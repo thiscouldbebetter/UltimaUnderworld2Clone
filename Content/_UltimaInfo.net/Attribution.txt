@@ -1,0 +1,13 @@
+The files in this directory and its subdirectories are adapted
+from the game _Ultima Underworld 2_, originally published
+by Origin Systems.  The files were obtained from a website
+hosted at the URL
+
+	https://ultimainfo.nullneuron.net/Maps/UW2Maps.htm.
+
+The text files here are adapted from that site as well.
+A note on that site reads:
+
+	These maps are screenshots from the in-game automap system.
+	Note that they are not from my own game. I found these graphics
+	on an RPG compilation CD-ROM. No author was mentioned.
