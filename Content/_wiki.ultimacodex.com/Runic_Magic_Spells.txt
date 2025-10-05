@@ -1,0 +1,109 @@
+
+Runic Magic
+===========
+
+[Adapted from https://wiki.ultimacodex.com/wiki/Runic_magic/All_spells.]
+
+Spell			Words of Power	Type			Description
+-----			--------------	--------		-----------
+
+1st Circle
+----------
+
+Bouncing		Uus Des Por			duration			Keeps the caster from taking any damage from falls; in fact, the caster bounces right back up.
+Create Food		In Mani Ylem		instantaneous		Causes a helping of fresh food to appear.
+Detect Trap		Wis Jux				targeted			Informs the caster of any non-magical traps on an object.
+Light				In Lor			duration			Provides illumination greater than that of a torch but less than a lantern.
+Locate				Bet Wis Ex		instantaneous		Reveals the a lost mage's location on the map.
+Luck				Bet Ort In		duration			Reduces the attack skill of all opponents by 3.
+Magic Arrow			Ort Jux			missile				Fires a magic arrow at an opponent. Can also be used to toggle switches.
+Resist Blows		Bet In Sanct	duration			Temporarily grants the caster the same protection as wearing head-to-toe armour.  Adds 2 points to all armor slots.
+
+
+2nd Circle
+----------
+Cause Fear			Quas Corp		targeted			Can cause an opponent to lose heart and flee.
+Deadly Seeker		Ort Wis Jux		missile				Releases a projectile that tracks down and strikes an opponent.
+Dispel Hunger		Wis Mani		instantaneous		Causes the caster to feel "well fed".
+Jump				Uus Por			duration			Increases the height and distance of its caster’s jumping ability. It is called Jump in manual and Leap in the game.
+Lesser Heal			In Bet Mani		instantaneous		Heals the caster's minor wounds. Restores 2d8 (2-16) vitality points.
+Rune of Flame		In Flam Jux		instantaneous		Creates an enchantment on a fixed location which will burst into flames should anything disturb it.
+Slow Fall			Rel Des Por		duration			Allows the caster to fall slowly and to avoid injury when jumping from great heights. 
+Valor				Quas An Corp	duration			Improves a caster's abilities in combat (20% weapon proficiency increase.)
+
+
+3rd Circle
+----------
+
+Bleeding			Jux Mani		targeted			Drains blood from a selected creature. It does 10 points of damage, plus half the caster's casting skill. Bypasses armor.
+Cure Poison			An Nox			instantaneous		Acts as an antidote to any poison currently in the caster’s system.
+Dispel Rune			An Jux Ort		targeted			Removes a magical rune such as a Rune of Flame or a Rune of Stasis.
+Electrical Bolt		Ort Grav		missile				Hurls a bolt of arcane electrical energy at a foe.
+Night Vision		Quas Lor		duration			Allows the caster to see without the benefit of a light source at a distance equivalent to a lantern.
+Repel Undead		An Kal Corp		instantaneous		Can cause numerous undead in front of the caster to attempt to flee (or attack, if backed into a corner).
+														Already-fleeing creatures take a number of points of damage equal to the caster's casting skill.
+Speed				Rel Tym Por		duration			Decreases the speed of others thereby making the caster relatively faster.
+
+
+4th Circle
+----------
+
+Flameproof			Sanct Flam		duration			Briefly grants a partial resistance to damage from flame.
+Frost				In An Flam		instantaneous		Creates frost in an area in front of the caster. This frost will inflict about 10 points of 
+Heal				In Mani			instantaneous		Heals the caster of even grievous wounds. Restores 4d8 (4-32) vitality points	
+Levitate			Hur Por			duration			Briefly allows you to rise vertically into the air. It grants control of vertical height at the cost of reduced horizontal
+Missile Protection	Grav Sanct Por	duration			Renders the caster invulnerable to most missiles, and offers protection
+Poison Weapon		Nox Jux Ylem	duration			Envenoms the caster’s weapons.
+Remove Trap			An Jux			targetd				Negates a non-magical trap.
+Study Monster		Wis Mani		targeted			Gives the caster knowledge about a creature.
+Thick Skin			In Sanct		duration			Increases resistance to damage.  Adds 3 points to all armor slots.
+
+
+5th Circle
+----------
+
+Cure Poison			An Nox			instantaneous		Acts as an antidote to any poison currently in the caster’s system.
+Fireball			Por Flam		missile				Hurls a flaming missile at an opponent.
+Mending				Rel Sanct Ylem	targeted			When cast on a weapon, armor, a light source, food or a door, this spell brings it to top quality.
+Name Enchantment	Ort Wis Ylem	targeted			Reveals the true nature of the object on which the spell is cast. It identifies magical items and bones.
+Open				Ex Ylem			targeted			Unlocks a locked door or chest.
+Rune of Stasis		In Tym Jux		instantaneous		Similar to the Second Circle Rune of Flame spell, this spell creates a floating rune that paralyzes the first creature to touch it. The spell lasts until disturbed.
+Smite Undead		An Corp Mani	targeted			Delivers a crushing blow to a single undead being.
+Telekinesis			Ort Por Ylem	duration			Allows the caster to pick up and/or manipulate items from a distance. Also extends 
+
+
+6th Circle
+----------
+
+Charm				Quas Rel Wis	targeted			Causes the target to become friendly toward the caster.
+Daylight			Vas In Lor		duration			Provides bright illumination for extended periods of time.
+Gate Travel			Vas Rel Por		instantaneous		When cast on one moonstone, this spell takes the caster instantaneously to another moonstone.
+Greater Heal		Vas In Mani		instantaneous		Brings the caster back to his or her original vigor (full Vitality).
+Invisibility		Vas Sanct Lor	duration			Causes the caster to become nearly impossible to detect by normal means.
+Map Area			Wis Ex			instantaneous		Reveals an area around the caster to the auto-map. The radius of this area varies from 15 feet (at casting skill 0) up to 165 feet (at casting skill 30)	
+Paralyze			An Ex Por		targeted			Prevents the target from moving.
+Sheet Lightning		Vas Ort Grav	instantaneous		Causes a cone of lightning bolts to erupt from the caster’s hands.
+
+7th Circle
+----------
+
+Enchantment			Vas Ort Ylem	instantaneous		Can either be used to add charges to any magic item which can take charges, or to permanently enchant a weapon or armor.
+Magic Satellite		Ort Por Grav	instantaneous		Creates an object that orbits the caster, and that explodes on contact with any creature.
+Mass Confusion		Vas An Wis		instantaneous		Earby creatures into an upset mood. Hostiles are no longer hostile and friendlies are no longer friendly. All are upset. Called Confusion in UW1, Mass Confusion in UW2.
+Portal				Vas Ex Ylem		instantaneous		Transports the caster forward some distance, regardless of intervening objects, as long as there is an open space to arrive at. Useful for passing through walls.
+Reveal				Ort An Quas		instantaneous		Reveals hidden objects and concealed exits from the caster’s current location.
+Shockwave			Jux Hur			instantaneous		Causes a devastating shockwave to expand outward from the caster’s body. It affects all creatures within 12 feet of you, and does 15+(casting/2) points of damage to each creature in the area.
+Summon Daemon		Kal An Mani		instantaneous		Summons a daemon whose power depends on the casting skill of the summoner. Unfortunately, being a daemon, it will be hostile.
+Tremor				Vas Por Ylem	instantaneous		Creates a vast upheaval, causing the ground to quake and rocks to fall.
+
+
+8th Circle
+----------
+Armageddon			Vas Kal Corp	instantaneous		Ends all life everywhere, and destroys all objects in the world and inventory, trapping the caster in a dead and desolate world.
+Flame Wind			Flam Hur		instantaneous		Unleashes a storm of fireballs in front of the caster.
+Fly					Vas Hur Por		duration			Allows the caster to fly through air for a time, and then glide gently to the ground. This spell decays into Slow Fall.
+Freeze Time			An Tym			duration			Stops the flow of time for all save the caster.
+Iron Flesh			In Vas Sanct	duration			Greatly increases resistance to damage. Adds 5 points to all armor slots.
+Restoration			Vas Mani		instantaneous		Restores the caster to full health, wakefulness and satiation.
+Roaming Sight		Ort Por Wis		duration			Allows the caster to move his or her point of view at will, regardless of physical constraints	
+Smite Foe			Vas Jux Mani	targeted			A more powerful version of the Third Circle Bleeding spell. It causes a single creature (which must be one that can bleed) to take 110 points of damage, plus 3 points per level of the caster's casting skill. It will kill almost any creature.	

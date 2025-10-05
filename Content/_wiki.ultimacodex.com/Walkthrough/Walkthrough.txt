@@ -1,0 +1,679 @@
+
+Ultima Underworld II Walkthrough
+================================
+
+[Adapted from https://wiki.ultimacodex.com/wiki/Ultima_Underworld_II_Walkthrough.]
+
+
+This is a complete walkthrough for Ultima Underworld II. Note that it will not
+go into too many details; only the tasks are listed here. The walkthrough is
+divided into tasks you have to do, things you should do and important loot for
+each world. Note that important loot are things that you can reach without
+trouble, without any kind of task or event.
+
+
+Britannia
+---------
+
+[Maps.]
+
+This is your home base. Britannia should be well known to you. The Castle
+Britannia and its cellar are safe places. However, the sewers beneath are
+filled with dangers that for a weak Avatar are deadly. You will return here
+often. It is the blackrock jewel on the fifth level that enables you to travel
+to all the different worlds.
+
+(X) = Tasks you can only do or solve after visiting another world or a story
+point.
+
+Things you have to do
+---------------------
+
+You awaken in your quarters in Castle British. Now, gather your equipment in
+your room, including an auto-map. A more complete cache of equipment (rune bag,
+runes, etc.) lies behind the secret door in the north wall. Talk with everyone
+in the castle. First, when the Guardian makes his first appearance in the
+throne room. Afterwards, do it every time you return from an other world,
+since everyone has something new to say.
+
+Advice: Always be polite and helpful, even if the others sometimes are not.
+
+Dupre reports an infestation of monsters in the sewers. He will give you the
+key to the ladder downwards.
+
+Take the eggshell of a dread spider on the northern part of level 4. You will
+need it later for Killorn Keep.
+
+Find the blackrock jewel on level 5 and use it to enter other worlds.
+
+(X) Use the small blackrock gems from the other worlds after a treatment from
+Nystul to permanently open these worlds for travel.
+
+(X) Killorn Keep and Anodunos will become available after entering the 8th
+level of Tarna and then talking with Miranda.
+
+(X) Talorus, the Academy and the Pits of Carnage will become available after
+the murder of Lady Tory (see below).
+
+(X) Rhiannon and the Ethereal Void will become available after avenging the
+murder of Nelson. (see below)
+
+(X) Sometime after visiting Killorn Keep, the servants will threaten to go on
+strike. Speak with Lord British, then talk with Nanna. Be very nice to her
+and agree with her demands, then convey them to Lord British. Wait several
+game hours, then talk with him again. Bring his answer to Nanna.
+
+(X) After getting the dagger from Altara on Killorn Keep, find the Listener on
+level 4, and kill it with the weapon.
+
+(X) After getting the blackrock gem from Anodunos and killing the Listener,
+talking to Miranda will reveal that a traitor has killed Lady Tory. You can
+investigate, but not do anything about it yet.
+
+(X) After talking with Zoranthus, having the gem from the Academy and fusing
+the Talorus gem with the jewel, Miranda will tell you, that Nelson has something
+important to say. However, right when Nelson wants to reveal the solution to the
+problem, Patterson will murder him! Kill Patterson in combat, revealing him as
+Lady Tory's murderer, then talk with the others as well.
+
+Things you should do
+--------------------
+
+You will find Fissif on the third level in the sewers.  Advice: Be nice to him
+and after getting your pocket watch back, say you want to arrest him. Add that
+in the sewers, only hunger and death will await him, and he will surrender and
+become a trainer.
+
+Get the armoury key from behind the reaper on level 4. It is hidden in the
+small alcove. Since battling the reaper would be difficult this early, just run
+in, grab the key, and run out. You can kill it later. Unlock the armoury for
+good equipment.
+
+Unlock the shortcut from level 5 back to the castle.
+
+Defeat the two gazers on level 3 to get some basilisk oil. Store it in you room,
+as you need it later.
+
+Help the goblins on level 4 with the bloodworms at the lake.  First demand from
+the unnamed goblin what he is doing here and tell him he is trespassing.
+Afterwards remark that he knows his way around and accept a token tracking
+training.
+
+(X) Returning much later (after Patterson's death), he will give you the Order
+Serpent.
+
+(X) Sometime after visiting the Academy, Charles will tell you that he found a
+key. It will open a door on level 3, where you have to defeat a strong red
+haunt. The reward besides loot, are a NOX rune stone and the second moonstone,
+enabling gate travel.
+
+Important Loot
+--------------
+
+In the armoury, you can find the rock hammer, a tool of great importance. There
+are the Leather Leggings of Stealth (possibly less useful), too.
+
+At the top of the western waterfall on level three, you can find the Chain Cowl
+of Valor. It has the same effect as the spell, greatly enhancing your battle powers.
+
+In the south-westernmost room on level three is the Leather Vest of Additional
+Protection.
+
+Next the the armoury key on level 4, a Jeweled Sword of Major Damage can be found.
+It is discovered by looking at the biggest plant, which also has the brightest
+shade of green.
+
+[Figure 1: The jeweled sword.]
+
+
+Tarna
+-----
+
+The Prison Tower of Tarna is a very tricky place. This early in the game,
+blowing your cover can be deadly. It is much better to use your smarts and if
+you play your cards right, you will not be drawn into a single fight on this
+world.
+
+(X) = Tasks you can only do or solve after visiting another world or a story point
+
+Things you have to do
+---------------------
+
+Move the small box on level 1 and pick up the voucher. Show it to the guard on
+level 2 to get free access to the tower.
+
+Be friendly to the goblin blacksmith on level 5 and suggest to him to coat normal
+gauntlets with fraznium. Talk to him again and ask for a spare pair of gauntlets,
+which you get.
+
+Play along with Borne confusing you with the inquisitor and promise to "crack
+Bishop like a nut". Borne will give you the password and another pair of
+gauntlets. Use the password to reach Bishop on level 8 and after a long chat,
+give him your spare gauntlets to free him.
+
+Return to Borne and demand the blackrock gem. He will release it to you.
+
+(X) After having Altara's Scepter, use it in Bishop's cell on level 8 to cut
+the line of power.
+
+Things you should do
+--------------------
+
+Take the grey stone on level 1. You will have a use for it in the Pits of Carnage.
+
+Talk with Felix on level 4. Turns out he wants the goblins dead so that he and
+Marcus can flee. You have to be careful with what you say, or it could have
+unfortunate results. Now you have two options to accomplish this:
+
+The old-fashioned way. Kill everyone by yourself.
+
+The smart way. Talk to Borne and demand the keys. He will give you a password for
+Janar, who will release the keys. Free Garg on level 6 and tell him to go on a
+rampage. Now all the goblins are dead.
+
+Hint: of course you can get the keys and then kill the goblins, before freeing
+Garg, as this give the maximum experience reward.
+
+Once this is done, return to Felix to get a food-producing box, and he and Marcus leave.
+Use the keys to free Milenus on level 8.
+
+(X) Visit Garg several times during the game. He will give you two messages from Bishop.
+
+Important Loot
+--------------
+None.
+
+
+Killorn Keep
+------------
+
+The Killorn Keep is held under the control of the Guardian. Therefore it is most
+important to keep your identity a secret. Not much fighting is going on, even in the
+basement, but plot-critical events will take place here.
+
+(X) = Tasks you can only do or solve after visiting another world or a story point
+
+Things you have to do
+---------------------
+
+Get the blackrock gem from the basement. You have to put out the candles to de-activate
+the teleport trap and defeat the headless, before you can take it.  Advice: throw the candles away.
+
+You have to gain Altara's help. However, to do this, you first have to ease the
+suspicion of Mystell.
+
+Talk with everyone in the castle except Relk and Altara. Then talk with Mystell
+and first use a fake name and then the facts you have learned to make her trust
+you.  Now you can talk with Altara and say that Bishop sends you.
+
+(X) Altara first wants you to kill the Listener in Britannia. Return to
+Britannia and find the Listener on the 4th level near the big lake. Advice:
+use the dagger that has been given by Altara.
+
+(X) Altara now wants you to create a special scepter. She gives you a special
+black pearl. She also needs the egg shell of a dread spider (which you may already
+have. If not, you will find it in dread spider colony at the north end of Britannia)
+and an amethyst rod (you can find it on Talorus). Once you have all three things,
+give them to her to get Altara's Scepter.
+
+(X) Find the secret door in the barracks. Kill the (exceptionally resilent) daemon
+and enter the engine room with the key from one of the barrels in the basement
+to cut the line of power with the scepter (standing close to the door and using
+the scepter also works).
+
+Things you should do
+--------------------
+
+Share a drink with Lobar and listen to his story. Getting his trust is important
+for another side-task.
+
+(X) After gaining Altara's and Mystell's favor, speak with Relk. Then go to his
+quarters. There he will attack you, because he knows who you are. You have to
+defend yourself against him! Some will scold you but most are happy about it
+and Lobar now offers training for the sword.
+
+Additionally, before you speak with Relk you should first talk with Blackie and
+then Beauty, who tells you that Josie is very thirsty. Give Josie some water
+and she'll reveal what Relk did with the blackrock gem, meaning you then can
+confront him about it in his quarters to get additional information.
+
+(X) Talk with a Trilkhai and then with Blackie. Promise to help. After getting
+the answer from the xorinite wisp in the Void, tell Blackie what you have learned.
+
+(X) Promise Ogri to return the Killorn Banner. You find the banner near the
+spirit of Praecor Loth on Rhiannon. When you return it to him, he will reveal
+a secret to you.
+
+Important Loot
+--------------
+
+In the basement you can find the Longsword of Major Accuracy.
+
+
+Anodunos
+--------
+
+The ice caves of Anodunos are all that is left after the Guardian was done with
+this place. You will have to survive the great dangers that lurks through this
+frozen world to actually reach the remains of this once great city.
+
+(X) = Tasks you can only do or solve after visiting another world or a story point
+
+Things you have to do
+---------------------
+
+Your main goal is to gain access to the city of Anodunos. However, to do so,
+some steps are needed.
+
+Manage to reach the second level in order to find the stairs to the other half of level 1.
+
+Kill Sentinel 868 to gain access to the control tower. Now follow Anodunos dam
+control puzzle in order to solve the puzzle by first getting the key and then
+reaching the door to pull the chain to open the floodgates.
+
+Now the entrance to the city is freed and can be reached with Water Walk. Talk to Beatrice.
+
+Get the blackrock gem on the 2nd level. It is a little difficult to reach, being
+surrounded by slippery ice.
+
+(X) Free the city of Anodunos by cutting the line of power near the central fountain
+with the scepter. Then talk to Beatrice again.
+
+Things you should do
+--------------------
+
+Get the map from the failed adventurers. It will spare you mapping the area.
+
+(X) If you give Mokpo some Dream Herbs, (after getting some and testing it)
+he will give you some important clues.
+
+Important Loot
+--------------
+
+Jump off the control tower on level one and enter the water slide with Water Walk
+activated. In the northern part you will find an alcove, and in it guarded by a
+ghost, the Ring of Protection.
+
+In the city of Anodunos itself, you find the Mace of Major Damage, but you first have to repair it.
+
+In the eastern part of the city are numerous important rune stones.
+
+Talorus
+-------
+
+Only one enemy will try to stop you. And while the Vorz are weak, they can attack in
+masses. Talorus is less about brute force and more about solving a very complex problem.
+
+(X) = Tasks you can only do or solve after visiting another world or a story point
+
+Things you have to do
+---------------------
+
+To actually get the blackrock gem and the place of power, you have to fulfill a lengthy puzzle.
+
+Talk with the Historian. Learn about everything you need to know.
+
+Next talk with the Futurian and also learn everything. From now on, Vorz will attack you,
+as the Guardian has become aware of you.
+
+Try to talk with the Data Integrator.
+
+After the failure first talk with Futurian again, then the Dialogicans. Ask for help and take their scroll.
+
+Now again talk with the Data Integrator.
+
+Get Control Crystal M4Y8.
+
+Go to level 2. First take Control Crystal E0Y2, then battle all the Vorz
+and take the Delgnigzator.
+
+Kill the Bliy Skup, then enter the production chamber. Put M4Y8 on yellow pad,
+E0Y2 on purple pad and the Delgnigzator on the circle. Pull the chain,
+then talk with the new Bily Skup.
+
+Return to Historian, and he will teleport you to the blackrock gem.
+
+(X) Return and use the scepter in the Bliy Skup chamber to cut the line of power.
+
+Things you should do
+--------------------
+
+None.
+
+Important Loot
+--------------
+
+The nutritious wafers are the best food in the game. Take them all.
+Amongst the masses of boots on level 2, there is one pair of Leather Boots of Bounce.
+
+
+Scintillus Academy
+------------------
+
+[Figure 2: The secret vault.]
+
+This is a mage academy, long devastated by the Guardian. However, to actually reach
+the great rewards this world promises, you have to take the final exam and use brains
+and brawn to manage your way through the tests.
+
+Things you have to do
+---------------------
+
+Take the final exam in order to get both of the things you need from this world.
+Note than on the levels 2-7, no mana regenerates.
+
+Level 1: Put the gold coffer on the middle pressure plate that opens the right-hand portcullis.
+
+Level 2: Try to not slide over the ice too badly and push the button in the east,
+then reach the door. Go through the second door and avoid the arrow traps.
+
+Level 3: Take the Wand of Telekinesis, then jump on the easternmost pillar and
+push the button. Then jump two pillars north and two west. Use Daylight then use
+the wand on the button on the far western wall, to raise pillar to the exit.
+
+Level 4: Find the keys in the NW and SE corner. Exit is in the NE.
+
+Level 5: Take the pole and flip switches with it until the southern door opens.
+Then go through that door and get key (do not push the button) for the exit through the northern door.
+
+Level 6: Step on pressure plates to create headless, then take the key (headless are killed
+by arrows meant for you). Follow the instructions on the map to solve the labyrinth.
+
+Level 7: First get the key by swimming or water-walking. Then use bullfrog jumps
+(shift+J) to follow the path on the map.
+
+[Figure 3: Level 7 Solution.]
+
+Level 8: Find the red carpet on each ring and count clockwise. The 3rd, 5th, 2nd and
+9th niche are the right ones. Then go on to loot all the rooms (look for secret doors
+and hidden items). Pick up the blackrock gem and use the scepter on the big pentagram.
+Then you can exit (but more is to be done, see below).
+
+Things you should do
+--------------------
+
+Talk with Elster to get a lot of information.  When you return from mastering the final exam,
+Elster has tried to do it himself, but got killed in the first test. You can find his remains there.
+
+Break into the secure vault after finishing the final exam. This is a complicated venture, but well worth the effort.
+
+First get the key and the fraznium circlet from the rooms of the testers.
+
+Then unlock the door to enter the vault.
+
+De-activate the rune by throwing a coin into it, then flip the switch by either
+using Telekinesis or a Magic Arrow.
+
+In the water section, use the map to first find the button. After pushing it,
+go to the now open door.
+
+Next go north to find another button behind a secret wall to open the next door.
+
+The following section has a very easy way to bypass this test. Cast Bounce, then run
+through the door. You will bounce through all three rooms and land in the water to stop bouncing.
+
+Enter the vault through the fake wall and raid it, then put on the fraznium circlet and go
+through the second fake wall to raid this vault as well (look carefully at the floor for the secret locker).
+
+The loot is impressive: the ultra-rare and useful TYM and VAS rune stones, the Axe of Fire Doom,
+numerous valuables and potions. After grabbing it all, exit through the teleporter at the end of the corridor.
+
+After entering the vault, take one FLAM rune stone for yourself, but take another and do not put
+it into the rune bag. You will have a use for it later.
+Important Loot
+
+The Hand Axe of Major Damage and the Leather Boots of Very Great Toughness are both found on level 4.
+A moonstone is found on level 5. Take it, together with the one found in Britannia, it will enable you to use Gate Travel.
+In the quarters on level 8, you will find a Mace of Unsurpassed Accuracy.
+
+
+Pits of Carnage
+---------------
+
+This is a brutal place. As the name says, the survival of the fittest is the rule here.
+Do not think for too long, your sword is your best friend in this place,
+where the Guardian banishes the ones that are too brutal even for his purposes.
+
+(X) = Tasks you can only do or solve after visiting another world or a story point
+
+Things you have to do
+---------------------
+
+Secure your position in the Pits. Do this by first defeating Krilner (a scratch is enough)
+and then fight three random Pit Fighters and defeat them to gain their respect.
+
+Cut the line of power with the Scepter in the northern room with the trap door.
+
+Get the blackrock gem. Dorstag has it and talking with him (after gaining respect)
+yields no result. There are two ways to get it:
+
+1. Talk with Krilner and Zogith about Dorstag, then go to Zaria. When she tries to goad you into
+a challenge, imply that women cannot fight, then demand the arena of earth.
+Go back to Dorstag. When he tries to lure you into a challenge, imply he is afraid to
+get another scar (do not mention it before) then chose the arena of earth.
+The battle will be hard, so it is best to do it after getting the Sword of Stone
+Strike. After he is dead, get the gem.
+
+2. Reach level three and find Blog. Be friendly and agree to a game. Give him your
+grey stone from Tarna, then ask for his help to get the gem. Return to Dorstag,
+demand the gem and Blog will make sure you get it. You can still challenge Dorstag.
+
+(X) Help Zoranthus on level 2 to get the Scepter of Deadly Seeker. He promises you
+to give a a djinn bottle in return. After getting the scepter from the Void,
+get the bottle and let him explain what to do to contain the being into yourself.
+
+Things you should do
+--------------------
+
+Help the mage Zogith. His first problem is that his battle tactics are wrong,
+so tell him to use the arena of air. Then he needs a FLAM rune stone, so
+give him your spare one from the Academy. He in turn will reveal the Valor spell
+to you.
+
+Make bets with Jospur. You get lots of gold and experience from it. Best only
+do this after getting the Sword of Stone Strike. First escalate the numbers,
+then battle only groups of five. When Jospur threatens to stop business,
+threaten to reveal this threat and he'll continue to do business. So fight often
+for big reward.
+
+The is a hidden lair of a liche on level 3. Contrary to rumor, no teleportation
+is needed. One needs to carefully search the walls at the right place
+(see the map) to reveal a button that frees the way. The fiend of course has
+to be killed. The loot includes Basilisk Oil, which is great if the other bottles
+were wasted somehow.
+
+Important Loot
+--------------
+
+After defeating Dorstag, break into his vault to get the extremely useful Cudgel
+of Opening, which casts an Open spell on the chest or door it hits. However, you
+have to repair it and first have to get rid of the guards (Sword of Stone Strike helps).
+
+A jeweled shield is found in the northern part of level 2, while a Mace of major
+Damage sits in the southern part of the same level. An earth golem on the same
+level holds the only JUX rune stone of the game.
+
+The Emerald of Regain Mana and the Gauntlets of Major Toughness are found on level 3.
+
+
+Rhiannon
+--------
+
+The Tomb of the kind king Praecor Loth on Rhiannon had attracted the servants
+of the Guardian for a long time, to bring their master Loth's greatest artifact.
+However, the tomb is a death trap, and has killed them all. Yet you need to
+master this challenge. The upside is, this tomb has lots of useful loot.
+
+Things you have to do
+---------------------
+
+Get the blackrock gem from the NW corridor (need a rock hammer to reach).
+This is also the place where you have to use the scepter in order to cut the line of power.
+
+Get the Horn of Praecor Loth. This is complicated since the three have hidden the
+dead king well away. The first two levels are not too bad, but the third
+is a real labyrinth. It gets even more challenging once you reach level 4.
+
+Talking to Morphius is useless, so use Smite Undead repeatedly to weaken him,
+before using your weapon. Then search for a hidden switch in the east.
+
+Challenge Lord Umbria. Quick climb on a ledge to avoid his golems, then smite
+and kill him, before destroying his goons. In the east is a room with 16 pillars
+(numbered left to right and up-down). Jump on the pillars 13-10-11-16 to reach
+the pentagram, where you throw away the candles.
+
+Lethe will go on the attack. Smite and kill her, then find the Despoiler
+in the east who has the final key to reach Praecor Loth.
+
+Once you speak with him, make him aware of the truth and listen patiently to
+what he says, and he will give you the horn with no further trouble.
+
+Things you should do
+--------------------
+
+Get all the map pieces on level 1. There are seven pieces in total, and they
+make level 3 much easier.
+
+Help Trystero on level 2 to get his bones back. You can find them at the same
+place you found the blackrock gem.
+
+Get the key from Silanus. After listening to his story, reach the drainage
+control in the SE. After pushing the button, go to the NE and search for a
+secret button in the water area to reveal the key. The key creates a shortcut
+with the nearby door and allows you to bypass Morphius by opening his door.
+
+Get the blue banner of Killorn from Loth's grave site for Ogri on Killorn Keep.
+
+Important Loot
+--------------
+
+(So much loot, only the best is listed. See maps for other locations)
+
+The Sword of Stone Strike in the SE of level 1. Fly there, open the portcullis
+with Open and take this best weapon of the game! On the same level, you find
+the Breast Plate of Very Great Protection in the E.
+
+The Tower Shield of Very Great Toughness near the stairs to level 3.
+
+The Leather Vest of Flameproof is found in the S of level 3. It will be very
+important in the northern part of the level and in the Void. Also enables usage
+of the Axe of Firedoom.
+
+The Plate Boots of Unsurpassed Toughness and the Ring of Regeneration are found
+in the center of level 3 in a secret room. On the same level near the stairs
+to level four are the Plate Leggins of Great Protection.
+
+Loth's grave includes the Mace of Undead Bane.
+
+
+Ethereal Void
+-------------
+
+[The map of the Ethereal Void]
+
+To master this huge puzzle you need to find out how to exactly reach your goal...
+and leave it after you are done.
+
+Before entering the Ethereal Void, you seek out a particular plant, which grows
+on gravesites. You obtain it in Anodunos, or in the Hall of Losers. After eating
+it, you go to sleep and finds yourself inside the Shrine of Spirituality.
+
+Things you have to do
+---------------------
+
+Your main and only objective is to clear the way to the Shrine of Spirituality.
+However, to actually do so, you first have to clear the four colored worlds.
+You can enter these worlds by entering a moongate of the color. After finishing
+the world, you have to re-color the Pyramid of Many Colors each time to the fitting
+color, before using the exit moongate to reach a reward chamber.
+
+Red: wear the Leather Vest of Flameproof. Slaughter everything, then take the
+Scepter of Deadly Seeker for Zoranthus after killing the Destroyer. Follow the path
+until you reach the exit.
+
+Yellow: The whole labyrinth is a huge distraction. Cast Fly to bypass it and reach
+the SE, where in a separate chamber you find the exit moongate. Beware of the
+brain creatures!
+
+Blue: walk S and then either fly or use the bouncing pad to reach the exit.
+
+Purple: explore the area until you reach a slope that leads to a gate shaped
+like the Guardian. Once you are in the early dungeon, go straight ahead and
+follow the path, until you get to the exit.
+
+After doing so, the color orange will become available. Enter the new, orange
+moongate and again re-color the pyramid, before using the exit gate to reach the
+shrine. First use the scepter to cut the line of power. To get the blackrock gem,
+you have several options:
+
+1. Fly up and teleport yourself through the bars.
+
+2. Fly up, throw a moonstone through the bars and gate yourself inside.
+
+3. Eat a Dream Herb and once you dream of the shrine, take the gem and throw it
+through the bars. Pick it up after waking up.
+
+Things you should do
+--------------------
+
+Learn from the dreamers what secrets the various zones hold.
+
+Give Prinx in the blue area two eyeballs of a brain creature in order to get a
+good scroll from him.
+
+Make a deal with the xorinite wisp in the blue area. Tell him that Bishop
+has escaped, and in turn learn what happened with the Trilkhai, which
+you can tell Blackie on Killorn Keep.
+
+Important Loot
+--------------
+
+Battle Axe of Life Stealing on the purple path in the stick maze. It is behind
+a false wall (not a secret door) sort of near the exit of the maze.
+
+Mail shirt of Tremendous Protection in blue area by the resilient circle.
+
+Endgame Preparations
+--------------------
+
+Now that all worlds are done, you should have done the following things:
+
+Cut all eight lines of power.
+
+Fused all eight blackrock gems into the portal jewel (it should be flashing now).
+
+Gotten the Horn of Praecor Loth, the djinn bottle and basilisk oil.
+
+For the next part, you have to trap the djinn inside yourself.
+
+Ask Merzan on Killorn Keep for special and buy a potion of Iron Flesh
+(You can also use the spell instead).
+
+Go to Anodunos and throw the basilisk oil into the filanium deposit in the east
+of the 2nd level, then bathe in it.
+
+Next go to Talorus and stand in the lava in the 2nd level to bake the mud on you.
+Alternatively, you can go to the brain creature room in Killorn Keep for lava.
+
+Go to the Void next. Walk through white moongates, until you reach the Sigil of Binding.
+Drink the potion to make the covering on you perfect. Put the djinn bottle in the
+center of the pentagram, then break it with your weapon to trap it inside
+yourself (if you did it wrong, you are dead now).
+
+Now you need the spellbook that caused the whole mess.
+
+Returning to Britannia, you are confronted with four of Mors Gotha’s Killorn Soldiers.
+Kill them, then go to Killorn Keep. 
+
+Mors Gotha hangs around in the barracks. Do not fall for her tempting offers
+and stay firm. Injure her so that she flees and kill her goons,
+then take her spellbook.
+
+Give Nystul the spellbook, then answer "throne room" and "4".
+
+Now finish off Mors Gotha and any of the invading forces you meet on the way
+to the throne room. Once you are there, you have won.
+
+____
+
+This page was last edited on 8 March 2025, at 21:18.
