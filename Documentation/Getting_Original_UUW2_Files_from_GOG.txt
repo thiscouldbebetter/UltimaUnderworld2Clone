@@ -1,0 +1,15 @@
+
+To obtain the original data files for _Ultima Underworld 2_ from GOG,
+follow these instructions:
+
+1. Log into your GOG account.
+2. Purchase a copy of _Ultima Underworld 2_.
+3. Download a copy of the game using the offline backup installer.
+4. Run the installer.
+5. Locate the directory to which the game was installed, likely "C:\GOG Games\Ultima Underworld 2".
+6. In the install directory, locate the file "game.gog".
+7. Make a copy of game.gog and rename it to game.gog.iso.
+8. Double-click the new .iso file to view its contents.
+9. In the .iso file, open the "UW2" directory, then, within it, the "DATA" directory.
+10. Within the DATA directory, locate the file cnv.ark.
+11. Copy the file to any convenient directory (as technically it's not a "real" file while it's still within the .iso directory).

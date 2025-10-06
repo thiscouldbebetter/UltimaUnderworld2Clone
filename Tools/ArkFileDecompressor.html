@@ -1,0 +1,235 @@
+
+<html>
+
+<body>
+
+<div>
+	<h3>ARK File Decompressor</h3>
+
+	<p>Upload a file in compressed .ark file format to decompress it.</p>
+
+	<div>
+		<label>File to Upload:</label>
+		<input type="file" onchange="inputFile_Changed(this)">
+	</div>
+
+	<div>
+		<label>File Contents Decompressed as Bytes:<label>
+		<br />
+		<textarea id="textareaBytesDecompressed" cols="80" rows="25"></textarea>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+function inputFile_Changed(inputFile)
+{
+	var file = inputFile.files[0];
+	if (file != null)
+	{
+		var fileReader = new FileReader();
+		fileReader.onload = (event) =>
+		{
+			var fileAsBinaryString = event.target.result;
+			var arkFileAsBytes =
+				fileAsBinaryString
+					.split("")
+					.map(x => x.charCodeAt(0) );
+			var arkFile = ArkFile.fromBytes(arkFileAsBytes);
+			var arkFileAsString = arkFile.toString();
+			var d = document;
+			var textareaBytesDecompressed =
+				d.getElementById("textareaBytesDecompressed");
+			textareaBytesDecompressed.value =
+				arkFileAsString;
+		};
+		fileReader.readAsBinaryString(file);
+	}
+}
+
+class ArkFile
+{
+	constructor(blocks)
+	{
+		this.blocks = blocks;
+	}
+
+	static fromBytes(bytesToDecompress)
+	{
+		var bytesDecompressed = [];
+
+		var reader = new ByteStream(bytesToDecompress);
+		var converter = new ByteConverter();
+
+		var blocksPerTable = converter.bytesToIntegerLE(reader.readBytes(2) );
+		var unknownAsBytes = reader.readBytes(4);
+		var unknownAsInteger = converter.bytesToIntegerLE(unknownAsBytes);
+		if (unknownAsInteger != 0)
+		{
+			alert("Unknown field should be all zeroes, but wasn't.");
+		}
+
+		var blockOffsetsAbsolute = [];
+
+		for (var i = 0; i < blocksPerTable; i++)
+		{
+			var blockOffsetAbsolute =
+				converter.bytesToIntegerLE(reader.readBytes(4) );
+			if (fileOffsetToBlockAbsolute == 0)
+			{
+				console.log("Offset for block " + i + " was 0, which was not yet used.");
+			}
+			blockOffsetsAbsolute.push(blockOffsetAbsolute);
+		}
+
+		var blockFlagSets = [];
+
+		for (var i = 0; i < blocksPerTable; i++)
+		{
+			var flagsAsByte = reader.readByte();
+			var padding = reader.readBytes(3);
+			var blockFlags = BlockFlag.fromByte(flagsAsByte);
+			blockFlagSets.push(blockFlags);
+		}
+
+		var blockSizes = [];
+		for (var i = 0; i < blocksPerTable; i++)
+		{
+			var blockSize =
+				converter.bytesToIntegerLE(reader.readBytes(4) );
+			blockSizes.push(blockSize);
+		}
+
+		var blockAvailableSpaces = [];
+		for (var i = 0; i < blocksPerTable; i++)
+		{
+			var blockAvailableSpace =
+				converter.bytesToIntegerLE(reader.readBytes(4) );
+			blockAvailableSpaces.push(blockAvailableSpace);
+		}
+
+		var blocks = [];
+		for (var i = 0; i < blocksPerTable; i++)
+		{
+			var blockOffsetAbsolute = blockOffsetAbsolute[i];
+			var blockFlags = blockFlagSets[i];
+			var blockSize = blockSizes[i];
+			var blockAvailableSpace = blockAvailableSpaces[i];
+
+			reader.seek(blockOffsetAbsolute);
+			var blockDataPadded = 
+				reader.readBytes(blockAvailableSpace);
+			var blockDataTrimmed =
+				blockDataPadded.slice(blockSize);
+
+			var block = new ArkFile_Block
+			(
+				blockOffsetAbsolute,
+				blockFlags,
+				blockSize,
+				blockAvailableSpace,
+				blockDataTrimmed
+			);
+
+			blocks.push(block);
+		}
+
+		var arkFile = new ArkFile(blocks);
+
+		return arkFile;
+	}
+
+	toString()
+	{
+		return JSON.stringify(this, null, 4);
+	}
+}
+
+class ArkFile_Block
+{
+	constructor(offset, flags, size, spaceAvailable, dataBytes)
+	{
+		this.offset = offset;
+		this.flags = flags;
+		this.size = size;
+		this.spaceAvailable = spaceAvailable;
+		this.dataBytes = dataBytes;
+	}
+}
+
+class ArkFile_Block_Flags
+{
+	constructor(shouldBeCompressed, isActuallyCompressed, extraSpaceIsAllocated)
+	{
+		this.shouldBeCompressed = shouldBeCompressed;
+		this.isActuallyCompressed = isActuallyCompressed;
+		this.extraSpaceIsAllocated = extraSpaceIsAllocated;
+	}
+
+	static fromByte(flagsAsByte)
+	{
+		var flagsAsBitString = flagsAsByte.toString(2);
+		var flagsAsBitStrings = flagsAsBitStrings.split("");
+		var shouldBeCompressed = (flagsAsBitStrings[0] == "1");
+		var isActuallyCompressed = (flagsAsBitStrings[1] == "1");
+		var extraSpaceIsAllocated = (flagsAsBitStrings[2] == "1");
+		var flags = new ArkFile_Block_Flags
+		(
+			shouldBeCompressed, isActuallyCompressed, extraSpaceIsAllocated
+		);
+		return flags;
+	}
+}
+
+class ByteConverter
+{
+	bytesToIntegerLE(bytesToConvert)
+	{
+		// "LE" = "Little-Endian".
+		var integerSoFar = 0;
+
+		for (var i = 0; i < bytesToConvert.length; i++)
+		{
+			var byteToConvert = bytesToConvert[i];
+			var byteValueInPlace =
+				byteToConvert << (ByteConverter.BitsPerByte * i);
+			integerSoFar += byteValueInPlace;
+		}
+
+		return integerSoFar;
+	}
+}
+
+class ByteStream
+{
+	constructor(bytes)
+	{
+		this.bytes = bytes;
+
+		this.byteCurrentIndex = 0;
+	}
+
+	readByte()
+	{
+		var byteRead = this.bytes[this.byteCurrentIndex];
+		this.byteCurrentIndex++;
+		return byteRead;
+	}
+
+	readBytes(byteCount)
+	{
+		var bytesRead = [];
+		for (var i = 0; i < byteCount; i++)
+		{
+			var byteRead = this.readByte();
+			bytesRead.push(byteRead);
+		}
+		return bytesRead;
+	}
+}
+
+</script>
+
+</body>
+
+</html>
