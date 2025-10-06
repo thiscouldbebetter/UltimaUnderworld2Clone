@@ -16,7 +16,11 @@
 	<div>
 		<label>File Contents Decompressed as Bytes:<label>
 		<br />
-		<textarea id="textareaBytesDecompressed" cols="80" rows="25"></textarea>
+		<textarea
+			id="textareaBytesDecompressed"
+			cols="80" rows="25"
+			spellcheck="false"
+		></textarea>
 	</div>
 </div>
 
@@ -75,7 +79,7 @@ class ArkFile
 		{
 			var blockOffsetAbsolute =
 				converter.bytesToIntegerLE(reader.readBytes(4) );
-			if (fileOffsetToBlockAbsolute == 0)
+			if (blockOffsetAbsolute == 0)
 			{
 				console.log("Offset for block " + i + " was 0, which was not yet used.");
 			}
@@ -88,7 +92,7 @@ class ArkFile
 		{
 			var flagsAsByte = reader.readByte();
 			var padding = reader.readBytes(3);
-			var blockFlags = BlockFlag.fromByte(flagsAsByte);
+			var blockFlags = ArkFile_Block_Flags.fromByte(flagsAsByte);
 			blockFlagSets.push(blockFlags);
 		}
 
@@ -111,7 +115,7 @@ class ArkFile
 		var blocks = [];
 		for (var i = 0; i < blocksPerTable; i++)
 		{
-			var blockOffsetAbsolute = blockOffsetAbsolute[i];
+			var blockOffsetAbsolute = blockOffsetsAbsolute[i];
 			var blockFlags = blockFlagSets[i];
 			var blockSize = blockSizes[i];
 			var blockAvailableSpace = blockAvailableSpaces[i];
@@ -120,7 +124,7 @@ class ArkFile
 			var blockDataPadded = 
 				reader.readBytes(blockAvailableSpace);
 			var blockDataTrimmed =
-				blockDataPadded.slice(blockSize);
+				blockDataPadded.slice(0, blockSize);
 
 			var block = new ArkFile_Block
 			(
@@ -139,9 +143,19 @@ class ArkFile
 		return arkFile;
 	}
 
+	toObjectToSerialize()
+	{
+		var returnValue = {};
+		var blocksAsObjectsToSerialize =
+			this.blocks.map(x => x.toObjectToSerialize() );
+		returnValue.blocks = blocksAsObjectsToSerialize;
+		return returnValue;
+	}
+
 	toString()
 	{
-		return JSON.stringify(this, null, 4);
+		var objectToSerialize = this.toObjectToSerialize();
+		return JSON.stringify(objectToSerialize, null, 4);
 	}
 }
 
@@ -155,6 +169,25 @@ class ArkFile_Block
 		this.spaceAvailable = spaceAvailable;
 		this.dataBytes = dataBytes;
 	}
+
+	toObjectToSerialize()
+	{
+		var dataBytesAsHexadecimal = this.dataBytes.map
+		(
+			x => x.toString(16).padStart(2, "0")
+		).join("");
+
+		var returnValue =
+		{
+			offset: this.offset,
+			flags: this.flags,
+			size: this.size,
+			spaceAvailable: this.spaceAvailable,
+			dataBytes: dataBytesAsHexadecimal
+		};
+		return returnValue;
+	}
+
 }
 
 class ArkFile_Block_Flags
@@ -169,7 +202,7 @@ class ArkFile_Block_Flags
 	static fromByte(flagsAsByte)
 	{
 		var flagsAsBitString = flagsAsByte.toString(2);
-		var flagsAsBitStrings = flagsAsBitStrings.split("");
+		var flagsAsBitStrings = flagsAsBitString.split("");
 		var shouldBeCompressed = (flagsAsBitStrings[0] == "1");
 		var isActuallyCompressed = (flagsAsBitStrings[1] == "1");
 		var extraSpaceIsAllocated = (flagsAsBitStrings[2] == "1");
@@ -183,6 +216,8 @@ class ArkFile_Block_Flags
 
 class ByteConverter
 {
+	static BitsPerByte = 8;
+
 	bytesToIntegerLE(bytesToConvert)
 	{
 		// "LE" = "Little-Endian".
@@ -225,6 +260,12 @@ class ByteStream
 			bytesRead.push(byteRead);
 		}
 		return bytesRead;
+	}
+
+	seek(byteIndexToSet)
+	{
+		this.byteCurrentIndex = byteIndexToSet;
+		return this;
 	}
 }
 
