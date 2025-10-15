@@ -168,6 +168,9 @@ class ArkFile_Block
 		this.size = size;
 		this.spaceAvailable = spaceAvailable;
 		this.dataBytes = dataBytes;
+
+		this.payload =
+			ArkFile_Block_Payload.fromBytesCompressed(this.dataBytes);
 	}
 
 	toObjectToSerialize()
@@ -187,7 +190,6 @@ class ArkFile_Block
 		};
 		return returnValue;
 	}
-
 }
 
 class ArkFile_Block_Flags
@@ -214,9 +216,113 @@ class ArkFile_Block_Flags
 	}
 }
 
+class ArkFile_Block_Payload
+{
+	constructor(subblocks)
+	{
+		this.subblocks = subblocks;
+	}
+
+	static fromBytesCompressed(bytes)
+	{
+		var reader = ByteStream.fromBytes(bytes);
+		var compressedBlockTagToIgnore = reader.readBytes(4);
+		var converter = new ByteConverter();
+
+		var blockHasMoreSubblocks = true;
+		while (blockHasMoreSubblocks)
+		{
+			var subblocksAreTransfersToBufferNotCopyRecordsAsByte =
+				reader.readByte();
+			var bitStream = BitStream.fromBytes
+			(
+				[ subblocksAreTransfersToBufferNotCopyRecordsAsByte ]
+			);
+			for (var i = 0; i < 8; i++)
+			{
+				var subblockIsTransferToBufferNotCopyRecords =
+					(bitStream.readBit() == 1);
+				if (subblockIsTransferToBufferNotCopyRecords)
+				{
+					throw new Error("todo - Transfer to buffer.");
+				}
+				else
+				{
+					// Copy record.
+
+					var positionAndCopyCountAsBytes =
+						reader.readBytes(2);
+					var bitStreamForPosAndCopyCount =
+						BitStream.fromBytes(positionAndCopyCountAsBytes);
+
+					var positionAsBits = bitStreamForPosAndCopyCount.readBits(11);
+					var positionAbsolute = 
+						converter
+							.bitsToIntegerLE(bitStreamForPosAndCopyCount);
+					var positionSignAsBit =
+						bitStreamForPosAndCopyCount.readBit();
+					var positionSign =
+						positionSignAsBit == "1"
+						? -1
+						: 1;
+					var positionBeforeOffset = positionSign * positionAbsolute;
+					const positionOffset = 18;
+					var position = positionBeforeOffset + positionOffset;
+
+					var copyCountAsBits = bitStream.readBits(4);
+					var copyCountBeforeOffset =
+						converter.bitsToIntegerLE(copyCountAsBits);
+					const copyCountOffset = 3;
+					var copyCount = copyCountBeforeOffset + copyCountOffset;
+
+					var message =
+						"position is " + position
+						+ ", copyCount is " + copyCount;
+
+					throw new Error(message);
+				}
+			}
+		}
+	}
+}
+
+class ArkFile_Block_Payload_CopyRecord
+{
+	constructor(position, copyCount)
+	{
+		this.position = position;
+		this.copyCount = copyCount;
+	}
+}
+
+class ArkFile_Block_Payload_TransferToBuffer
+{
+	constructor(data)
+	{
+		this.data = data;
+	}
+}
+
 class ByteConverter
 {
 	static BitsPerByte = 8;
+
+	bitsToIntegerLE(bitsToConvert)
+	{
+		// "LE" = "Little-Endian",
+		// which is more usually applied to bytes, not bits.
+
+		var integerSoFar = 0;
+
+		for (var i = 0; i < bitsToConvert.length; i++)
+		{
+			integerSoFar = integerSoFar << 1;
+			var bitToConvert = bitsToConvert[i];
+			integerSoFar += bitToConvert;
+		}
+
+		return integerSoFar;
+	}
 
 	bytesToIntegerLE(bytesToConvert)
 	{
@@ -235,6 +341,50 @@ class ByteConverter
 	}
 }
 
+class BitStream
+{
+	constructor(bytes)
+	{
+		this.byteStream = ByteStream.fromBytes(bytes)
+		this.bitOffsetWithinByte = 0; // Lowest-order bit first.
+	}
+
+	static fromBytes(bytes)
+	{
+		return new BitStream(bytes);
+	}
+
+	static BitsPerByte = 8;
+
+	readBit()
+	{
+		var byteCurrent = this.byteStream.peek();
+		var bitRead = (byteCurrent >> this.bitOffsetWithinByte) & 1;
+		this.bitOffsetWithinByte++;
+
+		if (this.bitOffsetWithinByte >= BitStream.BitsPerByte)
+		{
+			this.byteStream.readByte();
+			this.bitOffsetWithinByte = 0;
+		}
+
+		return bitRead;
+	}
+
+	readBits(bitCount)
+	{
+		var bitsReadSoFar = [];
+
+		for (var i = 0; i < bitCount; i++)
+		{
+			var bitRead = this.readBit();
+			bitsReadSoFar.push(bitRead);
+		}
+
+		return bitsReadSoFar;
+	}
+}
+
 class ByteStream
 {
 	constructor(bytes)
@@ -242,6 +392,17 @@ class ByteStream
 		this.bytes = bytes;
 
 		this.byteCurrentIndex = 0;
+	}
+
+	static fromBytes(bytes)
+	{
+		return new ByteStream(bytes);
+	}
+
+	peek()
+	{
+		var byteCurrent = this.bytes[this.byteCurrentIndex];
+		return byteCurrent;
 	}
 
 	readByte()
