@@ -1,0 +1,49 @@
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - General Hints
+ 
+Fighters
+This walkthrough contains a lot of screenshots. The original resolution of the game is 320x200 pixels. The resolution of today's monitors are much higher, causing the screenshots looking apparently small. However - for your convenience the screenshot are converted to 500x313 pixels and the maps are converted to 800x500 pixels ;-)
+
+The most important hint: read the Ultima Underworld II Reference Card ;-)
+
+Create your character with caution. The three primary attributs for every character are Strength, Dexterity and Intelligence. These skills are unchangeable, you can't raise them like the other skills. The maximum score for any of the attributes (or skills) is 30 (with the exception of Vitality (hitpoints), Mana and Experience of course which could raise much higher), and the minimum is 12 (only the three primary attributes, most of the other skills are 0 when you start a new game). If you don't like how the primary attributes are set press 'Esc' and start from scratch.
+
+Due to the surrounding blackrock, spells above the 4th Circle cannot be cast in the Castle of Lord British and the attached sewers.
+
+Ultima Underworld II - Labyrinth of Worlds has a non-linear gaming environment. This means that nearly all the adventuring locales will contain areas that will be too difficult for you the first time you arrive here. So if your foe seems to be getting the better of you time and time again, it would be wise to explore elsewhere for a while, until your character is more powerful.
+
+It's not a good idea to slaughter everything - even if it looks like a monster. Before attacking, it's best to look at the beast. This will often reveal its emotional state (friendly, mellow, upset, hostile). Mellow and friendly creatures often have important information. Killing them substantially reduces your chance of winning the game. Only hostile creatures are sure to attack you.
+
+The locations of items and runestones vary. A lot depends upon the character type and skills. A Fighter may found 5 runestones and a short sword in the secret room (Avatar quaters in the castle of Lord British) and a Druid may found 6 runestones and a dagger for example.
+
+Dont forget to left click the compass from time to time. You will get information about your status.
+
+Quench your light source (torch, candle, lamp) before you go to sleep. This prevents the light source from beeing used up during your slumber.
+
+In Labyrinth of worlds, there are several types of ice thay may prove troublesome to the adventurer. Cracked ice is not stable and often breaks, dropping you through to icy water underneath. The chance of the ice breaking is a function of your acrobat skill and the amount of weight you are carring, divided by the maximum you allowed to carry. Some ice is particulary smooth - once you step onto it, you will have difficulty altering your speed or direction.
+
+If a door is locked and you don't own the fitting key you can try to smash the door with your fist. Simply remove your current weapon (this prevents it from damage) and attack the door. Check the door's current status (right click) sometimes during your attack. If the status doesn't change after several hits you are apparently not able to smash the lock with your fist. By the way - you cannot smash massive doors. You can also try to open the door with a lockpick.
+
+You can't open a locked portcullis by your fists. Look for a person behind the portcullis and start a conversation. There could be a lever also.
+
+Some walls hide secret doors. If you detect a strange pattern on the wall right click to check the status. Maybe you have just detected a hidden door. Some of these doors you can open only from one direction.
+
+You can't carry all the stuff you picked up for ever. So erect a store - in your quarters in Castle of Lord British e.g. - where you can accumulate you treasures. It's a good idea to keep books about the various items.
+
+Some items could be more valuable than it seems. Maybe an object has magic properties but your lore isn't high enough to detect this. So don't forget to increase your lore skill.
+
+Because of a still unsolved bug, the map for each level can only hold a certain number of entries. Any further entry seems to disappear when you close the map and reopen it again. Or even more horrifying, it can happen that all of your entries of this level are lost. Therefore prioritise what is most important and put as much information as possible into each entry. And check your map before you save - don't save a game with a destroyed map.
+
+You are able to create screenshots by pressing [Alt][Q]. The screenshots are stored in the Ultima Underworld installation directory into the UNDERROM2 subfolder.
+
+ 
+
+ 
+
+>> Game Intro
+<< Walkthrough Index
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.

@@ -23,7 +23,7 @@ World.Choose|Display|Select a world.
 W1|Display|Selected World 1: Castle Britannia.
 |Display|Select a level.
 |OptionsClear
-|Option|0: [Choose a different world.]|World.Choose
+|Option|0: [Select a different world.]|World.Choose
 |Option|1: Main Level.|W1L1
 |Option|2: Basement.|W1L2
 |Option|3: Sewers: Top Level.|W1L3
@@ -54,85 +54,85 @@ W1L1|Display|Selected Level 1: Main Floor.
 W1L1C1|Display|Selected Character 1: Lord British.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C2|Display|Selected Character 2: Charles.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C3|Display|Selected Character 3: Dupre.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C4|Display|Selected Character 4: Feridwyn
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C5|Display|Selected Character 5: Geoffrey.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C6|Display|Selected Character 6: Iolo.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C7|Display|Selected Character 7: Julia.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C8|Display|Selected Character 8: Nanna.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C9|Display|Selected Character : Nell.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C10|Display|Selected Character 10: Nelson.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C11|Display|Selected Character 11: Nystul.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C12|Display|Selected Character 12: Patterson
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C13|Display|Selected Character 13: Syria.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 W1L1C14|Display|Selected Character 14: Tory.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]
+|Option|0: [Select a different character.]|W1L1
 |Prompt
 
 
@@ -147,18 +147,21 @@ W1L3|Display|Selected Level 3: Sewer: Top Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
+|Prompt
 
 
 W1L4|Display|Selected Level 4: Sewer: Middle Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
+|Prompt
 
 
 W1L5|Display|Selected Level 5: Sewer: Bottom Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
+|Prompt
 
 
 
@@ -180,48 +183,56 @@ W2L1|Display|Selected Level 1: Cellar.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L2|Display|Selected Level 2: Ground Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L3|Display|Selected Level 3.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L4|Display|Selected Level 4.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L5|Display|Selected Level 5.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L6|Display|Selected Level 6.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L7|Display|Selected Level 7.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W2L8|Display|Selected Level 8.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 
@@ -238,12 +249,14 @@ W3L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Prompt
 
 
 W3L2|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W3
+|Prompt
 
 
 

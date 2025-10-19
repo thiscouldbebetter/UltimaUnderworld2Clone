@@ -65,7 +65,7 @@ class Game
 		var videoDirectoryPath = contentDirectoryPath + "Video/";
 
 		var title = (a: string) => imageTitlesDirectoryPath + a;
-		// var image = (a: string) => imageDirectoryPath + a;
+		var image = (a: string) => imageDirectoryPath + a;
 		var effect = (a: string) => soundEffectDirectoryPath + a;
 		var music = (a: string) => soundMusicDirectoryPath + a;
 		var video = (a: string) => videoDirectoryPath + a;
@@ -78,6 +78,8 @@ class Game
 			title("Producer.png"),
 			title("Title.png"),
 
+			image("Friendly.png"),
+
 			effect("_Default.wav"),
 			effect("Producer.wav"),
 
@@ -89,6 +91,7 @@ class Game
 			font("Font.ttf"),
 
 			text("Instructions.txt"),
+			text("ConversationsAllByWorldLevelAndCharacter-psv.txt")
 		];
 
 		return mediaFilePaths;

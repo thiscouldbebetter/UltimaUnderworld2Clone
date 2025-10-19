@@ -34,7 +34,8 @@ class PlaceDefault extends PlaceBase {
     }
     initialize(uwpe) {
         super.initialize(uwpe);
-        var conversationDefn = ConversationDefn.fromPipeSeparatedValues(conversationDefnAsText);
-        var talker = Talker.fromConversationDefn();
+        var conversationDefnName = "ConversationsAllByWorldLevelAndCharacter-psv";
+        var talker = Talker.fromConversationDefnName(conversationDefnName);
+        talker.talk(uwpe);
     }
 }

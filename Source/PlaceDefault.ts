@@ -70,8 +70,9 @@ class PlaceDefault extends PlaceBase
 	{
 		super.initialize(uwpe);
 
-		var conversationDefn = ConversationDefn.fromPipeSeparatedValues(conversationDefnAsText);
+		var conversationDefnName = "ConversationsAllByWorldLevelAndCharacter-psv";
 
-		var talker = Talker.fromConversationDefn();
+		var talker = Talker.fromConversationDefnName(conversationDefnName);
+		talker.talk(uwpe);
 	}
 }

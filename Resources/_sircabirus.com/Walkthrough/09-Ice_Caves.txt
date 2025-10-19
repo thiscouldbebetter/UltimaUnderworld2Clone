@@ -1,0 +1,51 @@
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Ice Caves
+ 
+
+There are more maps available for Ice Caves. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+This level contains more maps. Rotate through the different views.
+
+Overview
+In this level you will explore a frozen world. Have a conversation with a mad hermit to get knowledge about a strange world you will visit later. Get another blackrock gem, uncover the lost city of Anodunos and talk to the ghost of the former mayor.
+
+Population
+Humans (friendly)
+Skeletons (hostile)
+Snow Cats (hostile)
+White Worms (hostile)
+Yetis (hostile)
+Lurkers (hostile)
+Rats (hostile)
+General hints
+Some areas have black ice. Once you step onto it, you will have difficulty altering your speed or direction. Jump (J) several times to stop slipping on ice.
+There are no keys to open any of the doors in Anodunos. Remember that it isn't possible to smash massive doors. Try to lockpick or use the Open spell instead and bash down the sturdy ones.
+Things you must do
+Uncover the lost city of Anodunos. In the middle of level 2 to the right of a waterfall you'll find an upwards slope to level 1. Go up and defeat the guarding ice golem Sentinel 868. Get the key and unlock the massive door. After the door there is a passageway to a maze which hides the floodgate control to get access to the lost city of Anodunos. The passageway is block to start; you must use two switches to travel further. Leap over a small chasm and reach a plateau with the controls to the maze which is accessible via a teleporter forcefield in the west of the plateau. You will find a notice with instructions how to get access to the floodgate control on the plateau also. First get the key from the maze, then open the locked door in the west of the maze and activate the floodgate control. The entrance to the city in the northwest of level 2 is freed now and can easily be reached by using the Water Walk spell.
+Get the blackrock gem on Level 2. The gem is in the south-southwest on a plateau near the river, surrounded by slippery ice.
+Go back to the castle to share your experiences with Miranda and your other friends.
+Things you should do
+Visit Mokpo the mad hermit (L2 1). He has some strange visions. When you visit the Ethereal Void later, you will wish that you had noted these visions down. In the course of the story you will detect Dream Herb. After finding and testing this on yourself, return to Mokpo and give him some of this substance to get further information and clues about the Ethereal Void.
+Talk with Beatrice to get information about what has happend with Anodunos. She will give you important hints about a place of great power and furthermore about the occurrence of a Filanium mud flats (they appear as watery mud). The latter are in the southeast of level 2. You will need to know about these things later.
+Jump from the plateau with the maze controls into the river, use Water Walk and go northwards until you reach an alcove. Go further to the east. There you'll find within a pack guarded by a ghost the Ring of Protection (9).
+Things you can do
+Get the map bit (L1 B3) from the belongings of one of the failed adventurers. It will spare you mapping the area and gives some additional information[1].
+In the northeast corner of Anodunos lies behind a secret door the vault of a wizard. Open the secret door by use of a hidden switch on the wall on the east. Behind the door you'll find some rune stones and an orb which will give you some visions from the past and some vision of the very near future.
+There is a secret room at the very northwest corner of Anodunos. Come back when you have the Vas, Ex and Ylem runestones. You can see a piece of a building in the ice near a table and a chair. Go to the southwest wall of this building, look to the north and cast Portal. Some very good scrolls here.
+Items
+Click here to get a list of ice caves items in a new browser window.
+
+Notes
+↑ If you add the map bit to the map, you are no longer able to make you own notes for level 1. This happens because of a bug. So save the game, add the map bit, make a screenshot of the map and restore the game. You can then use this screenshot for your orientation.
+>> Interlude IV - Murder in the Castle
+<< Back in Killorn Keep
+<< Walkthrough Index
+
+ 
+
+×
+<MEDIA>@https://www.sircabirus.com
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
