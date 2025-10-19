@@ -1,0 +1,43 @@
+This website use cookies for Google Analytics. Visit the Privacy / Datenschutzerklärung page to disable Google Analytics. Diese Website benutzt Cookies für Google Analytics. Besuchen Sie die Datenschutzerklärung-Seite um Google Analytics auszuschalten. Learn more
+Got it!
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Scintillus Academy Secure Vault
+ 
+
+For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+
+Overview
+After finishing the final exam you break into the Secure Vault. This is a dangerous and complicated undertaking, but well worth the effort. Note that this is the only chance to get a Tym rune stone.
+
+Population
+a Skeleton (hostile)
+an Imp (hostile)
+a Hordling (hostile)
+a Despoiler (hostile)
+General hints
+You are in a part of the Ethereal Void. The magically auto-map doesn't work here and neither does the compass.
+Be sure you have the fraznium circlet (Scintillus Academy, L8, 14) or a pair of fraznium gauntlets with you. You will need one of these to get access to the Inner Vault.
+In the Vault some magic is very handy. It isn't impossible but very hard to master this adventure without casting any magic. And it is totally impossible without the help of any magical means.
+Solution
+The key you find behind a bed in level 8 of the Scintillus Academy (L8, 12) gives you access to the vault, and lets you through the first door inside. Take care, beyond that door is a trap (1) - a Tym rune which will paralyse you and a bouncing fireball which will hurt you during the time you cannot move. You can cast Dispel Rune (An Jux Ort) to set off the rune from a safe distance. You can also try to deactivate the rune by throwing a coin into it.
+The next door on your way is locked and the key which opens the first two doors doesn't fit. In fact this key is useless from now on. Fortunately there is a button (2) floating in the dark, which opens the door. Unfortunately the button is too far away to reach. Cast Telekinesis (Ort Por Ylem) to press the button. If you are a sharpshooter you can also try to hit the button with a wand of Magic Arrow.
+The path leads you to a water maze. The exit of this maze is blocked by a locked door. You must first find the switch (3) that opens the door. Since the switch is high on the wall, you should cast Water Walk (Ylem Por), or alternatively use a pole, to reach the switch.
+After leaving the water maze you will soon find another locked door. Turn left and walk straight ahead - this is another maze but the walls are all illusionary - until you reach a switch (3) on a wall. Flip the switch and then turn around and head back to the door, which is open now.
+You are on the ledge above three wide purple pits. The pits are separated from one another by black walls. You have a host of opportunities to reach the pool (11) at the end of the last pit. You can cast Bouncing (Uus Des Por) - or wear the Leather Boots of Bounce (Talorus, L2) - and bounce over both of the walls to the pool beyond. The hardest way is to jump down into the first pit and to use the red moongate (6) which will transport you to a pedestal in a fiery area (7) with a right (9), a left (8) and a centre room (10). Enter the left room (8) first. If you walk straight across the lava you will die after a very short time. The Flameproof spell (Sanct Flam) would be very useful here, but unfortunately you don't have the Flam stone in your rune bag. But rest assured, you will get a Flam stone soon - if you survive this adventure. So hop over the lava (use the 'J' key frequently while you are moving), open the door, enter the room, defeat the imp and activate the pull chain. Your next goal is the right room with a key guarded by a hordling. There is a chance that the hordling will leave his room and come to you if you wait a minute or two. Kill the hordling and pick up the key from his chamber. Then hop to the room in the centre and fight against the despoiler. The despoiler is a dangerous opponent with a strong disposition to poison you. Open the second door with the key and step through the purple moongate, which will transport you into the pool (11).
+Climb up the gray ascending path from the pool and continue your way. Follow the path as it bends to the left. Go further until the path bends to the right. Don't turn right, keep walking straight ahead instead. You will pass an illusionary wall and find yourself in the Outer Vault (12). Congratulations, the chest here contains two Flam rune stones among some other items. Put one Flam stone into you rune bag and the other in a bag or pouch. The second Flam stone will be very useful later.
+The Outer Vault has another illusionary wall. Behind it lies a short hallway which leads to the Inner Vault, which is protected by a force field. Wear the fraznium circlet or a pair of fraznium gauntlets to get through the force field and enter the Outer Vault. Examine the floor carefully and you will detect some very rare and useful Tym and Vas rune stones as well as the Axe of Firedoom and some other useful items.
+Go back to the path, follow the bend to the right now an go further until you reach a teleporter at the end of the hallway. The teleporter will bring you back near to the yellow moongate (0). The yellow moongate will transport you to the academy.
+Items
+Click here to get a list of Scintillus Academy items in a new browser window.
+
+>> Interlude VII - Charles' Key
+<< Scintillus Academy
+<< Walkthrough Index
+
+ 
+
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.

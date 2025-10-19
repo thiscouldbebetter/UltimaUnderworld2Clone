@@ -1,0 +1,79 @@
+This website use cookies for Google Analytics. Visit the Privacy / Datenschutzerklärung page to disable Google Analytics. Diese Website benutzt Cookies für Google Analytics. Besuchen Sie die Datenschutzerklärung-Seite um Google Analytics auszuschalten. Learn more
+Got it!
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Ethereal Void
+ 
+
+There are no maps available in The Ethereal Void!
+
+Overview
+The eighth facet of the portal gem takes you to a surreal void, where you fulfil four quests to find the Shrine of Spirituality. Gain a final gem and use the sceptre of Altara for the last time.
+
+Population
+Humans (friendly)
+a Troll (friendly)
+Imps (peaceful / hostile)
+Gazers (upset / hostile)
+Hordlings (upset / hostile)
+Brain Creatures (peaceful / hostile)
+Destroyers (hostile)
+Vampire Bats (hostile)
+Fishes (hostile)
+Batskulls (hostile)
+Hellhounds (hostile)
+Mr. Jaws (hostile)
+General hints
+You are in the Ethereal Void. The magical auto-map doesn't work here and neither does the compass.
+From the vision you received under the influence of a dream herb you know that the blackrock gem lies into the Shrine of Spirituality. You assume that the Shrine is also the Guardian's place of power.
+When you first arrive in the Ethereal Void, you notice a great orange structure, the impassable walls surrounding the Shrine of Spirituality. Your main objective is to clear the way to the Shrine. To do so, you begin a series of four ordeals, the crossing of a blue, a purple, a yellow and a red zone. Follow the orange path which leads from the great orange structure until you reach a checkerboard plane. From here coloured paths lead to the different zones. In the middle is a wall of blackrock, the exit to Britannia. You can enter a zone by stepping through a moongate. Travel through each zone until you find its exit.
+When you have successfully completed a zone, you will be dumped on top of a pyramid. Each time you step on one of the blocks of the pyramid, it will change its colour to that of the zone you just have completed. But beware - stepping on it again causes the block to cycle between the previous colours. Once the entire pyramid has changed to the colour of the zone you just have passed, a moongate of that colour will appear on the ramps above. This moongate will transfer you to the reward room of this colour zone, where you can find some treasures and sometimes also a person to talk to. A further moongate brings you from the reward room back to the checkerboard plane.
+After you have passed all four zones, orange - the colour of the shrine - will become available. When you turn all the blocks of the pyramid orange, a golden moongate will appear, which takes you to the base of the Shrine of Spirituality.
+Red Zone
+Welcome to hell, the red zone is by far the nastiest region of the Ethereal Void.
+You will meet an alternate version of Mokpo on your way to the red zone. Mokpo will give you a further hint about the pyramid and its colours.
+This is a really hot place, so either put on the Leather Vest of Flameproof or cast Flameproof before you enter this area.
+The first part of the red zone is a hell of fire, hordlings, and fire elementals. Fight your way to the end of this section until you see a destroyer guarding the sceptre of Deadly Seeker. This is the sceptre Zoranthus asked you to retrieve. So kill the destroyer, take the sceptre and enter the moongate a few steps away from here.
+The moongate brings you to the second section of the red zone - a tunnel through lava, filled with demons.
+The following zone is a foul swamp, so be prepared - you will need some form of "Cure Poison".
+The fourth and final section of the red zone contains nothing dangerous, just jump over the blocks until you reach the exit.
+In the reward room enjoy an unexpected talk with an old friend.
+Yellow Zone
+From the checkerboard plane follow the short yellow path until its end. Cast Fly or Levitate, rise a bit up and follow the continuation of the yellow path. The need to fly is a hint because flying is best practice to cross the yellow zone. Follow the path and stride through the gates until you reach the yellow maze.
+The orb near the entrance of the yellow path shows you a moving platform. Once you reach this platform you are near the exit.
+Beware of the brain creatures who guard the yellow zone, most of them are hostile. They will attack you, drain your mana, weaken your orientation with disturbing visions and suck up your vitality. If you kill one, take its eyeballs. Prinx from the blue zone needs one.
+This is a 3-dimensional maze, climb up - or fly - on top of the maze. Cruise around the highest level of the maze until you see the moving platform you saw in the orb. Jump onto the platform when the it moves downwards and jump again when the platform has reached the lowest point. You are in a room with a moongate and two hostile brain creatures now. Kill the brain creatures or just enter the moongate. The moongate will transfer you to the pyramid. After colouring the pyramid the moongate brings you as usual into the reward room. Nothing special here.
+Purple Zone
+To reach the purple path look for the blue path viewed from the checkerboard plane. The purple path lies to the right of the blue path and a bit higher. Cast fly to reach it.
+In the purple zone you will meet Blog. Have a nice talk.
+Near Blog is a frictionless ramp. By running quickly at this ramp, you will manage to reach a strange liquid stream flowing uphill. Swim up this slippery stream and further over the edge, then follow the double arrow and use the bullseyes to bounce upwards.
+Explore the area until you reach a narrow, slippery path, which leads to a gate shaped like the Guardian. This gate brings you into a maze which looks somehow familiar[1].
+Make your way through the maze. Keep either completely to the left or completely to the right until you reach the moongate to the pyramid.
+The reward room has nothing special to offer, just a couple of strange artefacts and amethyst rods.
+Blue Zone
+On the blue path you meet an alternate vision of Iolo.
+Talk with Prinx, a travelling mage from another world. This is a bit difficult because the mage didn't speak or understand any English. Prinx tries to say what he wants using gestures. After some guessing it becomes clear that he needs a pair of eyeballs from a brain creature. These eyes may be obtained in the yellow zone by killing a brain creature. Prinx will give you a scroll of Fly as reward.
+Talk to a wisp to find out the history of the Trilkhai. To do so tell the wisp that Bishop has escaped from Killorn Keep. The wisp will give you information in return about what has happened to the Trilkhai and their history. Afterwards you can tell Blackie in Killorn Keep what you have learned.
+Circle around the edge of the plane until you see an oscillating sine-wave bridge. Cross this bridge that leads you to the outer ring. Go ahead until you reach - near the skull-face - the back end of the ring. Beware the attacking gazer, the imps and the brain creature. In the centre of the ring is an orange moongate on a pillar. Jump into the central pit and use either the bullseye to bounce up to the gate or cast Fly. The moongate brings you to the pyramid.
+And again the reward room has nothing special to offer, just a lot of broken wands and bottles of water.
+Shrine of Spirituality
+Enter the orange moongate, which will appear on the checkerboard plane when you have passed all four zones. The moongate brings you back to the pyramid. After you turn all the blocks of the pyramid orange, a golden moongate appears, which takes you to the base of the Shrine of Spirituality.
+Cast Levitate or Fly to ascend to the top of the shrine. Lower yourself until you are standing exactly at floor level of the shrine. Now cast Portal to get through the bars[2].
+Take the blackrock gem from the gravestone in the centre of the shrine and use Altara's sceptre there to cut the line of the Guardian's power. Afterwards cast Portal to get out.
+On the base of the shrine step over one of the green squares to get back to the checkerboard plane. Leave the Ethereal Void and enter Britannia through the blackrock wall.
+Items
+Click here to get a list of Ethereal Void items in a new browser window.
+
+Notes
+↑ This maze looks very much like the mazes in Ultima I or Akalabeth.
+↑ If you are a weak mage there is another way to solve this problem.
+>> Interlude XI - Preparations - Part II
+<< Interlude X - Visions of the Ethereal Void
+<< Walkthrough Index
+
+ 
+
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.

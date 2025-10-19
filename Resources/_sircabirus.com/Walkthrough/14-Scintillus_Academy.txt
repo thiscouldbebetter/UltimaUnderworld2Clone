@@ -1,0 +1,96 @@
+
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Scintillus Academy
+ 
+
+There are more maps available for Scintillus Academy. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+
+Overview
+Pass the exam of the Scintillus Academy of Magic, find another gem and use Altara's sceptre to cleanse this plane from the influence of the Guardian.
+
+Population
+Humans (friendly)
+Mongbats (hostile)
+Flesh Slugs (hostile)
+Acid Slugs (hostile)
+Wolf Spiders (hostile)
+Giant Spiders (hostile)
+Giant Rats (hostile)
+Skeletons (hostile)
+Lurkers (hostile)
+Headlesses (hostile, peaceful (four of them))
+Imps (hostile)
+General hints
+Mana will NOT regenerate on levels 2 thru 7. No way! Even the use of a potion of Restore Mana or similar magical means will not work. The potion will used up but fizzle out.
+In the Vault some magic is very handy, however, that is on level 8 where mana does generate.
+Things you must do
+Pass the exam of the Scintillus Academy. You must complete all eight levels of the test (see the following explanations).
+Level 1, "Lateral Reasoning"
+The easy beginning of the exam. There are three portcullises in the east which are controlled by three pressure plates.
+Place the gold coffer (L1, 4) on the middle pressure plate, which opens the rightmost portcullis.
+Follow the hallway until you reach a cul-de-sac, where a teleporter brings you to the next stage of the exam.
+Level 2, "Equilibrium and Non-Local Causality / Synchronization"
+After the Ice Caves this is a slippery area again. Try to not slide over the ice too badly.
+Head to the centre of this place and push the button (L2, B) to open the portcullis in the north.
+Pass this first exit gate and then slide to the final gate (L3) in the east.
+Cross the oscillating columns and avoid the arrow traps which shoot at you from the side.
+Level 3, "Psychokinesis and Terraforming"
+This is a heavy platformer level. A light-sphere (Talorus, L1, 3) is very handy here. You could also use the Daylight spell (Vas In Lor), but you haven't get the required Vas Rune as yet.
+Take the wand of Telekinesis which is provided in the hallway as you enter (L3, 1). There are three buttons each on the east and west walls, these buttons determine the heights of the pillars next to the wall.
+One good, if not necessarily the shortest way to solve this puzzle, is to jump north onto the middle pillar of the first row. Then head to the west wall and push the button whereupon the pillar moves downwards. Turn right and jump north two pillars, then east two pillars. Turn right and jump south one pillar. Turn left and jump east two pillars. Look upwards and you will see a button. Use the wand of Telekinesis to activate the button whereupon the pillar moves upwards. Turn left and jump a pillar to the north, turn left again and jump two pillars to the west. Then turn right and jump north in the hallway to reach the next stage of the exam.
+Level 4, "Spatial Reasoning"
+Level 4 is a big maze of platforms and pillars in different heights, populated with some monsters.
+Find the two keys (L4, I1, I2) on the southeast and northwest towers.
+Use these keys to open the two locked doors near the northeast tower and enter the next level.
+Level 5, "Effects and Constraints"
+This level provides a switches conundrum in several parts.
+To begin with, flip the three switches (L5, B) to the upper position. Be careful, directly in front of each switch lies a pressure plate, which alters the position of another switch when the plate is triggered. So either jump over the pressure plates or, a bit more easily, grab the pole (L5, I1) and use it on the switches.
+The door to the south will unlock when all three switches are raised. Pass through the door, jump over the pit and pick up the key (L5, I7). Caution, don't press the button on the wall near the key. This will create an invisible barrier that will prevent you from jumping back!
+Make your way back to the central chamber and use the key to unlock the portcullis in the northern hallway. You are now ready to pass the next exam.
+Level 6, "Risk Avoidance"
+Another big maze, divided into an anteroom and 7 separated maze areas. The maze areas are connected via several teleporters. You have to find your way through 6 of these maze areas to reach the exit to the next level.
+First get the key to unlock the massive door in the northwest of the anteroom and to proceed into the teleport maze. The key lies in the centre of the anteroom and is protected by an arrow trap. Step on each of the four yellow plates near the centre of the anteroom. This will create four peaceful headlesses. Pick up the key from the centre of the anteroom now. The arrows will kill the four headless instead of you.
+In the maze areas, there are brass floor and blue floor squares. The blue floor squares are teleporters to other maze areas. Beware of the brass floor squares. They will bring you back to level 1 and you must begin from the start.
+On the map is a letter listed near every important blue teleporter square. The same letter without a blue square indents the destination of the teleporter. Follow the letters from A to E to enter the next level.
+Level 7, "Nonreversible Processes"
+Level 7 is another heavy platformer level and like in level 3 a light-sphere (Talorus, L1, 3) is very handy here. The exam must be solved in two stages. First retrieve a key from the ground and second jump the pillars and reach the corridor on the east wall.
+Go down the ramp, jump into the water and swim to an alcove in the north wall (L7, 1), from which you can retrieve the key. But be careful, there is a hostile lurker in the water. The scroll of Water Walk from the pit (L5, 2) is very helpful here. Then return to the starting point of this level.
+Turn your attention to the pillars. Your goal is to jump from one pillar to another until you reach the exit to level 8 into the raised corridor in the middle of the east wall. This is harder as you might think because this is the exam of the Nonreversible Processes. Each pillar has an arrow symbol on the top which points to another pillar. Jumping on a pillar causes the pillar it points at to disappear. To reach the wall just jump in the sequence (A, B, C, .. M) shown on the map. The "Shift-J" key combination makes these jumps a lot easier. It is a good idea to save the game after each successful jump.
+Follow the corridor to a massive locked door. Open the door with the key you have retrieved form the alcove in the north wall (L7, 1) and enter level 8 to pass your final exam.
+Level 8, "Correlations"
+The first part of level 8 consists of four concentric tiers. A teleporter in each tier transports you to the next upper tier, a teleporter on the top level tier transports you into the eastern area where you find another blackrock gem and also the place where the Guardian draws power in this world.
+You start in the centre of level 8 which has 4 alcoves. One alcove has a red floor, one alcove has a teleporter and another alcove contains a sign that reads "3 : 5 : 2 : 9". When you count clockwise from the alcove with the red floor you realize that the teleporter is in the third alcove. Wait, this also the first number on the sign and this isn't a fluke but the solution to reach the second part of this level.
+The other tiers contain many teleporters, only one of them will transport you to the next upper tier or the eastern area. If you enter an incorrect alcove, you are teleported back to the centre and hostile creatures appear. So count clockwise from the alcove with the red floor on each level and enter the alcove with the right teleporter. On the first tier count over three, on the second five and so on. After entering the final alcove on tier 4 a teleporter takes you to the eastern area which is the final place of the Scintillus Academy.
+Walk to the large chamber with the pentagram (L8, 13), take the blackrock gem and use Altara's sceptre to cut the line of the Guardian's power.
+You can explore the Secure Vault now if you want to. You can also go back to the castle to instruct Miranda about your adventures.
+Things you should do
+Chat with Elster (L1, 1) to get a basic knowledge about the Scintillus Academy.
+Get a wand of Name Enchantment (L3, 2).
+Take the moonstone (L5, 1) in front of the portcullis.
+Jump into the pit (L5, 2) defeat a headless and gain a potion of Night Vision as well as a scroll of Water Walk. A teleporter (L5, T) in the west of the hallway will bring you back in front of the pit (L5, X). The scroll of Water Walk will be very handy in L7.
+Pick up the key behind a bed (L8, 12). The key opens the door to the Secure Vault and let you through the first door inside too.
+If you plan to visit the Secure Vault don't forget to take the fraznium circlet behind a secret door (L8, 14). You will need the crown - or a pair of fraznium gauntlets - to get access to the Inner Vault.
+Explore the Secure Vault after finishing the final exam. This is a complicated venture, but well worth the effort because you will get a TYM and a VAS rune stone here.
+Things you can do
+You can try out the vending machines (L1, 3; L4, 2; L6, 3). You need some coins for this.
+Get a ragged scroll of Invisibility (L4, I3).
+Fight against a ghost and get servicable leather boots of Very Great Toughness and a servicable hand axe of Great Damage (L4, 1).
+Use the pull chain near the portcullis (L5, 1) to summon a skeleton you can fight against.
+Get a brown potion of Freeze Time (L6, 2). However, you must cast Open (Ex Ylem) to unlock the secret door.
+Maybe you will try to break into the Secure Vault later. But it is hard to come back here again because you must repeat the whole exam. You could place the moonstone you found (L5, 1) and place it in the room with the pentagram. You will find another in the castle soon and this will enable you to use Gate Travel.
+Items
+Click here to get a list of Scintillus Academy items in a new browser window.
+
+>> Scintillus Academy Secure Vault
+<< Interlude VI - Cutting the First Lines of The Guardian's Power
+<< Walkthrough Index
+
+ 
+
+×
+<MEDIA>@https://www.sircabirus.com
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.

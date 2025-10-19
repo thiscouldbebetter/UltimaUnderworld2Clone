@@ -1,0 +1,205 @@
+Ultima Underworld Walkthrough II - Scintillus Academy Items
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Level 1
+Bags & Pouches
+B1 (Box)
+a day-old piece of meat (several)
+a day-old piece of cheese (several)
+a day-old loaf of bread (several)
+B2 (Map Case)
+a ragged scroll:
+Instructions to students:
+Anyone caught cheating on the exam will be
+ensorcelled and expelled.
+a ragged scroll:
+All items are property of the academy. Please
+leave them for the next student.
+a ragged scroll:
+This is partially a test in the judicious use of
+mana. You will not be allowed to regain mana
+after the first section.
+Items
+I1
+an undamaged book "Mages' Digest" (issue 1018)
+I2
+servicable mail leggings
+Level 2
+Bags & Pouches
+B1 (Pack)
+a half burned torch
+a servicable dagger
+a day-old apple
+a day-old piece of meat
+Items
+I1..3
+a servicable broadsword
+a brown potion
+a slightly worn wand
+I4
+a slightly worn wand
+Level 3
+Bags & Pouches
+none
+Items
+I1
+a slightly worn wand of Telekinesis (disappears when you exit this level)
+I2
+a slightly worn wand of Name Enchantment
+Level 4
+Bags & Pouches
+none
+Items
+I1
+a key
+The key is inscribed with a silver serpent.
+I2
+a key
+The key bears deep scratches, as if someone had tried to destroy it at one time.
+I3
+a ragged scroll of invisibility
+I4
+a servicable dagger
+I5
+a servicable cudgel
+I6..7
+servicable leather boots of Very Great Toughness
+a servicable hand axe of Great Damage
+I8
+a servicable cursed mail shirt
+Level 5
+Bags & Pouches
+none
+Items
+I1
+a pole
+I2..4
+a moonstone
+a slightly worn wand of Fireball with 3 full charges
+badly worn plate gauntlets
+I5..6
+a colorless potion of Night Vision
+a ragged scroll of Water Walk
+I7
+a key
+The metal handle of this key is stamped with a grinning face.
+Level 6
+Bags & Pouches
+B1 (Sack)
+a yellow potion of Greater Heal
+a slight worn wand of Detect Trap with 7 full charges
+Items
+I1
+a key
+The key is encrusted with salt.
+I2
+a brown potion of Freeze Time
+Level 7
+Bags & Pouches
+none
+Items
+I1
+a key
+The key feels unnaturally cold to the touch.
+I2
+a yellow potion
+Level 8
+Bags & Pouches
+B1 (Pouch)
+empty
+B2 (Chest)
+a Sanct stone
+a slightly worn wand of Deadly Seeker with 9 full charges
+a ragged scroll:
+Kalarion,
+ I have taken care of the Vas and Tym runes
+you sent me. They should be fairly safe.
+ Signed, Rovilar
+a moldy piece of cheese
+a servicable dagger
+a half burned torch
+B3 (Box)
+a ragged scroll of Sheet Lightning
+a ragged scroll of Dispel Hunger
+B4 (Box)
+11 coins
+B5 (Map case)
+a ragged scroll:
+..an extremely curious herb, it seems like the
+legendary mandrake to thrive only on
+gravesites. Its effects are entirely singular,
+in my experience..
+ (the rest of the note is faded and
+unreadable)
+Items
+I1
+a badly worn battle axe
+I2
+a Bet stone
+I3
+a servicable chain cowl
+I4
+a servicable worn wand of Frost with 7 full charges
+I5
+a ragged scroll:
+Istrik -- B+
+Jashou -- C+
+Perrin -- F (dead)
+Odraanj -- A-
+Ravenna -- dead
+Mirre -- B
+Lodrah -- B-
+Elster -- incomplete
+I6
+a servicable light mace of Unsurpassed Accuracy
+I7..9
+servicable leather boots
+a green potion
+a yellow potion
+I10
+a ragged scroll:
+Larkin
+ This is now the fifth straight day that I
+have detected an interdimensional disturbance
+in the ether. Judging from the proportional
+increases, I am now surer than ever that
+something monstrously powerful is fast
+approaching our planet. The council has thus
+far refused to acknowledge the import of my
+observations, but I am convinced that we are
+potentially in grave danger, could you place
+me in the agenda for the next council
+meeting? Thanks,
+ - Devrow
+I11..12
+a key
+The key appears to have been partially melted
+a ragged scroll:
+Rovilar
+ The council has voted on the matter of the
+Secure vault. They think it would be safest to
+build it in the Ethereal Void, and to put up
+obstacles that require magical training, in
+addition to an ordinary key. They'd like to
+see plans next week, and if all goes well
+expect it finished in a month.
+I13
+a cool blackrock gem
+I14..19
+a Ylem stone
+a Wis stone
+an Uus stone
+a Hur stone
+a Grav stone
+an An stone
+I20
+an undamaged fraznium circlet
+Copyright © 2022 Frank Wolter. All rights reserved.

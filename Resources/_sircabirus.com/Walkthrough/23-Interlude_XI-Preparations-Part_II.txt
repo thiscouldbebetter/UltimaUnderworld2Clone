@@ -1,0 +1,57 @@
+This website use cookies for Google Analytics. Visit the Privacy / Datenschutzerklärung page to disable Google Analytics. Diese Website benutzt Cookies für Google Analytics. Besuchen Sie die Datenschutzerklärung-Seite um Google Analytics auszuschalten. Learn more
+Got it!
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Interlude XI - Preparations - Part II
+ 
+
+
+Overview
+Back from the Ethereal Void you prepare yourself for the final steps to rescue Britannia from the influence of the Guardian.
+
+Things you must do
+Visit Nystul. The mage will magically treat the blackrock gem you have found in the Ethereal Void. It's certain, this is the last one. Return to the sewers and use the gem on the larger gem as you have done many times before.
+Get the Djinn bottle from Zoranthus (Pits of Carnage, L2, 13) in exchange for the sceptre of Deadly Seeker. Pay close attention to his instructions about the bottle-making rituals and what to do to contain the being inside yourself.
+Go to the Filanium mud deposits (Ice Caves, L2, 3) and toss in a colorless potion of Basilisk oil. You will notice that "The thick oil permeates the mud". Take a swim in the mud ("The oily mud coats your skin").
+Go back to the Ethereal Void and visit the red zone. Put on the Leather Vest of Flameproof[1] and take a bath in the lava pit ("The oily mud bakes on your skin"). Of course you can also do this anywhere else there is a lava pit, for example in the lava pit in the Brain Creature room (Killorn Keep, L2) or in Talorus (L2).
+Travel to the Sigil of Binding. To do so go through a few white moongates in the Ethereal Void until you get there. There is a sign which indicates that you have reached your destination.
+Drink a potion of Iron Flesh [2] ("The baked mud hardens into a clear glaze").
+Set the Djinn bottle down into the centre of the pentagram and break it with the weapon of your choice ("The air-demon is absorbed into your body, and remains there, a faint but detectable presence awaiting release").
+Back from the Ethereal Void you bump into a horde of hostile soldiers, which are standing around the blackrock gem world gate. Overcome these vassals of Mors Gotha and head to the castle.
+Talk to Miranda. She tells you that, though the gem is certainly weakened by your actions, you have not quite obtained the power necessary to destroy it. You wonder what is still missing, so you decide to visit Nystul. Unfortunately the conversation with the mage is not very enlightening.
+Perhaps your ally Altara has a clue what to do next. So go back to Killorn Keep to talk with the enchantress. You are too late - Altara has already fled but left a note [3] for you. Altara mentions that the spellbook of Mors Gotha might be a item of great interest.
+You meet Lobar to ask him about Altara. He tells you that Mors Gotha has arrived - together with her soldiers - for some kind of siege operation.
+Go to the barracks, behind the door on the north wall you will find Mors Gotha (Killorn Keep, L1, 17). After a short talk she will attack you along with her guards. The Sword of Stone Strike is very helpful to win this challenge. As soon as Mors Gotha is nearly defeated, the Guardian will teleport her out of the danger area.
+Pick up the spellbook[4] Mors Gotha leaves behind, and return to the castle.
+Things you should do
+Visit the trainers of your choice (in the worlds of your choice) and improve some skills. This is probably the last time you can do this in the game.
+Notes
+↑ If you don't have the Leather Vest of Flameproof, cast Flameproof instead.
+↑ If you don't own a potion of Iron Flesh, you can also buy one from Merzan (Killorn Keep, L1, 7) or cast Iron Flesh.
+↑ A ragged scroll:
+Avatar,
+I dare not remain in the keep any longer --
+the situation is too dangerous. Mors Gotha has
+arrived with her murders; be wary of her
+for she may discern thy true nature. The
+spellbook she carries may be of great
+interest to thee. Good luck; I hope we shall
+meet again one day.
+      Altara
+↑ An undamaged book:
+This book appears to contain magic formulas,
+and contains references to the guardian and
+his servants. However, much of it is written in
+an obscure scripts, which you are unable to
+decipher. The first page identifies it as the
+property of Mors Gotha.
+>> Endgame
+<< Ethereal Void
+<< Walkthrough Index
+
+ 
+
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.

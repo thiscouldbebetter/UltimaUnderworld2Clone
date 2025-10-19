@@ -1,0 +1,64 @@
+This website use cookies for Google Analytics. Visit the Privacy / Datenschutzerklärung page to disable Google Analytics. Diese Website benutzt Cookies für Google Analytics. Besuchen Sie die Datenschutzerklärung-Seite um Google Analytics auszuschalten. Learn more
+Got it!
+Sir Cabirus
+Ultima Homepage
+HomeContact Sir CabirusLinks
+Article
+Ultima Underworld II Walkthrough - Tomb of Praecor Loth
+ 
+
+There are more maps available for Tomb of Praecor Loth. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+
+Overview
+Enter the Tomb of Praecor Loth and receive the Horn from the shade of the dead king. Use Altara's sceptre and retrieve the blackrock gem from this plane.
+
+Population
+Humans (friendly)
+Liches (hostile)
+Ghosts (peaceful / upset)
+Dire Ghosts (hostile)
+Skeletons (peaceful / hostile)
+Fire Elementals (hostile)
+Giant Rats (hostile)
+Dread Spiders (peaceful)
+Golems (peaceful / upset / hostile)
+a Despoiler (upset / hostile)
+Vampire Bats (peaceful)
+Things you must do
+In level 1 enter the northwest corridor. The corridor is blocked up with boulders, so be sure to take a rock hammer with you. You can find one in the Ice Caves (L1, B4) or in the armoury of Lord British's Castle (L2). Smash the boulders to pieces with the rock hammer and go further. At the end of the corridor you will find the blackrock gem of this world. Take it and also use Altara's sceptre there to cut the line of the Guardian's power.
+On level 2 talk to the ghost of Helena, the wife of Praecor Loth. She is lying apart from her husband and needs your aid to speak with him. She wants you to tell the king the truth, that he is actually dead. Helena will also give you some information about the "Company of Three", Lethe, Morphius and Lord Umbria. Once "The Three" fought at Praecor Loth's side and did great deeds for the realm but now they are very dangerous liches who control the fourth level of the tomb. If you promise to help Helena, she will increase your attack skill by +1.
+On level 4 kill the "Three" (Morphius, Lord Umbria and Lethe). If you have Silanus's key you are able to open the first locked door without killing Morphius. But it is very hard to reach Lethe without killing Lord Umbria and Morphius will support Lord Umbria if he is still alive. You must kill Lethe to get access to Praecor Loth's chamber, so it is best to kill them one after another. It is likely that Morphius will poison you, so be ready to cast 'Cure Poison'. If you don't have Silanus's key enter the secret complex east from Morphius's chamber. Climbing onto a chest allows you to jump onto a beam and reach a hidden switch which will open the door behind Morphius's chamber. After you have defeated Lord Umbria enter the room with the pillars west of his chamber. You must reach the eastern wall and throw away the candles from the pentagram to destroy the outer space blockade in the south, which is preventing you from going further. To do so jump over the pillars to the eastern wall. Most of the pillars will teleport you back, use the ones which are tagged with a dot on the map or cast Fly. There is a teleport trap in the water to take you back to the start, if you should fall in. After you have destroyed the outer space blockade go further and kill Lethe. Then go to the east and destroy the Despoiler behind the waterfall. Take the key from the Despoiler and open the massive double door in the south. Just walk right over the fire pit, there is an invisible walkway. Now you are ready to meet Praecor Loth.
+Enter the chamber of Praecor Loth (L4, 8) and get his horn. To do so tell him that he has been deceived and he is actually dead. He then will hand over his mighty war horn.
+Things you should do
+Go to the northeast and get the Sword of Stone Strike. It is a difficult task but worth the effort, because the sword is the most powerful weapon in this game. This magical sword temporarily paralyses the enemy after a hit. Because every successive hit will renew the paralysis, the use of this sword can result in a very one-sided duel. But be aware, this doesn't work on undead like skeletons and liches! Fly - or try to jump over the columns - to the alcove in the east, open the portcullis with 'Open' (Ex Ylem) and take the sword from a pack (L1, B1). If your magical skills are low you can also try to load the pressure plate of the pillar in the south which will open the portcullis. Use the gold coffers from the golem room (L1, B2 and B3).
+Get the leather vest of Flameproof (L3, I4). This vest will protect you from the flame traps in the northern part and the centre of level 3 and also later in the Ethereal Void.
+Get Silanus's key. After listening to his story (L3, 1) reach the drain control in the SE (L3, 17). Use the lever, go to the NE and search for a hidden button in the water area to open a secret door (L3, 11). Enter the room behind the door and take the key from the pack (L3, B2). This key will allow you to open a locked door on level 4, so you can try to pass one or two of Loth's three guardian-liches.
+East of Silanus's chamber is a second water area which provides a shortcut through level 3 behind a secret door. Open the door with the buttons nearby. You have to activate the drain control switch in order to do this, else the shortcut will not be accessible.
+Get the breastplate of Very Great Protection (L1, 2).
+Level 3 contains a lot of good loot. Look for the helmet of Very Great Protection (L3, 10), the plate leggings of Great Protection (L3, 13), the Plate Boots of Unsurpassed Toughness (L3, 15) and the Ring of Regeneration (L3, 16).
+Collect some dream herb plants. These are typically found at the gravesites on level 2. The plants have little pale green blossoms that looks like "X"s. Eat one just before you sleep and you will get visions of the Ethereal Void. After you have used the dream plants in your sleep, give some to Mokpo. He will provide you with additional hints about the Ethereal Void.
+There is a plaque in the golem room (L1) which gives you a hint about eight map pieces. These pieces, once a whole map, now separated and spread over the first level of the tomb, are showing most of the dangerous level 3, provided with very valuable annotations about the many traps and monsters there. Silanus (L2) will also tell you about the separated map. In fact there are only seven map pieces - anyway, it is a good idea to collect all the map parts. See below a list of the locations of the map parts. Add each part to your map by clicking on it[1] .
+Locations of the map parts
+(N) push button by stairway
+(NE) behind secret door by locked door
+(E) Fire Elemental has one - use Flameproof (Sanct Flam)
+(SE) behind locked portcullis - see Sword of Stone Strike
+(S) by skeletons
+(SW) behind door with 5 moving switches - use a pole to reach upper switches
+(W) Metal golem has one - unfortunately you must kill all golems, earth golems first
+Things you can do
+Help Trystero to get his bones back. You can find the bones in the same place as the blackrock gem (L1, 1).
+Get the blue banner of Killorn from Loth's grave site for Ogri on Killorn Keep.
+Items
+Click here to get a list of Tomb of Praecor Loth items in a new browser window.
+
+Notes
+↑ If you add the seven map pieces to the map, you are no longer able to make you own notes for level 3. This happens because of a bug. So save the game, add the map pieces, make a screenshot of the map and restore the game. You can then use this screenshot for your orientation.
+>> Interlude IX - Preparations - Part I
+<< Interlude VIII - The Traitor
+<< Walkthrough Index
+
+ 
+
+
+Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
