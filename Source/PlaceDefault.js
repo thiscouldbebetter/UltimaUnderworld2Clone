@@ -32,4 +32,9 @@ class PlaceDefault extends PlaceBase {
         return PlaceDefn.fromNameMusicActionsMappingsAndPropertyNames(PlaceDefault.name, "Music__Default", // soundForMusicName
         actions, actionToInputsMappings, entityPropertyNamesToProcess);
     }
+    initialize(uwpe) {
+        super.initialize(uwpe);
+        var conversationDefn = ConversationDefn.fromPipeSeparatedValues(conversationDefnAsText);
+        var talker = Talker.fromConversationDefn();
+    }
 }

@@ -65,4 +65,13 @@ class PlaceDefault extends PlaceBase
 			entityPropertyNamesToProcess
 		);
 	}
+
+	initialize(uwpe: UniverseWorldPlaceEntities): void
+	{
+		super.initialize(uwpe);
+
+		var conversationDefn = ConversationDefn.fromPipeSeparatedValues(conversationDefnAsText);
+
+		var talker = Talker.fromConversationDefn();
+	}
 }

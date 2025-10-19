@@ -10,7 +10,7 @@ class Game {
     start() {
         var mediaLibrary = this.mediaLibraryBuild();
         var worldCreator = WorldCreator.fromWorldCreate(() => new WorldGame(this.name));
-        var universe = Universe.fromNameMediaLibraryAndWorldCreator("Untitled", mediaLibrary, worldCreator);
+        var universe = Universe.fromNameMediaLibraryAndWorldCreator("UltimaUnderworld2Clone", mediaLibrary, worldCreator);
         universe.initializeAndStart();
     }
     mediaLibraryBuild() {
@@ -41,16 +41,7 @@ class Game {
             title("Producer.png"),
             title("Title.png"),
             effect("_Default.wav"),
-            effect("Bading.wav"),
-            effect("Blip.wav"),
-            effect("Boom.wav"),
-            effect("Buzz.wav"),
-            effect("Chirp.wav"),
-            effect("Chirp-Reversed.wav"),
-            effect("Clank.wav"),
-            effect("Pluck.wav"),
             effect("Producer.wav"),
-            effect("Slap.wav"),
             music("_Default.mp3"),
             music("Title.mp3"),
             video("Movie.webm"),

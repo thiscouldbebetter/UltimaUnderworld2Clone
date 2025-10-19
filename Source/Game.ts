@@ -29,7 +29,7 @@ class Game
 
 		var universe = Universe.fromNameMediaLibraryAndWorldCreator
 		(
-			"Untitled",
+			"UltimaUnderworld2Clone",
 			mediaLibrary,
 			worldCreator
 		);
@@ -79,16 +79,7 @@ class Game
 			title("Title.png"),
 
 			effect("_Default.wav"),
-			effect("Bading.wav"),
-			effect("Blip.wav"),
-			effect("Boom.wav"),
-			effect("Buzz.wav"),
-			effect("Chirp.wav"),
-			effect("Chirp-Reversed.wav"),
-			effect("Clank.wav"),
-			effect("Pluck.wav"),
 			effect("Producer.wav"),
-			effect("Slap.wav"),
 
 			music("_Default.mp3"),
 			music("Title.mp3"),

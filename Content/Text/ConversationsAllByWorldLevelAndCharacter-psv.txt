@@ -1,0 +1,498 @@
+name=UltimaUnderworld2
+imagePortraitName=Friendly
+
+// name|defnName|content|next|isDisabled
+
+Start|Display|This is every conversation in UUW2
+|Display|by world, level, and character.
+
+World.Choose|Display|Select a world.
+|OptionsClear
+|Option|1: Castle Britannia.|W1
+|Option|2: Prison Tower.|W2
+|Option|3: Killorn Keep.|W3
+|Option|4: Ice Caverns.|W4
+|Option|5: Talorus.|W5
+|Option|6: Scintillus Academy.|W6
+|Option|7: Pits of Carnage.|W7
+|Option|8: Tomb of Praecor Loth.|W8
+|Option|9: Ethereal Void.|W9
+|Prompt
+
+
+W1|Display|Selected World 1: Castle Britannia.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Main Level.|W1L1
+|Option|2: Basement.|W1L2
+|Option|3: Sewers: Top Level.|W1L3
+|Option|4: Sewers: Middle Level.|W1L4
+|Option|4: Sewers: Bottom Level.|W1L5
+|Prompt
+
+W1L1|Display|Selected Level 1: Main Floor.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W1
+|Option|1: Lord British|W1L1C1
+|Option|2: Charles|W1L1C2
+|Option|3: Dupre|W1L1C3
+|Option|4: Feridwyn|W1L1C4
+|Option|5: Geoffrey|W1L1C5
+|Option|6: Iolo|W1L1C6
+|Option|7: Julia|W1L1C7
+|Option|8: Nanna|W1L1C8
+|Option|9: Nell|W1L1C9
+|Option|10: Nelson|W1L1C10
+|Option|11: Nystul|W1L1C11
+|Option|12: Patterson|W1L1C12
+|Option|13: Syria|W1L1C13
+|Option|14: Tory|W1L1C14
+|Prompt
+
+W1L1C1|Display|Selected Character 1: Lord British.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C2|Display|Selected Character 2: Charles.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C3|Display|Selected Character 3: Dupre.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C4|Display|Selected Character 4: Feridwyn
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C5|Display|Selected Character 5: Geoffrey.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C6|Display|Selected Character 6: Iolo.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C7|Display|Selected Character 7: Julia.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C8|Display|Selected Character 8: Nanna.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C9|Display|Selected Character : Nell.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C10|Display|Selected Character 10: Nelson.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C11|Display|Selected Character 11: Nystul.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C12|Display|Selected Character 12: Patterson
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C13|Display|Selected Character 13: Syria.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+W1L1C14|Display|Selected Character 14: Tory.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]
+|Prompt
+
+
+W1L2|Display|Selected Level 2: Castle Basement.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W1
+|Prompt
+
+
+W1L3|Display|Selected Level 3: Sewer: Top Level
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W1
+
+
+W1L4|Display|Selected Level 4: Sewer: Middle Level
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W1
+
+
+W1L5|Display|Selected Level 5: Sewer: Bottom Level
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W1
+
+
+
+W2|Display|Selected World 2: Prison Tower.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Cellar.|W2L1
+|Option|2: Ground Floor.|W2L2
+|Option|3: Level 3.|W2L3
+|Option|4: Level 4.|W2L4
+|Option|5: Level 5.|W2L5
+|Option|6: Level 6.|W2L6
+|Option|7: Level 7.|W2L7
+|Option|8: Top Level.|W2L8
+|Prompt
+
+W2L1|Display|Selected Level 1: Cellar.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L2|Display|Selected Level 2: Ground Floor.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L3|Display|Selected Level 3.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L4|Display|Selected Level 4.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L5|Display|Selected Level 5.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L6|Display|Selected Level 6.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L7|Display|Selected Level 7.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W2L8|Display|Selected Level 8.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+
+W3|Display|Selected World 3: Killorn Keep.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Main Floor.|W3L1
+|Option|2: Basement.|W3L2
+|Prompt
+
+
+W3L1|Display|Selected Level 1: Main Floor.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W2
+
+
+W3L2|Display|Selected Level 1: Main Floor.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W3
+
+
+
+W4|Display|Selected World 4: Ice Caverns
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Level 1.|W4L1
+|Option|2: Level 2.|W4L2
+|Prompt
+
+
+W4L1|Display|Selected Level 1.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W4
+|Prompt
+
+
+W4L2|Display|Selected Level 2.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W4
+|Prompt
+
+
+
+W5|Display|Selected World 5: Talorus
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Level 1: Main Level.|W5L1
+|Option|2: Level 2: Lava Pit.|W5L2
+|Prompt
+
+
+W5L1|Display|Selected Level 1: Main Level.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W5
+|Prompt
+
+
+W5L2|Display|Selected Level 2: Lava Pit.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W5
+|Prompt
+
+
+
+W6|Display|Selected World 6: Scintillus Academy.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Lobby.|W6L1
+|Option|2: Ice Floor.|W6L2
+|Option|3: Lava Platforms.|W6L3
+|Option|4: Stairs.|W6L4
+|Option|5: Generators?|W6L5
+|Option|6: Maze|W6L6
+|Option|7: Vanishing Platforms|W6L7
+|Option|8: Nested Tiers and Vault|W6L8
+|Prompt
+
+
+W6L1|Display|Selected Level 1: Lobby.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L2|Display|Selected Level 2: Ice Floor.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L3|Display|Selected Level 3: Lava Platforms
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L4|Display|Selected Level 4: Stairs
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L5|Display|Selected Level 5: Generators?
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L6|Display|Selected Level 6: Maze
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L7|Display|Selected Level 7: Vanishing Platforms
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+W6L8|Display|Selected Level 8: Nested Tiers and Vault
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W6
+|Prompt
+
+
+
+W7|Display|Selected World 7: Pits of Carnage.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Arenas.|W7L1
+|Option|2: Caves.|W7L2
+|Option|3: Depths.|W7L3
+|Prompt
+
+
+W7L1|Display|Selected Level 1: Arenas.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W7
+|Prompt
+
+
+W7L2|Display|Selected Level 2: Caves.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W7
+|Prompt
+
+
+W7L3|Display|Selected Level 3: Depths.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W7
+|Prompt
+
+
+
+W8|Display|Selected World 8: Tomb of Praecor Loth.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Puzzles.|W8L1
+|Option|2: Ghosts.|W8L2
+|Option|3: Trap Maze.|W8L3
+|Option|4: Bosses.|W8L4
+|Prompt
+
+
+W8L1|Display|Selected Level 1: Puzzles.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W8
+|Prompt
+
+
+W8L2|Display|Selected Level 2: Ghosts.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W8
+|Prompt
+
+
+W8L3|Display|Selected Level 3: Trap Maze.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W8
+|Prompt
+
+
+W8L4|Display|Selected Level 4: Bosses
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W8
+|Prompt
+
+
+
+W9|Display|Selected World 9: Etherial Void.
+|Display|Select a level.
+|OptionsClear
+|Option|0: [Choose a different world.]|World.Choose
+|Option|1: Hub.|W9L1
+|Option|2: Red Zone.|W9L2
+|Option|3: Yellow Zone.|W9L3
+|Option|4: Purple Zone.|W9L4
+|Option|5: Blue Zone.|W9L5
+|Option|6: Shrine.|W9L6
+|Prompt
+
+
+W9L1|Display|Selected Level 1: Hub.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+W9L2|Display|Selected Level 2: Red Zone.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+W9L3|Display|Selected Level 3: Yellow Zone.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+W9L4|Display|Selected Level 4: Purple Zone.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+W9L5|Display|Selected Level 5: Blue Zone.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+W9L6|Display|Selected Level 6: Shrine.
+|Display|Select a character or action.
+|OptionsClear
+|Option|0: [Choose a different level.]|W9
+|Prompt
+
+
+
+End|Quit
