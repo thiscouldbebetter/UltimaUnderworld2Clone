@@ -1,51 +1,68 @@
 Sir Cabirus
 Ultima Homepage
-HomeContact Sir CabirusLinks
-Article
 Ultima Underworld II Walkthrough - Killorn Keep
- 
-
-There are more maps available for Killorn Keep. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+===============================================
 
 Overview
+--------
+
 Visit Killorn Keep, a sandstone castle floating one mile above the desert. Outwit an enemy and his trap and gain an ally with a powerful enchantress. You attempt to perform several quests for her.
 
+
 Population
+----------
 Humans (friendly (except one))
 Trilkhai (friendly)
 Headless (hostile)
 Giant Rats (hostile)
 Gigant Spiders (hostile)
+
+
 General hints
+-------------
+
 You can't explore the whole of Killorn Keep for now. Therefore the map of level 2 shown here is incomplete.
+
 Maybe you'll find a way to crash the Keep. Don't do that! Altara will die and if you don't have her sceptre you cannot win the game. Moreover you will miss some other nice things that Altara can do for you.
+
 Beware of anyone offering "Dragon skin boots". This boots are a fake and worthless. You need such boots in Ultima Underworld - The Stygian Abyss but this is another story ;-)
+
+
 Things you must do
+------------------
 Talk to Kintara and Lobar to get the information you need to answer the questions of Mystell.
+
 Visit Mystell and pass her test of allegiance with the information you got from Kintara and Lobar. She will offer to reward you for spying on Altara.
+
 Meet Altara and warn her of Mystell's plot against her. You can also mention Bishop (Prison Tower) to win her trust. Altara will advise you about 'The Listener', a spy which the Guardian has posted in the basement of the Castle of Lord British. Get the excellent jewelled dagger of Unsurpassed Accuracy from Altara. The dagger will bring you through the walls of fire behind which 'The Listener' - a magic imp - is hidden. The blade of the dagger is the only weapon which can deal the killing blow to the occult imp, so take care and don't lose this magic item.
+
 The kitchen in the northeast has a sturdy door. Behind the door is a passage which leads to level 2. Descend to level 2 and search for a oubliette (L2 3). But wach out! The room is shielded by a trap, a carpet with four candles which teleports you to an alternate and deadly dimension. Disarm the trap by throwing away the four candles. Enter the oubliette, defeat two headless and get another blackrock gem.
+
+
 Things you should do
+--------------------
+
 Get the wand of Magic Arrow with 14 full charges in Level 2 (B1). To get through the sturdy locked door use a lockpick or your fist.
+
 Talk to Relk, it seems he knows who you are. You can meet him later in his quarter, but make sure no one is close by at your second meeting.
+
 Visit the stables and talk to the Trilkhai. Blackie will give you a quest about the history of the Trilkhai. You'll get the required information later when you visit the Ethereal Void. Talk also to Beauty who leads you to her companion Josie. Josie is thirsty - give her a bottle of water and she will tell you about Relk and the trap he made in the oubliette to shelter the blackrock gem you are looking for.
+
 Find the Blue Banner of Killorn for Ogri. But this can wait until you visit the Tomb of Praecor Loth.
+
+
 Things you can do
+-----------------
+
 In the southeast corner of the barracks is a secret door. Open the door and get access to level 2 under the barracks. Follow a passage to a locked massive door guarded by a soldier. Don't fight against this guardsman, he is more than he appears. You will get access to the room behind the door later.
 Merzan the merchant is willing to identify or recharge magical items for gold.
+
+
 Remarks
+-------
 You may have noticed a striking resemblance between the Trilkhai (singular: Trilkhun) of Kilorn Keep and the Kilrathi, a cat-like warrior race of Wing Commander, another old game series by Origin Systems. If you rearrange the letters in Trilkhai you will get Kilrathi ;-)
+
 Lord Thibris and Lobar seems to be faintly similar alternate versions of Lord British (appearance - and Thibris' name is an anagram too) and Dupre (habits).
-Items
-Click here to get a list of Killorn Keep items in a new browser window.
 
->> Interlude II - Beating 'The Listener'
-<< Interlude I - Back to the Castle
-<< Walkthrough Index
 
- 
-
-×
-<MEDIA>@https://www.sircabirus.com
-
-Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
+Copyright © 2022 Frank Wolter. All rights reserved.

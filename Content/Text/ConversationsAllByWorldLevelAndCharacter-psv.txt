@@ -8,19 +8,19 @@ Start|Display|This is every conversation in UUW2
 
 World.Choose|Display|Select a world.
 |OptionsClear
-|Option|1: Castle Britannia.|W1
-|Option|2: Prison Tower.|W2
-|Option|3: Killorn Keep.|W3
-|Option|4: Ice Caverns.|W4
-|Option|5: Talorus.|W5
-|Option|6: Scintillus Academy.|W6
-|Option|7: Pits of Carnage.|W7
-|Option|8: Tomb of Praecor Loth.|W8
-|Option|9: Ethereal Void.|W9
+|Option|1: Castle.|W1
+|Option|2: Prison.|W2
+|Option|3: Mirror Castle.|W3
+|Option|4: Lost City.|W4
+|Option|5: Exoplanet.|W5
+|Option|6: Wizard Academy.|W6
+|Option|7: Arena.|W7
+|Option|8: Tomb.|W8
+|Option|9: Astral Plane.|W9
 |Prompt
 
 
-W1|Display|Selected World 1: Castle Britannia.
+W1|Display|Selected World 1: Castle.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Select a different world.]|World.Choose
@@ -35,101 +35,101 @@ W1L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
-|Option|1: Lord British|W1L1C1
-|Option|2: Charles|W1L1C2
-|Option|3: Dupre|W1L1C3
-|Option|4: Feridwyn|W1L1C4
-|Option|5: Geoffrey|W1L1C5
-|Option|6: Iolo|W1L1C6
-|Option|7: Julia|W1L1C7
-|Option|8: Nanna|W1L1C8
-|Option|9: Nell|W1L1C9
-|Option|10: Nelson|W1L1C10
-|Option|11: Nystul|W1L1C11
-|Option|12: Patterson|W1L1C12
-|Option|13: Syria|W1L1C13
-|Option|14: Tory|W1L1C14
+|Option|1: King|W1L1C1
+|Option|2: Valet|W1L1C2
+|Option|3: Paladin|W1L1C3
+|Option|4: Philanhtropist|W1L1C4
+|Option|5: Knight|W1L1C5
+|Option|6: Bard|W1L1C6
+|Option|7: Tinker|W1L1C7
+|Option|8: Housekeeper|W1L1C8
+|Option|9: Chambermaid|W1L1C9
+|Option|10: Scholar|W1L1C10
+|Option|11: Wizard|W1L1C11
+|Option|12: Mayor|W1L1C12
+|Option|13: Guardswoman|W1L1C13
+|Option|14: Empathy|W1L1C14
 |Prompt
 
-W1L1C1|Display|Selected Character 1: Lord British.
+W1L1C1|Display|Selected Character 1: King.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C2|Display|Selected Character 2: Charles.
+W1L1C2|Display|Selected Character 2: Valet.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C3|Display|Selected Character 3: Dupre.
+W1L1C3|Display|Selected Character 3: Paladin.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C4|Display|Selected Character 4: Feridwyn
+W1L1C4|Display|Selected Character 4: Philanhtropist
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C5|Display|Selected Character 5: Geoffrey.
+W1L1C5|Display|Selected Character 5: Knight.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C6|Display|Selected Character 6: Iolo.
+W1L1C6|Display|Selected Character 6: Bard.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C7|Display|Selected Character 7: Julia.
+W1L1C7|Display|Selected Character 7: Tinker.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C8|Display|Selected Character 8: Nanna.
+W1L1C8|Display|Selected Character 8: Housekeeper.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C9|Display|Selected Character : Nell.
+W1L1C9|Display|Selected Character : Chambermaid.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C10|Display|Selected Character 10: Nelson.
+W1L1C10|Display|Selected Character 10: Scholar.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C11|Display|Selected Character 11: Nystul.
+W1L1C11|Display|Selected Character 11: Wizard.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C12|Display|Selected Character 12: Patterson
+W1L1C12|Display|Selected Character 12: Mayor
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C13|Display|Selected Character 13: Syria.
+W1L1C13|Display|Selected Character 13: Guardswoman.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
 |Prompt
 
-W1L1C14|Display|Selected Character 14: Tory.
+W1L1C14|Display|Selected Character 14: Empath.
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1L1
@@ -149,11 +149,31 @@ W1L3|Display|Selected Level 3: Sewer: Top Level
 |Option|0: [Choose a different level.]|W1
 |Prompt
 
+W1L3C1|Display|Selected Character 1: Thief.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W1L3
+|Prompt
+
 
 W1L4|Display|Selected Level 4: Sewer: Middle Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
+|Option|1: Goblin|W1L4C1
+|Option|2: Fishergoblin|W1L4C2
+|Prompt
+
+W1L4C1|Display|Selected Character 1: Goblin.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W1L4
+|Prompt
+
+W1L4C2|Display|Selected Character 2: Fishergoblin.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W1L4
 |Prompt
 
 
@@ -165,7 +185,7 @@ W1L5|Display|Selected Level 5: Sewer: Bottom Level
 
 
 
-W2|Display|Selected World 2: Prison Tower.
+W2|Display|Selected World 2: Prison.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -179,6 +199,7 @@ W2|Display|Selected World 2: Prison Tower.
 |Option|8: Top Level.|W2L8
 |Prompt
 
+
 W2L1|Display|Selected Level 1: Cellar.
 |Display|Select a character or action.
 |OptionsClear
@@ -190,6 +211,13 @@ W2L2|Display|Selected Level 2: Ground Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Option|1: Ground Floor Goblin Guard|W2L2C1
+|Prompt
+
+W2L2C1|Display|Selected Character 1: Ground Floor Guard.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L2
 |Prompt
 
 
@@ -204,6 +232,27 @@ W2L4|Display|Selected Level 4.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Option|1: Keymaster.|W2L4C1
+|Option|2: Kitchen Slave.|W2L4C2
+|Option|3: Kitchen Guard.|W2L4C3
+|Prompt
+
+W2L4C1|Display|Selected Character 1: Keymaster.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L4
+|Prompt
+
+W2L4C2|Display|Selected Character 2: Kitchen Slave.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L4
+|Prompt
+
+W2L4C3|Display|Selected Character 3: Kitchen Guard.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L4
 |Prompt
 
 
@@ -211,6 +260,13 @@ W2L5|Display|Selected Level 5.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Option|1: Armorer|W2L5C1
+|Prompt
+
+W2L5C1|Display|Selected Character 1: Armorer.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L5
 |Prompt
 
 
@@ -218,6 +274,20 @@ W2L6|Display|Selected Level 6.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Option|1: Guard Captain|W2L6C1
+|Option|2: Imprisoned Troll.|W2L6C2
+|Prompt
+
+W2L6C1|Display|Selected Character 1: Guard Captain.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L6
+|Prompt
+
+W2L6C2|Display|Selected Character 2: Imprisoned Troll.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L6
 |Prompt
 
 
@@ -232,11 +302,24 @@ W2L8|Display|Selected Level 8.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W2
+|Option|1: Imprisoned Rebel Spy.|W2
+|Option|2: Imprisoned Rebel Leader.|W2
+|Prompt
+
+W2L8C1|Display|Selected Character 1: Imprisoned Rebel Spy.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L8
+|Prompt
+
+W2L8C2|Display|Selected Character 2: Imprisoned Rebel Leader.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W2L8
 |Prompt
 
 
-
-W3|Display|Selected World 3: Killorn Keep.
+W3|Display|Selected World 3: Mirror Castle.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -248,11 +331,123 @@ W3|Display|Selected World 3: Killorn Keep.
 W3L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
-|Option|0: [Choose a different level.]|W2
+|Option|0: [Choose a different level.]|W3
+|Option|1: Agent|W3
+|Option|2. Beast of Burden: Leader|W3
+|Option|3. Beast of Burden: Nurturer|W3
+|Option|4. Beast of Burden: Thirsty|W3
+|Option|5. Guard|W3
+|Option|6. Guard Captain|W3
+|Option|7. Herbalist|W3
+|Option|8. Merchant: Food|W3
+|Option|9. Merchant: Magic|W3
+|Option|10. Merchant: Discount|W3
+|Option|11. Mirror King|W3
+|Option|12. Security Chief|W3
+|Option|13. Stable Boy|W3
+|Option|14. Sorceress|W3
+|Option|15. Steward|W3
+|Option|16. Swordmaster|W3
+|Prompt
+
+W3L1C1|Display|Selected Character 1: Agent.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C2|Display|Selected Character 2: Beast of Burden: Leader.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C3|Display|Selected Character 3: Beast of Burden: Nurturer.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C4|Display|Selected Character 4: Beast of Burden: Thirsty.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C5|Display|Selected Character 5: Guard.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C6|Display|Selected Character 6: Guard Captain.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C7|Display|Selected Character 7: Herbalist.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C8|Display|Selected Character 8: Merchant: Food.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C9|Display|Selected Character 9: Merchant: Magic.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C10|Display|Selected Character 10: Merchant: Discount.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C11|Display|Selected Character 11: Mirror King.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C12|Display|Selected Character 12: Security Chief.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C13|Display|Selected Character 13: Stable Boy.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C14|Display|Selected Character 14: Sorceress.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C15|Display|Selected Character 15: Steward.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
+|Prompt
+
+W3L1C16|Display|Selected Character 16: Swordmaster.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W3L1
 |Prompt
 
 
-W3L2|Display|Selected Level 1: Main Floor.
+W3L2|Display|Selected Level 2: Basement.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W3
@@ -260,7 +455,7 @@ W3L2|Display|Selected Level 1: Main Floor.
 
 
 
-W4|Display|Selected World 4: Ice Caverns
+W4|Display|Selected World 4: Lost City
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -284,7 +479,7 @@ W4L2|Display|Selected Level 2.
 
 
 
-W5|Display|Selected World 5: Talorus
+W5|Display|Selected World 5: Exoplanet.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -308,7 +503,7 @@ W5L2|Display|Selected Level 2: Lava Pit.
 
 
 
-W6|Display|Selected World 6: Scintillus Academy.
+W6|Display|Selected World 6: Wizard Academy.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -380,7 +575,7 @@ W6L8|Display|Selected Level 8: Nested Tiers and Vault
 
 
 
-W7|Display|Selected World 7: Pits of Carnage.
+W7|Display|Selected World 7: Arena.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -412,7 +607,7 @@ W7L3|Display|Selected Level 3: Depths.
 
 
 
-W8|Display|Selected World 8: Tomb of Praecor Loth.
+W8|Display|Selected World 8: Tomb.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
@@ -452,7 +647,7 @@ W8L4|Display|Selected Level 4: Bosses
 
 
 
-W9|Display|Selected World 9: Etherial Void.
+W9|Display|Selected World 9: Astral Plane.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose

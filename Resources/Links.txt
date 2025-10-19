@@ -2,5 +2,6 @@
 Links
 =====
 
-https://github.com/SiENcE/ultima_underworld_tools
+https://ultimacodex.com - Good source for character descriptions.
+https://github.com/SiENcE/ultima_underworld_tools - To read game files.
 

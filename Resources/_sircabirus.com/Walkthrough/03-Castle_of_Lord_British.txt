@@ -1,17 +1,16 @@
 Sir Cabirus
-Ultima Homepage
-HomeContact Sir CabirusLinks
-Article
 Ultima Underworld II Walkthrough - Castle of Lord British
- 
-
-There are more maps available for Castle of Lord British. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map.
-For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+========================================================= 
 
 Overview
+--------
+
 This is the starting level where your adventure begins. Talk to everyone often, descend to the deepest cavern below the castle and enter a labyrinth of worlds through a strange blackrock gem.
 
+
 Population
+----------
+
 Humans (friendly)
 Goblins (friendly)
 Cave Bats (peaceful or hostile)
@@ -24,38 +23,56 @@ Lurkers (hostile)
 Slugs (hostile)
 Acid Slugs (hostile)
 Bloodworms (hostile)
+
+
 General hints
+-------------
+
 You can't explore the whole sewers of the castle for now. Therefore the shown maps here are incomplete. Avoid strong creatures as headlesses (L3, L4), ghosts (L3, L5), the gazer (L3) and the reaper (L4) for the moment. Come back when you are stronger.
 Holes (L3: H1..H3) are connected with exits (L4: X1..X3).
+
 There are two chambers with locked massive doors on L3. One of the chambers has a second entry, for the other you will get the key later.
+
 Use 'Water Walk' in order to fight the lurkers.
+
+
 Things you must do
+------------------
+
 Pick up the bag (B1) from the Avatar Quarters. The bag's most important item is the map. The game automatically updates this map during your visit through the Labyrinth of Worlds. You can also write notes to yourself directly on this map.
+
 You need the rune bag and the runes in order to cast spells. The rune bag is along with some rune stones in the secret room in the north behind the Avatar Quarters.
+
 Attend the emergency meeting with Lord British.
+
 Speak to Miranda and all other inhabitants of the castle. Repeat this every time you make some progress and every time you return from another world.
+
 Get the key to the sewers from Dupré.
+
 Enter the sewers and descend to the deepest cavern below the castle (L5). Discover and enter the large blackrock gem. Currently only the nothernmost facet is active and leads you to the Prison Tower.
+
+
 Things you should do
+--------------------
+
 Get a few runestones (L2, B1, I1..4) from Nystul's laboratory.
+
 Talk with Fissif (L3) and dispatch him to jail. Get a runestone from Fissif's belongings (L3, B1) after he is in jail. Fissif is willing to train you in acrobat, picklock, stealth and traps skill when you visit him in jail.
+
 Take heed of the eggshells of the dread spiders on the nothern part of level 4. You will need an eggshell later.
+
 Pay regard to the strange lava fall in the southeast corner of level 4. You will return to this place later.
+
 Notice the reaper (L4). Fissif told you about the key to the castle armoury. The key is hidden in a pile of debris in a pit behind the reaper. Don't mess with the reaper, come back later when you are stronger to get the key and some other treasure.
+
 Unlock the shortcut from level 5 back to the castle.
+
+
 Things you can do
+-----------------
+
 Talk to the goblins in the southwest area of Level 4. They are friendly and offer to train in tracking skill.
+
 Barter a pole from 'The Dripper' (L4). A pole is a valuable item in order to reach distant objects.
-Items
-Click here to get a list of castle items in a new browser window.
 
->> Prison Tower
-<< Introduction
-<< Walkthrough Index
-
- 
-
-×
-<MEDIA>@https://www.sircabirus.com
-
-Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
+Copyright © 2022 Frank Wolter. All rights reserved.

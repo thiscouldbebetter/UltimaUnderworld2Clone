@@ -1,48 +1,59 @@
 Sir Cabirus
-Ultima Homepage
-HomeContact Sir CabirusLinks
-Article
 Ultima Underworld II Walkthrough - Prison Tower
- 
-
-There are more maps available for Prison Tower. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+===============================================
 
 Overview
+--------
+
 In this level you will travel upwards through a prison tower guarded by goblins. Your goal is to free all prisoners and to recover a tiny blackrock gem.
 
 Population
+----------
+
 Goblins (peaceful, upset)
 Humans (friendly)
 A Troll (friendly)
 Rotworms (hostile)
 Giant Rats (hostile)
 Mongbats (hostile)
+
+
 Things you must do
+------------------
+
 Take the 'Food Delivery Voucher' on Level 1. The voucher is your ticket to pass all the guards.
+
 Talk to one of the upset goblin guards on level 2 and present him the voucher. As a result the guard will open the locked portcullis, thinking you are a kind of grocery boy.
+
 Talk to the goblin armorer (L5). Give him a hint how to make fraznium gauntlets the easy way. He will lend you a pair of fraznium gauntlets on subsequent conversation after this.
+
 Talk to Borne, captain of the guards (L6). Borne mistakes you for Lorca Batan, an interrorgator that he is expecting to arrive. Pretend to be this expected torturer and get the password (password varies from game to game) and a second pair of fraznium gauntlets to access Bishop in his cell on level 8.
+
 Talk to Bishop (L8). You must wear the fraznium gauntlets to pass through the force field outside his door. Give him the second pair of fraznium gauntlets so he can leave his cell and escape. Bishop will give you a hint about the blackrock gem you are looking for in return.
+
 Take care of your fraznium gauntlets. You will need them later because you must return to Bishop's cell after you get a special item from Altara.
+
 Talk to Borne (L6) again and demand the blackrock gem.
+
+
 Things you should do
+--------------------
+
 Talk to Felix (L4). He will give you Cornucopia - a box which will generate food - after Freemis is killed. You must talk to Felix before Freemis is killed in order to get the box.
+
 Talk to Borne (L6) again and ask for more keys. Mention the Guardian and he will give you another codeword and send you to Janar (L4). Go to Janar and demand the set of keys. Use the keys to relase the Troll Garg (L6). Garg will leave his cell and kill every goblin in the tower. He will serve as a trainer (Barehand) as well. You can meet Garg in Borne's quarter after he is freed.
+
 Get the key ring from Borne's body to get access to the amoury and the locked chests within.
+
+
 Things you can do
+-----------------
+
 Get the password to access level 7 from the goblin armorer after you give him a hint how to make fraznium gauntlets the easy way. Anyway - you will get the password from Borne too.
+
 Release Milenus (PT8) a goblin who is an ally spy of Bishop.
+
 After Garg is freed you can get 3 rune stones (Rel, Sanct, Ylem) from the body of the goblin armorer.
-Items
-Click here to get a list of Prison Tower items in a new browser window.
 
->> Interlude I - Back to the Castle
-<< Castle of Lord British
-<< Walkthrough Index
 
- 
-
-×
-<MEDIA>@https://www.sircabirus.com
-
-Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
+Copyright © 2022 Frank Wolter. All rights reserved.
