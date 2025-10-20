@@ -20,6 +20,8 @@ World.Choose|Display|Select a world.
 |Prompt
 
 
+// World 1: Castle
+
 W1|Display|Selected World 1: Castle.
 |Display|Select a level.
 |OptionsClear
@@ -185,6 +187,8 @@ W1L5|Display|Selected Level 5: Sewer: Bottom Level
 
 
 
+// World 2: Prison
+
 W2|Display|Selected World 2: Prison.
 |Display|Select a level.
 |OptionsClear
@@ -318,6 +322,9 @@ W2L8C2|Display|Selected Character 2: Imprisoned Rebel Leader.
 |Option|0: [Select a different character.]|W2L8
 |Prompt
 
+
+
+// World 3: Mirror Castle.
 
 W3|Display|Selected World 3: Mirror Castle.
 |Display|Select a level.
@@ -455,12 +462,14 @@ W3L2|Display|Selected Level 2: Basement.
 
 
 
+// World 4: Lost City.
+
 W4|Display|Selected World 4: Lost City
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Choose a different world.]|World.Choose
-|Option|1: Level 1.|W4L1
-|Option|2: Level 2.|W4L2
+|Option|1: Lower Level.|W4L1
+|Option|2: Ruined City.|W4L2
 |Prompt
 
 
@@ -468,6 +477,13 @@ W4L1|Display|Selected Level 1.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W4
+|Option|1: Hermit.|W4
+|Prompt
+
+W4L1C1|Display|Selected Character 1: Hermit.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W4L1
 |Prompt
 
 
@@ -475,9 +491,24 @@ W4L2|Display|Selected Level 2.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W4
+|Option|1: Sentinel.|W4
+|Option|2: Ghost.|W4
+|Prompt
+
+W4L2C1|Display|Selected Character 1: Sentinel.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W4L2
+|Prompt
+
+W4L2C2|Display|Selected Character 2: Ghost.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W4L2
 |Prompt
 
 
+// World 5: Exoplanet.
 
 W5|Display|Selected World 5: Exoplanet.
 |Display|Select a level.
@@ -492,6 +523,48 @@ W5L1|Display|Selected Level 1: Main Level.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W5
+|Option|1: Archivist.|W5
+|Option|2: Beastmaster.|W5
+|Option|3: Extrapolator.|W5
+|Option|4: Interpolator.|W5
+|Option|5: Spawnmaster.|W5
+|Option|6: Talker|W5
+|Prompt
+
+W5L1C1|Display|Selected Character 1: Archivist.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
+|Prompt
+
+W5L1C2|Display|Selected Character 2: Beastmaster.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
+|Prompt
+
+W5L1C3|Display|Selected Character 3: Extrapolator.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
+|Prompt
+
+W5L1C4|Display|Selected Character 4: Interpolator.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
+|Prompt
+
+W5L1C5|Display|Selected Character 5: Spawnmaster.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
+|Prompt
+
+W5L1C6|Display|Selected Character 5: Talker.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W5L1
 |Prompt
 
 
@@ -502,6 +575,8 @@ W5L2|Display|Selected Level 2: Lava Pit.
 |Prompt
 
 
+
+// World 6: Wizard Academy.
 
 W6|Display|Selected World 6: Wizard Academy.
 |Display|Select a level.

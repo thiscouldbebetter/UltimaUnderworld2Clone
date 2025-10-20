@@ -1,51 +1,72 @@
 Sir Cabirus
 Ultima Homepage
-HomeContact Sir CabirusLinks
-Article
 Ultima Underworld II Walkthrough - Talorus
- 
-
-There are more maps available for Talorus. To call up maps of levels other than the first, click on the dog-eared corners on the right-hand side of the map. For further information and screenshots explore the map with the cursor. Be careful - even unmarked areas could be sensitive. Please close every little pop up browser window before you initiate a new one.
+===========================================
 
 Overview
+--------
+
 Visit Talorus, a very strange world immersed in psychedelic colors. Talk with the Talorids, the peaceful inhabitants which are organised in an ant-like society with highly specialized functions. The Guardian has 'optimized' these functions for his advantage. Talk with all Talorids to learn more about their duties, what has happend to Talorus and how to turn a bad thing into a good one.
 
 Population
+----------
 Talorids (friendly)
 Vorz (friendly / hostile)
+
+
 General Hints
+-------------
+
 You reach Talorus from high above. Use Slow Fall (Rel Des Por) to prevent damage from falling.
+
 The brass plates in the floor move you upwards. The plate in the centre is used to leave Talorus, the others allow you to reach higher places.
+
+
 Things you must do
+------------------
+
 Talk to Bliy Skup Ductosnore. It is the operator of the Bliy Skub Chamber, which is used to produce new Talorids to replace those expire through accident or age. Learn about how Talorids are born, live and die.
+
 Talk to the Historian. It will tell you how the Guardian has specialised the functions of the Talorids and how these changes has weakened their nation. The Historian will also report, that the Talorids had three sexes in former days but the Guardian has modified the programming of the Bliy Skub Chamber, so the Talorids were much simpler and have only one sex now. Bliy Skup Ductosnore was modified (was skupped) too, so it sees things like the Guardian - normally Ductosnore would not operate the Bliy Skup Chamber in such a manner. The Historian doesn't like this development and informs you about the location of the crystal E0Y2 with the original Ductosnore pattern. And this is your quest: destroy the current Ductosnore, get access to the Bliy Skub Chamber and create a new Ductosnore with the original Ductosnore behaviour. The Historian promises you the access to a further blackrock gem as reward.
+
 Visit the Futurian. It tells you about the other things you need to fulfil your quest. You require a second crystal M4Y8 with the proper program to encode the original Ductosnore pattern from the first crystal into the Skup Chamber. The third thing you need is a Delgnizator, a device designed to serve as part of the control system for the Skub Chamber. The Futurian also informs you about the location of the M4Y8 crystal and that you must kill Bliy Skup Ductosnore to get access to the Bliy Skub Chamber.
+
 Talk to the Data Integrator. You will learn about its function but this conversation doesn't go well, because your are not able to state your requirements with the utmost precision.
+
 Visit the Dialogicians and ask them for help about talking to the Data Integrator. They will deliver a scroll with the right questions. You can also get the scroll from the room behind the Dialogicians. It is the second scroll from left.
+
 Talk to the Data Integrator again. The conversations goes much better this time - you will learn all required steps to operate the Bliy Skub Chamber.
+
 Get the control crystal M4Y8 from the chamber behind the Futurian.
+
 Go down to level 2 and take the crystal E0Y2 at the north of the lava pit.
+
 Talk to Vorz Ductosnore, the Talorid who 'skup' the Vorz and get the Delgnizator.
+
 Go back to level 1 and kill Bliy Skup Ductosnore. Enter the Bliy Skup Chamber and place the M4Y8 control crystal in the yellow input hopper, place the E0Y2 pattern crystal in the purple input hopper, place the Delgnizator on the blue repulsor circle and pull the chain. Congratulations! You just have created a new Bliy Skup Ductosnore with the native Ductosnore pattern. Talk to it.
+
 Go back to the Historian and get your reward. It will teleport you to the gem on a small and safe area amid the lava pit. Take the gem and leave the area northwards over a bridge which will appear as soon as you touch the single brass plate close by.
+
 Get the amethyst rod from the chamber in the north of level 1. You should have the black pearl from Altera and the black eggshell too. Time to return to Killorn Keep again. Visit Altara and offer her the three components to create a magical sceptre.
+
+
 Things you should do
+--------------------
+
 The nutritious wafers are the best food in the game because they are very filling and light-weighted. Take them all.
+
 Pick up the light spheres. They are brighter than the lantern, but have a shorter duration. You can recharge the light spheres in the small room located right next to the Bliy Skup Chamber.
+
+
 Things you can do
+-----------------
+
 Visit the Runekeeper. This Talorid has many Kal runes and an occasional Corp rune as well.
+
 Talk to Eleomosynator. But you never do find out what's the deal with this very special Talorid.
+
 Amongst the masses of boots on level 2, there is one pair of Leather Boots of Bounce in the far north. You must pick them up to identify them.
 Items
-Click here to get a list of talorus items in a new browser window.
 
->> Interlude V - The Sceptre of Altara
-<< Interlude IV - Murder in the Castle
-<< Walkthrough Index
 
- 
-
-×
-<MEDIA>@https://www.sircabirus.com
-
-Datenschutzerklärung / Privacy Policy    |   Impressum / Site Notice   |    Copyright © 2022 Frank Wolter. All rights reserved.
+Copyright © 2022 Frank Wolter. All rights reserved.

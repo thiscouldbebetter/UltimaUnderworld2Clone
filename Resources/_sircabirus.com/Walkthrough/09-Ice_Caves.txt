@@ -1,3 +1,4 @@
+
 Sir Cabirus
 Ultima Homepage
 Ultima Underworld II Walkthrough - Ice Caves
@@ -61,5 +62,6 @@ There is a secret room at the very northwest corner of Anodunos. Come back when 
 Notes
 -----
 ↑ If you add the map bit to the map, you are no longer able to make you own notes for level 1. This happens because of a bug. So save the game, add the map bit, make a screenshot of the map and restore the game. You can then use this screenshot for your orientation.
+
 
 Copyright © 2022 Frank Wolter. All rights reserved.

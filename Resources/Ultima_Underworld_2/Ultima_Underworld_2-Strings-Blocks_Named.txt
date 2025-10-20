@@ -1,0 +1,150 @@
+STRINGS.PAK: 136 string blocks.
+
+0001: ?
+0002: ?
+0003: Books?
+0004: Weapons?.
+0005: Descriptors?
+0006: Environment Conditions?
+0007: Talking, Character Names?
+0008: Visions?
+0009: More visions?
+000a: Room features?
+
+0018: Admin/Status/Error messages?
+
+0c00: Letters, Intro Slideshow Subtitles?
+
+0c02: Endgame Subtitles?
+
+0c04: Interstitial Guardian Taunts 1.
+0c05: Interstitial Guardian Taunts 2?
+0c06: Interstitial Guardian Taunts 3?
+0c07: Interstitial Guardian Taunts 4?
+
+0c18: Interstitial Guardian Taunts 5?
+0c19: Interstitial Guardian Taunts 6?
+0c1a: Interstitial Guardian Taunts 7?
+0c1b: Interstitial Guardian Taunts 8?
+0c1c: Interstitial Guardian Taunts 9?
+0c1d: Interstitial Guardian Taunts 10?
+0c1e: Interstitial Guardian Taunts 11?
+
+0c20: Introductory Guardian Taunt
+0c28: Interstitial Guardian Taunts 12 (duplicated)?
+0c29: Interstitial Guardian Taunts 13?
+0c2a: Interstitial Guardian Taunts 14?
+0c2b: Interstitial Guardian Taunts 15?
+
+0e00: Dialogician 1?
+0e01: Prison Tower Goblin 1.
+0e02: Prison Tower Goblin, Showering.
+0e03: Prison Tower Goblin, with Code Word?
+0e04: Garg (the Imprisoned Troll)?
+0e05: Prison Tower Goblin 2.
+0e06: Bishop.
+0e07: Prison Tower, Mute Man
+0e08: Prison Tower Slave
+0e09; Prison Tower Goblin: "Check with Borne".
+0e0a: Prison Tower Goblin 3.
+0e0b: Prison Tower Goblin 4.
+0e0c: Prison Tower Goblin: Bully 1.
+0e0d: Prison Tower Goblin: Bully 2.
+0e0e: Prison Tower: Kind Slave?
+0e0f: Prison Tower Goblin: Demands Password?
+0e10: Prison Tower: Older Goblin Male: "I thought I had been forgotten."
+0e11: Prison Tower Goblin: Kitchen?
+0e12: Prison Tower: Front Gate Guard.
+0e13: Prison Tower Goblin: Demands Password 2?
+
+0e18: Ghost: "A stranger... a living @GS34! Why come here, to a tomb?"
+0e19: Ghost: "I wish thee good fortune."
+0e1a: Ghost: "Hast thou seen my bones?"
+0e1b: Ghost: "Ahhhhh! 'Tis now a pleasure to stroll through the tombs!"
+0e1c: Ghost: "He is slain! I was there...!"
+0e1d: Ghost: Boss After Umbria, Female.
+0e1e: "Set a thief to catch a thief, eh?"
+0e1f: Ghost: Boss after Morphius.  Lord Umbria?
+0e20: Praecor Loth.
+0e21: Guardian Soldier Ghost, Key.
+0e22: Ghost (Guardian Soldier?): "Hail, brave comrade!"
+0e23: "Another surfacer leaves the light of the warm star's gaze..."
+
+0e28: Killorn: Guard?
+0e29: Killorn: Lobar.
+0e2a: Killorn: "I see by thy clothing thou art from a far-off land, as am I."
+0e2b: Killorn: Ogri, Ancient Servant.
+0e2c: Mystell.
+0e2d: Killorn, Schemer?
+0e2e: Jerry the Rat. [Developer joke?]
+0e2f: Killorn: Evil Female Absorbed into Red Moongate?
+0e30: Planar Being?
+0e31: Relk
+0e32: Lord Thibris.
+0e33: Killorn Keep Guard?
+0e34: Stable Boy.
+0e35: Trilkhun, Stables: Well-Wisher?
+0e36: Trilkhun, Stables: Leader?
+0e37: Trilkhun, Stables: Not Josie.
+0e38: Killorn Merchant, Food, Friendly.
+0e39: Killorn Merchant, Surly.
+0e3a: Trilkhun, Generic, outside Stables?
+0e3b: Trilkhun, Generic, in Stables?
+0e3c: Killorn Guard?
+0e3f:  A. I. Crunchowicz [developer joke?]
+0e40: Mute Guy Who Wants to Fly, in Physical Form?
+0e48: Mokpo.
+0e49: Ruined City Ghost (Beatrice?)
+0e4a: Sentinel Construct 868.
+0e4b: Stocky Guard, Killorn Keep... Brain Room?
+
+0e50: Mokpo, in Dream Form.
+0e51: Mute Guy Who Wants to Fly, in Dream Form?
+0e52; Female Official from Killorn Keep, in Dream Form?
+0e53: Ethereal Void Prison Taunter?
+0e54: Iolo, in Dream Form.
+0e55: Blog the Troll, in Dream Form.
+0e56: Troll from First Game.
+0e58: Elster, Mage Candidate.
+
+0e60: Killorn Mage, Female?
+0e61; Arena Mage, Male (not Zoranthus).
+0e62: Arena Female Mage (Zaria).
+0e63: Arena Warrior?
+0e64: Krilner the Coward.
+0e65: Blog the Troll.
+0e66: Arena Warrior, male.
+0e67: Jospur
+0e68: Killorn Guard?
+0e69: Merzan.
+
+0e80: Fissif.
+0e81: Castle Guard, Male.
+0e82: Nystul.
+0e83: Charles.
+0e84: Dupre.
+0e85: Geoffrey.
+0e86: Iolo.
+0e87: Julia.
+0e88: Miranda.
+0e89: Nanna.
+0e8a: Charles's Sister (Maid?)
+0e8b: Nelson.
+0e8c: Patterson.
+0e8d: Lady Tory.
+0e8e: Lord British.
+0e8f: Feridwyn.
+0e90: Sewer Goblin, Leader?
+0e92: Sewer Goblin, Spitting. (Dripper?)
+0e93: Sewer Goblin, Rogwump.
+0e95: Castle Guard, Female.
+0e98: Bliy Skup Ductosnore 1.
+0e99; Vorz Ductosnore.
+0e9a: Bliy Skup Ductosnore 2.
+0e9b: Data Integrator.
+0e9c: Historian.
+0e9d: Futurian.
+0e9e: Eloemosynator.
+0e9f: Dialogician.
+0ea0: Runekeeper.
+0ea8: Syria.

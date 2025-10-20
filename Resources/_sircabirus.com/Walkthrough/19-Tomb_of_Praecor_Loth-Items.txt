@@ -14,7 +14,7 @@ Level 1
 			an unblemished emerald
 			an unblemished large blue gem
 		B3 (Gold Coffer)
-			a red potion of Restauration
+			a red potion of Restoration
 			an undamaged goblet
 			an unblemished red gem
 	Items
