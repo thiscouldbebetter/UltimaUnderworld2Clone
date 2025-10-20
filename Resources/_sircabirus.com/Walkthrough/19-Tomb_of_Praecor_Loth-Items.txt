@@ -1,0 +1,139 @@
+
+Ultima Underworld II Walkthrough - Tomb of Praecor Loth - Items
+===============================================================
+
+Level 1
+	Bags & Pouches
+		B1 (Pack)
+			a servicable longsword of Stone Strike
+			a bottle of wine
+			a mushroom
+		B2 (Gold Coffer)
+			servicable cursed plate gauntlets
+			an unblemished ruby
+			an unblemished emerald
+			an unblemished large blue gem
+		B3 (Gold Coffer)
+			a red potion of Restauration
+			an undamaged goblet
+			an unblemished red gem
+	Items
+		I1
+			a servicable longsword of Great Accuracy
+		I2..3
+			a cool blackrock gem
+			a servicable jeweled axe of Great Accuracy
+		I4
+			a servicable breastplate of Very Great Protection
+		I5
+			a ragged scroll
+				Foolish thief! "All that glitters is not gold."
+					Gotcha,
+					Morphius
+Level 2
+	Bags & Pouches
+		B1 (Quiver)
+			12 arrows
+		B2 (Gold Coffer)
+			an excellent leather vest of Unsurpassed Toughness
+			a slightly worn wand of Flame Wind with 3 full charges
+	Items
+		I1..3
+			a servicable jeweled mace
+			5 coins
+			a fishing pole
+		I4..5
+			a ragged scroll of Open
+			a servicable tower shield of Very Great Toughness
+Level 3
+	Bags & Pouches
+		B1 (Chest)
+			a servicable breastplate
+			servicable plate gauntlets
+			10 coins
+		B2 (Pack)
+			a key (Silanus)
+				This key attracts small metal objects to itself.
+			a servicable bow
+			a quiver (contains 14 arrows)
+			a rock hammer
+			6 bunches of leeches
+	Items
+		I1..3
+			a servicable crossbow
+			20 crossbowbolts
+			an undamaged Guardian signet ring
+		I4
+			a servicable leather vest of Flameproof
+		I5..15
+			an excellent black sword
+			an excellent jewelled dagger
+			a servicable mace
+			a servicable light mace
+			a servicable axe
+			an undamaged Guardian signet ring (several)
+			a servicable longsword
+			a servicable shortsword
+			a servicable leather cap (several)
+			a servicable leather helmet (several)
+			a servicable hand axe
+		I16..17
+			an undamaged goblet
+			an unblemished sceptre
+		I18
+			a nearly full lantern
+		I19
+			a servicable tower shield
+		I20..21
+			an oil flask
+			15 coins
+		I22..23
+			a day-old loaf of bread
+			a bottle of ale
+		I24
+			a servicable longsword
+		I25
+			a servicable helmet of Very Great Protection
+		I26..27
+			a worn helmet
+			a ragged scroll of Levitate
+		I28..30
+			a yellow potion of Greater Heal
+			a purple potion of Thick Skin
+			servicable chain boots of Tremendous Toughness
+		I31..33
+			servicable plate leggings of Great Protection
+			an Ex stone
+			a Wis stone
+		I34
+			a servicable buckler of Unsurpassed Protection
+		I35
+			servicable plate boots of Unsurpassed Toughness
+		I36
+			an undamaged ring of Regeneration
+Level 4
+	Special Items
+		an excellent black sword. After you have slain Lethe
+		from Morphius's body: a Nox stone
+		from Lord Umbria's body: a Flam stone, a Hur stone, a Vas stone
+	Bags & Pouches
+		B1 (Chest)
+			servicable mail leggings of Great Toughness
+			a cursed servicable helmet (don't touch)
+		B2 (Chest)
+			a servicable crossbow of Unsurpassed Accuracy
+			20 crossbow bolts
+	Items
+		I1
+			servicable plate gauntlets of Missile Protection (very handy in Morphius's secret chamber with the arrow trap)
+		I2
+			a servicable axe of Great Damage
+		I3..7
+			a banner (the blue banner of Killorn)
+			a ragged scroll of Freeze Time
+			a servicable jeweld mace of Undead Bane
+			a perfect goblet
+			a flawless saphire
+			a ragged scroll of Freeze Time
+
+Copyright © 2022 Frank Wolter. All rights reserved.

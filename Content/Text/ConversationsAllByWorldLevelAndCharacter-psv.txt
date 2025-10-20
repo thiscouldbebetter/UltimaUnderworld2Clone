@@ -35,20 +35,20 @@ W1L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
-|Option|1: King|W1L1C1
-|Option|2: Valet|W1L1C2
-|Option|3: Paladin|W1L1C3
-|Option|4: Philanhtropist|W1L1C4
-|Option|5: Knight|W1L1C5
-|Option|6: Bard|W1L1C6
-|Option|7: Tinker|W1L1C7
-|Option|8: Housekeeper|W1L1C8
-|Option|9: Chambermaid|W1L1C9
-|Option|10: Scholar|W1L1C10
-|Option|11: Wizard|W1L1C11
-|Option|12: Mayor|W1L1C12
-|Option|13: Guardswoman|W1L1C13
-|Option|14: Empathy|W1L1C14
+|Option|1: King.|W1L1C1
+|Option|2: Valet.|W1L1C2
+|Option|3: Paladin.|W1L1C3
+|Option|4: Philanhtropist.|W1L1C4
+|Option|5: Knight.|W1L1C5
+|Option|6: Bard.|W1L1C6
+|Option|7: Tinker.|W1L1C7
+|Option|8: Housekeeper.|W1L1C8
+|Option|9: Chambermaid.|W1L1C9
+|Option|10: Scholar.|W1L1C10
+|Option|11: Wizard.|W1L1C11
+|Option|12: Mayor.|W1L1C12
+|Option|13: Guardswoman.|W1L1C13
+|Option|14: Empathy.|W1L1C14
 |Prompt
 
 W1L1C1|Display|Selected Character 1: King.
@@ -332,22 +332,22 @@ W3L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W3
-|Option|1: Agent|W3
-|Option|2. Beast of Burden: Leader|W3
-|Option|3. Beast of Burden: Nurturer|W3
-|Option|4. Beast of Burden: Thirsty|W3
-|Option|5. Guard|W3
-|Option|6. Guard Captain|W3
-|Option|7. Herbalist|W3
-|Option|8. Merchant: Food|W3
-|Option|9. Merchant: Magic|W3
-|Option|10. Merchant: Discount|W3
-|Option|11. Mirror King|W3
-|Option|12. Security Chief|W3
-|Option|13. Stable Boy|W3
-|Option|14. Sorceress|W3
-|Option|15. Steward|W3
-|Option|16. Swordmaster|W3
+|Option|1: Agent.|W3
+|Option|2. Beast of Burden: Leader.|W3
+|Option|3. Beast of Burden: Nurturer.|W3
+|Option|4. Beast of Burden: Thirsty.|W3
+|Option|5. Guard.|W3
+|Option|6. Guard Captain.|W3
+|Option|7. Herbalist.|W3
+|Option|8. Merchant: Food.|W3
+|Option|9. Merchant: Magic.|W3
+|Option|10. Merchant: Discount.|W3
+|Option|11. Mirror King.|W3
+|Option|12. Security Chief.|W3
+|Option|13. Stable Boy.|W3
+|Option|14. Sorceress.|W3
+|Option|15. Steward.|W3
+|Option|16. Swordmaster.|W3
 |Prompt
 
 W3L1C1|Display|Selected Character 1: Agent.

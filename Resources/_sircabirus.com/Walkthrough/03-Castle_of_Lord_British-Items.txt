@@ -1,231 +1,226 @@
-Ultima Underworld Walkthrough II - Castle of Lord British Items
- 
 
- 
-
- 
-
- 
-
- 
+Ultima Underworld II Walkthrough - Castle of Lord British Items
+===============================================================
 
 Level 1
-Avatar Quarters
-Bags & Pouches
-B1 (Sack)
-a ragged map (the auto-map!)
-a somewhat used torch
-a badly worn dagger
-some thread
-B2 (Chest)
-a bowl
-a servicable dagger
-a quiver
-a ragged scroll:
-Dear Avatar, Greetings, old friend! I hope this letter finds
-the in good health. 'Tis now almost a year
-since thy defeat of the Guardian ....
-Items
-I1..6
-servicable leather boots
-a servicable leather vest
-a ragged scroll:
-Avatar --
-please come to the throne room as soon as
-possible. Lord British shall be holding a
-meeting to discuss our options in this sudden
-crisis
--- Miranda
-a bottle of water
-a day old pastry
-a day old piece of meat
-Avatar's secret room
-Bags & Pouches
-A Rune Bag
-Box
-a servicable sling
-9 slingstones
-Pack
-a servicable dagger
-3 somewhat used torches
-3 loafs of bread
-2 bottles of water
-a bedroll
-a lockpick
-Items
-I7..12
-a Bet stone
-an In stone
-a Jux stone
-a Mani stone
-an Ort stone
-a Sanct stone
-I13
-a flute
+	Avatar Quarters
+		Bags & Pouches
+			B1 (Sack)
+				a ragged map (the auto-map!)
+				a somewhat used torch
+				a badly worn dagger
+				some thread
+			B2 (Chest)
+				a bowl
+				a servicable dagger
+				a quiver
+				a ragged scroll:
+					Dear Avatar, Greetings, old friend! I hope this letter finds
+					the in good health. 'Tis now almost a year
+					since thy defeat of the Guardian ....
+		Items
+			I1..6
+				servicable leather boots
+				a servicable leather vest
+				a ragged scroll:
+					Avatar --
+					please come to the throne room as soon as
+					possible. Lord British shall be holding a
+					meeting to discuss our options in this sudden
+					crisis
+					-- Miranda
+				a bottle of water
+				a day old pastry
+				a day old piece of meat
+	Avatar's secret room
+		Bags & Pouches
+			A Rune Bag
+			Box
+				a servicable sling
+				9 slingstones
+			Pack
+				a servicable dagger
+				3 somewhat used torches
+				3 loafs of bread
+				2 bottles of water
+				a bedroll
+				a lockpick
+		Items
+			I7..12
+				a Bet stone
+				an In stone
+				a Jux stone
+				a Mani stone
+				an Ort stone
+				a Sanct stone
+			I13
+				a flute
 Level 2
-Nystul's Laboratory
-Bags & Pouches
-B1 (Box)
-an Uus stone
-a Des stone
-a Por stone
-a scroll:
-No practical application found yet for this
-spell.
-May be too undignified for use by most
-wizards
-I prefer the more difficult "Slow Fall" spell
-Items
-I1..4
-a Rel stone
-a Ylem sone
-a Des stone
-an unblemished black pearl
-I5..9
-a yellow potion
-a purple potion
-a colorless potion
-2 green potions
+	Nystul's Laboratory
+		Bags & Pouches
+		B1 (Box)
+			an Uus stone
+			a Des stone
+			a Por stone
+			a scroll:
+				No practical application found yet for this
+				spell.
+				May be too undignified for use by most
+				wizards
+				I prefer the more difficult "Slow Fall" spell
+		Items
+			I1..4
+				a Rel stone
+				a Ylem sone
+				a Des stone
+				an unblemished black pearl
+			I5..9
+				a yellow potion
+				a purple potion
+				a colorless potion
+				2 green potions
 Level 3
-Bags & Pouches
-B1 (Sack)
-a bottle of ale
-a bottle of water
-a day-old piece of meat
-a day-old piece of meat
-a day-old piece pastry
-B2 (Box - belonging to a human. Hint: open after Fissif is in jail)
-a Lor stone
-a lockpick
-a magical purple potion
-B3 (Box)
-a servicable chain cowl of Valor
-a scroll of Repel Undead
-B4 (Pack)
-4 coins
-2 somewhat used candles
-a servicable dagger
-a yellow potion
-a flute
-Items
-I1..4
-a bedroll
-a bottle of ale
-a bottle of water
-a bottle of water
-I5..6
-a lockpick
-an oil flask
-I7..8
-badly worn leather boots
-servicable leather leggings
-I9
-a servicable cudgel
-I10
-2 coins
-I11
-a ragged scroll:
-Sabo, have you seen what's going on with the
-moving platform system? One of the main
-elevators is jammed, and I don't even want to
-talk about the ones near the castle ladder.
-Also, I'm having more problems with giant slugs
-in my office. Is there anything you can do?
--- Harry
-I12..13
-a mold-coved loaf of breath (several)
-a bottle of water (several)
-I14
-a bedroll (several)
-I15..18
-a worm-invested fish (several)
-a worm-invested piece of meat (several)
-a worm-invested apple
-a somewhat used torch
-I19..22
-a colorless potion
-9 coins
-a badly worn helmet
-a slightly worn wand
-I23
-a large bolder (several)
-I24
-a worm-invested piece of meat (several)
-I25
-a ragged scroll:
-Harry --
-I'm not going to be able to get you that slug
-repellent until Thursday, so I hope you can
-hold on until then. In the meantime, I'd stop.
-storing food in your office
--- Sabo
-I26
-a servicable leather vest
-I27..28
-a moldy piece of cheese
-a stale piece of cheese
+	Bags & Pouches
+		B1 (Sack)
+			a bottle of ale
+			a bottle of water
+			a day-old piece of meat
+			a day-old piece of meat
+			a day-old piece pastry
+		B2 (Box - belonging to a human. Hint: open after Fissif is in jail)
+			a Lor stone
+			a lockpick
+			a magical purple potion
+		B3 (Box)
+			a servicable chain cowl of Valor
+			a scroll of Repel Undead
+		B4 (Pack)
+			4 coins
+			2 somewhat used candles
+			a servicable dagger
+			a yellow potion
+			a flute
+	Items
+		I1..4
+			a bedroll
+			a bottle of ale
+			a bottle of water
+			a bottle of water
+		I5..6
+			a lockpick
+			an oil flask
+		I7..8
+			badly worn leather boots
+			servicable leather leggings
+		I9
+			a servicable cudgel
+		I10
+			2 coins
+		I11
+			a ragged scroll:
+				Sabo, have you seen what's going on with the
+				moving platform system? One of the main
+				elevators is jammed, and I don't even want to
+				talk about the ones near the castle ladder.
+				Also, I'm having more problems with giant slugs
+				in my office. Is there anything you can do?
+				-- Harry
+		I12..13
+			a moldy loaf of bread (several)
+			a bottle of water (several)
+		I14
+			a bedroll (several)
+		I15..18
+			a worm-invested fish (several)
+			a worm-invested piece of meat (several)
+			a worm-invested apple
+			a somewhat used torch
+		I19..22
+			a colorless potion
+			9 coins
+			a badly worn helmet
+			a slightly worn wand
+		I23
+			a large bolder (several)
+		I24
+			a worm-invested piece of meat (several)
+		I25
+			a ragged scroll:
+				Harry --
+				I'm not going to be able to get you that slug
+				repellent until Thursday, so I hope you can
+				hold on until then. In the meantime, I'd stop.
+				storing food in your office
+				-- Sabo
+		I26
+			a servicable leather vest
+		I27..28
+			a moldy piece of cheese
+			a stale piece of cheese
 Level 4
-Bags & Pouches
-B1 (Sack)
-empty
-Items
-I1
-servicable chain gauntlets
-I2..3
-a magical scroll of Night Vision
-a black eggshell belonging to a spider (several)
-I4
-a ragged magical scroll of healing
-I5
-a fishing pole
-I6
-a servicable leather cap
-I7..9
-a rotten fish
-a worm-infested fish
-a fishing pole
-I10..11
-a worm-infested fish
-a fishing pole
-I12..13
-a servicable shortsword
-a day-old fish belonging to a goblin (several)
-I14
-a magical scroll
-I15..19
-a purple potion of Flameproof belonging to a rat
-an undamaged crown belonging to a rat
-a ragged magical scroll
-a day-old piece of cheese belonging to a rat (several)
-a moldy piece of cheese belonging to a rat (several)
-I20
-a slightly worn wand of Magic Arrow with 7 full charges
+
+	Bags & Pouches
+		B1 (Sack)
+			empty
+	Items
+		I1
+			servicable chain gauntlets
+		I2..3
+			a magical scroll of Night Vision
+			a black eggshell belonging to a spider (several)
+		I4
+			a ragged magical scroll of healing
+		I5
+			a fishing pole
+		I6
+			a servicable leather cap
+		I7..9
+			a rotten fish
+			a worm-infested fish
+			a fishing pole
+		I10..11
+			a worm-infested fish
+			a fishing pole
+		I12..13
+			a servicable shortsword
+			a day-old fish belonging to a goblin (several)
+		I14
+			a magical scroll
+		I15..19
+			a purple potion of Flameproof belonging to a rat
+			an undamaged crown belonging to a rat
+			a ragged magical scroll
+			a day-old piece of cheese belonging to a rat (several)
+			a moldy piece of cheese belonging to a rat (several)
+		I20
+			a slightly worn wand of Magic Arrow with 7 full charges
 Level 5
-Bags & Pouches
-B1 (Pack)
-a half burned torch
-a worm-infested apple
-2 half burned candles
-Items
-I1
-a ragged scroll of Lesser Heal
-I2..3
-a day-old piece of cheese belonging to a rat
-a servicable leather vest
-I4..5
-servicable leather gloves
-an unblemished emerald of Restore Mana with 2 full charges
-I6
-a yellow potion
-I7
-a servicable small shield
-I8..10
-a Por Stone
-a ragged scroll of Daylight
-a servicable chain cowl
-I11..14
-a servicable light mace
-an undamaged goblet
-a magical purple potion
-an unblemished sapphire
+	Bags & Pouches
+		B1 (Pack)
+			a half burned torch
+			a worm-infested apple
+			2 half burned candles
+	Items
+		I1
+			a ragged scroll of Lesser Heal
+		I2..3
+			a day-old piece of cheese belonging to a rat
+			a servicable leather vest
+		I4..5
+			servicable leather gloves
+			an unblemished emerald of Restore Mana with 2 full charges
+		I6
+			a yellow potion
+		I7
+			a servicable small shield
+		I8..10
+			a Por Stone
+			a ragged scroll of Daylight
+			a servicable chain cowl
+		I11..14
+			a servicable light mace
+			an undamaged goblet
+			a magical purple potion
+			an unblemished sapphire
+
 Copyright © 2022 Frank Wolter. All rights reserved.
