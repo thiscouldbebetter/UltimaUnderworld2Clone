@@ -26,115 +26,168 @@ W1|Display|Selected World 1: Castle.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Select a different world.]|World.Choose
-|Option|1: Main Level.|W1L1
-|Option|2: Basement.|W1L2
-|Option|3: Sewers: Top Level.|W1L3
-|Option|4: Sewers: Middle Level.|W1L4
-|Option|4: Sewers: Bottom Level.|W1L5
+|Option|1: Main Level.|W1.L1
+|Option|2: Basement.|W1.L2
+|Option|3: Sewers: Top Level.|W1.L3
+|Option|4: Sewers: Middle Level.|W1.L4
+|Option|4: Sewers: Bottom Level.|W1.L5
 |Prompt
 
-W1L1|Display|Selected Level 1: Main Floor.
+W1.L1|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
-|Option|0: [Choose a different level.]|W1
-|Option|1: King.|W1L1C1
-|Option|2: Valet.|W1L1C2
-|Option|3: Paladin.|W1L1C3
-|Option|4: Philanhtropist.|W1L1C4
-|Option|5: Knight.|W1L1C5
-|Option|6: Bard.|W1L1C6
-|Option|7: Tinker.|W1L1C7
-|Option|8: Housekeeper.|W1L1C8
-|Option|9: Chambermaid.|W1L1C9
-|Option|10: Scholar.|W1L1C10
-|Option|11: Wizard.|W1L1C11
-|Option|12: Mayor.|W1L1C12
-|Option|13: Guardswoman.|W1L1C13
-|Option|14: Empathy.|W1L1C14
+|Option|[Choose a different level.]|W1
+|Option|Bard.|W1.L1.Bard
+|Option|Chambermaid.|W1.L1.Chambermaid
+|Option|Empath.|W1.L1.Empath
+|Option|Guardswoman.|W1.L1.Guardswoman
+|Option|Housekeeper.|W1.L1.Housekeeper
+|Option|King.|W1.L1.King
+|Option|Knight.|W1.L1.Knight
+|Option|Mayor.|W1.L1.Mayor
+|Option|Paladin.|W1.L1.Paladin
+|Option|Philanhtropist.|W1.L1.Philanthropist
+|Option|Scholar.|W1.L1.Scholar
+|Option|Tinker.|W1.L1.Tinker
+|Option|Valet.|W1.L1.Valet
+|Option|Wizard.|W1.L1.Wizard
 |Prompt
 
-W1L1C1|Display|Selected Character 1: King.
+W1.L1.Bard|Display|Selected Character 6: Bard.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C2|Display|Selected Character 2: Valet.
+W1.L1.Chambermaid|Display|Selected Character : Chambermaid.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C3|Display|Selected Character 3: Paladin.
+W1.L1.Empath|Display|Selected Character 14: Empath.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C4|Display|Selected Character 4: Philanhtropist
+W1.L1.Guardswoman|Display|Selected Character 13: Guardswoman.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C5|Display|Selected Character 5: Knight.
+W1.L1.Housekeeper|Display|Selected Character 8: Housekeeper.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C6|Display|Selected Character 6: Bard.
-|Display|Not yet implemented!
+W1.L1.King|Speaker|King
+Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
+|Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
 |Prompt
 
-W1L1C7|Display|Selected Character 7: Tinker.
+	W1.L1.King.Speech.NotYet|0e8e.9: Please, Avatar, these are matters of utmost importance!
+	|Goto|End
+
+	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia[...]
+	|Speaker|[unknown]
+	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom [...] rally our people [...]?
+	|Speaker|King
+	|Display|0e8e.12: He will do what he can[...]
+	|Speaker|
+	|Display|0e8e.13: [Patterson arrives in a hurry, gasping for breath.]
+	|Speaker|Mayor
+	|Display|0e8e.14: Well, w-what can we do, then?
+	|Speaker|King
+	|Display|0e8e.15: Somehow, we must find a way to breach the gem[...]
+	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort[...]
+	|Display|0e8e.17: All Britannia...
+	|Speaker|
+	|Display|18: [He breaks off, sensing an otherworldly intruder.]
+	|Speaker|Villain
+	|Display|[Villain speech not available?]
+	|Goto|End
+
+W1.L1.Knight|Display|Selected Character 5: Knight.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C8|Display|Selected Character 8: Housekeeper.
+W1.L1.Mayor|Display|Selected Character 12: Mayor
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C9|Display|Selected Character : Chambermaid.
-|Display|Not yet implemented!
+W1.L1.Paladin|Speaker|Paladin
+|Display|0e84.10: Yes, my friend?
+|Display|0e84.11: What is it, @GS25?
+|Display|0e84.12: What is on thy mind, friend @GS25?
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0e84.13: What hast thou been doing since we trounced the Guardian a year ago?|W1.L1.Paladin.LastYear
+|Option|0e84.14: Hast thou time to spar with me?|W1.L1.Paladin.Train
+|Option|0e84.15: Pardon me, but I must be going.|W1.L1.Paladin.Done
 |Prompt
 
-W1L1C10|Display|Selected Character 10: Scholar.
+	W1.L1.Paladin.LastYear|Display|0e84.19: [...]I resumed my survey of Britannia's taverns[...]
+
+	W1.L1.Paladin.Train|Display|0e84.20: Of course! I could do with the practice, myself!
+	|Push
+	|Option|0e84.21: Let us spar with the axe, then.|W1.L1.Paladin.Train.Axe
+	|Option|0e84.22: By all means, let us try our hands at the mace.|W1.L1.Paladin.Train.Mace
+	|Option|0e84.23: I have no need to work on those, at the moment.|W1.L1.Paladin.Train.Done
+	|Prompt
+
+		W1.L1.Paladin.Train.Axe|Push
+		W1.L1.Paladin.Train.Axe.Start|Speaker|
+		|Display|0e84.24: Dupre is as accomplished a warrior as ever, and you learn much[...]
+		|Speaker|Paladin
+		|Display|0e84.30: Shall we go another round?
+		|Option|0e84.31: Yes, let us continue.|W1.L1C3.Train.Axe.Start
+		|Option|0e84.33: No, thank thee.|W1.L1C3.Train.Axe.Done
+		|Prompt
+
+			W1.L1.Paladin.Train.Axe.Done|Pop
+
+W1.L1.Philanthropist|Display|Selected Character 4: Philanthropist
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C11|Display|Selected Character 11: Wizard.
+W1.L1.Scholar|Display|Selected Character 10: Scholar.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C12|Display|Selected Character 12: Mayor
+W1.L1.Tinker|Display|Selected Character 7: Tinker.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1L1C13|Display|Selected Character 13: Guardswoman.
-|Display|Not yet implemented!
+W1.L1.Valet|Speaker|Valet
+|Display|0e8d.9: What is it, Avatar?
+|Display|0e8d.10: 'Tis good to see thee, Avatar.
+|Display|0e8d.11: Yes? May I help thee?
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+0e8d.14|Option|0e8d.14: What hast thou been doing for the past year?|W1.L1.Valet.LastYear
 |Prompt
 
-W1L1C14|Display|Selected Character 14: Empath.
+	W1.L1.Valet.LastYear|Display|119: It hath been a quiet year here at the castle[...]
+	|OptionRemove|0e8d.14
+	|Prompt
+
+W1.L1.Wizard|Display|Selected Character 11: Wizard.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L1
+|Option|0: [Select a different character.]|W1.L1
 |Prompt
 
 
