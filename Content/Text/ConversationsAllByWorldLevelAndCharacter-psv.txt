@@ -83,32 +83,32 @@ W1.L1.Housekeeper|Display|Selected Character 8: Housekeeper.
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.King|Speaker|King
-Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
+W1.L1.King|SpeakerSet|King
+|Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
 |OptionsClear
 |Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
 |Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
 |Prompt
 
-	W1.L1.King.Speech.NotYet|0e8e.9: Please, Avatar, these are matters of utmost importance!
+	W1.L1.King.Speech.NotYet|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
 	|Goto|End
 
 	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia[...]
-	|Speaker|[unknown]
+	|SpeakerSet|[unknown]
 	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom [...] rally our people [...]?
-	|Speaker|King
+	|SpeakerSet|King
 	|Display|0e8e.12: He will do what he can[...]
-	|Speaker|
+	|SpeakerSet|
 	|Display|0e8e.13: [Patterson arrives in a hurry, gasping for breath.]
-	|Speaker|Mayor
+	|SpeakerSet|Mayor
 	|Display|0e8e.14: Well, w-what can we do, then?
-	|Speaker|King
+	|SpeakerSet|King
 	|Display|0e8e.15: Somehow, we must find a way to breach the gem[...]
 	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort[...]
 	|Display|0e8e.17: All Britannia...
-	|Speaker|
+	|SpeakerSet|
 	|Display|18: [He breaks off, sensing an otherworldly intruder.]
-	|Speaker|Villain
+	|SpeakerSet|Villain
 	|Display|[Villain speech not available?]
 	|Goto|End
 
@@ -124,17 +124,20 @@ W1.L1.Mayor|Display|Selected Character 12: Mayor
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Paladin|Speaker|Paladin
-|Display|0e84.10: Yes, my friend?
-|Display|0e84.11: What is it, @GS25?
-|Display|0e84.12: What is on thy mind, friend @GS25?
+W1.L1.Paladin|Push
+|SpeakerSet|Paladin
+|DoNextInCycle|W1.L1.Paladin.TimesGreeted|W1.L1.Paladin.Greet.1;W1.L1.Paladin.Greet.2;W1.L1.Paladin.Greet.3
+W1.L1.Paladin.Greet.1|Display|0e84.10: Yes, my friend?
+W1.L1.Paladin.Greet.2|Display|0e84.11: What is it, @GS25?
+W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 |OptionsClear
-|Option|0e84.13: What hast thou been doing since we trounced the Guardian a year ago?|W1.L1.Paladin.LastYear
+|Option|0e84.13: What hast thou been doing since [...] a year ago?|W1.L1.Paladin.LastYear
 |Option|0e84.14: Hast thou time to spar with me?|W1.L1.Paladin.Train
 |Option|0e84.15: Pardon me, but I must be going.|W1.L1.Paladin.Done
 |Prompt
 
 	W1.L1.Paladin.LastYear|Display|0e84.19: [...]I resumed my survey of Britannia's taverns[...]
+	|Prompt
 
 	W1.L1.Paladin.Train|Display|0e84.20: Of course! I could do with the practice, myself!
 	|Push
@@ -144,15 +147,35 @@ W1.L1.Paladin|Speaker|Paladin
 	|Prompt
 
 		W1.L1.Paladin.Train.Axe|Push
-		W1.L1.Paladin.Train.Axe.Start|Speaker|
+		W1.L1.Paladin.Train.Axe.Start|SpeakerSet
 		|Display|0e84.24: Dupre is as accomplished a warrior as ever, and you learn much[...]
-		|Speaker|Paladin
+		|SpeakerSet|Paladin
 		|Display|0e84.30: Shall we go another round?
-		|Option|0e84.31: Yes, let us continue.|W1.L1C3.Train.Axe.Start
-		|Option|0e84.33: No, thank thee.|W1.L1C3.Train.Axe.Done
+		|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Axe.Start
+		|Option|0e84.33: No, thank thee.|W1.L1.Paladin.Train.Axe.Done
 		|Prompt
 
 			W1.L1.Paladin.Train.Axe.Done|Pop
+			|Prompt
+
+		W1.L1.Paladin.Train.Mace|Push
+		W1.L1.Paladin.Train.Mace.Start|SpeakerSet
+		|Display|0e84.The mighty Dupre wields the mace with his customary ease[...]
+		|SpeakerSet|Paladin
+		|Display|0e84.30: Shall we go another round?
+		|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Mace.Start
+		|Option|0e84.33: No, thank thee.|W1.L1.Paladin.Train.Mace.Done
+		|Prompt
+
+			W1.L1.Paladin.Train.Mace.Done|Pop
+			|Prompt
+
+		W1.L1.Paladin.Train.Done|Pop
+		|Prompt
+
+	W1.L1.Paladin.Done|Display|0e84.38: Do not linger here, Avatar, but hurry to investigate! [...]
+	|Pop
+	|Prompt
 
 W1.L1.Philanthropist|Display|Selected Character 4: Philanthropist
 |Display|Not yet implemented!
@@ -172,10 +195,11 @@ W1.L1.Tinker|Display|Selected Character 7: Tinker.
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Valet|Speaker|Valet
-|Display|0e8d.9: What is it, Avatar?
-|Display|0e8d.10: 'Tis good to see thee, Avatar.
-|Display|0e8d.11: Yes? May I help thee?
+W1.L1.Valet|SpeakerSet|Valet
+|DoNextInCycle|W1.L1.Valet.TimesGreeted|W1.L1.Valet.Greet.1;W1.L1.Valet.Greet.2;W1.L1.Valet.Greet.3
+W1.L1.Valet.Greet.1|Display|0e8d.9: What is it, Avatar?
+W1.L1.Valet.Greet.2|Display|0e8d.10: 'Tis good to see thee, Avatar.
+W1.L1.Valet.Greet.3|Display|0e8d.11: Yes? May I help thee?
 |OptionsClear
 0e8d.14|Option|0e8d.14: What hast thou been doing for the past year?|W1.L1.Valet.LastYear
 |Prompt
@@ -191,48 +215,56 @@ W1.L1.Wizard|Display|Selected Character 11: Wizard.
 |Prompt
 
 
-W1L2|Display|Selected Level 2: Castle Basement.
+W1.L2|Display|Selected Level 2: Castle Basement.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
 |Prompt
 
 
-W1L3|Display|Selected Level 3: Sewer: Top Level
+W1.L3|Display|Selected Level 3: Sewer: Top Level
 |Display|Select a character or action.
 |OptionsClear
-|Option|0: [Choose a different level.]|W1
+|Option|[Choose a different level.]|W1
+|Option|Thief.|W1.L3.Thief
 |Prompt
 
-W1L3C1|Display|Selected Character 1: Thief.
+W1.L3.Thief|Display|Selected Character 1: Thief.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L3
+|Option|0: [Select a different character.]|W1.L3
 |Prompt
 
 
-W1L4|Display|Selected Level 4: Sewer: Middle Level
+W1.L4|Display|Selected Level 4: Sewer: Middle Level
 |Display|Select a character or action.
 |OptionsClear
-|Option|0: [Choose a different level.]|W1
-|Option|1: Goblin|W1L4C1
-|Option|2: Fishergoblin|W1L4C2
+|Option|[Choose a different level.]|W1
+|Option|Sewer Goblin 1.|W1.L4.Goblin1
+|Option|Sewer Goblin 2.|W1.L4.Goblin2
+|Option|Sewer Goblin 3.|W1.L4.Goblin3
 |Prompt
 
-W1L4C1|Display|Selected Character 1: Goblin.
+W1.L4.Goblin1|Display|Selected Character 1: Sewer Goblin 1.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L4
+|Option|0: [Select a different character.]|W1.L4
 |Prompt
 
-W1L4C2|Display|Selected Character 2: Fishergoblin.
+W1.L4.Goblin2|Display|Selected Character 2: Sewer Goblin 2.
 |Display|Not yet implemented!
 |OptionsClear
-|Option|0: [Select a different character.]|W1L4
+|Option|0: [Select a different character.]|W1.L4
+|Prompt
+
+W1.L4.Goblin3|Display|Selected Character 2: Sewer Goblin 3.
+|Display|Not yet implemented!
+|OptionsClear
+|Option|0: [Select a different character.]|W1.L4
 |Prompt
 
 
-W1L5|Display|Selected Level 5: Sewer: Bottom Level
+W1.L5|Display|Selected Level 5: Sewer: Bottom Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
