@@ -30,7 +30,7 @@ W1|Display|Selected World 1: Castle.
 |Option|2: Basement.|W1.L2
 |Option|3: Sewers: Top Level.|W1.L3
 |Option|4: Sewers: Middle Level.|W1.L4
-|Option|4: Sewers: Bottom Level.|W1.L5
+|Option|5: Sewers: Bottom Level.|W1.L5
 |Prompt
 
 W1.L1|Display|Selected Level 1: Main Floor.
@@ -91,7 +91,7 @@ W1.L1.King|SpeakerSet|King
 |Prompt
 
 	W1.L1.King.Speech.NotYet|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
-	|Goto|End
+	|Goto||End
 
 	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia[...]
 	|SpeakerSet|[unknown]
@@ -107,10 +107,10 @@ W1.L1.King|SpeakerSet|King
 	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort[...]
 	|Display|0e8e.17: All Britannia...
 	|SpeakerSet|
-	|Display|18: [He breaks off, sensing an otherworldly intruder.]
+	|Display|0e8e.18: [He breaks off, sensing an otherworldly intruder.]
 	|SpeakerSet|Villain
 	|Display|[Villain speech not available?]
-	|Goto|End
+	|Goto||End
 
 W1.L1.Knight|Display|Selected Character 5: Knight.
 |Display|Not yet implemented!
@@ -131,16 +131,17 @@ W1.L1.Paladin.Greet.1|Display|0e84.10: Yes, my friend?
 W1.L1.Paladin.Greet.2|Display|0e84.11: What is it, @GS25?
 W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 |OptionsClear
-|Option|0e84.13: What hast thou been doing since [...] a year ago?|W1.L1.Paladin.LastYear
+0e84.13|Option|0e84.13: What hast thou been doing since [...] a year ago?|W1.L1.Paladin.LastYear
 |Option|0e84.14: Hast thou time to spar with me?|W1.L1.Paladin.Train
 |Option|0e84.15: Pardon me, but I must be going.|W1.L1.Paladin.Done
 |Prompt
 
 	W1.L1.Paladin.LastYear|Display|0e84.19: [...]I resumed my survey of Britannia's taverns[...]
+	|OptionRemove||0e84.13
 	|Prompt
 
-	W1.L1.Paladin.Train|Display|0e84.20: Of course! I could do with the practice, myself!
-	|Push
+	W1.L1.Paladin.Train|Push
+	|Display|0e84.20: Of course! I could do with the practice, myself!
 	|Option|0e84.21: Let us spar with the axe, then.|W1.L1.Paladin.Train.Axe
 	|Option|0e84.22: By all means, let us try our hands at the mace.|W1.L1.Paladin.Train.Mace
 	|Option|0e84.23: I have no need to work on those, at the moment.|W1.L1.Paladin.Train.Done
@@ -156,7 +157,7 @@ W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 		|Prompt
 
 			W1.L1.Paladin.Train.Axe.Done|Pop
-			|Prompt
+			|Goto||W1.L1.Paladin.Train.Done
 
 		W1.L1.Paladin.Train.Mace|Push
 		W1.L1.Paladin.Train.Mace.Start|SpeakerSet
@@ -168,9 +169,10 @@ W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 		|Prompt
 
 			W1.L1.Paladin.Train.Mace.Done|Pop
-			|Prompt
+			|Goto||W1.L1.Paladin.Train.Done
 
-		W1.L1.Paladin.Train.Done|Pop
+		W1.L1.Paladin.Train.Done|Display|0e84.16: What else have we to speak of?
+		|Pop
 		|Prompt
 
 	W1.L1.Paladin.Done|Display|0e84.38: Do not linger here, Avatar, but hurry to investigate! [...]
