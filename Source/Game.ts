@@ -58,14 +58,17 @@ class Game
 
 		var fontDirectoryPath = contentDirectoryPath + "Fonts/";
 		var imageDirectoryPath = contentDirectoryPath + "Images/";
+		var imagePortraitsDirectoryPath = imageDirectoryPath + "Portraits/";
 		var imageTitlesDirectoryPath = imageDirectoryPath + "Titles/";
 		var soundEffectDirectoryPath = contentDirectoryPath + "Audio/Effects/";
 		var soundMusicDirectoryPath = contentDirectoryPath + "Audio/Music/";
 		var textStringDirectoryPath = contentDirectoryPath + "Text/";
 		var videoDirectoryPath = contentDirectoryPath + "Video/";
 
-		var title = (a: string) => imageTitlesDirectoryPath + a;
-		var image = (a: string) => imageDirectoryPath + a;
+		var dotPng = ".png";
+		var image = (a: string) => imageDirectoryPath + a + dotPng;
+		var imagePortrait = (a: string) => imagePortraitsDirectoryPath + a + dotPng;
+		var imageTitle = (a: string) => imageTitlesDirectoryPath + a + dotPng;
 		var effect = (a: string) => soundEffectDirectoryPath + a;
 		var music = (a: string) => soundMusicDirectoryPath + a;
 		var video = (a: string) => videoDirectoryPath + a;
@@ -74,11 +77,26 @@ class Game
 
 		var mediaFilePaths =
 		[
-			title("Opening.png"),
-			title("Producer.png"),
-			title("Title.png"),
+			image("Friendly"),
 
-			image("Friendly.png"),
+			imagePortrait("Bard"),
+			imagePortrait("Chambermaid"),
+			imagePortrait("Empath"),
+			imagePortrait("Guardswoman"),
+			imagePortrait("Housekeeper"),
+			imagePortrait("King"),
+			imagePortrait("Knight"),
+			imagePortrait("Mayor"),
+			imagePortrait("Paladin"),
+			imagePortrait("Philanthropist"),
+			imagePortrait("Scholar"),
+			imagePortrait("Tinker"),
+			imagePortrait("Valet"),
+			imagePortrait("Wizard"),
+
+			imageTitle("Opening"),
+			imageTitle("Producer"),
+			imageTitle("Title"),
 
 			effect("_Default.wav"),
 			effect("Producer.wav"),

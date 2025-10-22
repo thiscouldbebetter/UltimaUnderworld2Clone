@@ -33,7 +33,8 @@ W1|Display|Selected World 1: Castle.
 |Option|5: Sewers: Bottom Level.|W1.L5
 |Prompt
 
-W1.L1|Display|Selected Level 1: Main Floor.
+W1.L1|SpeakerSet|
+|Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
 |Option|[Choose a different level.]|W1
@@ -53,37 +54,37 @@ W1.L1|Display|Selected Level 1: Main Floor.
 |Option|Wizard.|W1.L1.Wizard
 |Prompt
 
-W1.L1.Bard|Display|Selected Character 6: Bard.
+W1.L1.Bard|SpeakerSet|Portraits_Bard
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Chambermaid|Display|Selected Character : Chambermaid.
+W1.L1.Chambermaid|SpeakerSet|Portraits_Chambermaid
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Empath|Display|Selected Character 14: Empath.
+W1.L1.Empath|SpeakerSet|Portraits_Empath
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Guardswoman|Display|Selected Character 13: Guardswoman.
+W1.L1.Guardswoman|SpeakerSet|Portraits_Guardswoman
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Housekeeper|Display|Selected Character 8: Housekeeper.
+W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.King|SpeakerSet|King
+W1.L1.King|SpeakerSet|Portraits_King
 |Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
 |OptionsClear
 |Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
@@ -94,7 +95,7 @@ W1.L1.King|SpeakerSet|King
 	|Goto||End
 
 	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia[...]
-	|SpeakerSet|[unknown]
+	|SpeakerSet|
 	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom [...] rally our people [...]?
 	|SpeakerSet|King
 	|Display|0e8e.12: He will do what he can[...]
@@ -112,20 +113,20 @@ W1.L1.King|SpeakerSet|King
 	|Display|[Villain speech not available?]
 	|Goto||End
 
-W1.L1.Knight|Display|Selected Character 5: Knight.
+W1.L1.Knight|SpeakerSet|Portraits_Knight
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Mayor|Display|Selected Character 12: Mayor
+W1.L1.Mayor|SpeakerSet|Portraits_Mayor
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
 W1.L1.Paladin|Push
-|SpeakerSet|Paladin
+|SpeakerSet|Portraits_Paladin
 |DoNextInCycle|W1.L1.Paladin.TimesGreeted|W1.L1.Paladin.Greet.1;W1.L1.Paladin.Greet.2;W1.L1.Paladin.Greet.3
 W1.L1.Paladin.Greet.1|Display|0e84.10: Yes, my friend?
 W1.L1.Paladin.Greet.2|Display|0e84.11: What is it, @GS25?
@@ -179,25 +180,25 @@ W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 	|Pop
 	|Prompt
 
-W1.L1.Philanthropist|Display|Selected Character 4: Philanthropist
+W1.L1.Philanthropist|SpeakerSet|Portraits_Philanhtropist
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Scholar|Display|Selected Character 10: Scholar.
+W1.L1.Scholar|SpeakerSet|Portraits_Scholar
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Tinker|Display|Selected Character 7: Tinker.
+W1.L1.Tinker|SpeakerSet|Portraits_Tinker
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Valet|SpeakerSet|Valet
+W1.L1.Valet|SpeakerSet|Portraits_Valet
 |DoNextInCycle|W1.L1.Valet.TimesGreeted|W1.L1.Valet.Greet.1;W1.L1.Valet.Greet.2;W1.L1.Valet.Greet.3
 W1.L1.Valet.Greet.1|Display|0e8d.9: What is it, Avatar?
 W1.L1.Valet.Greet.2|Display|0e8d.10: 'Tis good to see thee, Avatar.
@@ -210,7 +211,7 @@ W1.L1.Valet.Greet.3|Display|0e8d.11: Yes? May I help thee?
 	|OptionRemove|0e8d.14
 	|Prompt
 
-W1.L1.Wizard|Display|Selected Character 11: Wizard.
+W1.L1.Wizard|SpeakerSet|Portraits_Wizard
 |Display|Not yet implemented!
 |OptionsClear
 |Option|0: [Select a different character.]|W1.L1
