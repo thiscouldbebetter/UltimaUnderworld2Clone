@@ -177,6 +177,7 @@ W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
 		|Prompt
 
 	W1.L1.Paladin.Done|Display|0e84.38: Do not linger here, Avatar, but hurry to investigate! [...]
+	|SpeakerSet|
 	|Pop
 	|Prompt
 
