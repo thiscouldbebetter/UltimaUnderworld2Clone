@@ -58,6 +58,7 @@ class Game
 
 		var fontDirectoryPath = contentDirectoryPath + "Fonts/";
 		var imageDirectoryPath = contentDirectoryPath + "Images/";
+		var imageLevelMapsDirectoryPath = imageDirectoryPath + "Maps/";
 		var imagePortraitsDirectoryPath = imageDirectoryPath + "Portraits/";
 		var imageTitlesDirectoryPath = imageDirectoryPath + "Titles/";
 		var soundEffectDirectoryPath = contentDirectoryPath + "Audio/Effects/";
@@ -67,6 +68,7 @@ class Game
 
 		var dotPng = ".png";
 		var image = (a: string) => imageDirectoryPath + a + dotPng;
+		var imageLevelMap = (a: number, b: number) => imageLevelMapsDirectoryPath + a + "/" + b + dotPng;
 		var imagePortrait = (a: string) => imagePortraitsDirectoryPath + a + dotPng;
 		var imageTitle = (a: string) => imageTitlesDirectoryPath + a + dotPng;
 		var effect = (a: string) => soundEffectDirectoryPath + a;
@@ -78,6 +80,12 @@ class Game
 		var mediaFilePaths =
 		[
 			image("Friendly"),
+
+			imageLevelMap(1, 1),
+			imageLevelMap(1, 2),
+			imageLevelMap(1, 3),
+			imageLevelMap(1, 4),
+			imageLevelMap(1, 5),
 
 			imagePortrait("Bard"),
 			imagePortrait("Chambermaid"),
@@ -94,6 +102,7 @@ class Game
 			imagePortrait("Valet"),
 			imagePortrait("Wizard"),
 
+			imageTitle("BoxArt"),
 			imageTitle("Opening"),
 			imageTitle("Producer"),
 			imageTitle("Title"),

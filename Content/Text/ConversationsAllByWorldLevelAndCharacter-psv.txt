@@ -3,7 +3,8 @@ imagePortraitName=Friendly
 
 // name|defnName|content|next|isDisabled
 
-Start|Display|This is every conversation in UUW2
+Start|SpeakerSet|Titles_BoxArt
+|Display|This is every conversation in UUW2
 |Display|by world, level, and character.
 
 World.Choose|Display|Select a world.
@@ -22,18 +23,19 @@ World.Choose|Display|Select a world.
 
 // World 1: Castle
 
-W1|Display|Selected World 1: Castle.
+W1|SpeakerSet|Maps_1_1
+|Display|Selected World 1: Castle.
 |Display|Select a level.
 |OptionsClear
 |Option|0: [Select a different world.]|World.Choose
-|Option|1: Main Level.|W1.L1
+|Option|1: Main Floor.|W1.L1
 |Option|2: Basement.|W1.L2
 |Option|3: Sewers: Top Level.|W1.L3
 |Option|4: Sewers: Middle Level.|W1.L4
 |Option|5: Sewers: Bottom Level.|W1.L5
 |Prompt
 
-W1.L1|SpeakerSet|
+W1.L1|SpeakerSet|Maps_1_1
 |Display|Selected Level 1: Main Floor.
 |Display|Select a character or action.
 |OptionsClear
@@ -54,11 +56,189 @@ W1.L1|SpeakerSet|
 |Option|Wizard.|W1.L1.Wizard
 |Prompt
 
-W1.L1.Bard|SpeakerSet|Portraits_Bard
-|Display|Not yet implemented!
+W1.L1.Bard
+|Push
+|SpeakerSet|Portraits_Bard
+|DoNextInCycle|W1.L1.Bard.TimesGreeted|W1.L1.Bard.Greet.1;W1.L1.Bard.Greet.2;W1.L1.Bard.Greet.3
+W1.L1.Bard.Greet.1|Display|0e86.10: Yes, my friend?
+W1.L1.Bard.Greet.2|Display|0e86.11: What is it, @GS25?
+W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
 |OptionsClear
-|Option|0: [Select a different character.]|W1.L1
+0e86.13|Option|0e86.13: What of thy year since we smashed the Black Gate?|W1.L1.Bard.LastYear
+|Option|0e86.14: Iolo, wouldst thou train me?|W1.L1.Bard.Train
+|Option|0e86.15: If you'll excuse me, Iolo, I must return to my work.|W1.L1.Bard.Done
 |Prompt
+
+	W1.L1.Bard.LastYear|DoNothing
+	|OptionRemove|0e86.13
+	|Push
+	|Display|0e86.20: 'Twas most relaxing, @GS8. I spent much of my time at Iolo's South[...]
+	0e86.21|Option|0e86.21: Hast thou any news of Gwenno?|W1.L1.Bard.LastYear.Wife
+	|Prompt
+
+		W1.L1.Bard.LastYear.Wife
+		|Push
+		|Display|0e86.23: None at all, I'm afraid, since she left on her voyage of exploration. Why did she not ask me to go along? 'Tis most disheartening.
+		|Option|0e86.22: Well, at least thou hast a great deal of money.|W1.L1.Bard.LastYear.Wife.Money
+		|Prompt
+
+			W1.L1.Bard.LastYear.Wife.Money
+			|SpeakerSet|
+			|Display|0e86.24: He sighs.
+			|SpeakerSet|Portraits_Bard
+			|Display|0e86.25: My friend, I find such things are little consolation.
+			|Pop
+
+	W1.L1.Bard.Train
+	|Push
+	|Display|0e86.26: Of course! 'Tis always a pleasure[...]
+	|Option|0e86.27: I would fain improve my marksmanship.|W1.L1.Bard.Train.Missile
+	|Option|0e86.28: Aye, thou art right. Teach me to swim.|W1.L1.Bard.Train.Swimming
+	|Option|0e86.29: I would like to learn to judge an item's quality.|W1.L1.Bard.Train.Appraise
+	|Option|0e86.30: I shall return when I have the time.|W1.L1.Bard.Train.Done
+	|Prompt
+
+		W1.L1.Bard.Train.Missile
+		|Push
+		W1.L1.Bard.Train.Missile.Continue
+		|SpeakerSet|
+		|Display|31: Iolo is indeed a master of missile combat[...]
+		|SpeakerSet|Portraits_Bard
+		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Missile.Continue
+		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+		|Prompt
+
+		W1.L1.Bard.Train.Swimming
+		|Push
+		W1.L1.Bard.Train.Swimming.Continue
+		|SpeakerSet|
+		|Display|0e86.34: With a minimum of patronizing, Iolo gives you some tips on swimming.
+		|SpeakerSet|Portraits_Bard
+		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Swimming.Continue
+		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+		|Prompt
+
+		W1.L1.Bard.Train.Appraise
+		|Push
+		W1.L1.Bard.Train.Appraise.Continue
+		|SpeakerSet|
+		|Display|0e86.36: Iolo gives you a few lessons on how to spot good workmanship.
+		|SpeakerSet|Portraits_Bard
+		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Appraise.Continue
+		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+		|Prompt
+
+	W1.L1.Bard.Train.Done
+	|Pop
+	|Pop
+	|Goto||W1.L1.Bard.AnythingElse
+
+	W1.L1.Bard.AnythingElse
+	|Push
+	|Display|0e86.16: Now, is there aught else thou wouldst speak to me about?
+	|Option|0e86.17: Nay. Goodbye for now.|W1.L1.Bard.Done
+	|Option|0e86.18: Yes, my friend.|W1.L1.Bard.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Bard.AnythingElse.Yes
+		|Display|0e86.19: Of course. What hast thou in mind?
+		|Pop
+		|Prompt
+
+	W1.L1.Bard.Done
+	|Display|0e86.9: 'Tis good to speak with thee again.
+	|Pop
+	|Prompt
+
+// 1: @GS102
+// 2: Well...
+// 3: @GS70SI1
+// 4: I thank thee, @GS25, that is enough.
+// 5: What else dost thou know?
+// 6: Just a moment, Avatar. 'Twere best we let Lord British speak first.
+// 7: Now is the time, @GS8!
+// 8: I am glad to see my old companion again, now that we are in this fix.
+
+
+// 
+// 32: Somehow, you are unable to hit the mark.
+// 33: Thy concentration seems a bit off today, @GS8.
+
+// 35: Iolo attempts to demonstrate some new strokes, but succeeds only in looking silly.
+
+// 37: Iolo explains some of the fine points of wood and metal-working, but it doesn't sink in.
+
+// 41: There is little to say, my friend. 'Tis a fine mess we are in this time, is it not?
+// 42: Thou art right, Iolo, I see little hope for us.
+// 43: Doubtless we shall pull through, friend. When have we failed before?
+// 44: Iolo lowers his voice.
+// 45: Thou shouldst not be so gloomy, @GS8. 'Tis true the situation is grim, but remember! The others look to thee to keep their spirits up.
+// 46: He raises his voice again, so that others can hear him.
+// 47: 'Tis true, my friend! We may be thankful for this prison, inasmuch as we are safe on the inside, while the rest are trapped outside with Chuckles the Jester!
+// 48: He drops his voice to a whisper again.
+// 49: But really, Avatar, the situation is darker than most here suspect.
+// 50: What meanest thou?
+// 51: Don't tell me! I don't want to hear it!
+// 52: Courage, Avatar!
+// 53: Dupre and I took a look down in the sewers when the gem first came up -- 'tis crawling with monstrous vermin! The sewers were never safe, but now they are horrific! I believe he has the key, shouldst thou care to take a look for thyself.
+// 54: Hast thou seen the monsters in the sewer yet?
+// 55: Aye.
+// 56: Nay.
+// 57: I'd swear they are getting worse! We can only hope that someone does not discover them and start a panic!
+// 58: I hear thou didst journey from the basement to another world. Dost thou think, perhaps, that that world might have its own Virtues, its own Avatar?
+// 59: 'Tis possible, Iolo -- I did not think to ask.
+// 60: Bishop was its defender, but he seemed more concerned with victory than Virtue.
+// 61: Hmmm... methinks we ought not lose sight of either in our struggle.
+// 62: More worlds! Avatar, thou art a very cosmopolitan of the cosmos! If this keeps up, thou shalt soon leave Britannia and thy native Earth behind, in favor of some more felicitous reality!
+// 63: I would not abandon my new home so quickly!
+// 64: I would be a fool to do so, as the Guardian would surely pursue me where'er I went.
+// 65: The Guardian's influence has touched all the worlds within our reach, Iolo. There is no place we can run.
+// 66: Thou'rt right, my friend, though there are some fools within the castle who say we might do best to run for it. I shall quiet them with this advice.
+// 67: Rightly spoken! This shall silence those in the castle who doubt thee!
+// 68: Avatar, I know not what to say... Nelson was such a gentle man. I am glad, though, that thou wert not gentle in avenging him.
+// 69: I am sorry about Patterson, but 'twas the only way.
+// 70: Indeed -- Patterson died like the traitor he was!
+// 71: I regret my actions -- Patterson was not evil, only frightened for his life.
+// 72: I agree -- there is a time for compassion and humility, but here thou didst rightly choose Honor and Justice.
+// 73: So saith Honor and Justice, perhaps. But though Virtue often leads one into battle, an Avatar must never lose sight of Compassion and Humility.
+// 74: Perhaps thou'rt right, Avatar, but I believe thou didst right in upholding the Virtues of Valor, Honor, and Justice.
+// 75: Avatar! I have had the strangest dream!
+// 76: Tell me of it.
+// 77: I have not time for thy nocturnal fantasies, Iolo.
+// 78: No, really...
+// 79: The Guardian spoke to me of my wife Gwenno -- he showed me a picture of her in a frozen wasteland -- he said she was in danger, and that he could help her, if I cooperated against you.
+// 80: And what did you reply?
+// 81: Did you learn anything?
+// 82: Nay, only what I have told thee.
+// 83: What was thy reply?
+// 84: No doubt 'twas one of the Guardian's lies.
+// 85: @GS8, thou dost insult me! I would never betray thee, not even for Gwenno's sake, for I know she would rather die than see me dishonored!
+// 86: We can only hope, Avatar...
+// 87: 'Twas a narrow escape for Mayor Patterson, this morning!
+// 88: What happened?
+// 89: Did Julia finally behead him for his incompetence?
+// 90: I was searching for an underground storeroom, when I heard his cries. He had been set upon by an enormous spider, which for some ungodly reason had crawled up from the depths. What on earth had the fellow been doing down there, I wonder?
+// 91: I cannot believe it -- Tory, struck down in the very midst of the castle! I can't believe one of us would do such a thing.
+// 92: Frightened people are easy to manipulate, Iolo. One of us could have turned traitor.
+// 93: What else could it be?
+// 94: 'Tis impossible! How could they walk among us as a friend, after doing such a deed. No, 'twas something crept up from the caverns, I am sure of it!
+// 95: One of these creatures from your other worlds, Avatar! Surely the Guardian has many allies on those planes.
+// 96: Thou'rt right -- he has many agents on the other worlds.
+// 97: I still suspect one of us. Be on thy guard.
+// 98: I shall, but I still cannot believe it's one of our own.
+// 99: Thou art rarely in the castle these days, Avatar. Thy affairs in other worlds are keeping thee very busy!
+// 100: Indeed! What news of the castle?
+// 101: I rely on thee to keep an eye on things while I am gone, Iolo.
+// 102: There is little to say. None of us have slept easy since Tory's death, and the monsters are growing worse.
+// 103: I am working as fast as I can. Meanwhile, you must keep up morale in the castle.
+// 104: Thou dost remind me of the urgency of the situation! I must be off.
+// 105: Godspeed, Avatar!
+// 106: I will do whatever is in my power, @GS8. Still, between me and thee, Avatar, I worry -- what dangers may lie beyond the holes in that gem? What if the gem opened onto an ocean floor, or a world full of poisonous gases?
+// 107: Remember thine own counsel, Iolo, and do not mention such ideas to the others.
+// 108: If such a thing happens, than we shall face it. If not, 'tis best to worry about the dangers we do know.
 
 W1.L1.Chambermaid|SpeakerSet|Portraits_Chambermaid
 |Display|Not yet implemented!
@@ -219,14 +399,16 @@ W1.L1.Wizard|SpeakerSet|Portraits_Wizard
 |Prompt
 
 
-W1.L2|Display|Selected Level 2: Castle Basement.
+W1.L2|SpeakerSet|Maps_1_2
+|Display|Selected Level 2: Castle Basement.
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1
 |Prompt
 
 
-W1.L3|Display|Selected Level 3: Sewer: Top Level
+W1.L3|SpeakerSet|Maps_1_3
+|Display|Selected Level 3: Sewer: Top Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|[Choose a different level.]|W1
@@ -240,7 +422,8 @@ W1.L3.Thief|Display|Selected Character 1: Thief.
 |Prompt
 
 
-W1.L4|Display|Selected Level 4: Sewer: Middle Level
+W1.L4|SpeakerSet|Maps_1_4
+|Display|Selected Level 4: Sewer: Middle Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|[Choose a different level.]|W1
@@ -268,7 +451,8 @@ W1.L4.Goblin3|Display|Selected Character 2: Sewer Goblin 3.
 |Prompt
 
 
-W1.L5|Display|Selected Level 5: Sewer: Bottom Level
+W1.L5|SpeakerSet|Maps_1_5
+|Display|Selected Level 5: Sewer: Bottom Level
 |Display|Select a character or action.
 |OptionsClear
 |Option|0: [Choose a different level.]|W1

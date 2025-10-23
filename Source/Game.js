@@ -24,6 +24,7 @@ class Game {
         //contentDirectoryPath = "../Source/Framework/Content/" + contentDirectoryPath;
         var fontDirectoryPath = contentDirectoryPath + "Fonts/";
         var imageDirectoryPath = contentDirectoryPath + "Images/";
+        var imageLevelMapsDirectoryPath = imageDirectoryPath + "Maps/";
         var imagePortraitsDirectoryPath = imageDirectoryPath + "Portraits/";
         var imageTitlesDirectoryPath = imageDirectoryPath + "Titles/";
         var soundEffectDirectoryPath = contentDirectoryPath + "Audio/Effects/";
@@ -32,6 +33,7 @@ class Game {
         var videoDirectoryPath = contentDirectoryPath + "Video/";
         var dotPng = ".png";
         var image = (a) => imageDirectoryPath + a + dotPng;
+        var imageLevelMap = (a, b) => imageLevelMapsDirectoryPath + a + "/" + b + dotPng;
         var imagePortrait = (a) => imagePortraitsDirectoryPath + a + dotPng;
         var imageTitle = (a) => imageTitlesDirectoryPath + a + dotPng;
         var effect = (a) => soundEffectDirectoryPath + a;
@@ -41,6 +43,11 @@ class Game {
         var text = (a) => textStringDirectoryPath + a;
         var mediaFilePaths = [
             image("Friendly"),
+            imageLevelMap(1, 1),
+            imageLevelMap(1, 2),
+            imageLevelMap(1, 3),
+            imageLevelMap(1, 4),
+            imageLevelMap(1, 5),
             imagePortrait("Bard"),
             imagePortrait("Chambermaid"),
             imagePortrait("Empath"),
@@ -55,6 +62,7 @@ class Game {
             imagePortrait("Tinker"),
             imagePortrait("Valet"),
             imagePortrait("Wizard"),
+            imageTitle("BoxArt"),
             imageTitle("Opening"),
             imageTitle("Producer"),
             imageTitle("Title"),
