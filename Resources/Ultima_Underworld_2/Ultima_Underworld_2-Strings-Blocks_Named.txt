@@ -128,7 +128,7 @@ STRINGS.PAK: 136 string blocks.
 0e87: Julia.
 0e88: Miranda.
 0e89: Nanna.
-0e8a: Charles's Sister (Maid?)
+0e8a: Nell.
 0e8b: Nelson.
 0e8c: Patterson.
 0e8d: Lady Tory.

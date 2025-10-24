@@ -373,14 +373,198 @@ W1.L1.Bard.YoureVeryBusy
 // 37: Iolo explains some of the fine points of wood and metal-working, but it doesn't sink in.
 
 
+W1.L1.Chambermaid
+|Push
+|SpeakerSet|Portraits_Chambermaid
 
+	W1.L1.Chambermaid.KingAboutToSpeak
+	|Display|0e8a.6: Avatar, thou shouldst hurry to the throne room. We must decide what on earth we're going to do!
 
+	W1.L1.Chambermaid.Greet
+	W1.L1.Chambermaid.Greet.1|Display|0e8a.10: How may I help thee, Avatar?
+	W1.L1.Chambermaid.Greet.2|Display|0e8a.11: Yes? May I help thee?
+	W1.L1.Chambermaid.Greet.3|Display|0e8a.12: What hast occupied thee of late, @GS25?
+	W1.L1.Chambermaid.Start
+	0e8a.13|Option|0e8a.13: What hast thou been doing for the past year?|W1.L1.Chambermaid.LastYear
+	|Option|0e8a.14: Canst thou think of anything which might tell us more about our situation?|W1.L1.Chambermaid.Noises
+	|Option|0e8a.15: Please excuse me, @GS25, I am in a hurry.|W1.L1.Chambermaid.Done
+	|Prompt
 
-W1.L1.Chambermaid|SpeakerSet|Portraits_Chambermaid
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+	W1.L1.Chambermaid.LastYear
+	|Display|0e8a.71: This last year was wonderful -- I have married my darling Carrocio!  Lord British even allowed the ceremony to be held here in the castle. My brother Charles grumbled a bit, of course, but deep down I think he was as pleased as I.
+	|OptionRemove|0e8a.13
+	|Prompt
+
+	W1.L1.Chambermaid.Strike
+	|Display|0e8a.20: Hello, @GS8. I must warn thee that the Domestic Management is still on strike!
+	|OptionsClear
+	|Option|0e8a.21: Could this not have waited for a better time?|W1.L1.Chambermaid.Strike.WaitForABetterTime
+	|Option|0e8a.22: The very notion of a strike in the castle is preposterous!|W1.L1.Chambermaid.Strike.StrikingIsPreposterous
+	|Option|0e8a.23: Thou art truly serious about this, art thou not?|W1.L1.Chambermaid.Strike.YouAreSerous
+
+		W1.L1.Chambermaid.Strike.WaitForABetterTime
+		|Display|0e8a.24: If time is important, then Lord British should grant us our requests without delay! All we ask for is fairness.
+		|Goto||W1.L1.Chambermaid.Strike.2
+
+		W1.L1.Chambermaid.Strike.StrikingIsPreposterous
+		|Display|0e8a.28: Given our lack of influence here, a strike is our only option.
+		|Goto||W1.L1.Chambermaid.Strike.2
+
+		W1.L1.Chambermaid.Strike.YouAreSerous
+		|Display|0e8a.29: We are very serious, Avatar. The unfair class division in the castle has for too long been taken for granted. If we succeed here in changing the attitude of the nobility toward the working class, perhaps others elsewhere will take notice. Like Nanna says, this new way of thinking is a spectre haunting Britannia!
+		|OptionsClear
+		|Option|0e8a.32: A spectre? Where? I shall slay it!|W1.L1.Chambermaid.Strike.IWillSlayTheSpectre
+		|Prompt
+
+			W1.L1.Chambermaid.Strike.IWillSlayTheSpectre
+			|Display|0e8a.36: 'Tis a metaphor, Avatar.
+			|Goto||W1.L1.Chambermaid.Strike.2
+
+			W1.L1.Chambermaid.Strike.2
+			|OptionsClear
+			|Option|0e8a.25: This is no longer funny, Nell.|W1.L1.Chambermaid.Strike.NotFunny
+			|Option|0e8a.26: What wouldst thou have Lord British do?|W1.L1.Chambermaid.Strike.WhatDoYouWantFromKing
+			|Option|0e8a.27: I have no time to deal with this nonsense.|W1.L1.Chambermaid.NoTimeForThisNonsense
+			|Prompt
+
+				W1.L1.Chambermaid.Strike.NotFunny
+				|Display|0e8a.34: 'Twas never funny, @GS8. We do not enjoy being on strike. We do it because we must.
+				|Goto||W1.L1.Chambermaid.Strike.3
+
+				W1.L1.Chambermaid.Strike.WhatDoYouWantFromKing
+				|Display|0e8a.35: Thou hast probably already spoken of this with Nanna. It is not so important to me that we be called 'Domestic Management,' but I agree that we should have more control over the way this castle is run. Until that happens, we shall continue to strike.
+				|Goto||W1.L1.Chambermaid.Strike.3
+
+				W1.L1.Chambermaid.NoTimeForThisNonsense
+				|Display|0e8a.33: @GS8, I come from a long line of 'servants.' I have always been happy having taken up my family's profession, but in this past year I have I have come to realize that we are not treated with nearly the respect we dost deserve. I have listened often to Nanna, and I agree with her views. We have no choice but to strike.
+				|Goto||W1.L1.Chambermaid.Strike.3
+
+					W1.L1.Chambermaid.Strike.3
+					|OptionsClear
+					|Option|0e8a.30: Aren't thou getting carried away with all of this?|W1.L1.Chambermaid.Strike.Done
+					|Option|0e8a.31: I am impressed with thine eloquence.|W1.L1.Chambermaid.Strike.Done
+					|Prompt
+
+						W1.L1.Chambermaid.Strike.Done
+						|Goto||W1.L1.Chambermaid.IsThatAll
+
+	W1.L1.Chambermaid.StrikeResolved
+	|Display|0e8a.8: I have heard that Lord British has granted our requests! We owe thee many thanks for helping us.
+
+	W1.L1.Chambermaid.Noises
+	|Display|0e8a.38: The gem that surrounds the castle has been making the most terrifying noises! If it should crack, dost thou think we would be injured?
+	|OptionsClear
+	|Option|0e8a.39: Methinks we would be safe here on the inside.|W1.L1.Chambermaid.Noises.2
+	|Option|0e8a.40: Since Nystul has not raised such a concern, I wouldst say no.|W1.L1.Chambermaid.Noises.2
+	|Option|0e8a.41: I hope not!|W1.L1.Chambermaid.Noises.2
+	|Prompt
+
+		W1.L1.Chambermaid.Noises.2
+		|Display|0e8a.42: They scare me nearly as much as the chanting I heard before. Oh! The chanting! Did I forget to tell thee?
+		|OptionsClear
+		|Option|0e8a.43: Nay, thou didst tell me.|W1.L1.Chambermaid.Noises.YouToldMeAboutTheChanting
+		|Option|0e8a.45: What chanting?|W1.L1.Chambermaid.Noises.WhatChanting
+		|Option|0e8a.46: You have indeed forgotten!|W1.L1.Chambermaid.Noises.WhatChanting
+		|Prompt
+
+			W1.L1.Chambermaid.Noises.YouToldMeAboutTheChanting
+			|Display|0e8a.44: Good! I hope it helps thee.
+			|Goto||W1.L1.Chambermaid.Done
+
+			W1.L1.Chambermaid.Noises.WhatChanting
+			|Display|0e8a.50: 'Twas the night before this hideous gem formed around us.  At four o'clock in the morning I was awakened by a voice in the throne room. I was too scared to investigate, but it sounded like someone chanting in a very low voice. I was going to tell thee, but then the gem appeared, and that awful Guardian spoke to us, and I forgot all about it until now.
+			|Goto||W1.L1.Chambermaid.IsThatAll
+
+		//0e8a.47: I have told thee the only thing I can think of -- that strange voice, a man's voice, chanting in some awful language in the throne room. 'Twas perhaps four in the morning.
+		//0e8a.48: Thou hast asked me that enough times, Avatar! I tell thee, all I know of is the chanting in the throne room, that morning at perhaps the fourth bell!
+		//0e8a.49: Truly, Avatar, thou dost seem to obsess on this subject. Ask someone else, can't thou?
+
+	W1.L1.Chambermaid.FoodTheft
+	|Display|0e8a.51: I swear someone in the castle is hoarding food! Seven whole loaves of bread disappeared last night!
+	|OptionsClear
+	|Option|0e8a.52: Thou shouldst put a lock on the store-room door.|W1.L1.Chambermaid.FoodTheft.LockThePantry
+	|Option|0e8a.53: Dost thou have any idea about who has taken them?|W1.L1.Chambermaid.FoodTheft.AnySuspects
+	|Option|0e8a.54: Are we in danger of running out of food?|W1.L1.Chambermaid.FoodTheft.WillWeStarve
+	|Prompt
+
+		W1.L1.Chambermaid.FoodTheft.LockThePantry
+		|Display|0e8a.55: 'Twould be a shame if it has come to that. Can we not even trust each other in this crisis?
+		|Goto||W1.L1.Chambermaid.FoodTheft.Done
+
+		W1.L1.Chambermaid.FoodTheft.AnySuspects
+		|Display|0e8a.56: 'Tis hard to imagine that any of us would steal food, Avatar.	
+		|Goto||W1.L1.Chambermaid.FoodTheft.Done
+
+		W1.L1.Chambermaid.FoodTheft.WillWeStarve
+		|Display|0e8a.57: No, we have food enough to last for many months. That only makes it stranger that someone would be stealing from the store-room.
+		|Goto||W1.L1.Chambermaid.FoodTheft.Done
+
+		W1.L1.Chambermaid.FoodTheft.Done
+		|Goto||W1.L1.Chambermaid.IsThatAll
+
+	W1.L1.Chambermaid.MurderMystery
+	|Display|0e8a.58: I have heard of Lady Tory's death. I wouldst prefer not to talk about it.
+	|OptionsClear
+	|Option|0e8a.59: As you wish.|W1.L1.Chambermaid.IsThatAll
+	|Option|0e8a.60: Hast thou heard any details of the crime?|W1.L1.Chambermaid.MurderMystery.HeardAnyDetails
+	|Prompt
+
+		W1.L1.Chambermaid.MurderMystery.HeardAnyDetails
+		0e8a.61: I heard it was... that she was... oh, @GS8, 'tis such a horrible crime!  Lady Tory was a friend to everyone, and now she is... she is...
+		|SpeakerSet
+		0e8a.62: Nell bursts into tears.
+		|SpeakerSet|Portraits_Chambermaid
+		|Goto||W1.L1.Chambermaid.Done
+
+	W1.L1.Chambermaid.MurderSolved
+	|SpeakerSet|
+	0e8a.63: Nell looks at you sadly.
+	|SpeakerSet|Portraits_Chambermaid
+	|Display|0e8a.64: @GS8, 'tis a cruel irony that the two most gentle people in the castle should be Patterson's two victims.
+	|OptionsClear
+	|Option|0e8a.65: They are more the Guardian's victims than Patterson's.|W1.L1.Chambermaid.MurderSolved.ItIsTheVillainsFault
+	|Option|0e8a.66: At least they will be the last.|W1.L1.Chambermaid.MurderSolved.AtLeastTheyreTheLast
+	|Option|0e8a.67: How art thou taking the deaths?|W1.L1.Chambermaid.MurderSolved.HowAreYouTakingIt
+
+		W1.L1.Chambermaid.MurderSolved.ItIsTheVillainsFault
+		|Display|0e8a.68: 'Tis not much of a comfort, Avatar.
+		|Goto||W1.L1.Chambermaid.MurderSolved.Done
+
+		W1.L1.Chambermaid.MurderSolved.AtLeastTheyreTheLast
+		|Display|0e8a.69: Art thou sure? If we do not escape from the castle soon, I fear we shall all end up dead!
+		|Goto||W1.L1.Chambermaid.MurderSolved.Done
+
+		W1.L1.Chambermaid.MurderSolved.HowAreYouTakingIt
+		|Display|0e8a.70: When Lady Tory was killed I was extremely distressed, but Nelson's slaying has turned my grief to anger. I wish there was more we could do against this Guardian.
+		|Goto||W1.L1.Chambermaid.MurderSolved.Done
+
+		W1.L1.Chambermaid.MurderSolved.Done
+		|Goto||W1.L1.Chambermaid.IsThatAll
+
+	W1.L1.Chambermaid.EndOfGame
+	|Display|0e8a.7: They're coming, Avatar. Whatever thou hast to do, do it now, Avatar!
+
+	W1.L1.Chambermaid.IsThatAll
+	|Display|16: Will that be all, @GS8?
+	|OptionsClear
+	|Option|0e8a.17: Yes. I shall speak with thee again, later.|W1.L1.Chambermaid.Done
+	|Option|0e8a.18: Nay, there is more I must ask of thee.|W1.L1.Chambermaid.IsThatAll.No
+
+		W1.L1.Chambermaid.IsThatAll.No
+		|Display|0e8a.19: Of course. What hast thou in mind?
+		|Goto||W1.L1.Chambermaid.Start
+
+	W1.L1.Chambermaid.Done
+	|Display|0e8a.37: I am glad thou art here with us, Avatar. If there is a way to escape this... this gem, I am sure thou wilt find it. But I worry so about my darling Caroccio, outside with our son. Shouldst anything happen to them, I would perish with grief.
+	// 9: Oh Avatar -- I am so glad thou art here with us. Er, I mean, not for thy sake, you understand, but it gives me hope.
+	|Pop
+	|Prompt
+
+	// 1: @GS102
+	// 2: Well...
+	// 3: @GS70SI1
+	// 4: I thank thee, @GS25, that is enough.
+	// 5: What else dost thou know?
 
 W1.L1.Empath|SpeakerSet|Portraits_Empath
 |Display|Not yet implemented!
