@@ -528,11 +528,618 @@ W1.L1.Valet.Greet.3|Display|0e8d.11: Yes? May I help thee?
 	|OptionRemove|0e8d.14
 	|Prompt
 
-W1.L1.Wizard|SpeakerSet|Portraits_Wizard
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+W1.L1.Wizard
+|Push
+|SpeakerSet|Portraits_Wizard
+|Goto||W1.L1.Wizard.Greet// todo
+
+	W1.L1.Wizard.KingAboutToSpeak
+	|Display|0e82.8: If thou wilt wait a moment, Avatar, I think Lord British is about to commence his speech.
+	|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.Greet
+	|DoNextInCycle|W1.L1.Wizard.TimesGreeted|W1.L1.Wizard.Greet.1;W1.L1.Wizard.Greet.2;W1.L1.Wizard.Greet.3
+	W1.L1.Wizard.Greet.1|Display|0e82.33: Avatar, I am glad thou hast come to see me!
+	W1.L1.Wizard.Greet.2|Display|0e82.34: What brings thee to see me, Avatar?
+	W1.L1.Wizard.Greet.3|Display|0e82.35: What wouldst thou say to me?
+	|Option|0e82.36: What hast thou been thinking, lately?|W1.L1.Wizard.Speculations.Current
+	|Option|0e82.37: What hast thou been doing since last we worked together?|W1.L1.Wizard.SinceLastWeMet
+	|Option|0e82.38: Hast thou time to teach me more of the mystic arts?|W1.L1.Wizard.Train
+	|Option|0e82.39: Please, repeat to me some of thy past speculations.|W1.L1.Wizard.Speculations.Past
+	|Option|0e82.41: I have a gem for thee to treat.|W1.L1.Wizard.IHaveAGemToTreat
+	|Option|0e82.40: Excuse me, I must go now.|W1.L1.Wizard.Farewell
+	|Prompt
+
+	W1.L1.Wizard.SinceLastWeMet
+	|Display|0e82.58: Since last we met, I have been hard at work restoring the study of magic in Britannia to its former level. Some of my research is documented in "A Safe Passage Through Britannia" -- thou shouldst take a look, as it touches on some of thine own experiences in the Stygian Abyss.
+	|Prompt
+
+	W1.L1.Wizard.Train
+	|Push
+	|Display|0e82.69: Of course -- I always have time to teach thee.
+	|Option|0e82.70: I would like to increase my mana store.|W1.L1.Wizard.Train.Mana
+	|Option|0e82.71: I'd like to work on my casting skill.|W1.L1.Wizard.Train.SpellCasting
+	|Option|0e82.72: No, never mind. I have no need of training right now.|W1.L1.Wizard.Train.Done
+	|Prompt
+
+		W1.L1.Wizard.Train.Mana
+		|Display|0e82.73: Certainly.
+		|SpeakerSet|
+		|Goto||W1.L1.Wizard.Train.Mana.Succeed//todo
+
+			W1.L1.Wizard.Train.Mana.Succeed
+			|Display|0e82.74: With Nystul's aid, you increase the amount of mystic energy your body can retain.
+			|SpeakerSet|Portraits_Wizard
+			|Goto||W1.L1.Wizard.Train.Mana.WouldYouLikeToLearnMore
+
+				W1.L1.Wizard.Train.Mana.WouldYouLikeToLearnMore
+				|Display|0e82.81: Wouldst thou like to learn more?
+				|OptionsClear
+				|Option|0e82.82: Yes, please teach me more!|W1.L1.Wizard.Train.Mana
+				|Option|0e82.83: No, thank thee.|W1.L1.Wizard.Train.Done
+				|Prompt
+
+			W1.L1.Wizard.Train.Mana.Fail
+			|Display|0e82.75: Your work with Nystul proves unproductive.
+			|SpeakerSet|Portraits_Wizard
+			|Display|0e82.76: I'm afraid that for the moment this is all you will be able to hold.
+			|Goto||W1.L1.Wizard.Train.Done
+
+		W1.L1.Wizard.Train.SpellCasting
+		|Display|0e82.77: Ah yes, the subtlety in working runic magic lies in the hand motions. Let me instruct thee...
+		|SpeakerSet|
+		|Goto||W1.L1.Wizard.Train.SpellCasting.Succeed//todo
+
+			W1.L1.Wizard.Train.SpellCasting.Succeed
+			|Display|0e82.78: Under Nystul's masterful eye, your skill in spellcasting quickly increases.
+			|SpeakerSet|Portraits_Wizard
+			|Goto||W1.L1.Wizard.Train.SpellCasting.WouldYouLikeToLearnMore
+
+				W1.L1.Wizard.Train.SpellCasting.WouldYouLikeToLearnMore
+				|Display|0e82.81: Wouldst thou like to learn more?
+				|OptionsClear
+				|Option|0e82.82: Yes, please teach me more!|W1.L1.Wizard.Train.SpellCasting
+				|Option|0e82.83: No, thank thee.|W1.L1.Wizard.Train.Done
+				|Prompt
+
+			|Display|0e82.79: Despite Nystul's best efforts, you are unable to improve.
+			|SpeakerSet|Portraits_Wizard
+			|Display|0e82.80: Hmmm. Thou shouldst perhaps take a break, try thy hand at exploring for awhile, and then perhaps we will try again.
+			|Goto||W1.L1.Wizard.Train.Done
+
+		W1.L1.Wizard.Train.Done
+			|Pop
+			|Prompt
+
+	W1.L1.Wizard.Speculations.Current
+	W1.L1.Wizard.Speculations.Past//todo
+	|Push
+	W1.L1.Wizard.Speculations.Start
+	|Display|0e82.2: Well...
+	|Goto||W1.L1.Wizard.Speculations.1.VillainsSpellLacksSubtlety
+
+		W1.L1.Wizard.Speculations.1.VillainsSpellLacksSubtlety
+		|Push
+		|Display|0e82.52: The Guardian's spell-casting lacks subtlety. His huge expenditures of power may cause aftershocks, "echoes" of the spell's original intent.
+		|Display|0e82.84: 'Tis a staggeringly huge spell -- I had not thought even the Guardian could create such an enormous amount of blackrock -- but 'tis also a very crude casting, no subtlety about it. If I had the book it was cast from, I'd swear I could reverse it!
+		|Option|0e82.85: What dost thou mean, a crude spell?|W1.L1.Wizard.Speculations.1.WhatDoYouMeanCrude
+		|Option|0e82.86: What is blackrock?|W1.L1.Wizard.Speculations.1.WhatIsBlackrock
+		|Option|0e82.87: I am sorry thy sense of aesthetics has been offended, Nystul.|W1.L1.Wizard.Speculations.1.AestheticsOffended
+		|Prompt
+
+			W1.L1.Wizard.Speculations.1.AestheticsOffended
+			|SpeakerSet|
+			|Display|0e82.88: He sighs.
+			|SpeakerSet|Portraits_Wizard
+			|Display|0e82.89: 'Tis the curse of true mastery, I suppose, to be sensitive to such things.
+
+			W1.L1.Wizard.Speculations.1.WhatDoYouMeanCrude
+			|Display|0e82.90: 'Tis as if the caster had so much power he thought there was no need to work skillfully. As it is, the ether has been violently disrupted, and I should not be surprised if there were aftershocks and side effects in our own and other realities.
+			|OptionsClear
+			|Option|0e82.91: What kind of "aftershocks?"|W1.L1.Wizard.Speculations.1.WhatKindOfEffects
+			|Option|0e82.92: Other realities? What dost thou mean?|W1.L1.Wizard.Speculations.1.WhatOtherRealities
+			|Option|0e82.93: Probably. But I must be going.|W1.L1.Wizard.Speculations.1.Done
+			|Prompt
+
+				W1.L1.Wizard.Speculations.1.WhatKindOfEffects
+				|Display|0e82.94: 'Tis hard to predict -- possibly some sort of "echo" effect, wherein the spell effect might replicate itself on a smaller scale, like an echo repeating and dying away. 'Tis common in his castings. I shouldn't wonder if we see some smaller replica of the gem, just as we saw in his assault a year ago.
+				|OptionsClear
+				|Option|0e82.95: And you think this effect might extend to worlds beyond our own?|W1.L1.Wizard.Speculations.1.WhatOtherRealities
+				|Option|0e82.96: Just what is blackrock, anyway?|W1.L1.Wizard.Speculations.1.WhatIsBlackrock
+				|Option|0e82.97: You sorcerers are given to fanciful talk -- I shall believe it if I see it.|W1.L1.Wizard.Speculations.1.Done
+				|Prompt
+
+				W1.L1.Wizard.Speculations.1.WhatOtherRealities
+				|Display|0e82.98: The same ether surrounds and permeates all the realities. An etherstorm this size might have far-reaching effects. Such things are hard to estimate.
+				|OptionsClear
+				|Option|0e82.99: What kind of "effects" would these be?|W1.L1.Wizard.Speculations.1.WhatKindOfEffects
+				|Option|0e82.100: Just what is blackrock, anyway?|W1.L1.Wizard.Speculations.1.WhatIsBlackrock
+				|Option|0e82.101: I have heard all I need, for now.|W1.L1.Wizard.Speculations.1.Done
+				|Prompt
+
+			W1.L1.Wizard.Speculations.1.WhatIsBlackrock
+			|Display|0e82.102: I know not, save that it blocks the flow of the ether, and thus we can cast only the simplest spells within the castle.
+			|Option|0e82.103: This is grim news, indeed.|W1.L1.Wizard.Speculations.1.Done
+			|Option|0e82.104: Earlier thou didst mention some sort of "aftershocks" from the Guardian's spell...?|W1.L1.Wizard.Speculations.1.WhatKindOfEffects
+			|Prompt
+
+			W1.L1.Wizard.Speculations.1.Done
+			|Pop
+			|Prompt
+
+		W1.L1.Wizard.Speculations.2.Tunnels
+		|Display|0e82.53: The tunnels below the castle are countless centuries old -- the mysteries they contain may be useful to us.
+
+		W1.L1.Wizard.Speculations.3.SpellHasBreachedWalls
+		|Display|0e82.54: 'Tis evident that the violence of the Guardian's spell hath breached the dimensional walls.
+		|Display|0e82.55: That tiny gem must have something to do with the symmetry common to the Guardian's magic. Thou shouldst look at the relevant passages in "A Safe Passage Through Britannia."
+		|Display|0e82.56: It is has become apparent that the gem is linking us to other worlds places in the multiverse where the Guardian has flexed his sorcerous muscles.
+		|Prompt
+
+		W1.L1.Wizard.Speculations.WantToHearMore
+		|Option|0e82.4: I thank thee, @GS25, that is enough.|W1.L1.Wizard.Speculations.Done
+		|Option|0e82.5: What else dost thou know?|W1.L1.Wizard.Speculations.WhatElse
+		|Prompt
+
+		W1.L1.Wizard.Speculations.WhatElse
+			|Goto||W1.L1.Wizard.Speculations.WhatElse.Nothing
+
+			W1.L1.Wizard.Speculations.WhatElse.Something
+			|Display|todo
+			|Goto||W1.L1.Wizard.Done
+
+			W1.L1.Wizard.Speculations.WhatElse.Nothing
+			|Display|0e82.57: I can think of nothing else thou wouldst be interested in.
+			|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.Speculations.Done
+		|Display|0e82.46: What wouldst thou like to talk about, then?
+		|Pop
+		|Prompt
+
+	W1.L1.Wizard.IHaveAGemToTreat
+		|Push
+
+	W1.L1.Wizard.IHaveAGemToTreat.Another
+		|Display|0e82.228: May I examine it?
+		|SpeakerSet
+		|Display|0e82.229: Nystul holds out a gnarled hand.
+		|SpeakerSet|Portraits_Wizard
+		|Option|0e82.230: Certainly.|W1.L1.Wizard.IHaveAGemToTreat.IsThisValid
+		|Option|0e82.231: I'm afraid I do not have it with me.|W1.L1.Wizard.IHaveAGemToTreat.Done
+		|Prompt
+
+		W1.L1.Wizard.IHaveAGemToTreat.IsThisValid
+		|Goto||W1.L1.Wizard.IHaveAGemToTreat.Correct
+
+		// todo
+		//232: Avatar, that's disgusting!
+		//233: There is nothing of the Guardian's here! Hast thou anything else to show me?
+		//234: I can only examine one item at a time, Avatar! Please choose one.
+		//235: No, that is not the item I am seeking. Perhaps thou hast another that might be the one?
+		//236: I must see the jewel to treat it, Avatar.
+		//237: But Avatar, I have already treated this gem!
+
+		W1.L1.Wizard.IHaveAGemToTreat.Correct
+		|SpeakerSet
+		|Display|0e82.238: Nystul performs a gesture and incantation.
+		|Display|0e82.239: He hands the gem, now heated by his magic, back to you.
+		|SpeakerSet|Portraits_Wizard
+		|Goto||W1.L1.Wizard.IHaveAGemToTreat.TryItNow
+		|Goto||W1.L1.Wizard.IHaveAGemToTreat.LastOne
+
+		W1.L1.Wizard.IHaveAGemToTreat.TryItNow
+		|Display|0e83.241: Try this now, then!
+		|Goto||W1.L1.Wizard.IHaveAGemToTreat.AreThereAnyOthers
+
+		W1.L1.Wizard.IHaveAGemToTreat.LastOne
+		|Display|0e82.240: There! 'Tis the last one!
+		|Goto||W1.L1.Wizard.IHaveAGemToTreat.AreThereAnyOthers
+
+		W1.L1.Wizard.IHaveAGemToTreat.AreThereAnyOthers
+		|Display|0e83.242: Hast thou any others thou wouldst have me treat?
+		|OptionsClear
+		|Option|0e82.243: Aye.|W1.L1.Wizard.IHaveAGemToTreat.Another
+		|Option|0e82.244: Nay.|W1.L1.Wizard.IHaveAGemToTreat.Done
+
+		W1.L1.Wizard.IHaveAGemToTreat.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Wizard.WhatHaveYouExplored
+	|Push
+	|Display|0e82.105: Well, I am curious: how goes thy exploration of the castle?
+	|Option|0e82.106: I am still making a study of the ground floor.|W1.L1.Wizard.WhatHaveYouExplored.GroundFloor
+	|Option|0e82.107: I have begun exploring the depths below the castle.|W1.L1.Wizard.WhatHaveYouExplored.WillExploreDepths
+	|Prompt
+
+		W1.L1.Wizard.WhatHaveYouExplored.GroundFloor
+		|Push
+		|Display|0e82.108: It is important that you become thoroughly acquainted with it. However, do not omit to survey the area beneath it -- some of the caves and tunnels were built centuries ago. Perhaps the depths hold mysteries worth investigating.
+		|Option|0e82.109: I shall take thy advice.|W1.L1.Wizard.WhatHaveYouExplored.WillExploreDepths
+		|Option|0e82.110: I am not certain -- there is much to be seen in the aboveground castle.|W1.L1.Wizard.WhatHaveYouExplored.StayingAboveGround
+		|Prompt
+
+			W1.L1.Wizard.WhatHaveYouExplored.StayingAboveGround
+			|Display|111: That is true; but I beg thee, Avatar, do not forget what I have told thee.
+			|Pop
+			|Goto||W1.L1.Wizard.WhatHaveYouExplored.Done
+
+		W1.L1.Wizard.WhatHaveYouExplored.WillExploreDepths
+		|Display|0e82.112: That is wise of thee -- some of the tunnels 'neath Lord British's castle are thousands of years old. Who knows what might be found there?
+		|Goto||W1.L1.Wizard.WhatHaveYouExplored.Done
+
+		W1.L1.Wizard.WhatHaveYouExplored.Done
+		|Pop
+
+	W1.L1.Wizard.HeardYouVisitedAnotherWorld
+	|Push
+	|Display|0e82.120: Well... it is most extraordinary, is it not? Miranda tells me thou hast travelled to a place outside of Britannia -- that the violence of the Guardian's interdimensional magic has cracked the very walls between the worlds!
+	|Option|121: How can this be?|W1.L1.Wizard.HeardYouVisitedAnotherWorld.HowCanThisBe
+	|Option|122: But why did I arrive in that plane in particular?|W1.L1.Wizard.HeardYouVisitedAnotherWorld.WhyThatParticularOne
+	|Prompt
+
+		W1.L1.Wizard.HeardYouVisitedAnotherWorld.HowCanThisBe
+		|Display|0e82.123: As yet, I know not, but 'tis possible the effect will worsen, extending to two or even three more planes of existence.
+
+		W1.L1.Wizard.HeardYouVisitedAnotherWorld.WhyThatParticularOne
+		|Display|0e82.124: I know not. 'tis possible a certain symmetry exists among the planes.  Was the plane you visited connected to the Guardian in some way?
+		|OptionsClear
+		|Option|0e82.125: Yes.|W1.L1.Wizard.HeardYouVisitedAnotherWorld.WasItConnectedToVillain.Yes
+		|Option|0e82.126: No.|W1.L1.Wizard.HeardYouVisitedAnotherWorld.WasItConnectedToVillain.No
+		|Prompt
+
+			W1.L1.Wizard.HeardYouVisitedAnotherWorld.WasItConnectedToVillain.Yes
+			|Display|0e82.127: Hmmm... 'tis as I thought. I must ponder this matter further. I wish I had that spellbook!
+			|Goto||W1.L1.Wizard.HeardYouVisitedAnotherWorld.Done
+
+			W1.L1.Wizard.HeardYouVisitedAnotherWorld.WasItConnectedToVillain.No
+			|Display|0e82.128: Hmmm... 'tis a mystery. I wish I had that spellbook!
+			|Goto||W1.L1.Wizard.HeardYouVisitedAnotherWorld.Done
+
+				W1.L1.Wizard.HeardYouVisitedAnotherWorld.Done
+				|Pop
+				|Prompt
+
+	W1.L1.Wizard.BeenThinkingAboutBlackJewel
+	|Push
+	|Display|0e82.129: I have been thinking about that black jewel thou didst bring back from the prison tower. 'Tis clear that these gems form a part of the Guardian's magic -- the spell is more intricate than I had first thought. Thou shouldst collect more of these, if you find them.
+	|Option|0e82.130: I shall go and do that.|W1.L1.Wizard.BeenThinkingAboutBlackJewel.Done
+	|Option|0e82.131: Why should they be so important?|W1.L1.Wizard.BeenThinkingAboutBlackJewel.WhyDoTheyMatter
+	|Prompt
+
+		W1.L1.Wizard.BeenThinkingAboutBlackJewel.WhyDoTheyMatter
+		|Display|0e82.132: The Guardian's spell has generated a certain symmetry -- an enormous faceted jewel surrounds the castle, a smaller one appears in the basement's center, then you find a tiny one in the Tower. Perhaps a disruption of this symmetry would weaken the spell.
+		|Option|0e82.133: I thank thee for the advice, but... this all seems a bit abstract.|W1.L1.Wizard.BeenThinkingAboutBlackJewel.ThisIsDeepMagic
+		|Option|0e82.134: Why should symmetry be a part of the Guardian's magic?|W1.L1.Wizard.BeenThinkingAboutBlackJewel.WhyIsSymmetryImportant
+		|Option|0e82.135: I have had enough of thy longwinded magician's talk. In future, I shall put my trust in cold steel.|W1.L1.Wizard.BeenThinkingAboutBlackJewel.ThisIsDeepMagic
+
+			W1.L1.Wizard.BeenThinkingAboutBlackJewel.ThisIsDeepMagic
+			|Display|136: Remember, @GS8, this is magic of the deepest kind, not just a bit of swordplay. Here such principles as beauty and resonance command great power.
+
+			W1.L1.Wizard.BeenThinkingAboutBlackJewel.WhyIsSymmetryImportant
+			|Display|0e82.137: Why should symmetry apply to the towers and arches of Castle British? There is strength in balanced and precise construction -- if we shift the building blocks of the spell, we might be able to bring it tumbling down!
+			|Display|0e82.138: Just think -- on each of the planes thou hast traveled on, the Guardian hath in the past accomplished some prodigious work of sorcery! Coincidence, my dear Avatar? I think not!
+			|Option|139: Well, what of it?|W1.L1.Wizard.BeenThinkingAboutBlackJewel.Done
+			|Option|140: I am not sure whether this is true, but go on.|W1.L1.Wizard.BeenThinkingAboutBlackJewel.Done
+			|Prompt
+
+				W1.L1.Wizard.BeenThinkingAboutBlackJewel.Done
+				|Display|141: There must be some connection between the dimensions where the Guardian has unleashed his most powerful sorcery! That is why we have become connected to them. If I had the original spell with which it was cast, perhaps I could reverse this connection, dissipate along those connections the power that maintains the gem!
+				|Pop
+				|Prompt
+
+	W1.L1.Wizard.IDetectMagicOnYourPerson
+	|Push
+	|Display|0e82.203: Well, Avatar! I sense thou dost carry some element of Guardian's spellcraft with thee! What is it thou hast found?
+	|Option|0e82.204: I know not what thou dost mean.|W1.L1.Wizard.IDetectMagicOnYourPerson.IDontKnowWhatYouMean
+	|Option|0e82.205: Perhaps this is what you mean.|W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis
+	|Prompt
+
+		W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.Yes
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoThatsGross
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoYoureNotHoldingAnything
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoOneAtATime
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoTryAgain
+		|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoThisOneHasAlreadyBeenActivated
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoThatsGross
+			|Display|0e82.213: Avatar, that's disgusting!
+			|Prompt
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoYoureNotHoldingAnything
+			|Display|0e82.214: There is nothing of the Guardian's here! Hast thou anything else to show me?
+			|Prompt
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoOneAtATime
+			|Display|0e82.215: I can only examine one at a time, Avatar! Please choose one.
+			|Prompt
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoTryAgain
+			|Display|0e82.216: No, that is not the item I am seeking. Perhaps thou hast another that might be the one?
+			|Prompt
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.NoThisOneHasAlreadyBeenActivated
+			|Display|0e82.218: But Avatar, I have already treated this gem!
+			|Prompt
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.Yes
+			|Display|0e82.219: Aha! Thou hast it!
+			|Display|0e82.206: May I examine it?
+			|SpeakerSet
+			|Display|0e82.207: Nystul holds out a gnarled hand.
+			|SpeakerSet|Portraits_Wizard
+			|OptionsClear
+			|Option|0e82.208: Certainly.|W1.L1.Wizard.IDetectMagicOnYourPerson.HereTakeIt
+			|Option|0e82.209: I am not sure what thou'rt looking for.|W1.L1.Wizard.IDetectMagicOnYourPerson.IDontKnowWhatYouMean
+			|Prompt
+
+				W1.L1.Wizard.IDetectMagicOnYourPerson.HereTakeIt
+				|SpeakerSet
+				|Display|0e82.220: Nystul examines the jewel closely. He holds it in his left hand, closes his eyes, and mutters several strange words.
+				|Display|0e82.221: He hands the gem back to you, now slightly warm to the touch.
+				|SpeakerSet|Portraits_Wizard
+				|Display|0e82.222: Thou shouldst bring this down to the larger gem in the sewers, and experiment. There might be some... interesting effects.
+				|OptionsClear
+				|Option|223: I shall.|W1.L1.Wizard.IDetectMagicOnYourPerson.IWillUseIt
+				|Option|224: What kind of effects?|W1.L1.Wizard.IDetectMagicOnYourPerson.WhatKindOfEffects
+				|Prompt
+
+					W1.L1.Wizard.IDetectMagicOnYourPerson.IWillUseIt
+					|Display|0e82.227: Do so -- it may put a tangle in the Guardian's carefully spun web!
+					|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.Done
+
+					W1.L1.Wizard.IDetectMagicOnYourPerson.WhatKindOfEffects
+					|Display|0e82.225: The Guardian's spell placed this jewel on a plane under his sorcerous dominion -- returning it to its source in Britannia may help upset his spell -- throw the balance of his designs into disorder.
+					|Display|0e82.226: Go, then, and try it.
+					|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.Done
+
+			W1.L1.Wizard.IDetectMagicOnYourPerson.IDontKnowWhatYouMean
+			|Display|0e82.210: It should bear some relation to other aspects of the Guardian's spell -- I cannot tell thee more. Dost thou have some thing like that?
+			|OptionsClear
+			|Option|0e82.211: I think so. What about this?|W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis.Yes
+			|Option|0e82.212: Nay, I can think of nothing.|W1.L1.Wizard.IDetectMagicOnYourPerson.SorryOutOfIdeas
+			|Prompt
+
+				W1.L1.Wizard.IDetectMagicOnYourPerson.SorryOutOfIdeas
+				|Display|0e82.217: Hmmm... thou dost definitely have some important artifact on thy person, but this is not it. Perhaps thou shouldst take a close look at the contents of thy pockets, and then speak with me again.
+				|Goto||W1.L1.Wizard.IDetectMagicOnYourPerson.Done
+
+		W1.L1.Wizard.IDetectMagicOnYourPerson.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Wizard.ServantsOnStrike
+	|Display|0e82.14: Avatar, what's going on? I was in the kitchen just now, and Charles absolutely refused to bring me bread from the storeroom! I simply can't work unless I have enough food.
+	|Option|0e82.15: I will speak to Lord British about it.|W1.L1.Wizard.ServantsOnStrike.IWillTalkToKing
+	|Option|0e82.16: Thou wilt have to endure hardships with the rest of us, Nystul.|W1.L1.Wizard.ServantsOnStrike.EndureHardships
+	|Prompt
+
+		W1.L1.Wizard.ServantsOnStrike.EndureHardships
+		|Display|0e82.17: But Avatar, I am not a young @SS7 like thee, I cannot survive so easily without sustenance.
+		|Display|0e82.19: Please, Avatar, I am so weak now. Speak to the servants, settle the matter peaceably!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.ServantsOnStrike.IWillTalkToKing
+		|Display|0e82.18: I beg thee, settle the matter quickly.
+		|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.MurderMystery
+	|Display|0e82.113: She was so beautiful! Why did this have to happen to her?
+	|Option|0e82.114: Some say her empathic powers made her a traitor's target.|W1.L1.Wizard.MurderMystery.EmpathyMadeHerATarget
+	|Option|0e82.115: When we find the traitor, we shall ask him... or her!|W1.L1.Wizard.MurderMystery.WhenWeCatchTheTraitorWeWillAsk
+
+		W1.L1.Wizard.MurderMystery.EmpathyMadeHerATarget
+		|Display|0e82.116: I'm an old man, @GS8! It should have been me.
+		|Goto||W1.L1.Wizard.MurderMystery.Done
+
+		W1.L1.Wizard.MurderMystery.WhenWeCatchTheTraitorWeWillAsk
+		|Display|0e82.117: Aye, when we catch the traitor...
+		|Display|0e82.118: You catch a glimpse of something you have never seen before in Nystul's eyes -- a bloodthirsty hatred.
+		|Goto||W1.L1.Wizard.MurderMystery.Done
+
+		W1.L1.Wizard.MurderMystery.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Wizard.MurderSolved
+	|Display|119: Nelson, my colleague, the gentle one. He would never even have thought to suspect Patterson! Never again shall I be able to trust our people...
+	|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.IHeardYouFoundAMagicBook
+	|Push
+	|Display|143: Avatar, I heard thou didst bring home an arcane book from abroad -- may I look at it?
+	|Option|144: Of course.|W1.L1.Wizard.IHeardYouFoundAMagicBook.YouMaySeeIt
+	|Option|145: No, I do not have it.|W1.L1.Wizard.IHeardYouFoundAMagicBook.IDoNotHaveIt
+	|Prompt
+
+		W1.L1.Wizard.IHeardYouFoundAMagicBook.IDoNotHaveIt
+		|Display|146: Please bring it to me immediately. It may be extremely important to our survival.
+		|Goto||W1.L1.Wizard.IHeardYouFoundAMagicBook.Done
+
+		W1.L1.Wizard.IHeardYouFoundAMagicBook.YouMaySeeIt
+		|Goto||W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsHeld//todo
+
+			W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsHeld
+			|Display|147: Thank thee, Avatar. This may prove most important.
+			|Goto||W1.L1.Wizard.IHeardYouFoundAMagicBook.Done
+
+			W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsNotHeld
+			|Display|0e82.148: Where is it? Dost thou have it with thee?
+			|OptionsClear
+			|Option|0e82.149: Aye, here it is!|W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsHeldNow
+			|Option|0e82.150: Nay, I must fetch it.|W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsNotHeld
+			|Prompt
+
+				W1.L1.Wizard.IHeardYouFoundAMagicBook.BookIsHeldNow
+				|Display|0e82.151: Please hurry -- It is most vital!
+				|Goto||W1.L1.Wizard.IHeardYouFoundAMagicBook.Done
+
+				W1.L1.Wizard.IHeardYouFoundAMagicBook.ICanCancelTheVillainsSpellWithThis
+				|Display|0e82.152: With the text of this spell in my hands, I shall be able to unravel the Guardian's spell like a clever knot!
+				|Goto||W1.L1.Wizard.IHeardYouFoundAMagicBook.Done
+
+		W1.L1.Wizard.IHeardYouFoundAMagicBook.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Wizard.DoYouHaveEnemyGeneralsBook
+	|Display|0e82.20: Hast thou brought Mors Gotha's book with thee?
+	|Option|0e82.21: Aye, here it is.|W1.L1.Wizard.DoYouHaveEnemyGeneralsBook.Yes
+	|Option|0e82.22: Nay.|W1.L1.Wizard.DoYouHaveEnemyGeneralsBook.No
+	|Prompt
+
+		W1.L1.Wizard.DoYouHaveEnemyGeneralsBook.No
+		|Display|0e82.23: Please, fetch it for me... I must see it!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.DoYouHaveEnemyGeneralsBook.Yes
+		|Display|todo
+		|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.DoYouKnowTheTimeAndPlace
+	|Display|0e82.24: Hast thou found the time and place?
+	|Option|0e82.25: Yes.|W1.L1.Wizard.Done
+	|Option|0e82.26: No.|W1.L1.Wizard.DoYouKnowTheTimeAndPlace.No
+	|Prompt
+
+		W1.L1.Wizard.DoYouKnowTheTimeAndPlace.No
+		|Display|0e82.27: You must keep looking, then -- someone must know!
+		|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.DoYouKnowTheTime
+	|Display|0e82.28: Dost thou know the time?
+	|Option|0e82.29: Yes.|W1.L1.Wizard.DoYouKnowTheTime.Yes
+	|Option|0e82.30: No.|W1.L1.Wizard.DoYouKnowTheTime.No
+
+		W1.L1.Wizard.DoYouKnowTheTime.No
+		|Display|0e82.31: Then you must keep looking, then -- someone must know!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.DoYouKnowTheTime.Yes
+		|Display|todo
+		|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.EndOfGame
+	|Display|0e82.9: Avatar, we have very little time! Art thou ready to begin?
+	|Option|0e82.10: Aye, Nystul. It is time.|W1.L1.Wizard.EndOfGame.EverythingIsReady
+	|Prompt
+
+		W1.L1.Wizard.EndOfGame.CannotStartWhileEnemyPresent
+		|Display|0e82.12: We cannot begin the ceremony with Mors Gotha rampaging loose in the castle! She must be stopped, Avatar!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.EndOfGame.CannotStartWithoutArtifact
+		|Display|0e82.13: Avatar, where is the horn of Praecor Loth? We must have it if we can hope to destroy the gem now!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.EndOfGame.EverythingIsReady
+		|Display|0e82.47: We must hurry and accomplish the ritual before it is too late!
+		|Display|0e82.48: Thy airy prisoner is trapped, much as we are, but when he emerges, it shall be with the force of a hurricane!
+		|SpeakerSet|
+		|Display|0e82.11: As Nystul begins reading from the Book of Mors Gotha, you raise the Horn of Praecor Loth to your lips. You feel the daemon's strength surge within you and a mighty, ringing blast issues from the horn, and echoes through the chamber, shaking Castle British to its very foundations.\m
+		|SpeakerSet|Portraits_Wizard
+		|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.Farewell
+	|Display|0e82.44: I shall speak to thee later, then.
+
+	W1.L1.Wizard.Done
+	|Pop
+	|Prompt
+
+//1: @GS102
+//3: @GS70SI1
+//6: man
+//7: woman
+
+//32: Ah, @GS8, 'tis quite a mess we are in. Come, what may I do for thee?
+
+//42: I see there is no use talking to thee anymore right now.
+//43: If there is nothing more, @GS8, I must return to my work.
+
+//45: Wait, @GS25, there is more we must speak of.
+
+//49: The book thou didst bring me shall prove essential to our escape -- with it, I shall be able to weaken the spell holding the gem in place.
+//50: The Horn of Praecor Loth may help us shatter the gem, though I can scarcely believe 'tis real and not a legend.
+//51: Now that thou hast retrieved all eight of the Key Gems, the spell maintaining the black jewel has nearly broken.
+
+//59: @GS8, I see thou art joining us in this unexpectedly protracted reunion! Listen, I wish to discuss with thee my thoughts on our situation.
+//60: Ah, Avatar, I have been meaning to speak with thee.
+//61: Avatar, this is the most extraordinary thing I have ever heard of!
+//62: Avatar, I am interested to hear of thy latest findings.
+//63: I have had a new idea concerning thy interplanar vagrancy.
+//64: Avatar, the time of the ritual is almost at hand!
+//65: Nystul sees you, and begins to split his sides with laughter.
+//66: HA HA HA, thou hast made a djinn-bottle of thyself, Avatar!
+//67: So, 'tis true -- thou hast obtained the Horn of Praecor Loth, a thing out of legend!
+//68: You've done it, Avatar!  We're almost there!
+
+//142: Seriously, Avatar, 'twill someday prove useful to us -- when thou dost choose to release thy captive, 'twill issue from thy lips with great force.
+
+//153: Thou hast the Horn of Praecor Loth with thee -- make sure thou dost keep it  safe, for we shall need it soon!
+//154: Make sure thou dost retrieve Praecor Loth's horn, and keep it in a safe place, Avatar -- we shall need it soon!
+//155: Aha! This is the very thing we need! With this in my hands, I shall unravel the Guardian's spell as if it were a clever knot! Thou hast done well, Avatar. I shall require a little solitude now, to study this tome.
+//156: With the elemental within thee, thou now hast the means to blow the Horn of Praecor Loth! If we can but weaken the spell holding the gem in place, perhaps even blackrock shall fall before its might.
+//157: 'Tis said that with this weapon Praecor Loth did lord it over a hundred battlefields, but that none but he could wield the weapon. If we are to enlist its force to shatter the gem, we must find some way to blow it.
+//158: What I mean, thou hast found all the gems! Feel how the gem quivers at the touch, and hums strange harmonies! The spell that supports it is bent and twisted, its geometry warped from its shape. With its lines of magical support severed, all we need do is strike the shattering blow.
+//159: We need know only two more things -- what was the place and time of the original casting, when the Guardian's agent performed the ceremony to bring the dark jewel down on us?
+//160: Where did it happen?
+//161: I know not.
+//162: Other...
+//163: \1@SS1\0
+//164: throne
+//165: Yes, the throne room. My calculations agree with thee there.
+//166: Nay, my calculations say this is impossible.
+//167: Thou must go and ask those left in the castle -- someone must have seen or heard something!
+//168: And now, what time of night was it?
+//169: I know not.
+//170: Other...
+//171: \1@SS1\0
+//172: 4
+//173: four
+//174: Four o'clock in the morning, yes, in the throne room as dawn broke. My calculations are complete! Now we may... what's that noise?
+//175: Nay, my calculations say this is impossible.
+//176: Thou must go and ask those left in the castle -- someone must have seen or heard something!
+//177: him
+//178: her
+//179: Suddenly you hear running footsteps, and a distant shouting. Julia bursts into the room, her sword bloody, her chest heaving, a gash running down her right shin.
+//180: A... Avatar... I... soldiers are pouring out of the gem, an army of them! If thou hast any hope of saving...
+//181: She breaks off and now stares into the corridor, shocked.
+//182: Julia, what is it?
+//183: Where are they coming from? What soldiers?
+//184: A voice from the corridor outside replies.
+//185: You hear a familiar voice from the corridor.
+//186: MY soldiers.
+//187: A figure who could only be Mors Gotha herself steps through the doorway.
+//188: Mors Gotha steps into the doorway.
+//189: Led me right to @SS1, Julia.
+//190: From behind you, Nystul calls out, "Julia, you must get me to the throne room!" Mors Gotha chuckles as she watches them leave. Then she turns to look you in the eye.
+//191: Let's go.
+
+//192: So, the small gem thou didst find merged with the larger! This bodes well for us!
+//193: How so?
+//194: Why did the gems merge?
+//195: The Guardian is a careless spellcaster! The tiny gem in the other world is an echo in the ether, just like the Gateway Gem, an echo of the first, enormous sphere he placed on our world.
+//196: How can this help us?
+//197: I don't understand.
+//198: 'Tis a subtle point, I grant thee!
+//199: As these echoes come together, they begin to build into a shout, which may bring this gem tumbling right down around our ears!
+
+//200: Hast thou had any ideas yet, Avatar? I do sense strongly the presence of the Guardian's magic!
+//201: Of course! I found this...
+//202: Nay, I know not what it might be.
+
+
+//245: Avatar, I have been thinking -- in thy travels, thou hast encountered a number of servants of the Guardian, is that not so?
+//246: Indeed.
+//247: Aye, and what of it?
+//248: Perhaps one of them might have a copy of the spell the Guardian used in Britannia!
+//249: I shall keep watch for one.
+//250: What good would that do us?
+//251: If I can find a copy of that spell and gain some understanding of it, I may be able to reverse the mystic processes that keep the gem's structure stable. If only I knew when it had been cast . . .
+
 
 
 W1.L2|SpeakerSet|Maps_1_2
