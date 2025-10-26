@@ -56,21 +56,25 @@ W1.L1|SpeakerSet|Maps_1_1
 |Option|Wizard.|W1.L1.Wizard
 |Prompt
 
-// Bard ////////
-
 W1.L1.Bard
 |Push
 |SpeakerSet|Portraits_Bard
-|DoNextInCycle|W1.L1.Bard.TimesGreeted|W1.L1.Bard.Greet.1;W1.L1.Bard.Greet.2;W1.L1.Bard.Greet.3
-W1.L1.Bard.Greet.1|Display|0e86.10: Yes, my friend?
-W1.L1.Bard.Greet.2|Display|0e86.11: What is it, @GS25?
-W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
-|OptionsClear
-0e86.13|Option|0e86.13: What of thy year since we smashed the Black Gate?|W1.L1.Bard.LastYear
-|Option|0e86.14: Iolo, wouldst thou train me?|W1.L1.Bard.Train
-|Option|0e86.5: What else dost thou know?|W1.L1.Bard.WhatElseDoYouKnow
-|Option|0e86.15: If you'll excuse me, Iolo, I must return to my work.|W1.L1.Bard.Done
-|Prompt
+
+	W1.L1.Bard.KingAboutToSpeak
+	|Display|0e86.6: Just a moment, Avatar. 'Twere best we let Lord British speak first.
+	|Goto||W1.L1.Bard.Done
+
+	W1.L1.Bard.Greet
+	|DoNextInCycle|W1.L1.Bard.TimesGreeted|W1.L1.Bard.Greet.1;W1.L1.Bard.Greet.2;W1.L1.Bard.Greet.3
+	W1.L1.Bard.Greet.1|Display|0e86.10: Yes, my friend?
+	W1.L1.Bard.Greet.2|Display|0e86.11: What is it, @GS25?
+	W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
+	|OptionsClear
+	0e86.13|Option|0e86.13: What of thy year since we smashed the Black Gate?|W1.L1.Bard.LastYear
+	|Option|0e86.14: Iolo, wouldst thou train me?|W1.L1.Bard.Train
+	|Option|0e86.5: What else dost thou know?|W1.L1.Bard.WhatElseDoYouKnow
+	|Option|0e86.15: If you'll excuse me, Iolo, I must return to my work.|W1.L1.Bard.Done
+	|Prompt
 
 	W1.L1.Bard.LastYear
 	|OptionRemove|0e86.13
@@ -95,8 +99,8 @@ W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
 			|Prompt
 
 	W1.L1.Bard.Train
-	|Push
 	|Display|0e86.26: Of course! 'Tis always a pleasure[...]
+	|OptionsClear
 	|Option|0e86.27: I would fain improve my marksmanship.|W1.L1.Bard.Train.Missile
 	|Option|0e86.28: Aye, thou art right. Teach me to swim.|W1.L1.Bard.Train.Swimming
 	|Option|0e86.29: I would like to learn to judge an item's quality.|W1.L1.Bard.Train.Appraise
@@ -104,40 +108,65 @@ W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
 	|Prompt
 
 		W1.L1.Bard.Train.Missile
-		|Push
-		W1.L1.Bard.Train.Missile.Continue
-		|SpeakerSet|
-		|Display|31: Iolo is indeed a master of missile combat[...]
-		|SpeakerSet|Portraits_Bard
-		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
-		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Missile.Continue
-		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
-		|Prompt
+		|Goto||W1.L1.Bard.Train.Missile.Succeed
+		|Goto||W1.L1.Bard.Train.Missile.Fail
+
+			W1.L1.Bard.Train.Missile.Succeed
+			|SpeakerSet|
+			|Display|0e86.31: Iolo is indeed a master of missile combat[...]
+			|SpeakerSet|Portraits_Bard
+			|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+			|OptionsClear
+			|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Missile.Continue
+			|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+			|Prompt
+
+			W1.L1.Bard.Train.Missile.Fail
+			|SpeakerSet|
+			|Display|0e86.32: Somehow, you are unable to hit the mark.
+			|SpeakerSet|Portraits_Bard
+			|Display|0e86.33: Thy concentration seems a bit off today, @GS8.
+			|Goto||W1.L1.Bard.Train.Done
 
 		W1.L1.Bard.Train.Swimming
-		|Push
-		W1.L1.Bard.Train.Swimming.Continue
-		|SpeakerSet|
-		|Display|0e86.34: With a minimum of patronizing, Iolo gives you some tips on swimming.
-		|SpeakerSet|Portraits_Bard
-		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
-		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Swimming.Continue
-		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
-		|Prompt
+		|Goto||W1.L1.Bard.Train.Swimming.Succeed
+		|Goto||W1.L1.Bard.Train.Swimming.Fail
+
+			W1.L1.Bard.Train.Swimming.Succeed
+			|SpeakerSet|
+			|Display|0e86.34: With a minimum of patronizing, Iolo gives you some tips on swimming.
+			|SpeakerSet|Portraits_Bard
+			|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+			|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Swimming.Continue
+			|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+			|Prompt
+
+			W1.L1.Bard.Train.Swimming.Fail
+			|SpeakerSet
+			|Option|0e86.35: Iolo attempts to demonstrate some new strokes, but succeeds only in looking silly.
+			|SpeakerSet|Portraits_Bard
+			|Goto||W1.L1.Bard.Train.Done
 
 		W1.L1.Bard.Train.Appraise
-		|Push
-		W1.L1.Bard.Train.Appraise.Continue
-		|SpeakerSet|
-		|Display|0e86.36: Iolo gives you a few lessons on how to spot good workmanship.
-		|SpeakerSet|Portraits_Bard
-		|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
-		|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Appraise.Continue
-		|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
-		|Prompt
+		|Goto|W1.L1.Bard.Train.Appraise.Succeed
+		|Goto|W1.L1.Bard.Train.Appraise.Fail
+
+			W1.L1.Bard.Train.Appraise.Succeed
+			|SpeakerSet|
+			|Display|0e86.36: Iolo gives you a few lessons on how to spot good workmanship.
+			|SpeakerSet|Portraits_Bard
+			|Display|0e86.38: Wouldst thou like to continue, or stop for the moment?
+			|Option|0e86.39: By all means, let us continue.|W1.L1.Bard.Train.Appraise.Continue
+			|Option|0e86.40: Let us call it a day.|W1.L1.Bard.Train.Done
+			|Prompt
+
+			W1.L1.Bard.Train.Appraise.Fail
+			|SpeakerSet|
+			|Display|0e86.37: Iolo explains some of the fine points of wood and metal-working, but it doesn't sink in.
+			|SpeakerSet|Portraits_Bard
+			|Goto|W1.L1.Bard.Train.Done
 
 		W1.L1.Bard.Train.Done
-		|Pop
 		|Pop
 		|Goto||W1.L1.Bard.AnythingElse
 
@@ -195,182 +224,176 @@ W1.L1.Bard.Greet.3|Display|0e86.12: What news, @GS25?
 		|Pop
 		|Prompt
 
-	W1.L1.Bard.Done
+	W1.L1.Bard.OtherWorlds
+	|Push
+	|Display|0e86.58: I hear thou didst journey from the basement to another world. Dost thou think, perhaps, that that world might have its own Virtues, its own Avatar?
+	|Option|0e86.59: 'Tis possible, Iolo -- I did not think to ask.|W1.L1.Bard.OtherWorlds.MoreWorlds
+	|Option|0e86.60: Bishop was its defender, but he seemed more concerned with victory than Virtue.|W1.L1.Bard.OtherWorlds.VictoryOverVirtue
+	|Prompt
+
+		W1.L1.Bard.OtherWorlds.VictoryOverVirtue
+		|Display|0e86.61: Hmmm... methinks we ought not lose sight of either in our struggle.
+
+		W1.L1.Bard.OtherWorlds.MoreWorlds
+		|Display|0e86.62: More worlds! Avatar, thou art a very cosmopolitan of the cosmos! If this keeps up, thou shalt soon leave Britannia and thy native Earth behind, in favor of some more felicitous reality!
+		|Option|0e86.63: I would not abandon my new home so quickly!|W1.L1.Bard.OtherWorlds.MoreWorlds.WontAbandonHome
+		|Option|0e86.64: I would be a fool to do so, as the Guardian would surely pursue me where'er I went.|W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
+		|Option|0e86.65: The Guardian's influence has touched all the worlds within our reach, Iolo. There is no place we can run.|W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
+		|Prompt
+
+			W1.L1.Bard.OtherWorlds.MoreWorlds.WontAbandonHome
+			|Display|0e86.66: Thou'rt right, my friend, though there are some fools within the castle who say we might do best to run for it. I shall quiet them with this advice.
+			|Pop
+			|Prompt
+
+			W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
+			|Display|0e86.67: Rightly spoken! This shall silence those in the castle who doubt thee!
+			|Pop
+			|Prompt
+
+	W1.L1.Bard.MurderSolved
+	|Push
+	|Display|0e86.68: Avatar, I know not what to say... Nelson was such a gentle man. I am glad, though, that thou wert not gentle in avenging him.
+	|Option|0e86.69: I am sorry about Patterson, but 'twas the only way.|W1.L1.Bard.MurderSolved.ItWasTheOnlyWay
+	|Option|0e86.70: Indeed -- Patterson died like the traitor he was!|W1.L1.Bard.MurderSolved.DeathToTraitors
+	|Option|0e86.71: I regret my actions -- Patterson was not evil, only frightened for his life.|W1.L1.Bard.MurderSolved.HeWasJustScared
+	|Prompt
+
+		W1.L1.Bard.MurderSolved.ItWasTheOnlyWay
+		|Display|0e86.72: I agree -- there is a time for compassion and humility, but here thou didst rightly choose Honor and Justice.
+		|Goto||W1.L1.Bard.MurderSolved.Done
+
+		W1.L1.Bard.MurderSolved.DeathToTraitors
+		|Display|0e86.73: So saith Honor and Justice, perhaps. But though Virtue often leads one into battle, an Avatar must never lose sight of Compassion and Humility.
+		|Goto||W1.L1.Bard.MurderSolved.Done
+
+		W1.L1.Bard.MurderSolved.HeWasJustScared
+		|Display|0e86.74: Perhaps thou'rt right, Avatar, but I believe thou didst right in upholding the Virtues of Valor, Honor, and Justice.
+		|Goto||W1.L1.Bard.MurderSolved.Done
+
+		W1.L1.Bard.MurderSolved.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Bard.StrangeDream
+	|Push
+	|Display|0e86.75: Avatar! I have had the strangest dream!
+	|Option|0e86.76: Tell me of it.|W1.L1.Bard.StrangeDream.TellMe
+	|Option|0e86.77: I have not time for thy nocturnal fantasies, Iolo.|W1.L1.Bard.StrangeDream.NoTimeForThis
+	|Prompt
+
+		W1.L1.Bard.StrangeDream.NoTimeForThis
+		|Display|0e86.78: No, really...
+
+		W1.L1.Bard.StrangeDream.TellMe
+		|Display|0e86.79: The Guardian spoke to me of my wife Gwenno -- he showed me a picture of her in a frozen wasteland -- he said she was in danger, and that he could help her, if I cooperated against you.
+		|Option|0e86.80: And what did you reply?|W1.L1.Bard.StrangeDream.WhatDidYouReply
+		|Option|0e86.81: Did you learn anything?|W1.L1.Bard.StrangeDream.DidYouLearnAnything
+		|Prompt
+
+			W1.L1.Bard.StrangeDream.DidYouLearnAnything
+			|Display|0e86.82: Nay, only what I have told thee.
+			|Option|0e86.83: What was thy reply?|W1.L1.Bard.StrangeDream.WhatDidYouReply
+			|Option|0e86.84: No doubt 'twas one of the Guardian's lies.|W1.L1.Bard.StrangeDream.VillainWasLying
+			|Prompt
+
+				W1.L1.Bard.StrangeDream.VillainWasLying
+				|Display|0e86.86: We can only hope, Avatar...
+				|Goto||W1.L1.Bard.StrangeDream.Done
+
+			W1.L1.Bard.StrangeDream.WhatDidYouReply
+			|Display|0e86.85: @GS8, thou dost insult me! I would never betray thee, not even for Gwenno's sake, for I know she would rather die than see me dishonored!
+
+		W1.L1.Bard.StrangeDream.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Bard.NarrowEscapeForMayor
+	|Push
+	|Display|0e86.87: 'Twas a narrow escape for Mayor Patterson, this morning!
+	|Option|0e86.88: What happened?|W1.L1.Bard.NarrowEscapeForMayor.2
+	|Option|0e86.89: Did Julia finally behead him for his incompetence?|W1.L1.Bard.NarrowEscapeForMayor.2
+	|Prompt
+
+		W1.L1.Bard.NarrowEscapeForMayor.2
+		|Display|0e86.90: I was searching for an underground storeroom, when I heard his cries. He had been set upon by an enormous spider, which for some ungodly reason had crawled up from the depths. What on earth had the fellow been doing down there, I wonder?
+		|Pop
+		|Prompt
+
+	W1.L1.Bard.MurderMystery
+	|Display|0e86.91: I cannot believe it -- Tory, struck down in the very midst of the castle! I can't believe one of us would do such a thing.
+	|Option|0e86.92: Frightened people are easy to manipulate, Iolo. One of us could have turned traitor.|W1.L1.Bard.MurderMystery.Traitor
+	|Option|0e86.93: What else could it be?|W1.L1.Bard.MurderMystery.WhoElse
+	|Prompt
+
+		W1.L1.Bard.MurderMystery.Traitor
+		|Display|0e86.94: 'Tis impossible! How could they walk among us as a friend, after doing such a deed. No, 'twas something crept up from the caverns, I am sure of it!
+		|OptionsClear
+		|Option|0e86.97: I still suspect one of us. Be on thy guard.|W1.L1.Bard.MurderMystery.BeOnGuardForTraitors
+		|Prompt
+
+			W1.L1.Bard.MurderMystery.BeOnGuardForTraitors
+			|Display|0e86.98: I shall, but I still cannot believe it's one of our own.
+			|Goto||W1.L1.Bard.MurderMystery.Done
+
+		W1.L1.Bard.MurderMystery.WhoElse
+		|Display|0e86.95: One of these creatures from your other worlds, Avatar! Surely the Guardian has many allies on those planes.
+		|OptionsClear
+		|Option|0e86.96: Thou'rt right -- he has many agents on the other worlds.|W1.L1.Bard.MurderMystery.Done
+		|Goto||W1.L1.Bard.MurderMystery.Done
+
+		W1.L1.Bard.MurderMystery.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Bard.YoureVeryBusy
+	|Display|0e86.99: Thou art rarely in the castle these days, Avatar. Thy affairs in other worlds are keeping thee very busy!
+	|Option|0e86.100: Indeed! What news of the castle?|W1.L1.Bard.YoureVeryBusy.WhatNews
+	|Option|0e86.101: I rely on thee to keep an eye on things while I am gone, Iolo.|W1.L1.Bard.YoureVeryBusy.KeepUpMorale
+	|Option|0e86.104: Thou dost remind me of the urgency of the situation! I must be off.|W1.L1.Bard.YoureVeryBusy.IMustBeOff
+	|Prompt
+
+		W1.L1.Bard.YoureVeryBusy.WhatNews
+		|Display|0e86.102: There is little to say. None of us have slept easy since Tory's death, and the monsters are growing worse.
+		|OptionsClear
+		|Option|0e86.103: I am working as fast as I can. Meanwhile, you must keep up morale in the castle.|W1.L1.Bard.YoureVeryBusy.KeepUpMorale
+		|Prompt
+
+			W1.L1.Bard.YoureVeryBusy.KeepUpMorale
+			|Display|0e86.106: I will do whatever is in my power, @GS8. Still, between me and thee, Avatar, I worry -- what dangers may lie beyond the holes in that gem? What if the gem opened onto an ocean floor, or a world full of poisonous gases?
+			|OptionsClear
+			|Option|0e86.107: Remember thine own counsel, Iolo, and do not mention such ideas to the others.|W1.L1.Bard.YoureVeryBusy.DontMentionIdeas
+			|Prompt
+
+				W1.L1.Bard.YoureVeryBusy.DontMentionIdeas
+				|Display|0e86.108: If such a thing happens, than we shall face it. If not, 'tis best to worry about the dangers we do know.
+				|OptionsClear
+				|Option|0e86.104: Thou dost remind me of the urgency of the situation! I must be off.|W1.L1.Bard.YoureVeryBusy.IMustBeOff
+				|Prompt
+
+					W1.L1.Bard.YoureVeryBusy.IMustBeOff
+					|Display|0e86.105: Godspeed, Avatar!
+					|Pop
+					|Prompt
+
+
+	W1.L1.Bard.Farewell
 	|Display|0e86.9: 'Tis good to speak with thee again.
+	|Goto||W1.L1.Bard.Done
+
+	W1.L1.Bard.Done
 	|SpeakerSet|
 	|Pop
 	|Prompt
-
-// todo
-
-W1.L1.Bard.OtherWorlds
-|Push
-|Display|0e86.58: I hear thou didst journey from the basement to another world. Dost thou think, perhaps, that that world might have its own Virtues, its own Avatar?
-|Option|0e86.59: 'Tis possible, Iolo -- I did not think to ask.|W1.L1.Bard.OtherWorlds.MoreWorlds
-|Option|0e86.60: Bishop was its defender, but he seemed more concerned with victory than Virtue.|W1.L1.Bard.OtherWorlds.VictoryOverVirtue
-|Prompt
-
-	W1.L1.Bard.OtherWorlds.VictoryOverVirtue
-	|Display|0e86.61: Hmmm... methinks we ought not lose sight of either in our struggle.
-
-	W1.L1.Bard.OtherWorlds.MoreWorlds
-	|Display|0e86.62: More worlds! Avatar, thou art a very cosmopolitan of the cosmos! If this keeps up, thou shalt soon leave Britannia and thy native Earth behind, in favor of some more felicitous reality!
-	|Option|0e86.63: I would not abandon my new home so quickly!|W1.L1.Bard.OtherWorlds.MoreWorlds.WontAbandonHome
-	|Option|0e86.64: I would be a fool to do so, as the Guardian would surely pursue me where'er I went.|W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
-	|Option|0e86.65: The Guardian's influence has touched all the worlds within our reach, Iolo. There is no place we can run.|W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
-	|Prompt
-
-		W1.L1.Bard.OtherWorlds.MoreWorlds.WontAbandonHome
-		|Display|0e86.66: Thou'rt right, my friend, though there are some fools within the castle who say we might do best to run for it. I shall quiet them with this advice.
-		|Pop
-		|Prompt
-
-		W1.L1.Bard.OtherWorlds.MoreWorlds.VillainIsEverywhere
-		|Display|0e86.67: Rightly spoken! This shall silence those in the castle who doubt thee!
-		|Pop
-		|Prompt
-
-W1.L1.Bard.MurderSolved
-|Push
-|Display|0e86.68: Avatar, I know not what to say... Nelson was such a gentle man. I am glad, though, that thou wert not gentle in avenging him.
-|Option|0e86.69: I am sorry about Patterson, but 'twas the only way.|W1.L1.Bard.MurderSolved.ItWasTheOnlyWay
-|Option|0e86.70: Indeed -- Patterson died like the traitor he was!|W1.L1.Bard.MurderSolved.DeathToTraitors
-|Option|0e86.71: I regret my actions -- Patterson was not evil, only frightened for his life.|W1.L1.Bard.MurderSolved.HeWasJustScared
-|Prompt
-
-	W1.L1.Bard.MurderSolved.ItWasTheOnlyWay
-	|Display|0e86.72: I agree -- there is a time for compassion and humility, but here thou didst rightly choose Honor and Justice.
-	|Goto||W1.L1.Bard.MurderSolved.Done
-
-	W1.L1.Bard.MurderSolved.DeathToTraitors
-	|Display|0e86.73: So saith Honor and Justice, perhaps. But though Virtue often leads one into battle, an Avatar must never lose sight of Compassion and Humility.
-	|Goto||W1.L1.Bard.MurderSolved.Done
-
-	W1.L1.Bard.MurderSolved.HeWasJustScared
-	|Display|0e86.74: Perhaps thou'rt right, Avatar, but I believe thou didst right in upholding the Virtues of Valor, Honor, and Justice.
-	|Goto||W1.L1.Bard.MurderSolved.Done
-
-	W1.L1.Bard.MurderSolved.Done
-	|Pop
-	|Prompt
-
-W1.L1.Bard.StrangeDream
-|Push
-|Display|0e86.75: Avatar! I have had the strangest dream!
-|Option|0e86.76: Tell me of it.|W1.L1.Bard.StrangeDream.TellMe
-|Option|0e86.77: I have not time for thy nocturnal fantasies, Iolo.|W1.L1.Bard.StrangeDream.NoTimeForThis
-|Prompt
-
-	W1.L1.Bard.StrangeDream.NoTimeForThis
-	|Display|0e86.78: No, really...
-
-	W1.L1.Bard.StrangeDream.TellMe
-	|Display|0e86.79: The Guardian spoke to me of my wife Gwenno -- he showed me a picture of her in a frozen wasteland -- he said she was in danger, and that he could help her, if I cooperated against you.
-	|Option|0e86.80: And what did you reply?|W1.L1.Bard.StrangeDream.WhatDidYouReply
-	|Option|0e86.81: Did you learn anything?|W1.L1.Bard.StrangeDream.DidYouLearnAnything
-	|Prompt
-
-		W1.L1.Bard.StrangeDream.DidYouLearnAnything
-		|Display|0e86.82: Nay, only what I have told thee.
-		|Option|0e86.83: What was thy reply?|W1.L1.Bard.StrangeDream.WhatDidYouReply
-		|Option|0e86.84: No doubt 'twas one of the Guardian's lies.|W1.L1.Bard.StrangeDream.VillainWasLying
-		|Prompt
-
-			W1.L1.Bard.StrangeDream.VillainWasLying
-			|Display|0e86.86: We can only hope, Avatar...
-			|Goto||W1.L1.Bard.StrangeDream.Done
-
-		W1.L1.Bard.StrangeDream.WhatDidYouReply
-		|Display|0e86.85: @GS8, thou dost insult me! I would never betray thee, not even for Gwenno's sake, for I know she would rather die than see me dishonored!
-
-	W1.L1.Bard.StrangeDream.Done
-	|Pop
-	|Prompt
-
-W1.L1.Bard.NarrowEscapeForMayor
-|Push
-|Display|0e86.87: 'Twas a narrow escape for Mayor Patterson, this morning!
-|Option|0e86.88: What happened?|W1.L1.Bard.NarrowEscapeForMayor.2
-|Option|0e86.89: Did Julia finally behead him for his incompetence?|W1.L1.Bard.NarrowEscapeForMayor.2
-|Prompt
-
-	W1.L1.Bard.NarrowEscapeForMayor.2
-	|Display|0e86.90: I was searching for an underground storeroom, when I heard his cries. He had been set upon by an enormous spider, which for some ungodly reason had crawled up from the depths. What on earth had the fellow been doing down there, I wonder?
-	|Pop
-	|Prompt
-
-W1.L1.Bard.MurderMystery
-|Display|0e86.91: I cannot believe it -- Tory, struck down in the very midst of the castle! I can't believe one of us would do such a thing.
-|Option|0e86.92: Frightened people are easy to manipulate, Iolo. One of us could have turned traitor.|W1.L1.Bard.MurderMystery.Traitor
-|Option|0e86.93: What else could it be?|W1.L1.Bard.MurderMystery.WhoElse
-|Prompt
-
-	W1.L1.Bard.MurderMystery.Traitor
-	|Display|0e86.94: 'Tis impossible! How could they walk among us as a friend, after doing such a deed. No, 'twas something crept up from the caverns, I am sure of it!
-	|OptionsClear
-	|Option|0e86.97: I still suspect one of us. Be on thy guard.|W1.L1.Bard.MurderMystery.BeOnGuardForTraitors
-	|Prompt
-
-		W1.L1.Bard.MurderMystery.BeOnGuardForTraitors
-		|Display|0e86.98: I shall, but I still cannot believe it's one of our own.
-		|Goto||W1.L1.Bard.MurderMystery.Done
-
-	W1.L1.Bard.MurderMystery.WhoElse
-	|Display|0e86.95: One of these creatures from your other worlds, Avatar! Surely the Guardian has many allies on those planes.
-	|OptionsClear
-	|Option|0e86.96: Thou'rt right -- he has many agents on the other worlds.|W1.L1.Bard.MurderMystery.Done
-	|Goto||W1.L1.Bard.MurderMystery.Done
-
-	W1.L1.Bard.MurderMystery.Done
-	|Pop
-	|Prompt
-
-W1.L1.Bard.YoureVeryBusy
-|Display|0e86.99: Thou art rarely in the castle these days, Avatar. Thy affairs in other worlds are keeping thee very busy!
-|Option|0e86.100: Indeed! What news of the castle?|W1.L1.Bard.YoureVeryBusy.WhatNews
-|Option|0e86.101: I rely on thee to keep an eye on things while I am gone, Iolo.|W1.L1.Bard.YoureVeryBusy.KeepUpMorale
-|Option|0e86.104: Thou dost remind me of the urgency of the situation! I must be off.|W1.L1.Bard.YoureVeryBusy.IMustBeOff
-|Prompt
-
-	W1.L1.Bard.YoureVeryBusy.WhatNews
-	|Display|0e86.102: There is little to say. None of us have slept easy since Tory's death, and the monsters are growing worse.
-	|OptionsClear
-	|Option|0e86.103: I am working as fast as I can. Meanwhile, you must keep up morale in the castle.|W1.L1.Bard.YoureVeryBusy.KeepUpMorale
-	|Prompt
-
-		W1.L1.Bard.YoureVeryBusy.KeepUpMorale
-		|Display|0e86.106: I will do whatever is in my power, @GS8. Still, between me and thee, Avatar, I worry -- what dangers may lie beyond the holes in that gem? What if the gem opened onto an ocean floor, or a world full of poisonous gases?
-		|OptionsClear
-		|Option|0e86.107: Remember thine own counsel, Iolo, and do not mention such ideas to the others.|W1.L1.Bard.YoureVeryBusy.DontMentionIdeas
-		|Prompt
-
-			W1.L1.Bard.YoureVeryBusy.DontMentionIdeas
-			|Display|0e86.108: If such a thing happens, than we shall face it. If not, 'tis best to worry about the dangers we do know.
-			|OptionsClear
-			|Option|0e86.104: Thou dost remind me of the urgency of the situation! I must be off.|W1.L1.Bard.YoureVeryBusy.IMustBeOff
-			|Prompt
-
-				W1.L1.Bard.YoureVeryBusy.IMustBeOff
-				|Display|0e86.105: Godspeed, Avatar!
-				|Pop
-				|Prompt
-
 
 // 1: @GS102
 // 2: Well...
 // 3: @GS70SI1
 // 4: I thank thee, @GS25, that is enough.
 
-// 6: Just a moment, Avatar. 'Twere best we let Lord British speak first.
 // 7: Now is the time, @GS8!
 // 8: I am glad to see my old companion again, now that we are in this fix.
 
-// 32: Somehow, you are unable to hit the mark.
-// 33: Thy concentration seems a bit off today, @GS8.
-
-// 35: Iolo attempts to demonstrate some new strokes, but succeeds only in looking silly.
-
-// 37: Iolo explains some of the fine points of wood and metal-working, but it doesn't sink in.
 
 
 W1.L1.Chambermaid
@@ -566,11 +589,214 @@ W1.L1.Chambermaid
 	// 4: I thank thee, @GS25, that is enough.
 	// 5: What else dost thou know?
 
-W1.L1.Empath|SpeakerSet|Portraits_Empath
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+W1.L1.Empath
+|SpeakerSet|Portraits_Empath
+|Push
+
+	W1.L1.Empath.KingAboutToSpeak
+	|Display|0e8d.6: I think it best that we listen to what Lord British has to say -- perhaps he will have a calming effect on the group.
+	|Goto||W1.L1.Empath.Done
+
+//0e8d.0: 
+//0e8d.1: @GS102
+//0e8d.2: Well...
+//0e8d.3: @GS70SI1
+//0e8d.4: I thank thee, @GS25, that is enough.
+//0e8d.5: What else dost thou know?
+
+//0e8d.7: @GS8! For all our sakes, it is good that thou art here.
+
+	W1.L1.Empath.Greet
+	W1.L1.Empath.Greet.1|Display|0e8d.8: Hello again, @GS8, I was just looking for thee.
+	W1.L1.Empath.Greet.2|Display|0e8d.9: Hello there, @GS8.
+	W1.L1.Empath.Greet.3|Display|0e8d.10: So ho, @GS25.
+	|Goto|W1.L1.Empath.GeneralQuestions
+
+	W1.L1.Empath.GeneralQuestions
+	|Option|0e8d.11: I would know thy thoughts, Lady Tory.
+	|Option|0e8d.12: How has the past year been for thee?|W1.L1.Empath.WhatOfLastYear
+	|Option|0e8d.13: Lady, canst thou train me to be a more charismatic leader?|W1.L1.Empath.Train
+	|Option|0e8d.14: If I may, I would like to hear thy thoughts so far on the current situation.
+	|Option|0e8d.15: Excuse me, Lady, I must be going.
+	|Prompt
+
+	W1.L1.Empath.WhatOfLastYear
+	|Display|0e8d.84: I have spent this past year at Serpent's Hold, serving as counsellor and raising my son.  I am still in debt to thee for saving him from those accursed harpies! But now, I fear again for his safety. I left him in the care of trusted servants at Serpent's Hold, and now that there is war in Britannia, the Hold will be in an uproar. I can only hope that the Guardian has not singled out my home for a special assault.
+	|Prompt
+
+	W1.L1.Empath.Train
+	|Display|0e8d.21: Of course, @GS8. Let us talk for a while. But this will take some time -- wilt thou stay, or dost thou have to hurry off?
+	|OptionsClear
+	|Option|0e8d.22: I will stay and train.|W1.L1.Empath.Train.StayAndTrain
+	|Option|0e8d.23: I do not have the time to train with thee.
+	|Prompt
+
+		W1.L1.Empath.Train.StayAndTrain
+		|Goto||W1.L1.Empath.Train.Success
+		|Goto||W1.L1.Empath.Train.Fail
+
+		W1.L1.Empath.Train.Success
+		|SpeakerSet|
+		|Display|0e8d.24: The Lady's empathic insights are very helpful.
+		|SpeakerSet|Portraits_Empath
+		|Goto|W1.L1.Empath.Train.WantToKeepGoing
+
+		W1.L1.Empath.Train.Fail
+		|SpeakerSet|
+		|Display|0e8d.25: Lady Tory attempts to explain how she perceives other people's feelings, but you find her point of view alien to your own.
+		|SpeakerSet|Portraits_Empath
+		|Display|W1.L1.Empath.WillThatBeAll
+
+		W1.L1.Empath.Train.WantToKeepGoing
+		|Display|0e8d.26: Wouldst thou speak some more on this subject?
+		|OptionsClear
+		|Option|0e8d.27: Indeed! I find this very fascinating.|W1.L1.Empath.Train.StayAndTrain
+		|Option|0e8d.28: No thank thee -- perhaps another time.|W1.L1.Empath.Train.WantToKeepGoing.No
+		|Prompt
+
+			W1.L1.Empath.Train.WantToKeepGoing.No
+			0e8d.29: I am always available to talk with, @GS8.
+
+	W1.L1.Empath.VillainInvadesMyDreams
+	|Display|0e8d.30: Oh, Avatar, wilt the Guardian not leave our minds to ourselves? Each night his horrible visage invades my dreams.
+	|Option|0e8d.31: Are thy nightmares growing worse?
+	|Option|0e8d.32: Remember that they art only dreams, which cannot harm thee.
+	|Option|0e8d.33: Many here have received such unwanted visitations.
+
+		|Display|0e8d.34: His voice, that awful voice, speaks to me in my sleep. Recently it has been one message, over and over again. 'Lady Tory,' it says, 'even in the darkness of thy innermost thoughts, my eyes shall be watching you.'
+		|Options|0e8d.35: Do thy best to ignore it -- we must all stay sane to survive.
+		|Options|0e8d.36: Soon we will be free from this gem, and your nightmares will cease.
+
+		|Display|0e8d.37: My dreams are more vivid than thine own, @GS8, due to the nature of my empathic abilities. Still, thou art correct. They are naught but dreams, which means the Guardian is still unable to affect us directly. For that we should be thankful.
+		|Goto|W1.L1.Empath.AnythingElse
+
+		|Display|0e8d.38: I know that they have. Several people have come to me recently for counsel. The Guardian seems to know what we each most fear -- and what we most desire -- and uses that to influence us in our dreams.
+		|OptionsClear
+		|Option|0e8d.39: How art thou dealing with these dreams thyself?
+		|Option|0e8d.40: 'Tis good that we have an empath with us!
+		|Prompt
+
+			|Display|0e8d.41: I shouldst put my own distress aside, I know. There are others in the castle without my mental training who are in great need of my skills.
+			|Goto|W1.L1.Empath.AnythingElse
+
+			|Display|0e8d.42: My nightmares doth continue, Avatar, but I am doing what I can to ignore them. Others need mine aid too much for me to succumb to the Guardian's whisperings.
+			|Goto|W1.L1.Empath.AnythingElse
+
+	W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist
+	|Display|0e8d.43: Avatar, I am sensing very strong emotions from Feridwyn.
+	|Option|0e8d.44: Canst thou be more specific?
+	|Option|0e8d.45: I have long suspected that he was up to no good!
+	|Option|0e8d.46: From Feridwyn? Art thou certain?
+
+		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+		|Display|0e8d.47: 'Tis strange, but though he greatly fears what others may think of him, I can detect no guilt in him at all.
+		|OptionsClear
+		|Option|0e8d.48: Why is that strange?
+		|Option|0e8d.49: What dost thou think it means?
+		|Option|0e8d.50: Do you trust Feridwyn?
+		|Prompt
+
+			W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+			|Display|0e8d.51: He has either committed an evil act without remorse, or he is afraid of being falsely accused. Which, I cannot tell. To be honest with thee, Avatar, I do not trust the man.
+			|OptionsClear
+			|Option|0e8d.53: What can you tell from his emotions?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+			|Option|0e8d.54: Keep an eye on him, Lady Tory.|W1.L1.Empath.AnythingElse
+			|Prompt
+
+			W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+			|Display|0e8d.52: Truthfully, I do not know what to think. I hesitate to judge Feridwyn harshly without proof, and yet his emotions are so extremely defensive!
+			|OptionsClear
+			|Option|0e8d.53: What can you tell from his emotions?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+			|Option|0e8d.54: Keep an eye on him, Lady Tory.|W1.L1.Empath.AnythingElse
+			|Prompt
+
+	W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Display|0e8d.55: I am still keeping my mind on Feridwyn.  He remains suspicious, though I have no proof that he has done wrong.
+	|Display|0e8d.56: Trapped in here as we are, I sense rising fear and anxiety in nearly everyone.
+	|Option|0e8d.57: Thou must do what thou canst to prevent panic.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+	|Option|0e8d.58: 'Tis understandable, Lady Tory.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+	|Option|0e8d.59: We must not give into fear. 'Tis the Guardian's chief weapon!
+	|Prompt
+
+		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+		|Display|0e8d.60: But I also sense that they have great confidence in thee, @GS8.
+		|SpeakerSet|
+		|Display|0e8d.61: She pauses.
+		|SpeakerSet|Portraits_Empath
+		|Display|0e8d.62: As do I, Avatar.
+		|Goto||W1.L1.Empath.AnythingElse
+
+	W1.L1.Empath.NowThatYouFoundWater
+	|Display|0e8d.63: Now that we will not die of thirst, some of the tension in the castle has been lifted.
+	|Option|0e8d.64: We must still find a means to escape!
+	|Option|0e8d.65: It shows that the Guardian is not infallable.
+	|Option|0e8d.66: What is thy general sense of emotion in the castle?
+	|Prompt
+
+		W1.L1.Empath.NowThatYouFoundWater.PeopleWorriedAboutVillain
+		|Display|0e8d.67: The people worry about what the Guardian has planned for us.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+		W1.L1.Empath.NowThatYouFoundWater.WeMustStillEscape
+		|Display|0e8d.68: Aye, 'tis true.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+		W1.L1.Empath.NowThatYouFoundWater.VillainIsNotInfallible
+		|Display|0e8d.69: I suppose that is so, but 'tis only a minor comfort.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+			W1.L1.Empath.NowThatYouFoundWater.Done
+			|Goto||W1.L1.Empath.AnythingElse
+
+	W1.L1.Empath.SensingStrongEmotionsFromMayor
+	|Display|0e8d.70: I am sensing particularly great anxiety and turmoil in Patterson.
+	|Option|0e8d.71: Canst thou divine the cause?
+	|Option|0e8d.72: Perhaps thou shouldst speak with him.
+	|Option|0e8d.73: His behavior has seemed strange of late.
+	|Prompt
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.MindTooConfused
+		//0e8d.74: Nay, there is too much confusion in his mind.
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.TriedToTalkSeveralTimes
+		//0e8d.75: I have tried, several times.
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.ClaimsVillainNotTauntingHim
+		//0e8d.76: Patterson claims that he has received no taunts from the Guardian, but I am sure he is lying. I suspect that the Guardian has been particularly cruel to him. 'Twould be wise for me to speak with him again.
+
+	W1.L1.Empath.TriedToTalkToMayorAgain
+	|Display|0e8d.77: I tried to talk with Patterson again, but 'twas useless. Why, he even made a pass at me!
+	|Option|0e8d.78: Art thou joking?|W1.L1.Empath.TriedToTalkToMayorAgain.NotAJoke
+	|Option|0e8d.79: Dost thou sense anything new in him?|W1.L1.Empath.HisMindTooConfusedToRead
+	|Prompt
+
+		W1.L1.Empath.TriedToTalkToMayorAgain.NotAJoke
+		|Display|0e8d.80: No, 'tis no jest! 'Tis a shame I had no interest in responding, but I hope I was kind to him.
+
+		W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead
+		|Display|0e8d.81: I still can detect no specific emotions in the man. His mind is a tangle of confusion. He seems to have taken a liking to thee, @GS8 -- perhaps thou can help him.
+		|OptionsClear
+		|Option|0e8d.82: I will do what I can.|W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead.2
+		|Prompt
+
+			W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead.2
+			|Display|0e8d.83: I wish the man would just leave me alone!
+			|Goto||W1.L1.Empath.Done
+
+	W1.L1.Empath.WillThatBeAll
+	0e8d.16: Will that be all, @GS8?
+	|Option|0e8d.17: Yes. I shall speak with thee again, later.|W1.L1.Empath.Farewell
+	|Option|0e8d.18: Nay, there is more I must discuss with thee.|W1.L1.Empath.WillThatBeAll.No
+	|Option|0e8d.20: That is all for the moment. I shall have more to say later.|W1.L1.Empath.Farewell
+
+		W1.L1.Empath.WillThatBeAll.No
+		Display|0e8d.19: Of course. What hast thou in mind?
+		|Goto||W1.L1.Empath.GeneralQuestions
+
+	W1.L1.Empath.Done
+	|SpeakerSet
+	|Pop
+	|Prompt
 
 W1.L1.Guardswoman|SpeakerSet|Portraits_Guardswoman
 |Display|Not yet implemented!
@@ -584,7 +810,8 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.King|SpeakerSet|Portraits_King
+W1.L1.King
+|SpeakerSet|Portraits_King
 |Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
 |OptionsClear
 |Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
@@ -592,26 +819,275 @@ W1.L1.King|SpeakerSet|Portraits_King
 |Prompt
 
 	W1.L1.King.Speech.NotYet|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
-	|Goto||End
+	|Goto||W1.L1.King.Done
 
-	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia[...]
+	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia, that we are near our darkest hour. The gem that surrounds our castle is made of blackrock, a substance impervious to all physical force, which stifles magical workings within its boundaries. The Guardian has this day struck Britannia a fearsome blow, and we may be sure that he will not rest idle. Doubtless, even now he is preparing an assault on the entire nation of Britannia!
 	|SpeakerSet|
-	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom [...] rally our people [...]?
+	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom of the gargoyles rally our people against the invader?\m
 	|SpeakerSet|King
-	|Display|0e8e.12: He will do what he can[...]
+	|Display|0e8e.12: 12: He will do what he can, certainly, but I know not whether the humans of Britannia shall follow a gargoyle leader.
 	|SpeakerSet|
 	|Display|0e8e.13: [Patterson arrives in a hurry, gasping for breath.]
 	|SpeakerSet|Mayor
 	|Display|0e8e.14: Well, w-what can we do, then?
 	|SpeakerSet|King
-	|Display|0e8e.15: Somehow, we must find a way to breach the gem[...]
-	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort[...]
+	|Display|0e8e.15: Somehow, we must find a way to breach the gem. Now, to work! Servants, take an inventory of the castle storerooms! Nystul, Nelson, we shall have need of thy far-famed scholarly powers -- you must determine how the jewel was created, and how it may be destroyed. You others, warriors, and especially you, Avatar, eight times our savior, you must search the castle, above and below, for some means of escape.\m
+	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort. Thou shouldst use the Great Hall as thy headquarters. Avatar, be sure and report to her all that thou dost learn in thy search, and heed her advice in all things.
 	|Display|0e8e.17: All Britannia...
 	|SpeakerSet|
 	|Display|0e8e.18: [He breaks off, sensing an otherworldly intruder.]
 	|SpeakerSet|Villain
 	|Display|[Villain speech not available?]
-	|Goto||End
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.IMustHaveSolitude
+	|Display|0e8e.22: Please, Avatar -- I must have solitude if I am to  come to any decision in this matter. I trust Miranda to handle any difficulties that may come up meanwhile.
+	|Goto||W1.L1.King.Done
+
+	|Display|0e8e.42: Well, Avatar, I am sorry now I did invite thee to this doomed affair. The Guardian's threats are indeed dire!
+	|Option|0e8e.43: I would not have my friends face danger alone!
+	|Option|0e8e.44: 'Tis not thy fault -- who could have known?
+
+		|SpeakerSet|
+		|Display|0e8e.45: He laughs.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.46: Thou'rt right! Thou dost merely gravitate towards peril, like one of Brion's mystic lodestones towards iron! 'Tis a natural process, I am sure.
+		|Goto||W1.L1.King.GeneralQuestions
+
+		|SpeakerSet|
+		|Display|0e8e.47: He laughs.
+		|SpeakerSet|Portraits_King
+		0e8e.48: Thou'rt right! I was a fool to think I could keep thee out of danger, for thou'rt e'er plunging thyself in the thick of it!
+		|Goto||W1.L1.King.GeneralQuestions
+
+	W1.L1.King.Greet
+	|DoNextInSequence|W1.L1.King.TimesGreeted|W1.L1.King.Greet.1;W1.L1.King.Greet.2;W1.L1.King.Greet.3
+	|Display|W1.L1.King.Greet.1|Display|0e8e.23: Greetings, Avatar. In this dark time, 'tis good to see an old companion I can trust!
+	|Display|W1.L1.King.Greet.2|Display|0e8e.24: Avatar, 'tis well that thou hast come.
+	|Display|W1.L1.King.Greet.3|Display|0e8e.25: Yes, @GS8? What may I do for thee?
+
+//0e8e.26: Please explain more fully sir.
+
+	W1.L1.King.GeneralQuestions
+	|Option|0e8e.27: Tell me, then, what hath occupied thine attention lately?
+	|Option|0e8e.28: Tell me of the Reconstruction, my lord.
+	|Option|0e8e.29: I would speak to thee of thy experiences here in the castle.
+	|Option|0e8e.30: I have need of thy healing powers.
+	|Option|0e8e.31: Your pardon, sir, I must leave thee.
+	|Prompt
+
+//0e8e.34: Wait, @GS25, there is more we must speak of.
+//0e8e.35: What wouldst thou like to talk about, then?
+
+	W1.L1.King.WhatOfLastYear
+	|Display|0e8e.36: It has indeed been a hard year for us, Avatar. As thou didst travel the land, doubtless thou didst bear witness to the Guardian's subtle devastation of our land. 'Twill be a few more years yet before Britannia is once again a land fit for heroes to walk.
+
+	W1.L1.King.INeedHealing
+
+		W1.L1.King.INeedHealing.NoYouDont
+		0e8e.37: But thou art unwounded! 'Twere best I save my power for a time of need.
+
+		W1.L1.King.INeedHealing.TriesAndFails
+		|Display|0e8e.38: Of course, Avatar.
+		|SpeakerSet|
+		|Display|0e8e.39: He performs a gesture of healing, but nothing happens.
+		|Display|0e8e.40: He repeats the gesture.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.41: I am sorry, Avatar, but it appears that black jewel has nullifed my powers of healing. Thou wilt have to heal thyself naturally.
+
+	W1.L1.King.IsThereAnythingElse
+	Display|0e8e.32: If there is nothing more, @GS8, I must go now.
+	|Option|Display|0e8e.33: I shall speak to thee later, then.
+	|Goto||W1.L1.King.Farewell
+
+	W1.L1.King.SpeakWithPaladin
+	|Display|0e8e.49: Listen, thou shouldst speak with Dupre! He mentioned he had seen something which might relate to our current plight!
+	|Goto|W1.L1.King.Done
+
+	W1.L1.King.HeardYouWereExploringTheDepths
+	|Display|0e8e.50: Avatar, I hear thou hast begun exploring the Undercastle. 'Tis a vast area, and even I do not know its full extent. Be sure to alert Miranda to all of thy movements, lest thou shouldst become lost within its vast extent.
+	|Goto|W1.L1.King.Done
+
+	W1.L1.King.
+	//0e8e.51: I knew my hopes would be justified! Trust the Avatar to take a sealed castle, and discover in it a door to another world. Well done, my friend!
+
+	W1.L1.King.
+	//0e8e.52: Stricken with grief, Lord British turns his face away from you.
+	//0e8e.53: Please, Avatar, I would rather not speak with anyone right now.
+	//0e8e.54: All right, I shall go.
+	//0e8e.55: What is the matter?
+
+		W1.L1.King.
+		//0e8e.56: I cannot accept it! A woman murdered, within the walls of my own castle! If I cannot protect an innocent woman here, how can I protect an entire people?
+		//0e8e.57: Your Highness, thou canst not hold thyself responsible for everything.
+		//0e8e.58: I shall avenge her, my lord, thou canst depend on it.
+
+			W1.L1.King.
+			//0e8e.59: He sighs.
+			//0e8e.60: I suppose thou art right. But mark me, now that the deed is done there shall be justice. I shall have the killer, or rule this land no more!
+
+			W1.L1.King.
+			//0e8e.61: Aye. Though we failed in offering her protection, we may still offer vengeance. I shall count on thee, Avatar. Do not fail.
+
+	W1.L1.King.HeardTheMurderIsSolved
+	|Display|0e8e.62: I heard the... news about Mayor Patterson. I fear that part of the blame for Nelson's death is mine -- I should never have trusted him after his association with the Fellowship. And yet... after his encounter with you he seemed a changed man, and I believe he really was.
+	|Option|0e8e.63: I think thou art right.|W1.L1.King.HeardTheMurderIsSolved.TheVillainCorruptedTheMayor
+	|Option|0e8e.64: A cur like Patterson can never change.|W1.L1.King.HeardTheMurderIsSolved.YouAreMistaken
+	|Prompt
+
+		W1.L1.King.HeardTheMurderIsSolved.YouAreMistaken
+		Display|0e8e.65: No, I think thou art mistaken.
+
+		W1.L1.King.HeardTheMurderIsSolved.TheVillainCorruptedTheMayor
+		|Display|0e8e.66: It took the Guardian to find his fear, and his lust for power and status, and twist him into something else. Patterson was not a strong man, and the Guardian knew where to push him.
+		|Goto|W1.L1.King.Done
+
+	W1.L1.King.YouSwallowedAWhat
+	|Display|0e8e.67: Avatar, grant me the truth from thine own lips. Thou hast WHAT inside thy body?
+	|Option|0e8e.68: Why, nothing, Lord British.|W1.L1.King.YouSwallowedAWhat.Nothing
+	|Option|0e8e.69: An elemental of air, my lord.|W1.L1.King.YouSwallowedAWhat.AnAirElemental
+	|Prompt
+
+		W1.L1.King.YouSwallowedAWhat.Nothing
+		|Display|0e8e.70: 'Tis a relief. There certainly are strange rumors afoot in this castle.
+		|Goto||W1.L1.King.Done
+
+		W1.L1.King.YouSwallowedAWhat.AnAirElemental
+		|Display|0e8e.71: Surely, @GS8, this is thy strangest adventure ever!
+		|Goto||W1.L1.King.Done
+
+	W1.L1.King.ServantsOnStrike
+	|Display|0e8e.72: Avatar, something strange is going on. Just now, I asked Nanna to bring me some ale, and she stalked off without a word!
+	|Option|0e8e.73: My lord, I am here to demand a leveling of the class system in Britannia.
+	|Option|0e8e.74: Nanna has declared the servants on strike, sir!
+	|Option|0e8e.75: My lord, the servants are unhappy with their place in the castle..
+	|Prompt
+
+		W1.L1.King.ServantsOnStrike.Why
+		|Display|0e8e.76: What precisely are they asking for?
+		|Option|0e8e.77: To be treated with respect, to be referred to as "Domestic Management," and to have a voice in castle decisions.|W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+		|Option|0e8e.78: Their demands are subtle, but 'tis clear they ultimately seek to overthrow thee.|W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+		|Prompt
+
+			W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+			|Display|0e8e.79: Nanna... was she not once a member of the Guardian's Fellowship?
+			|Option|0e8e.80: Aye, but I think her concerns are legitimate nonetheless.|W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+			|Option|0e8e.81: Yes, thou hast it! She has thrown in her lot with the Guardian.|W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+			|Prompt
+
+				W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+				|Display|0e8e.82: Perhaps so, but I was certain Nanna could be trusted. Perhaps she is in fact sincere. I must think on this.
+				|Goto||W1.L1.King.Done
+
+//0e8e.83: @GS112
+
+	W1.L1.King.StrikeSolutions
+	|Display|0e8e.84: So, Avatar, hast thou come to any new conclusions about our class problems?|
+	|Option|0e8e.85: I think the servants should be beaten!|W1.L1.King.StrikeSolutions.BeatTheServants
+	|Option|0e8e.86: I think thou shouldst accede to their demands, which are quite reasonable.|W1.L1.King.StrikeSolutions.AcceptTheDemands
+	|Option|0e8e.87: I am uncertain -- caving in to their demands sets an unpleasant precedent.|W1.L1.King.StrikeSolutions.NotSure
+	|Prompt
+
+		W1.L1.King.StrikeSolutions.BeatTheServants
+		|Display|0e8e.88: Avatar, I am most disappointed -- thou showest thyself a fool! One cannot govern people as if one were driving oxen!
+		|Goto||W1.L1.King.StrikeSolutions.IHaveDecided
+
+		W1.L1.King.StrikeSolutions.AcceptTheDemands
+		|Display|0e8e.89: I see some justice in thy words, Avatar, although 'tis not easy to change the longstanding order of a society.
+		W1.L1.King.StrikeSolutions.IHaveDecided
+
+		W1.L1.King.NotSureWhatToDoAboutServants
+		|Display|0e8e.90: 'Tis true. Yet in this instance the wrath of the aggrieved may well be just, and therefore I cannot ignore or suppress it.
+		|Goto||W1.L1.King.StrikeSolutions.MustThinkAboutIt
+
+		W1.L1.King.StrikeSolutions.MustThinkAboutIt
+		//0e8e.94: I must have time, Avatar, to think on the past, and the way of life I have established in Britannia, and whether or not I have been just in my actions.
+		|Goto||W1.L1.King.Done
+
+		W1.L1.King.StrikeSolutions.IHaveDecided
+		|SpeakerSet|
+		|Display|0e8e.91: He sighs.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.92: I have made my decision.
+		|Display|0e8e.93: 'Tis a reform too long in coming -- the ordering of our society is an ancient one, and it carries with it many evils which have long gone unrecognized. I shall inform them myself that I find their demands, and their anger, understandable and justified.
+		|Goto||W1.L1.King.Done
+
+//0e8e.95: @GS1e12
+
+	W1.L1.King.AlmostTimeToBreakSpell
+	|Display|0e8e.96: Avatar, thou shouldst speak with Nystul at once -- it is almost time to begin our attack on the Guardian's spell!
+	|Option|0e8e.97: I shall speak with him at once.|W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+	|Option|0e8e.98: I have a few things to take care of yet.|AlmostTimeToBreakSpell.NotYet
+	|Prompt
+
+		W1.L1.King.AlmostTimeToBreakSpell.NotYet
+		//0e8e.99: Hurry, then! I can think of nothing more urgent than this.
+		|Goto||W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+
+		W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+		//0e8e.100: In the meantime, I have instructed the guards to be watchful for this "Mors Gotha" you have described.
+		|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUp
+	|SpeakerSet|
+	|Display|0e8e.102: Lord British gazes at you sternly.
+	|SpeakerSet|Portraits_King
+	|Display|0e8e.103: Avatar? I would speak with thee.
+	|Option|0e8e.104: What wouldst thou speak of?|W1.L1.King.YouScrewedUp.DontFightWithFriends
+	|Option|0e8e.105: I suspect I know what thou art here about.|W1.L1.King.YouScrewedUp.YouKnowWhatThisIsAbout
+	|Option|0e8e.106: I do not wish to speak to thee.|W1.L1.King.YouScrewedUp.ButWeMustSpeak
+	|Prompt
+
+		W1.L1.King.YouScrewedUp.ButWeMustSpeak
+		|Display|0e8e.107: As the situation stands, thou hast not a choice.
+		|Goto||W1.L1.King.YouScrewedUp.DontFightWithFriends
+
+		W1.L1.King.YouScrewedUp.YouKnowWhatThisIsAbout
+		|Display|0e8e.108: I suspect thou art right.
+		|Goto||W1.L1.King.YouScrewedUp.DontFightWithFriends
+
+		W1.L1.King.YouScrewedUp.DontFightWithFriends
+		|Display|0e8e.109: Avatar, I and thou know that the burden of protecting a nation is a great one. However, the next time thou dost find the pressure too much to bear, I suggest that thou find some occupation besides brawling with thy friends!
+		|OptionsClear
+		|Option|0e8e.110: I am sorry, Your Lordship. I did indeed lose my head.|W1.L1.King.YouScrewedUp.YoureForgiven
+		|Option|0e8e.111: Nay, I shall spend my time how I like.|W1.L1.King.YouScrewedUp.YoureNotForgiven
+		|Prompt
+
+			W1.L1.King.YouScrewedUp.YoureForgiven
+			|Display|0e8e.112: Now come, thou hast been forgiven. Now let us begin the fight anew!
+			|Display|0e8e.113: Try to be more civil in the future, though -- this is all we ask.
+			|Goto||W1.L1.King.Done
+
+			W1.L1.King.YouScrewedUp.YoureNotForgiven
+			|Display|0e8e.114: Then I am afraid thou shalt spend it here, and we must continue the fight without thee.
+			|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUpAgainSoGameOver
+	|Display|0e8e.115: Avatar, I have had enough. I sentence thee to remain in this cell for the duration of the Guardian's assault, if not longer. In that time, I suggest thou dost meditate on the path of virtue, and where it was thou didst lose thy way from it.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUpSoVeryBadSoGameOver
+	|Display|0e8e.101: Avatar, I am sorry to see that the shock of the Guardian's assault has gotten the better of thee. I think it best that thou shouldst remain here for the duration of the coming crisis. This time, Britannia will have to undertake its own defense.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.EndOfGame
+	|Display|0e8e.21: Avatar, the time to act is now! If the gem is not shattered, the Guardian's soldiers shall flood the castle in a few moments. This spell you and Nystul have prepared must not fail.
+
+	W1.L1.King.Farewell
+	|Goto||W1.L1.King.Farewell.IllBeHereInMyRoom
+
+	W1.L1.King.Farewell.IllBeHereOrInMyRoom
+	|Display|0e8e.20: If I am not here, I shall be in my quarters.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.Farewell.IllBeHereInMyRoom
+	|Display|0e8e.19: If thou dost need me, I shall be here in my quarters.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.Done
+	|SpeakerSet|
+	|Pop
+	|Prompt
 
 W1.L1.Knight|SpeakerSet|Portraits_Knight
 |Display|Not yet implemented!
@@ -619,11 +1095,251 @@ W1.L1.Knight|SpeakerSet|Portraits_Knight
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Mayor|SpeakerSet|Portraits_Mayor
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+W1.L1.Mayor
+|SpeakerSet|Portraits_Mayor
+
+	W1.L1.Mayor.KingAboutToSpeak
+	|Display|0e8c.6: Avatar, a pleasure to see thee again! Let us have a talk, you and I, after Lord British finishes his little speech. For now, we should hasten there.
+
+	//0e8c.0: 
+	//0e8c.1: @GS102
+	//0e8c.2: Well...
+	//0e8c.3: @GS70SI1
+	//0e8c.4: I thank thee, @GS25, that is enough.
+	//0e8c.5: What else dost thou know?
+
+	//0e8c.12: Oh, @GS8! Nelson and I were just . . . er . . . talking about an . . . idea he had . . .
+
+	W1.L1.Mayor.Greet
+	|DoNextInCycle|W1.L1.Mayor.TimesGreeted|W1.L1.Mayor.Greet.1;W1.L1.Mayor.Greet.2;W1.L1.Mayor.Greet.3
+	W1.L1.Mayor.Greet.1|Display|0e8c.13: I am so happy to see thee here! I mean... not because thou art inside here but... er, you understand.
+	W1.L1.Mayor.Greet.2|Display|0e8c.14: @GS8! What a pleasure to see thee!
+	W1.L1.Mayor.Greet.3|Display|0e8c.15: Avatar! What a surprise, a real treat!
+
+	W1.L1.Mayor.GeneralQuestions
+	|Option|0e8c.16: How are things, @GS25?
+	|Option|0e8c.17: What hast thou been doing since I saw thee last year?|W1.L1.Mayor.LastYear
+	|Option|0e8c.18: Patterson, canst thou train me to have more charisma?
+	|Option|0e8c.19: Excuse me, Patterson, I must leave thee.|W1.L1.Mayor.Done
+	|Prompt
+
+		W1.L1.Mayor.LastYear
+		|Display|0e8c.35: Well, Avatar, I shall not soon forget our last encounter! Thou didst teach me a lesson in honesty that was long past due, and though it hurts my pride, I must thank thee for it. Adultery is an ugly sin, but an easy one to fall into. Ah, 'tis a relief to be living without lies again.
+		|Option|0e8c.36: I hope thy wife was understanding.
+		|Option|0e8c.37: Think nothing of it -- 'twas my duty as an Avatar.
+		|Option|0e8c.38: Thou wert a scoundrel, Patterson, and I hope thou hast mended thy ways.
+		|Prompt
+
+			|Display|0e8c.39: Though we separated for a time, I am glad to tell thee Judith and I are together once again!
+			|Option|0e8c.40: 'Tis a relief to hear that, Patterson. I wish thee well.
+			|Option|0e8c.41: If thou art not deserving of her trust, thou shalt hear from me again!
+			|Prompt
+
+				|Display|0e8c.42: Again, I thank thee.
+				|Display|0e8c.43: I am glad to have a chance to speak with thee. I just wanted to say, I have always been a great admirer of thine, and 'tis good to be working with thee. If there is anything I can do to help out...
+				|Option|0e8c.44: No, thank thee.|W1.L1.Mayor.CanIHelp
+				|Option|0e8c.45: I need thee to help keep up people's morale -- thou art good at that!|W1.L1.Mayor.CanIHelp.Sure
+				|Option|0e8c.46: Perhaps thou shouldst assist Miranda in the war room.|W1.L1.Mayor.CanIHelp.Sure
+				|Option|0e8c.47: Just stay out of my way, Patterson.|W1.L1.Mayor.CanIHelp.No
+				|Prompt
+
+					W1.L1.Mayor.CanIHelp.No
+					|Display|0e8c.48: Er...
+					|Display|0e8c.49: Well, thou hast only to call on me, and I shall be ready!
+					|Goto||W1.L1.Mayor.WillThatBeAll
+
+					W1.L1.Mayor.CanIHelp.Sure
+					|Display|0e8c.50: Thank thee, Avatar! I shall do as thou sayest.
+					|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.Train.Charisma
+		|Option|0e8c.26: Surely I will help thee! Not for nothing did I serve as mayor of Britannia's largest town. I shall give thee a few pointers about dealing with people! But it will take some time -- hast thou a moment to spare?
+		|Option|0e8c.27: I will stay and train.
+		|Option|0e8c.28: I do not have the time to train with thee.
+
+			W1.L1.Train.Charisma.SucceedOrFail
+			|Goto|W1.L1.Train.Charisma.Succeed
+			|Goto|W1.L1.Train.Charisma.Fail
+
+			W1.L1.Train.Charisma.Succeed
+			|SpeakerSet
+			|Display|0e8c.29: Patterson's tips are surprisingly insightful.
+			|SpeakerSet|Portraits_Mayor
+			|Goto||W1.L1.Train.Charisma.AnyMore
+
+			W1.L1.Train.Charisma.Fail
+			|SpeakerSet
+			|Display|0e8c.30: Patterson tries to explain how he works with people, but you are unable to see his point of view.
+			|SpeakerSet|Portraits_Mayor
+
+			W1.L1.Train.Charisma.AnyMore
+			|Display|0e8c.31: Wouldst thou speak some more on this subject?
+			|Option|0e8c.32: Surely -- I find this very educational.W1.L1.Train.Charisma
+			|Option|0e8c.33: No thank thee -- perhaps another time.|W1.L1.Train.Charisma.AnyMore.No
+			|Prompt
+
+				W1.L1.Train.Charisma.AnyMore.No
+				|Display|0e8c.34: Of course -- come to me any time.
+				|Goto||W1.L1.Train.Charisma.Succeed
+
+	W1.L1.Mayor.HeardYouveBeenExploringDepths
+	|Display|0e8c.58: I have heard thou hast begun exploring beneath the castle -- surely there is naught there but a few rotten supplies, musty tunnels... I'm sure the libraries would prove more productive.
+	|Option|0e8c.59: I am not so sure... perhaps some hidden exit tunnel?|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+	|Option|0e8c.60: There are many mysteries in the depths -- perhaps one such might lead to our escape.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+	|Option|0e8c.61: Thou art right -- perhaps some ancient tome will shed light on the situation.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+	|Prompt
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+		|Display|0e8c.62: Perhaps thou art right...but I fear the gem has sealed us in for good.
+		|Goto|W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+		|Display|0e8c.63: I see that thou art a @SS1 of deep insight! I am sure thy scholarly investigations will save us all!
+		|Goto|W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+		|SpeakerSet|
+		|Display|0e8c.64: He shrugs.
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8c.65: Do what seems best to thee!
+		|Goto|W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouFoundMultiversePortal
+	|Display|0e8c.51: Is it true thou hast found some sort of gateway, in the sewers?
+	|Option|0e8c.52: Aye, but it leads only to another prison.
+	|Option|0e8c.53: Aye, perhaps it is the key to our salvation.
+	|Prompt
+
+		|Display|0e8c.54: 'Tis always the way with me! We've a saying in the town of Britain, when, for instance, you buy an ox and it falls dead the next day: "'Tis Patterson's luck has found ye!"
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		|Display|0e8c.55: I would not count on it, Avatar -- I am more concerned about what will come through the gate to find us!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+
+	W1.L1.Mayor.HadAScareThisMorning
+	|Display|0e8c.66: I had quite a scare this morning, as Iolo may have told thee!
+	|Option|0e8c.67: What happened?|W1.L1.Mayor.SpiderCorneredMeInBasement
+	|Option|0e8c.68: What had Iolo to do with this?|W1.L1.Mayor.BardSavedMe
+
+		W1.L1.Mayor.BardSavedMe
+		//0e8c.69: Why, he played the part of my rescuer!
+
+		W1.L1.Mayor.SpiderCorneredMeInBasement
+		|Display|0e8c.70: A spider had me cornered in the basement, a real brute the size of a dog! Iolo found me and drove it off, thank the serpent.
+		|Option|0e8c.71: Thou wert very lucky!|W1.L1.Mayor.EveryoneAvoidsMe
+		|Option|0e8c.72: What wert thou doing in the basement?|W1.L1.Mayor.WhyWereYouInTheBasement
+		|Prompt
+
+			W1.L1.Mayor.WhyWereYouInTheBasement
+			|Display|0e8c.73: I was hoping to find some wine or ale, to calm down Dupre -- he has been so nervous lately.
+			|Goto||W1.L1.Mayor.EveryoneAvoidsMe
+
+			W1.L1.Mayor.EveryoneAvoidsMe
+			|Display|0e8c.74: 'Tis disheartening, Avatar -- I try to help the others out, but it never seems to come out right! Now it seems like the whole castle is avoiding me. 'Tis strange to feel so alone, when trapped in a castle with a score of other humans.
+			|Option|0e8c.75: Well, thou knowest I am thy friend, Patterson.|W1.L1.Mayor.IAmYourFriend
+			|Option|0e8c.76: I pity thee, Patterson.|W1.L1.Mayor.IPityYou
+			|Option|0e8c.77: Really, I must be going!|W1.L1.Mayor.IMustGot
+
+				W1.L1.Mayor.IMustGot
+				|Display|0e8c.78: Well, I guess I shall see thee later, @GS8...
+				|Goto|W1.L1.Mayor.Done
+
+				W1.L1.Mayor.IAmYourFriend
+				|Display|0e8c.79: I am glad to hear thee say that, @GS8. Very glad.
+				|Goto|W1.L1.Mayor.WillThatBeAll
+
+				W1.L1.Mayor.IPityYou
+				|Display|0e8c.80: He is silent for a moment.
+				|Display|0e8c.81: Yes, 'tis a common sentiment 'round here.
+				|Goto|W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouFoundMirrorUniverse
+	|Display|0e8c.86: I have heard of thy discovery of a peaceful world, ruled by a regent of the Guardian! Is it possible... dost thou think we, too... oh, never mind, I shouldn't say it!
+	|Option|0e8c.87: Nay, what hast thou to propose?
+	|Option|0e8c.88: As you wish, 'tis forgotten.
+	|Prompt
+
+		W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay
+		|Display|0e8c.89: What I mean to say... perhaps to live under the Guardian would not... be that bad?
+		|Option|0e8c.90: Thou hast only to look at what he did to Britannia, to know what it would be like under his rule.|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+		|Option|0e8c.91: The inhabitants did seem at peace, in a sense, but certainly discontented.|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+		|Prompt
+
+			W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+			|Display|0e8c.92: I see. Perhaps thou art right.
+			|Goto|W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.MurderMystery
+	|Display|0e8c.93: What has happened, @GS8, I can't think about it... I just can't think about it!
+	|SpeakerSet|
+	|Display|0e8c.94: He hides his face.
+	Goto|W1.L1.Mayor.Done
+
+	W1.L1.Mayor.HeardOfMineralCacheOnExoplanet
+	|Display|0e8c.82: Avatar! I have seen a most extraordinary thing! I was wandering through a basement storeroom, when I came upon an ancient scroll, which spoke of a secret cache of Filanium on Talorus, "near the lava pits!" Could this be of any help to thee?
+	|Option|0e8c.83: Aye, a great deal!|W1.L1.Mayor.HeardOfMineralCacheOnExoplanet.SoundsGood
+	|Option|0e8c.84: No, sorry.|W1.L1.Mayor.WillThatBeAll
+	|Prompt
+
+		W1.L1.Mayor.HeardOfMineralCacheOnExoplanet.SoundsGood
+		|Display|0e8c.85: At last I am of some use!
+		|Goto|W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.WillWeEverEscape
+	|Display|0e8c.95: Avatar, dost thou think we will ever get out of here?
+	|Option|0e8c.96: Aye, do not worry thyself, Patterson!|	W1.L1.Mayor.WillWeEverEscape.IAmNotSoSure
+	|Prompt
+
+		W1.L1.Mayor.WillWeEverEscape.IAmNotSoSure
+		|Display|0e8c.97: I am not so sure! At night I have awful dreams . . . even if we do get out of here, what if his men have conquered Britannia?
+		|Option|0e8c.98: We have no proof that the Guardian's visions are real.
+		|Option|0e8c.99: I have seen them, too. We can only hope...
+		|Prompt
+
+			W1.L1.Mayor.WillWeEverEscape.NoProofVillainsVisionsAreReal
+			|Display|0e8c.100: You're right! I had not thought of that!
+			|Goto|W1.L1.Mayor.WillThatBeAll
+
+			W1.L1.Mayor.WillWeEverEscape.WeCanOnlyHope
+			|Display|0e8c.101: Yes... I suppose we can just hope.
+			|Goto|W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.Dying
+	|SpeakerSet|
+	|Display|0e8c.7: Driven to his knees, Patterson cries out.
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8c.8: Oh G... Guardian, save me, I served you... I did it all... why... do you not aid me now?
+	|SpeakerSet|
+	|Display|0e8c.9: Somehow, he manages to stand again.
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8c.10: Stop staring at me, you... you hated me in life, anyway, false friends, now you may hate me worse in death. If you ever get out of here... tell Judith I am sorry!
+	|Display|0e8c.11: I'm sorry, Avatar -- he's going to kill us all, and I can't... let myself go that way.
+	|Goto||W1.L1.Mayor.Done
+
+	W1.L1.Mayor.WillThatBeAll
+	|Display|0e8c.20: Will that be all, @GS8?
+	|OptionsClear
+	|Option|0e8c.21: Yes. I shall speak with thee again, later.|W1.L1.Mayor.Farewell
+	|Option|0e8c.22: There is more I must discuss with thee.|W1.L1.Mayor.WillThatBeAll.No
+	|Option|0e8c.25: That is all for the moment. I shall have more to say later.|W1.L1.Mayor.Farewell
+	|Prompt
+
+		W1.L1.Mayor.WillThatBeAll.No
+		|Display|0e8c.23: Of course. What hast thou in mind?
+		|Goto||W1.L1.Mayor.GeneralQuestions
+
+	W1.L1.Mayor.Farewell
+	|Display|0e8c.24: Always a pleasure, @GS8.
+	|Goto|W1.L1.Mayor.Done
+
+	W1.L1.Mayor.Done
+	|Pop
+	|Prompt
+
+
+	//0e8c.56: man
+	//0e8c.57: woman
 
 W1.L1.Paladin|Push
 |SpeakerSet|Portraits_Paladin
@@ -687,11 +1403,277 @@ W1.L1.Philanthropist|SpeakerSet|Portraits_Philanhtropist
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Scholar|SpeakerSet|Portraits_Scholar
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+W1.L1.Scholar
+|Push
+|SpeakerSet|Portraits_Scholar
+
+	W1.L1.Scholar.KingAboutToSpeak
+	|Display|0e8a.6: Ah, Avatar, I was just thinking... oh, just a moment. Perhaps Lord British has something to say to us.
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.WeAreInAFix
+	|Display|0e8a.55: We are in quite a fix, aren't we? But then, I suppose that is a specialty of thine!
+	|Option|0e8a.56: Thou art right -- I shall get us out of this!
+	|Option|0e8a.57: One never gets used to such things, Nelson.
+	|Prompt
+
+	W1.L1.Scholar.Greet
+	|DoNextInCycle|W1.L1.Scholar.TimesGreeted|W1.L1.Scholar.Greet.1;W1.L1.Scholar.Greet.2;W1.L1.Scholar.Greet.3
+	W1.L1.Scholar.Greet.1|Display|0e8a.10: Avatar! I am quite relieved thou art here.
+	W1.L1.Scholar.Greet.2|Display|0e8a.11: There you are, Avatar. I was just looking for thee.
+	W1.L1.Scholar.Greet.3|Display|0e8a.12: Yes, @GS8? What may I do for thee?
+	|Option|0e8a.13: What is it, @GS25?
+	|Option|0e8a.14: What hast occupied thee of late, @GS25?
+	W1.L1.Scholar.SinceLastISawYou|Option|0e8a.15: What hast thou been doing since I saw thee in Moonglow?|W1.L1.Scholar.SinceLastISawYou.Answer
+	|Option|0e8a.16: I would study with thee a brief time.|W1.L1.Scholar.Train
+	|Option|0e8a.17: If I may, I would like to hear thy thoughts so far on the current situation.
+	|Option|0e8a.18: 'Tis good to speak with thee, Nelson, but I must hurry off.
+	|Prompt
+
+	W1.L1.Scholar.SinceLastISawYou.Answer
+	|OptionRemove|W1.L1.Scholar.SinceLastISawYou
+	|Display|0e8a.29: I have remained in that fair city, as head of the Lycaeum. My studies there have kept me well occupied and quite content.  I heard that your friend Dupre had visited the city recently, but he prefered to frequent the Friendly Knave, and did not visit me in the Lycaeum.
+	|Prompt
+
+	W1.L1.Scholar.Train
+	|Display|0e8a.42: Of course! I find the ancient lore endlessly fascinating, and I would love to teach thee. Also, in my archaeological work I have developed an efficient method of searching small areas. Which would thou like to learn of?
+	|OptionsClear
+	|Option|43: Let us discuss lore, then.|W1.L1.Scholar.Train.Lore
+	|Option|44: Please, teach me to search out what is hidden.|W1.L1.Scholar.Train.Search
+	|Option|45: I shall return when I have the time.|W1.Scholar.Train.Done
+	|Push
+	|Prompt
+
+		W1.L1.Scholar.Train.Lore
+		|Goto||W1.L1.Scholar.Train.Lore.Succeed
+
+			W1.L1.Scholar.Train.Lore.Succeed
+			|SpeakerSet|
+			|Display|0e8a.46: Nelson's knowledge is encyclopedic, and in a short time you learn much.
+			|SpeakerSet|Portraits_Scholar
+			|Goto||W1.L1.Scholar.Train.Lore.WouldYouLikeToLearnMore
+
+				W1.L1.Scholar.Train.Lore.WouldYouLikeToLearnMore
+				|Display|0e8a.52: Wouldst thou like to study more?
+				|OptionsClear
+				|Option|0e8a.53: Yes, let us continue.|W1.Scholar.Train.Lore
+				|Option|0e8a.54: No, thank thee.|W1.Scholar.Train.Done
+				|Prompt
+
+			W1.L1.Scholar.Train.Lore.Fail
+			|SpeakerSet|
+			|Display|0e8a.47: Nelson talks for a long time, but you find your attention straying.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.48: Perhaps thou hast other things on thy mind, Avatar.
+
+		W1.L1.Scholar.Train.Search
+		|Goto||W1.L1.Scholar.Train.Search.Succeed
+
+			W1.L1.Scholar.Train.Search.Succeed
+			|SpeakerSet|
+			|Display|0e8a.49: Nelson's observations on the subject are quite canny.  You learn a great deal.
+			|SpeakerSet|Portraits_Scholar
+			|Goto||W1.L1.Scholar.Train.Search.WouldYouLikeToLearnMore
+
+				W1.L1.Scholar.Train.Search.WouldYouLikeToLearnMore
+				|Display|0e8a.52: Wouldst thou like to study more?
+				|OptionsClear
+				|Option|0e8a.53: Yes, let us continue.|W1.Scholar.Train.Search
+				|Option|0e8a.54: No, thank thee.|W1.Scholar.Train.Done
+				|Prompt
+
+			W1.L1.Scholar.Train.Search.Fail
+			|SpeakerSet|
+			|Display|0e8a.50: Nelson seems to know what he's talking about, but you don't quite get the point.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.51: Perhaps we should discuss this some other time, Avatar.
+			|Goto||W1.L1.Scholar.Train.Done
+
+		W1.L1.Scholar.Train.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Scholar.SearchForASmallerSphere
+	|Display|0e8a.58: Well, I have been thinking -- all of the Guardian's blackrock structures have had smaller copies of themselves inside -- it would be worthwhile searching for something similar within the castle.
+	|Option|0e8a.59: But where would such a thing be?|W1.L1.Scholar.SearchForASmallerSphere.Where
+	|Option|0e8a.60: What use would that be to us?|W1.L1.Scholar.SearchForASmallerSphere.Why
+	|Prompt
+
+		|W1.L1.Scholar.SearchForASmallerSphere.Why
+		|Display|0e8a.61: I cannot say for certain, but a year ago, thou didst find such a thing did help thee in breaking the Guardian's power. Dost thou recall? Thou didst enter within each of the smaller shapes, to attain thy goal.
+		|Goto|||W1.L1.Scholar.HaveYouObservedTheStructure
+
+		|W1.L1.Scholar.SearchForASmallerSphere.Where
+		|Display|0e8a.62: 'Tis hard to say. It may have been hidden, or it may contain its own defences, in some interior space. 'Tis probably not in the castle proper, though, but rather nearer the base of the sphere, in the sewers.
+		|Goto|||W1.L1.Scholar.HaveYouObservedTheStructure
+
+		W1.L1.Scholar.HaveYouObservedTheStructure
+		|Display|0e8a.63: Hast thou observed anything of the black gem's structural properties?
+		|OptionsClear
+		|Option|0e8a.64: No. I have more important things to think about than architecture.|W1.L1.Scholar.StructureHasAcousticalProperties
+		|Option|0e8a.65: No, please tell me of thy observations.|W1.L1.Scholar.StructureHasAcousticalProperties
+		|Prompt
+
+			W1.L1.Scholar.StructureHasAcousticalProperties
+			|Display|0e8a.66: Hmm... well, 'tis a very stable structure, very sound. I did notice some interesting acoustical properties. Listen!
+			|SpeakerSet|
+			|Display|0e8a.67: He hums a single note loudly, in a pleasing tenor. When he leaves off, you can hear the gem resonating faintly to the same note. It holds for a long time, then dies away.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.68: Extraordinary, is it not?
+			|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.YouFoundAPortal
+	|Display|0e8a.70: I mean, that thou didst find a gem, that took thee to a building in another world! Just think of what this discovery means!
+	|OptionsClear
+	|Option|0e8a.71: Er, what does it mean?|W1.L1.Scholar.YouFoundAPortal.2
+	|Option|0e8a.72: Canst thou tell me anything about other worlds?|W1.L1.Scholar.YouFoundAPortal.2
+	|Prompt
+
+		W1.L1.Scholar.YouFoundAPortal.2
+		|Display|0e8a.73: There are legends of events of other worlds, just think if we could learn their truth firsthand! The Battle of Rhyna, the Homeland of the Daemons -- any one of these things could lie through that gem!
+		|OptionsClear
+		|Option|0e8a.74: Why not come with me and see?|W1.L1.Scholar.YouFoundAPortal.ComeWithMe
+		|Option|0e8a.75: I am more concerned with survival, thank thee.|W1.L1.Scholar.IAmConcernedWithSurvival
+		|Prompt
+
+			W1.L1.Scholar.YouFoundAPortal.ComeWithMe
+			|Option|0e8a.76: No thank thee! Miranda is right -- a scholar like myself should stay in the library, out of danger. But be sure and visit me, and tell me of thy discoveries!
+			|Goto||W1.L1.Scholar.Done
+
+			W1.L1.Scholar.IAmConcernedWithSurvival
+			|Display|0e877: Ah, @GS8, thou hast not the poet's heart! Still, to a hero such as thyself, perhaps such things seem commonplace.
+			|Goto|W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderMystery
+	|Display|0e8a.78: I can hardly believe it -- I was so fond of her, @GS8. Tell me -- was it some... thing that crawled up out of the gem, or... dost thou think it could have been one of us?
+	|Option|0e8a.79: I know not.|W1.L1.Scholar.MurderMystery.KillerWasIDontKnow
+	|Option|0e8a.80: Aye, methinks one of us hath turned traitor.|W1.L1.Scholar.MurderMystery.KillerWasTraitor
+	|Option|0e8a.81: Nay, likely something from one of the other worlds.|W1.L1.Scholar.MurderMystery.KillerWasOutworlder
+	|Prompt
+
+		W1.L1.Scholar.MurderMystery.KillerWasIDontKnow
+		|Display|0e8a.82: If I may be of any assistance... I mean, I am a scholar, not a monster-killer, but still... I would fain be allowed to help in this matter.
+		|Option|0e8a.83: I shall call on thee if I need thee.
+		|Option|0e8a.84: 'Tis unlikely, but I shall keep thee in mind.
+		|Prompt
+
+		W1.L1.Scholar.MurderMystery.KillerWasTraitor
+		|Display|0e8a.85: 'Tis hard to imagine, Avatar. Surely, no one of us could have done that... And yet, if there were a traitor in the castle, the empath would be his or her first target.
+		|Goto||W1.L1.Scholar.Done
+
+		W1.L1.Scholar.MurderMystery.KillerWasOutworlder
+		|Display|0e8a.86: 'Tis a relief to hear thee say that. And yet, 'twas not one of the verminous sewer-creatures that did that. It strikes me that the killing was no random act of malice or hunger, but a deliberate attempt to remove the empath from our midst.
+		|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderedOnstage
+	|Display|0e8a.89: You see, @GS8, I was reading in the library, and . . .\n
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8a.90: Yes, @GS8, but there was something I wished to discuss with thee . . .\m
+	|SpeakerSet|Portraits_Scholar
+	|Display|0e8a.91: Please, Mayor Patterson, this is of the utmost importance. I was reading some of Batal Thaam's early texts concerning blackrock -- thou hast heard of Batal Thaam?
+	|Option|0e8a.92: Aye.|W1.L1.Scholar.MurderedOnstage.2
+	|Option|0e8a.93: Nay.|W1.L1.Scholar.MurderedOnstage.2
+	|Prompt
+
+		W1.L1.Scholar.MurderedOnstage.2
+		|Display|0e8a.94: She was one of the earliest sorcerers to develop a sense of the ether around us. Also a veteran of the Brujerian uprising -- 'tis a fascinating story, thou shouldst read it sometime...\m
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8a.95: Nelson, this does not seem terribly urgent after all. Perhaps the Avatar and I have something to discuss...?\m
+		|SpeakerSet|Portraits_Scholar
+		|Display|0e8a.96: Mayor Patterson, please! Now Batal Thaam also wrote specifically on the creation of blackrock, and its effects on the ether. But also, on how the ether can be made to have an effect on blackrock itself.\m
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8a.97: Avatar, must we endure these abstract theories? There is work to be done!
+		|Option|0e8a.98: Shhh. This sounds important.|W1.L1.Scholar.MurderedOnstage.ThisSoundsImportant
+		|Option|0e8a.99: Nelson, he may have a point. What is the gist of the matter?|W1.L1.Scholar.MurderedOnstage.GetToThePoint
+		|Prompt
+
+			W1.L1.Scholar.MurderedOnstage.ThisSoundsImportant
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.100: Thank you, @GS8.
+			|Goto||W1.L1.Scholar.MurderedOnstage.3
+
+			W1.L1.Scholar.MurderedOnstage.GetToThePoint
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.101: Avatar, please, a little patience.
+			|Goto||W1.L1.Scholar.MurderedOnstage.3
+
+			W1.L1.Scholar.MurderedOnstage.3
+			|Display|0e8a.102: Now it seems that Thaam had discovered a means of manip...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8a.103: Nelson, why are we bothering with this?\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.104: ...manipulating blackrock through a simple spell, which would allow one to perceive and act on...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8a.105: I don't think thou shouldst speak of such...\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.106: ...act on the ether, and therefore on the blackrock itself,...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8a.107: Nelson.\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8a.108: 'Twas a runic spell, using the runes...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8a.109: I'm sorry, Nelson.\m
+			|SpeakerSet|
+			|Display|0e8a.110: In a flash, Patterson draws a dagger from his belt and stabs Nelson through the back of the neck. Nelson stiffens and falls, and the dagger falls from Patterson's hand.
+			|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderedOffstage
+	|SpeakerSet|
+	|Display|0e8a.7: Nelson seems dazed. Blood is trickling from a wound on his neck, running down his shirt. He looks  down at it, then back up at you.
+	|SpeakerSet|Portraits_Scholar
+	|Display|0e8a.8: I say, Avatar . . . I was just telling Patterson about a new way of tunnelling through blackrock, when . . . there seems to have been some sort of misunderstanding . . .
+	|SpeakerSet|
+	|Display|0e8a.9: He collapses at your feet.
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.WillThatBeAll
+	|Display|0e8a.19: Will that be all, @GS8?
+	|Option|0e8a.20: Yes. I shall speak with thee again, later.
+	|Option|0e8a.21: Nay, there is more I must discuss with thee.
+	|Option|0e8a.22: Of course. What hast thou in mind?
+	|Prompt
+
+	W1.L1.Scholar.Farewell
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.Done
+	|Pop
+	|Prompt
+
+
+//0: 
+//1: @GS102
+//2: Well...
+//3: @GS70SI1
+//4: I thank thee, @GS25, that is enough.
+//5: What else dost thou know?
+
+//23: The logic of the Guardian's previous creations dictates that some smaller version of the blackrock gem must have formed within the castle grounds.
+
+//24: Well, I did notice that the gem resonates very strongly to certain musical notes.
+//25: Ah, @GS8, I long to know more of the worlds that lie through that gem!
+	//69: Yes, well, I suppose thou dost.
+
+//26: It seemed clear to me that Lady Tory was killed intentionally, and not just by some animal or brutal humanoid.
+//27: I'm dead now, so I can't say this.
+//28: That is all for the moment. I shall have more to say later.
+//30: 'Tis good to see thee here, Avatar.
+//31: I have noticed something odd.
+
+//32: Avatar, I have heard the news!
+//33: @GS8, I suppose thou hast heard the news.
+//34: Hello, @GS8. Mayor Patterson was just visiting me. I have some important research I must share with thee at once!
+//35: Of course, Nelson. What is it?
+//36: Just a minute -- I have another question for thee.
+//37: It must wait, Avatar -- this is too important!
+//38: Hello, @GS8. Mayor Patterson was just visiting me. I have some important research I must share with thee at once!
+//39: Of course, Nelson. What is it?
+//40: Just a minute -- I have another question for thee.
+//41: It must wait, Avatar -- this is too important!
+
+//87: man
+//88: woman
+
 
 W1.L1.Tinker|SpeakerSet|Portraits_Tinker
 |Display|Not yet implemented!
@@ -699,7 +1681,8 @@ W1.L1.Tinker|SpeakerSet|Portraits_Tinker
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
-W1.L1.Valet|SpeakerSet|Portraits_Valet
+W1.L1.Valet
+|SpeakerSet|Portraits_Valet
 |DoNextInCycle|W1.L1.Valet.TimesGreeted|W1.L1.Valet.Greet.1;W1.L1.Valet.Greet.2;W1.L1.Valet.Greet.3
 W1.L1.Valet.Greet.1|Display|0e8d.9: What is it, Avatar?
 W1.L1.Valet.Greet.2|Display|0e8d.10: 'Tis good to see thee, Avatar.
@@ -722,7 +1705,9 @@ W1.L1.Wizard
 	|Goto||W1.L1.Wizard.Done
 
 	W1.L1.Wizard.Greet
-	|DoNextInCycle|W1.L1.Wizard.TimesGreeted|W1.L1.Wizard.Greet.1;W1.L1.Wizard.Greet.2;W1.L1.Wizard.Greet.3
+	|DoOnceOnly|W1.L1.Wizard.TimesGreeted|W1.L1.Wizard.Greet.FirstTime
+	W1.L1.Wizard.Greet.FirstTime|Display|0e82.32: Ah, @GS8, 'tis quite a mess we are in. Come, what may I do for thee?
+	|DoNextInCycle|W1.L1.Wizard.TimesGreeted|W1.L1.Wizard.Greet.1;W1.L1.Wizard.Greet.2;W1.L1.Wizard.Greet.3;
 	W1.L1.Wizard.Greet.1|Display|0e82.33: Avatar, I am glad thou hast come to see me!
 	W1.L1.Wizard.Greet.2|Display|0e82.34: What brings thee to see me, Avatar?
 	W1.L1.Wizard.Greet.3|Display|0e82.35: What wouldst thou say to me?
@@ -1016,7 +2001,10 @@ W1.L1.Wizard
 	W1.L1.Wizard.IDetectMagicOnYourPerson
 	|Push
 	|Display|0e82.203: Well, Avatar! I sense thou dost carry some element of Guardian's spellcraft with thee! What is it thou hast found?
+	//200: Hast thou had any ideas yet, Avatar? I do sense strongly the presence of the Guardian's magic!
 	|Option|0e82.204: I know not what thou dost mean.|W1.L1.Wizard.IDetectMagicOnYourPerson.IDontKnowWhatYouMean
+	//202: Nay, I know not what it might be.
+	//201: Of course! I found this...
 	|Option|0e82.205: Perhaps this is what you mean.|W1.L1.Wizard.IDetectMagicOnYourPerson.DoYouMeanThis
 	|Prompt
 
@@ -1093,6 +2081,18 @@ W1.L1.Wizard
 		W1.L1.Wizard.IDetectMagicOnYourPerson.Done
 		|Pop
 		|Prompt
+
+	W1.L1.Wizard.SmallGemMergedWithLarger
+	todo
+	//192: So, the small gem thou didst find merged with the larger! This bodes well for us!
+	//193: How so?
+	//194: Why did the gems merge?
+	//195: The Guardian is a careless spellcaster! The tiny gem in the other world is an echo in the ether, just like the Gateway Gem, an echo of the first, enormous sphere he placed on our world.
+	//196: How can this help us?
+	//197: I don't understand.
+	//198: 'Tis a subtle point, I grant thee!
+	//199: As these echoes come together, they begin to build into a shout, which may bring this gem tumbling right down around our ears!
+
 
 	W1.L1.Wizard.ServantsOnStrike
 	|Display|0e82.14: Avatar, what's going on? I was in the kitchen just now, and Charles absolutely refused to bring me bread from the storeroom! I simply can't work unless I have enough food.
@@ -1182,18 +2182,60 @@ W1.L1.Wizard
 		|Display|todo
 		|Goto||W1.L1.Wizard.Done
 
-	W1.L1.Wizard.DoYouKnowTheTimeAndPlace
+	W1.L1.Wizard.YouGotTheHorn
+	|Display|0e82.67: So, 'tis true -- thou hast obtained the Horn of Praecor Loth, a thing out of legend!
+	|Display|0e82.50: The Horn of Praecor Loth may help us shatter the gem, though I can scarcely believe 'tis real and not a legend.
+	|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.YouHaveMadeYourselfADjinnBottle
+	|SpeakerSet|
+	|Display|0e82.65: Nystul sees you, and begins to split his sides with laughter.
+	|SpeakerSet|Wizard
+	|Display|0e82.66: HA HA HA, thou hast made a djinn-bottle of thyself, Avatar!
+	|Display|142: Seriously, Avatar, 'twill someday prove useful to us -- when thou dost choose to release thy captive, 'twill issue from thy lips with great force.
+	|Goto||W1.L1.Wizard.Done
+
+	W1.L1.Wizard.WeMustKnowTheTimeAndPlaceOfSpell
+
+	W1.L1.Wizard.TimeAndPlaceOfTheRitual
+	|Display|0e82.64: Avatar, the time of the ritual is almost at hand!
+	|Display|0e82.159: We need know only two more things -- what was the place and time of the original casting, when the Guardian's agent performed the ceremony to bring the dark jewel down on us?
 	|Display|0e82.24: Hast thou found the time and place?
-	|Option|0e82.25: Yes.|W1.L1.Wizard.Done
-	|Option|0e82.26: No.|W1.L1.Wizard.DoYouKnowTheTimeAndPlace.No
+	|Option|0e82.25: Yes.|W1.L1.Wizard.WhereDidItHappen
+	|Option|0e82.26: No.|W1.L1.Wizard.TimeAndPlaceOfTheRitual.No
 	|Prompt
 
-		W1.L1.Wizard.DoYouKnowTheTimeAndPlace.No
+		W1.L1.Wizard.TimeAndPlaceOfTheRitual.No
 		|Display|0e82.27: You must keep looking, then -- someone must know!
 		|Goto||W1.L1.Wizard.Done
 
+	W1.L1.Wizard.WhereDidItHappen
+	|Display|0e82.160: Where did it happen?
+	|OptionsClear
+	|Option|161: I know not.|W1.L1.Wizard.WhereDidItHappen.IDontKnow
+	|Option|162: Other...|W1.L1.Wizard.WhereDidItHappen.FreeTextAnswer
+	|Prompt
+
+		W1.L1.Wizard.WhereDidItHappen.IDontKnow
+		|Display|0e82.176: Thou must go and ask those left in the castle -- someone must have seen or heard something!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.WhereDidItHappen.FreeTextAnswer
+		|Goto||W1.L1.Wizard.WhereDidItHappen.Correct
+		|Goto||W1.L1.Wizard.WhereDidItHappen.Incorrect
+
+		W1.L1.Wizard.WhereDidItHappen.Incorrect
+		|Display|0e82.166: Nay, my calculations say this is impossible.
+		|Display|0e82.167: Thou must go and ask those left in the castle -- someone must have seen or heard something!
+		|Goto||W1.L1.Wizard.Done
+
+		W1.L1.Wizard.WhereDidItHappen.Correct
+		|Display|0e82.165: Yes, the throne room. My calculations agree with thee there.
+		|Goto||W1.L1.Wizard.WhenDidItHappen
+
 	W1.L1.Wizard.DoYouKnowTheTime
 	|Display|0e82.28: Dost thou know the time?
+	|OptionsClear
 	|Option|0e82.29: Yes.|W1.L1.Wizard.DoYouKnowTheTime.Yes
 	|Option|0e82.30: No.|W1.L1.Wizard.DoYouKnowTheTime.No
 
@@ -1202,8 +2244,53 @@ W1.L1.Wizard
 		|Goto||W1.L1.Wizard.Done
 
 		W1.L1.Wizard.DoYouKnowTheTime.Yes
-		|Display|todo
-		|Goto||W1.L1.Wizard.Done
+		W1.L1.Wizard.WhenDidItHappen
+		|Display|0e82.168: And now, what time of night was it?
+		|OptionsClear
+		|Option|0e82.169: I know not.|W1.L1.Wizard.DoYouKnowTheTime.No
+		|Option|0e82.170: Other...|W1.L1.Wizard.WhenDidItHappen.FreeTextAnswer
+		//171: \1@SS1\0
+		//172: 4
+		//173: four
+		|Prompt
+
+		W1.L1.Wizard.WhenDidItHappen.FreeTextAnswer
+		|Goto||W1.L1.Wizard.WhenDidItHappen.Correct
+		|Goto||W1.L1.Wizard.WhenDidItHappen.Incorrect
+
+			W1.L1.Wizard.WhenDidItHappen.Incorrect
+			|Display|0e82.175: Nay, my calculations say this is impossible.
+			|Goto||W1.L1.Wizard.DoYouKnowTheTime.No
+
+			W1.L1.Wizard.WhenDidItHappen.Correct
+			|Display|0e82.174: Four o'clock in the morning, yes, in the throne room as dawn broke. My calculations are complete! Now we may... what's that noise?
+			|SpeakerSet|
+			|Display|0e82.179: Suddenly you hear running footsteps, and a distant shouting. Julia bursts into the room, her sword bloody, her chest heaving, a gash running down her right shin.
+			|SpeakerSet|Guardswoman
+			|Display|0e82.180: A... Avatar... I... soldiers are pouring out of the gem, an army of them! If thou hast any hope of saving...
+			|SpeakerSet|
+			|Display|0e82.181: She breaks off and now stares into the corridor, shocked.
+			|SpeakerSet|Guardswoman
+			|Option|0e82.182: Julia, what is it?|W1.L1.Wizard.EnemyGeneralArrives
+			|Option|0e82.183: Where are they coming from? What soldiers?|W1.L1.Wizard.EnemyGeneralArrives
+			|Prompt
+
+				W1.L1.Wizard.EnemyGeneralArrives
+				|SpeakerSet|
+				|Display|184: A voice from the corridor outside replies.
+				//185: You hear a familiar voice from the corridor.
+				|SpeakerSet|EnemyGeneral
+				|Display|0e82.186: MY soldiers.
+				|SpeakerSet|
+				//187: A figure who could only be Mors Gotha herself steps through the doorway.
+				|Display|0e82.188: Mors Gotha steps into the doorway.
+				|SpeakerSet|EnemyGeneral
+				|Display|0e82.189: Led me right to @SS1, Julia.
+				|SpeakerSet|
+				|Display|0e82.190: From behind you, Nystul calls out, "Julia, you must get me to the throne room!" Mors Gotha chuckles as she watches them leave. Then she turns to look you in the eye.
+				|SpeakerSet|EnemyGeneral
+				|Display|0e82.191: Let's go.
+				|Goto||W1.L1.Wizard.Done
 
 	W1.L1.Wizard.EndOfGame
 	|Display|0e82.9: Avatar, we have very little time! Art thou ready to begin?
@@ -1238,7 +2325,6 @@ W1.L1.Wizard
 //6: man
 //7: woman
 
-//32: Ah, @GS8, 'tis quite a mess we are in. Come, what may I do for thee?
 
 //42: I see there is no use talking to thee anymore right now.
 //43: If there is nothing more, @GS8, I must return to my work.
@@ -1246,7 +2332,7 @@ W1.L1.Wizard
 //45: Wait, @GS25, there is more we must speak of.
 
 //49: The book thou didst bring me shall prove essential to our escape -- with it, I shall be able to weaken the spell holding the gem in place.
-//50: The Horn of Praecor Loth may help us shatter the gem, though I can scarcely believe 'tis real and not a legend.
+
 //51: Now that thou hast retrieved all eight of the Key Gems, the spell maintaining the black jewel has nearly broken.
 
 //59: @GS8, I see thou art joining us in this unexpectedly protracted reunion! Listen, I wish to discuss with thee my thoughts on our situation.
@@ -1254,13 +2340,8 @@ W1.L1.Wizard
 //61: Avatar, this is the most extraordinary thing I have ever heard of!
 //62: Avatar, I am interested to hear of thy latest findings.
 //63: I have had a new idea concerning thy interplanar vagrancy.
-//64: Avatar, the time of the ritual is almost at hand!
-//65: Nystul sees you, and begins to split his sides with laughter.
-//66: HA HA HA, thou hast made a djinn-bottle of thyself, Avatar!
-//67: So, 'tis true -- thou hast obtained the Horn of Praecor Loth, a thing out of legend!
 //68: You've done it, Avatar!  We're almost there!
 
-//142: Seriously, Avatar, 'twill someday prove useful to us -- when thou dost choose to release thy captive, 'twill issue from thy lips with great force.
 
 //153: Thou hast the Horn of Praecor Loth with thee -- make sure thou dost keep it  safe, for we shall need it soon!
 //154: Make sure thou dost retrieve Praecor Loth's horn, and keep it in a safe place, Avatar -- we shall need it soon!
@@ -1268,52 +2349,12 @@ W1.L1.Wizard
 //156: With the elemental within thee, thou now hast the means to blow the Horn of Praecor Loth! If we can but weaken the spell holding the gem in place, perhaps even blackrock shall fall before its might.
 //157: 'Tis said that with this weapon Praecor Loth did lord it over a hundred battlefields, but that none but he could wield the weapon. If we are to enlist its force to shatter the gem, we must find some way to blow it.
 //158: What I mean, thou hast found all the gems! Feel how the gem quivers at the touch, and hums strange harmonies! The spell that supports it is bent and twisted, its geometry warped from its shape. With its lines of magical support severed, all we need do is strike the shattering blow.
-//159: We need know only two more things -- what was the place and time of the original casting, when the Guardian's agent performed the ceremony to bring the dark jewel down on us?
-//160: Where did it happen?
-//161: I know not.
-//162: Other...
 //163: \1@SS1\0
 //164: throne
-//165: Yes, the throne room. My calculations agree with thee there.
-//166: Nay, my calculations say this is impossible.
-//167: Thou must go and ask those left in the castle -- someone must have seen or heard something!
-//168: And now, what time of night was it?
-//169: I know not.
-//170: Other...
-//171: \1@SS1\0
-//172: 4
-//173: four
-//174: Four o'clock in the morning, yes, in the throne room as dawn broke. My calculations are complete! Now we may... what's that noise?
-//175: Nay, my calculations say this is impossible.
-//176: Thou must go and ask those left in the castle -- someone must have seen or heard something!
+
 //177: him
 //178: her
-//179: Suddenly you hear running footsteps, and a distant shouting. Julia bursts into the room, her sword bloody, her chest heaving, a gash running down her right shin.
-//180: A... Avatar... I... soldiers are pouring out of the gem, an army of them! If thou hast any hope of saving...
-//181: She breaks off and now stares into the corridor, shocked.
-//182: Julia, what is it?
-//183: Where are they coming from? What soldiers?
-//184: A voice from the corridor outside replies.
-//185: You hear a familiar voice from the corridor.
-//186: MY soldiers.
-//187: A figure who could only be Mors Gotha herself steps through the doorway.
-//188: Mors Gotha steps into the doorway.
-//189: Led me right to @SS1, Julia.
-//190: From behind you, Nystul calls out, "Julia, you must get me to the throne room!" Mors Gotha chuckles as she watches them leave. Then she turns to look you in the eye.
-//191: Let's go.
 
-//192: So, the small gem thou didst find merged with the larger! This bodes well for us!
-//193: How so?
-//194: Why did the gems merge?
-//195: The Guardian is a careless spellcaster! The tiny gem in the other world is an echo in the ether, just like the Gateway Gem, an echo of the first, enormous sphere he placed on our world.
-//196: How can this help us?
-//197: I don't understand.
-//198: 'Tis a subtle point, I grant thee!
-//199: As these echoes come together, they begin to build into a shout, which may bring this gem tumbling right down around our ears!
-
-//200: Hast thou had any ideas yet, Avatar? I do sense strongly the presence of the Guardian's magic!
-//201: Of course! I found this...
-//202: Nay, I know not what it might be.
 
 
 //245: Avatar, I have been thinking -- in thy travels, thou hast encountered a number of servants of the Guardian, is that not so?
