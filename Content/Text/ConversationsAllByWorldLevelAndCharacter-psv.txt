@@ -102,17 +102,39 @@ W1.L1.Administrator
 
 	W1.L1.Administrator.GeneralQuestions
 	|OptionsClear
-	|Option|0e88.27: What is the situation in the castle?
-	|Option|0e88.28: What is the current situation in the castle?
-	|Option|0e88.29: What hast thou been doing since I last visited Britain?
-	|Option|0e88.69: How are the castle personnel doing?
-	|Option|0e88.30: Miranda, canst thou tell me where the Guardian's lines of power have been cut?
-	|Option|0e88.31: Excuse me, Miranda, I must go.
+	|Option|0e88.27: What is the situation in the castle?|W1.L1.Administrator.WhatIsSituationInCastle
+	|Option|0e88.28: What is the current situation in the castle?|W1.L1.Administrator.WhatIsSituationInCastle
+	|Option|0e88.29: What hast thou been doing since I last visited Britain?|W1.L1.Administrator.LastYear
+	|Option|0e88.69: How are the castle personnel doing?|W1.L1.Administrator.HowArePeople
+	|Option|0e88.30: Miranda, canst thou tell me where the Guardian's lines of power have been cut?|W1.L1.Administrator.VillainsPowerHasBeenCutHere
+	|Option|0e88.31: Excuse me, Miranda, I must go.|W1.L1.Administrator.Done
 	|Prompt
 
 		W1.L1.Administrator.WhatIsSituationInCastle
+		|Display|todo
+		|Prompt
+
+		W1.L1.Administrator.HowArePeople
 		|Display|0e88.71: Our people are doing all right, so far.
-		|Option|0e88.70: What else has been happening?
+		|Option|0e88.70: What else has been happening?|W1.L1.Administrator.WhatIsSituationInCastle
+		|Prompt
+
+		W1.L1.Administrator.LastYear
+		|Display|0e88.44: Well, Lord British put me in charge of Britannia's environmental problems, starting with Lock Lake, and I've started an organization of women who want a larger role in Britannian society. But who knows if all that will matter now?
+		|Prompt
+
+		W1.L1.Administrator.VillainsPowerHasBeenCutHere
+		|Display|0e88.117: The Guardian can no longer draw power from @SS1C1.
+		|Display|0e88.114: The Guardian can no longer draw power from these places:
+		|Display|0e88.106: The Ethereal Void.
+		|Display|0e88.107: The Pits of Carnage.
+		|Display|0e88.108: The Tomb of Praecor Loth.
+		|Display|0e88.109: The Scintillus Academy Final Exam.
+		|Display|0e88.110: Talorus.
+		|Display|0e88.111: Ice Caverns.
+		|Display|0e88.112: Killorn Keep.
+		|Display|0e88.113: The Prison Tower.
+		|Display|0e88.116: Why, 'tis all the known planes of reality!
 		|Prompt
 
 	W1.L1.Administrator.ValetIsPleasedAboutSomething
@@ -123,14 +145,10 @@ W1.L1.Administrator
 	|Display|0e88.37: And do not forget -- Nystul wishes thee to be watchful for something which might tell us more about the casting of this spell on our castle.
 	|Goto||W1.L1.Administrator.Done
 
-	W1.L1.Administrator.LastYear
-	|Display|0e88.44: Well, Lord British put me in charge of Britannia's environmental problems, starting with Lock Lake, and I've started an organization of women who want a larger role in Britannian society. But who knows if all that will matter now?
-	|Prompt
-
 	W1.L1.Administrator.SettingUpAWarRoom
 	|Display|0e88.46: Well, I'm setting up our "War Room" in the Great Hall, where I'll keep track of all the events related to our battle against the Guardian. Make sure to come to me often to get the latest news, and inform me of thy progress.
 	|OptionsClear|
-	|Option|0e88.47: I shall.
+	|Option|0e88.47: I shall.|W1.L1.Administrator.AnythingElse
 	|Option|0e88.48: Nay, I prefer to work on my own.|W1.L1.Administrator.SettingUpAWarRoom.YouMustCooperate
 	|Prompt
 
@@ -180,8 +198,8 @@ W1.L1.Administrator
 
 	W1.L1.Administrator.ServantsAreRude
 	|Display|0e88.62: The castle has been quiet recently, save for the servants, who have become increasingly rude and irritable.
-	|Option|0e88.63: Perhaps I should speak to them myself.
-	|Option|0e88.64: 'Tis a difficult time for all of us!
+	|Option|0e88.63: Perhaps I should speak to them myself.|W1.L1.Administrator.ServantsAreRude.TheyllListenToYou
+	|Option|0e88.64: 'Tis a difficult time for all of us!|W1.L1.Administrator.ServantsAreRude.WeMustWorkTogether
 	|Prompt
 
 		W1.L1.Administrator.ServantsAreRude.WeMustWorkTogether
@@ -216,13 +234,15 @@ W1.L1.Administrator
 	|Display|0e88.78: Yes? Out with it!\m
 	|SpeakerSet|Portraits_Guard
 	|Display|0e88.79: Julia just found her, @GS105. I...she's been killed.\m
-	|Option|0e88.80: How did this happen?
-	|Option|0e88.81: Who is responsible for this?
+	|Option|0e88.80: How did this happen?|W1.L1.Administrator.Murder.How
+	|Option|0e88.81: Who is responsible for this?|W1.L1.Administrator.Murder.Who
 	|Prompt
 
+		W1.L1.Administrator.Murder.How
 		|Display|0e88.82: Er, it seems she was stabbed, @GS105. In her room.\m
 		|Goto||W1.L1.Administrator.MurderMystery.Done
 
+		W1.L1.Administrator.Murder.Who
 		|Display|0e88.83: I don't know, @GS105. No one knows anything.\m
 		|Goto||W1.L1.Administrator.MurderMystery.Done
 
@@ -237,8 +257,8 @@ W1.L1.Administrator
 
 	W1.L1.Administrator.SeeTheScholar
 	|Display|0e88.86: @GS8, thou shouldst go see Nelson at once!
-	|Option|0e88.87: Why? What is the matter?
-	|Option|0e88.88: I am too busy!
+	|Option|0e88.87: Why? What is the matter?|W1.L1.Administrator.SeeTheScholar.WhatsTheMatter
+	|Option|0e88.88: I am too busy!|W1.L1.Administrator.SeeTheScholar.ItsImportant
 	|Prompt
 
 		W1.L1.Administrator.SeeTheScholar.ItsImportant
@@ -284,28 +304,13 @@ W1.L1.Administrator
 
 	W1.L1.Administrator.YourEffortsMayNotBeEnough
 	|Display|0e88.102: Avatar, thou hast done much on our behalf, but it may not be enough!
-	|Option|0e88.103: Why not?
-	|Option|0e88.104: I feel confident I shall soon succeed in freeing us.
+	|Option|0e88.103: Why not?|W1.L1.Administrator.YourEffortsMayNotBeEnough.2
+	|Option|0e88.104: I feel confident I shall soon succeed in freeing us.|W1.L1.Administrator.YourEffortsMayNotBeEnough.2
 	|Prompt
 
 		W1.L1.Administrator.YourEffortsMayNotBeEnough.2
 		|Display|0e88.105: The gem is certainly weakening, but Nystul tells me we have not quite obtained the power necessary to destroy it! And meanwhile, I have been having terrible dreams! If Lord Draxinusom is not victorious, we may emerge to find the Guardian's troops on our doorstep!
 		|Goto||W1.L1.Administrator.Done
-
-	W1.L1.Administrator.VillainsPowerHasBeenCutHere
-	|Display|0e88.117: The Guardian can no longer draw power from @SS1C1.
-	|Display|0e88.114: The Guardian can no longer draw power from these places:
-
-	|Display|0e88.106: The Ethereal Void.
-	|Display|0e88.107: The Pits of Carnage.
-	|Display|0e88.108: The Tomb of Praecor Loth.
-	|Display|0e88.109: The Scintillus Academy Final Exam.
-	|Display|0e88.110: Talorus.
-	|Display|0e88.111: Ice Caverns.
-	|Display|0e88.112: Killorn Keep.
-	|Display|0e88.113: The Prison Tower.
-	|Display|0e88.116: Why, 'tis all the known planes of reality!
-	|Goto||W1.L1.Administrator.Done
 
 	W1.L1.Administrator.SpellIsBreaking
 	|Display|0e88.98: At night I hear the black jewel creak and groan, as if under great strain -- I feel thine efforts are having some strong effect.
@@ -316,13 +321,15 @@ W1.L1.Administrator
 	W1.L1.Administrator.HornOfTheGhostKing
 	|Display|0e88.21: She seems surprised to see you again so soon.
 	|Display|0e88.22: And what of the horn of Praecor Loth? Dost thou have it?
-	|Option|0e88.23: Aye.
-	|Option|0e88.25: Nay.
+	|Option|0e88.23: Aye|W1.L1.Administrator.HornOfTheGhostKing.GotIt
+	|Option|0e88.25: Nay.|W1.L1.Administrator.HornOfTheGhostKing.DoNotHaveIt
 	|Prompt
 
+		W1.L1.Administrator.HornOfTheGhostKing.GotIt
 		|Display|0e88.24: That is good. I'm sure it is very important.
 		|Goto||W1.L1.Administrator.Done
 
+		W1.L1.Administrator.HornOfTheGhostKing.DoNotHaveIt
 		|Display|0e88.26: Perhaps thou shouldst find it.  I'm sure it is very important.
 		|Goto||W1.L1.Administrator.Done
 
@@ -339,8 +346,8 @@ W1.L1.Administrator
 
 		W1.L1.Administrator.AnythingElse.Yes
 		|Display|0e88.35: What wouldst thou like to know?
-		|Option|0e88.43: That is all for the moment. I shall have more to say later.
-		|Goto||W1.L1.Administrator.GeneralQuestions
+		|Option|0e88.43: That is all for the moment. I shall have more to say later.|W1.L1.Administrator.GeneralQuestions
+		|Prompt
 
 	W1.L1.Administrator.Farewell
 	|DoNextInCycle|W1.L1.Administrator.Farewell.TimesDismissed|W1.L1.Administrator.Farewell.1;W1.L1.Administrator.Farewell.2;W1.L1.Administrator.Farewell.3;W1.L1.Administrator.Farewell.4;W1.L1.Administrator.Farewell.5
@@ -442,7 +449,7 @@ W1.L1.Bard
 
 			W1.L1.Bard.Train.Swimming.Fail
 			|SpeakerSet
-			|Option|0e86.35: Iolo attempts to demonstrate some new strokes, but succeeds only in looking silly.
+			|Display|0e86.35: Iolo attempts to demonstrate some new strokes, but succeeds only in looking silly.
 			|SpeakerSet|Portraits_Bard
 			|Goto||W1.L1.Bard.Train.Done
 
@@ -847,6 +854,7 @@ W1.L1.Chambermaid
 	|Option|0e8a.65: They are more the Guardian's victims than Patterson's.|W1.L1.Chambermaid.MurderSolved.ItIsTheVillainsFault
 	|Option|0e8a.66: At least they will be the last.|W1.L1.Chambermaid.MurderSolved.AtLeastTheyreTheLast
 	|Option|0e8a.67: How art thou taking the deaths?|W1.L1.Chambermaid.MurderSolved.HowAreYouTakingIt
+	|Prompt
 
 		W1.L1.Chambermaid.MurderSolved.ItIsTheVillainsFault
 		|Display|0e8a.68: 'Tis not much of a comfort, Avatar.
@@ -865,12 +873,14 @@ W1.L1.Chambermaid
 
 	W1.L1.Chambermaid.EndOfGame
 	|Display|0e8a.7: They're coming, Avatar. Whatever thou hast to do, do it now, Avatar!
+	|Goto||W1.L1.Chambermaid.Done
 
 	W1.L1.Chambermaid.IsThatAll
 	|Display|16: Will that be all, @GS8?
 	|OptionsClear
 	|Option|0e8a.17: Yes. I shall speak with thee again, later.|W1.L1.Chambermaid.Done
 	|Option|0e8a.18: Nay, there is more I must ask of thee.|W1.L1.Chambermaid.IsThatAll.No
+	|Prompt
 
 		W1.L1.Chambermaid.IsThatAll.No
 		|Display|0e8a.19: Of course. What hast thou in mind?
@@ -887,6 +897,7 @@ W1.L1.Chambermaid
 	// 3: @GS70SI1
 	// 4: I thank thee, @GS25, that is enough.
 	// 5: What else dost thou know?
+
 
 W1.L1.Empath
 |SpeakerSet|Portraits_Empath
@@ -912,11 +923,11 @@ W1.L1.Empath
 	|Goto||W1.L1.Empath.GeneralQuestions
 
 	W1.L1.Empath.GeneralQuestions
-	|Option|0e8d.11: I would know thy thoughts, Lady Tory.
+	|Option|0e8d.11: I would know thy thoughts, Lady Tory.|W1.L1.Empath.News
 	|Option|0e8d.12: How has the past year been for thee?|W1.L1.Empath.WhatOfLastYear
 	|Option|0e8d.13: Lady, canst thou train me to be a more charismatic leader?|W1.L1.Empath.Train
-	|Option|0e8d.14: If I may, I would like to hear thy thoughts so far on the current situation.
-	|Option|0e8d.15: Excuse me, Lady, I must be going.
+	|Option|0e8d.14: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Empath.News
+	|Option|0e8d.15: Excuse me, Lady, I must be going.|W1.L1.Empath.Done
 	|Prompt
 
 	W1.L1.Empath.WhatOfLastYear
@@ -927,7 +938,7 @@ W1.L1.Empath
 	|Display|0e8d.21: Of course, @GS8. Let us talk for a while. But this will take some time -- wilt thou stay, or dost thou have to hurry off?
 	|OptionsClear
 	|Option|0e8d.22: I will stay and train.|W1.L1.Empath.Train.StayAndTrain
-	|Option|0e8d.23: I do not have the time to train with thee.
+	|Option|0e8d.23: I do not have the time to train with thee.|W1.L1.Empath.Train.WantToKeepGoing.No
 	|Prompt
 
 		W1.L1.Empath.Train.StayAndTrain
@@ -954,46 +965,61 @@ W1.L1.Empath
 		|Prompt
 
 			W1.L1.Empath.Train.WantToKeepGoing.No
-			0e8d.29: I am always available to talk with, @GS8.
+			|Display|0e8d.29: I am always available to talk with, @GS8.
+			|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.News
+	|Goto||W1.L1.Empath.VillainInvadesMyDreams
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Goto||W1.L1.Empath.NowThatYouFoundWater
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromMayor
+	|Goto||W1.L1.Empath.TriedToTalkToMayorAgain
 
 	W1.L1.Empath.VillainInvadesMyDreams
 	|Display|0e8d.30: Oh, Avatar, wilt the Guardian not leave our minds to ourselves? Each night his horrible visage invades my dreams.
-	|Option|0e8d.31: Are thy nightmares growing worse?
-	|Option|0e8d.32: Remember that they art only dreams, which cannot harm thee.
-	|Option|0e8d.33: Many here have received such unwanted visitations.
+	|Option|0e8d.31: Are thy nightmares growing worse?|W1.L1.Empath.VillainInvadesMyDreams.HisVoiceSpeaksToMe
+	|Option|0e8d.32: Remember that they art only dreams, which cannot harm thee.|W1.L1.Empath.VillainInvadesMyDreams.TheyAreOnlyDreams
+	|Option|0e8d.33: Many here have received such unwanted visitations.|W1.L1.Empath.VillainInvadesMyDreams.ManyAreHavingDreams
 
+		W1.L1.Empath.VillainInvadesMyDreams.HisVoiceSpeaksToMe
 		|Display|0e8d.34: His voice, that awful voice, speaks to me in my sleep. Recently it has been one message, over and over again. 'Lady Tory,' it says, 'even in the darkness of thy innermost thoughts, my eyes shall be watching you.'
-		|Option|0e8d.35: Do thy best to ignore it -- we must all stay sane to survive.
-		|Option|0e8d.36: Soon we will be free from this gem, and your nightmares will cease.
+		|Option|0e8d.35: Do thy best to ignore it -- we must all stay sane to survive.|W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
+		|Option|0e8d.36: Soon we will be free from this gem, and your nightmares will cease.|W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
 		|Prompt
 
+		W1.L1.Empath.VillainInvadesMyDreams.TheyAreOnlyDreams
 		|Display|0e8d.37: My dreams are more vivid than thine own, @GS8, due to the nature of my empathic abilities. Still, thou art correct. They are naught but dreams, which means the Guardian is still unable to affect us directly. For that we should be thankful.
 		|Goto||W1.L1.Empath.WillThatBeAll
 
+			W1.L1.Empath.VillainInvadesMyDreams.ManyAreHavingDreams
 		|Display|0e8d.38: I know that they have. Several people have come to me recently for counsel. The Guardian seems to know what we each most fear -- and what we most desire -- and uses that to influence us in our dreams.
 		|OptionsClear
-		|Option|0e8d.39: How art thou dealing with these dreams thyself?
-		|Option|0e8d.40: 'Tis good that we have an empath with us!
+		|Option|0e8d.39: How art thou dealing with these dreams thyself?|W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
+		|Option|0e8d.40: 'Tis good that we have an empath with us!|W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
 		|Prompt
 
+			W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
 			|Display|0e8d.41: I shouldst put my own distress aside, I know. There are others in the castle without my mental training who are in great need of my skills.
 			|Goto||W1.L1.Empath.WillThatBeAll
 
+			W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
 			|Display|0e8d.42: My nightmares doth continue, Avatar, but I am doing what I can to ignore them. Others need mine aid too much for me to succumb to the Guardian's whisperings.
 			|Goto||W1.L1.Empath.WillThatBeAll
 
 	W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist
-	|Display|0e8d.43: Avatar, I am sensing very strong emotions from Feridwyn.
-	|Option|0e8d.44: Canst thou be more specific?
-	|Option|0e8d.45: I have long suspected that he was up to no good!
-	|Option|0e8d.46: From Feridwyn? Art thou certain?
+	|Display|0e8d.43: Avatar, I am sensing very strong emotions from Feridwyn.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.44: Canst thou be more specific?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.45: I have long suspected that he was up to no good!|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.46: From Feridwyn? Art thou certain?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Prompt
 
 		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
 		|Display|0e8d.47: 'Tis strange, but though he greatly fears what others may think of him, I can detect no guilt in him at all.
 		|OptionsClear
-		|Option|0e8d.48: Why is that strange?
-		|Option|0e8d.49: What dost thou think it means?
-		|Option|0e8d.50: Do you trust Feridwyn?
+		|Option|0e8d.48: Why is that strange?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+		|Option|0e8d.49: What dost thou think it means?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+		|Option|0e8d.50: Do you trust Feridwyn?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
 		|Prompt
 
 			W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
@@ -1015,7 +1041,7 @@ W1.L1.Empath
 	|Display|0e8d.56: Trapped in here as we are, I sense rising fear and anxiety in nearly everyone.
 	|Option|0e8d.57: Thou must do what thou canst to prevent panic.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
 	|Option|0e8d.58: 'Tis understandable, Lady Tory.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
-	|Option|0e8d.59: We must not give into fear. 'Tis the Guardian's chief weapon!
+	|Option|0e8d.59: We must not give into fear. 'Tis the Guardian's chief weapon!|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
 	|Prompt
 
 		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
@@ -1028,9 +1054,9 @@ W1.L1.Empath
 
 	W1.L1.Empath.NowThatYouFoundWater
 	|Display|0e8d.63: Now that we will not die of thirst, some of the tension in the castle has been lifted.
-	|Option|0e8d.64: We must still find a means to escape!
-	|Option|0e8d.65: It shows that the Guardian is not infallable.
-	|Option|0e8d.66: What is thy general sense of emotion in the castle?
+	|Option|0e8d.64: We must still find a means to escape!|W1.L1.Empath.NowThatYouFoundWater.WeMustStillEscape
+	|Option|0e8d.65: It shows that the Guardian is not infallable.|W1.L1.Empath.NowThatYouFoundWater.VillainIsNotInfallible
+	|Option|0e8d.66: What is thy general sense of emotion in the castle?|W1.L1.Empath.NowThatYouFoundWater.PeopleWorriedAboutVillain
 	|Prompt
 
 		W1.L1.Empath.NowThatYouFoundWater.PeopleWorriedAboutVillain
@@ -1050,19 +1076,22 @@ W1.L1.Empath
 
 	W1.L1.Empath.SensingStrongEmotionsFromMayor
 	|Display|0e8d.70: I am sensing particularly great anxiety and turmoil in Patterson.
-	|Option|0e8d.71: Canst thou divine the cause?
-	|Option|0e8d.72: Perhaps thou shouldst speak with him.
-	|Option|0e8d.73: His behavior has seemed strange of late.
+	|Option|0e8d.71: Canst thou divine the cause?|W1.L1.Empath.SensingStrongEmotionsFromMayor.MindTooConfused
+	|Option|0e8d.72: Perhaps thou shouldst speak with him.|W1.L1.Empath.SensingStrongEmotionsFromMayor.TriedToTalkSeveralTimes
+	|Option|0e8d.73: His behavior has seemed strange of late.|W1.L1.Empath.SensingStrongEmotionsFromMayor.ClaimsVillainNotTauntingHim
 	|Prompt
 
 		W1.L1.Empath.SensingStrongEmotionsFromMayor.MindTooConfused
-		//0e8d.74: Nay, there is too much confusion in his mind.
+		|Display|0e8d.74: Nay, there is too much confusion in his mind.
+		|Goto||W1.L1.Empath.WillThatBeAll
 
 		W1.L1.Empath.SensingStrongEmotionsFromMayor.TriedToTalkSeveralTimes
-		//0e8d.75: I have tried, several times.
+		|Display|0e8d.75: I have tried, several times.
+		|Goto||W1.L1.Empath.WillThatBeAll
 
 		W1.L1.Empath.SensingStrongEmotionsFromMayor.ClaimsVillainNotTauntingHim
-		//0e8d.76: Patterson claims that he has received no taunts from the Guardian, but I am sure he is lying. I suspect that the Guardian has been particularly cruel to him. 'Twould be wise for me to speak with him again.
+		|Display|0e8d.76: Patterson claims that he has received no taunts from the Guardian, but I am sure he is lying. I suspect that the Guardian has been particularly cruel to him. 'Twould be wise for me to speak with him again.
+		|Goto||W1.L1.Empath.WillThatBeAll
 
 	W1.L1.Empath.TriedToTalkToMayorAgain
 	|Display|0e8d.77: I tried to talk with Patterson again, but 'twas useless. Why, he even made a pass at me!
@@ -1115,11 +1144,11 @@ W1.L1.Guardswoman
 	W1.L1.Guardswoman.Greet
 	|DoOnceOnly
 	|Display|0ea8.9: Well, Avatar, it seems thou art trapped with the rest of us!
-	|OptionsClear
-	|Option|0ea8.10: Ah, Avatar. Good of thee to visit me.
-	|Option|0ea8.11: Yes? What may I do for thee?
+	|DoNextInCycle|W1.L1.Guardswoman.TimesGreeted|W1.L1.Guardswoman.Greet.1;W1.L1.Guardswoman.Greet.2;W1.L1.Guardswoman.Greet.3
+	W1.L1.Guardswoman.Greet.1|Display|0ea8.10: Ah, Avatar. Good of thee to visit me.
+	W1.L1.Guardswoman.Greet.2|Display|0ea8.11: Yes? What may I do for thee?
 	//0ea8.12: Blah blah blah?
-	//|Option|0ea8.13: What is on thy mind, @GS25?|W1.L1.Guardswoman.
+	W1.L1.Guardswoman.Greet.3|Display|0ea8.13: What is on thy mind, @GS25?|W1.L1.Guardswoman.
 	|Prompt
 
 	W1.L1.Guardswoman.GeneralQuestions
@@ -1131,8 +1160,8 @@ W1.L1.Guardswoman
 
 	W1.L1.Guardswoman.LastYear
 	|Display|0ea8.21: I confess, Avatar, for a long time I hated thee. 'Twas a cruel thing, to learn that my Master De Snel, who had attained such perfection in the fighting arts, had turned from the path of honor! 'Twas a terrible blow to the entire academy, the Library of Scars!
-	|Option|0ea8.22: 'Twas indeed a shame.
-	|Option|0ea8.23: He got what he deserved.
+	|Option|0ea8.22: 'Twas indeed a shame.|W1.L1.Guardswoman.LastYear.HeDiedWithHonor
+	|Option|0ea8.23: He got what he deserved.|W1.L1.Guardswoman.LastYear.YouDispensedJustice
 	|Option|0ea8.24: Refresh my memory -- what became of the man?|W1.L1.Guardswoman.LastYear.RefreshMyMemory
 	|Prompt
 
@@ -1168,15 +1197,15 @@ W1.L1.Guardswoman
 
 	W1.L1.Guardswoman.Train
 	|Display|0ea8.35: I thought thou wouldst never ask! My blade rusts in its sheath, confined to the castle as I am! Shall we fence, then? Or shall I teach thee the art of unarmed fighting?
-	|Option|0ea8.36: By all means, teach me of the blade!
-	|Option|0ea8.37: Let us spar unarmed.
-	|Option|0ea8.38: Not right now. Perhaps later.
+	|Option|0ea8.36: By all means, teach me of the blade!|W1.L1.Guardswoman.Train.Sword
+	|Option|0ea8.37: Let us spar unarmed.|W1.L1.Guardswoman.Train.Unarmed
+	|Option|0ea8.38: Not right now. Perhaps later.|W1.L1.Guardswoman.Train.Done
 	|Prompt
 
 		W1.L1.Guardswoman.Train.ATestOfTheGreatOne
 		|Display|0ea8.50: It seems I shall have a chance to see the famous Avatar in action. I shall be curious to know whether there is any truth to the tales of thy boldness and cunning.
-		|Option|0ea8.51: Doubtless some of it has been exaggerated in the telling.||W1.L1.Guardswoman.Train.ATestOfTheGreatOne.NoBigDeal
-		|Option|0ea8.52: I have indeed endured many perils! Mine has been a full life.||W1.L1.Guardswoman.Train.ATestOfTheGreatOne.YouKnowIt
+		|Option|0ea8.51: Doubtless some of it has been exaggerated in the telling.|W1.L1.Guardswoman.Train.ATestOfTheGreatOne.NoBigDeal
+		|Option|0ea8.52: I have indeed endured many perils! Mine has been a full life.|W1.L1.Guardswoman.Train.ATestOfTheGreatOne.YouKnowIt
 		|Prompt
 
 			W1.L1.Guardswoman.Train.ATestOfTheGreatOne.NoBigDeal
@@ -1247,10 +1276,11 @@ W1.L1.Guardswoman
 		W1.L1.Guardswoman.HeardYouFoundMultiversePortal.1
 		|Display|0ea8.58: I truly hope so. Britannia has been so boring, of late! If only I had been born back in the days of the evil Mondain!
 		|OptionsClear
-		|Option|0ea8.59: How canst thou say such a thing?
-		|Option|0ea8.60: I was there -- 'twas a difficult time to be alive.
+		|Option|0ea8.59: How canst thou say such a thing?|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
+		|Option|0ea8.60: I was there -- 'twas a difficult time to be alive.|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
 		|Prompt
 
+			W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
 			|Display|0ea8.61: Say what thou wilt, but I am tired of a world where a mastery of the fighting arts makes one either a preacher of virtue (no offense, Avatar), or a school teacher!
 			|Goto||W1.L1.Guardswoman.AnythingElse
 
@@ -1260,12 +1290,15 @@ W1.L1.Guardswoman
 
 	W1.L1.Guardswoman.SpeakWithPaladin
 	|Display|0ea8.63: @GS8, speak to Dupre, won't thou? He seems so restless, waving his sword about the way he does! If he is not more careful I shall duel him -- 'twould fascinate me to take on the famous Sir Dupre!
-	|Option|0ea8.64: Watch thy step, Syria. He is possessed of a temper!
-	|Option|0ea8.65: I am sure he would spar with thee, if thou wouldst ask him.
+	|Option|0ea8.64: Watch thy step, Syria. He is possessed of a temper!|W1.L1.Guardswoman.SpeakWithPaladin.CertainlyHopeHeHasATemper
+	|Option|0ea8.65: I am sure he would spar with thee, if thou wouldst ask him.|W1.L1.Guardswoman.SpeakWithPaladin.NoWishToSpar
 	|Prompt
 
+		W1.L1.Guardswoman.SpeakWithPaladin.NoWishToSpar
 		|Display|0ea8.66: I have no wish to spar with anyone, Avatar! 'Tis so dull, if there is no blood at stake.
+		|Goto||W1.L1.Guardswoman.AnythingElse
 
+		W1.L1.Guardswoman.SpeakWithPaladin.CertainlyHopeHeHasATemper
 		|Display|0ea8.67: My dear @GS8, I certainly hope so!
 		|SpeakerSet|
 		|Display|0ea8.68: Syria laughs.
@@ -1388,30 +1421,26 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 	|Goto||W1.L1.Housekeeper.GeneralQuestions
 
 	W1.L1.Housekeeper.GeneralQuestions
-	|Option|0e89.18: What may I do for thee, Nanna?
-	|Option|0e89.19: What hast occupied thee of late, @GS25?
-	|Option|0e89.20: What hast thou been doing for the past year?
-	|Option|0e89.21: Excuse me, @GS25, I must return to my work.
+	|Option|0e89.18: What may I do for thee, Nanna?|W1.L1.Housekeeper.News
+	|Option|0e89.19: What hast occupied thee of late, @GS25?|W1.L1.Housekeeper.News
+	|Option|0e89.20: What hast thou been doing for the past year?|W1.L1.Housekeeper.LastYear
+	|Option|0e89.21: Excuse me, @GS25, I must return to my work.|W1.L1.Housekeeper.Done
 	|Prompt
 
-	W1.L1.Housekeeper.LastYear
-	|Display|0e89.134: Oh, not much. I have retained my position as head of the Royal Nursery, keeping watch over the little ones of the castle. Boots came back last week and took the children on a field trip to Paws -- I do hope they are all right!
-	|Prompt
+		W1.L1.Housekeeper.LastYear
+		|Display|0e89.134: Oh, not much. I have retained my position as head of the Royal Nursery, keeping watch over the little ones of the castle. Boots came back last week and took the children on a field trip to Paws -- I do hope they are all right!
+		|Prompt
 
-	W1.L1.Housekeeper.ServantTroubleBrewing
-	|Display|0e89.26: Avatar, I must speak to thee at once!
-	|Display|0e89.27: Lord British's behavior is becoming more and more offensive! "Servants, take an inventory"! No "please," no "thank you," no mention of "far-famed organizational powers!" I wonder what he thinks he would do without us!
-	|Option|0e89.28: I am sure Lord British holds the servants in great esteem.|W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
-	|Option|0e89.29: Look, @GS25, in this time of crisis we must all pull together.|W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
-	|Prompt
-
-		W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
-		|Display|0e89.30: Hmf!
-		|Goto||W1.L1.Housekeeper.Done
-
-		W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
-		|Display|0e89.31: Pull together? I spend all day searching the storerooms, shooing away rats, while he sits on his throne looking noble, staring into the middle distance! I suppose that's what you call pulling together!
-		|Goto||W1.L1.Housekeeper.Done
+		W1.L1.Housekeeper.News
+		|Goto||W1.L1.Housekeeper.WhatDoYouDoAllDay
+		|Goto||W1.L1.Housekeeper.MayorSucks
+		|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe
+		|Goto||W1.L1.Housekeeper.KingIsCondescending
+		|Goto||W1.L1.Housekeeper.ServantTroubleBrewing
+		|Goto||W1.L1.Housekeeper.AboutToGoOnStrike
+		|Goto||W1.L1.Housekeeper.ServantsOnStrike
+		|Goto||W1.L1.Housekeeper.StrikeResolved
+		|Goto||W1.L1.Housekeeper.SpellIsWeakening
 
 	W1.L1.Housekeeper.WhatDoYouDoAllDay
 	|Display|0e89.32: Avatar, what do heroes such as thee DO all day?
@@ -1431,6 +1460,80 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 		|SpeakerSet|Portraits_Housekeeper
 		|Goto||W1.L1.Housekeeper.Done
 
+	W1.L1.Housekeeper.MayorSucks
+	|Display|0e89.85: Patterson was fetching supplies for me, and spilled a whole bushel of apples down the stairs. Nearly half of them are badly bruised. What are we going to do with him?
+	|OptionsClear
+	|Option|0e89.86: Be patient with him, Nanna. He is only trying to help.|W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
+	|Option|0e89.87: Perhaps thou shouldst suggest that he provide help elsewhere.|W1.L1.Housekeeper.MayorSucks.UselessAtPracticalTasks
+	|Option|0e89.88: Patterson should be locked away!|W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
+	|Prompt
+
+		W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
+		|Display|0e89.89: He did volunteer for the job, so perhaps I'd best not complain. But usually he tries too hard to be helpful, and makes a nuisance of himself instead.
+		|Display|0e89.90: I'm not sure I'd wish his 'help' on anyone else!
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.UselessAtPracticalTasks
+		|Display|0e89.91: For all his experience as mayor, he is quite useless for more practical tasks. A typical specimen of the ruling class!
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
+		|Display|0e89.92: I'd not be so extreme as that, Avatar. But we would be better off if he'd simply stay out of the way.
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.Done
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.VillainTriedToBribeMe
+	|Display|0e89.94: The Guardian has been attempting to sway my loyalties away from thee and Lord British!
+	|OptionsClear
+	|Option|0e89.95: What hath been the nature of his persuasions?|W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+	|Option|0e89.96: Thou must fight against his influences!|W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
+	|Prompt
+
+		W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
+		|Display|0e89.97: Oh, do not worry. There is no danger of him convincing me.
+		|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+
+		W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+		|Display|0e89.98: He hath promised me a world where the workers have equal representation in all levels of government, if only I wouldst be loyal to him.
+		|OptionsClear
+		|Option|0e89.99: I wouldst think that thou might find that tempting.|W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+		|Option|0e89.100: 'Tis but a lie. The Guardian would surely make thee a slave.|W1.L1.Housekeeper.VillainTriedToBribeMe.ForgetThatScoundrel
+		|Option|0e89.101: The Guardian seeks to lure us each with our own desires.|W1.L1.Housekeeper.VillainTriedToBribeMe.MisjudgedWhatIWant
+		|Prompt
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.MisjudgedWhatIWant
+			|Display|0e89.102: He hath misjudged what I desire, then.
+			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.ForgetThatScoundrel
+			0e89.103: I have no intention of giving into that red scoundrel.
+			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+			0e89.104: My true desire is to see Britannia's social order change, but from within, and willingly. I do not simply want equality and an end to class structure. I wish that all people, nobles and peasants alike, should first understand the need for that change, and then strive themselves to achieve it.
+			|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.KingIsCondescending
+	|Display|0e89.93: Grrrr . . . that Lord British! Could he be more condescending!?!
+	|Goto|W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.ServantTroubleBrewing
+	|Display|0e89.26: Avatar, I must speak to thee at once!
+	|Display|0e89.27: Lord British's behavior is becoming more and more offensive! "Servants, take an inventory"! No "please," no "thank you," no mention of "far-famed organizational powers!" I wonder what he thinks he would do without us!
+	|Option|0e89.28: I am sure Lord British holds the servants in great esteem.|W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
+	|Option|0e89.29: Look, @GS25, in this time of crisis we must all pull together.|W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
+	|Prompt
+
+		W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
+		|Display|0e89.30: Hmf!
+		|Goto||W1.L1.Housekeeper.Done
+
+		W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
+		|Display|0e89.31: Pull together? I spend all day searching the storerooms, shooing away rats, while he sits on his throne looking noble, staring into the middle distance! I suppose that's what you call pulling together!
+		|Goto||W1.L1.Housekeeper.Done
+
 	W1.L1.Housekeeper.AboutToGoOnStrike
 	|Display|0e89.53: I find it insulting that we 'servants' are treated with so little respect. Lord British has become accustomed to ordering us about like animals!
 	|OptionsClear
@@ -1442,70 +1545,71 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 		W1.L1.Housekeeper.AboutToGoOnStrike.StopComplaining
 		|Display|0e89.57: Thou art just like the rest of the nobility! Thou hast no idea what 'tis like to be a member of the working classes. We enjoy none of the privileges and benefits afforded to those of noble rank. And in the past year, the situation has worsened, both in the castle and in Britannia at large.
 		|OptionsClear
-		|Option|0e89.58: What privileges dost thou desire?
-		|Option|0e89.59: Thou shouldst spend less time worrying about such things.
+		|Option|0e89.58: What privileges dost thou desire?|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+		|Option|0e89.59: Thou shouldst spend less time worrying about such things.|W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
 		|Prompt
 
-		W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
-		|Display|0e89.60: Thou might be surprised, Avatar, at how quickly things here would degenerate without the castle 'servants.' Given what we do, we deserve social equality!
-		|OptionsClear
-		|Option|0e89.61: How dost thou define 'equality?'
-		|Option|0e89.62: What exactly dost thou want, then?
-		|Prompt
-
-		W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
-		|Display|0e89.63: First off, we should not be called 'servants.' 'Tis a demeaning term, and overused here in the castle.  We should be given the title of 'Domestic Management.'
-		|OptionsClear
-		|Option|0e89.64: Surely thou art kidding!|W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
-		|Option|0e89.65: That seems reasonable.|W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
-		|Prompt
-
-			W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
-			|Display|0e89.66: And why should I be kidding?
-
-			W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
-			|Display|0e89.67: Aren't we all 'servants,' in truth?  Lord British himself hath taken an oath to serve the people of Britannia -- should we not call him a 'servant,' then? The word implies that we are not entitled to basic human dignity! It should be discarded.
+			W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
+			|Display|0e89.60: Thou might be surprised, Avatar, at how quickly things here would degenerate without the castle 'servants.' Given what we do, we deserve social equality!
 			|OptionsClear
-			|Option|0e89.68: That is a fair argument.|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
-			|Option|0e89.69: Is that all thou dost want?|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
-			|Option|0e89.70: That seemeth a bit silly, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
+			|Option|0e89.61: How dost thou define 'equality?'|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+			|Option|0e89.62: What exactly dost thou want, then?|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
 			|Prompt
 
-				W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
-				|Display|0e89.71: 'Tis not silly, and 'tis not all.
-				|Goto||W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+			W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+			|Display|0e89.63: First off, we should not be called 'servants.' 'Tis a demeaning term, and overused here in the castle.  We should be given the title of 'Domestic Management.'
+			|OptionsClear
+			|Option|0e89.64: Surely thou art kidding!|W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
+			|Option|0e89.65: That seems reasonable.|W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+			|Prompt
 
-				W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
-				|Display|0e89.72: More importantly, we desire a voice in the decisions that affect life here in the castle. We toil here every day, working just as hard as the nobles, if not harder. And yet we are never consulted on issues of day-to-day management. 'Tis like we are but children here!
-				|Option|0e89.73: 'Tis not possible for everyone to have a say in everything.|W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
-				|Option|0e89.74: Your arguments are persuasive, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
-				|Option|0e89.75: Is there something I can do to help thee?|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+				W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
+				|Display|0e89.66: And why should I be kidding?
+				|Goto||W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+
+				W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+				|Display|0e89.67: Aren't we all 'servants,' in truth?  Lord British himself hath taken an oath to serve the people of Britannia -- should we not call him a 'servant,' then? The word implies that we are not entitled to basic human dignity! It should be discarded.
+				|OptionsClear
+				|Option|0e89.68: That is a fair argument.|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+				|Option|0e89.69: Is that all thou dost want?|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+				|Option|0e89.70: That seemeth a bit silly, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
 				|Prompt
 
-					W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
-					|Display|0e89.76: Is it not? In an environment such as this, methinks it is not just possible, but a moral imperative!
+					W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
+					|Display|0e89.71: 'Tis not silly, and 'tis not all.
+					|Goto||W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
 
-					W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
-					|Display|0e89.77: Avatar, wouldst thou take our grievances to Lord British? Thou art one of his most trusted friends, and he wouldst take thee seriously.  We only ask for a leveling of the unfair class structure that is so exemplified by life in the castle. Wilt thou do it?
-					|Option|0e89.78: I am afraid I must refuse. Thou art asking too much.|W1.L1.Housekeeper.GoingOnStrike
-					|Option|0e89.79: I sympathize with thee, but I think thou hast chosen a bad time to approach Lord British.|W1.L1.Housekeeper.GoingOnStrike.2
-					|Option|0e89.80: I would be happy to talk with him on thy behalf.|W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
+					W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+					|Display|0e89.72: More importantly, we desire a voice in the decisions that affect life here in the castle. We toil here every day, working just as hard as the nobles, if not harder. And yet we are never consulted on issues of day-to-day management. 'Tis like we are but children here!
+					|Option|0e89.73: 'Tis not possible for everyone to have a say in everything.|W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
+					|Option|0e89.74: Your arguments are persuasive, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+					|Option|0e89.75: Is there something I can do to help thee?|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
 					|Prompt
 
-					W1.L1.Housekeeper.GoingOnStrike
-					|SpeakerSet|
-					|Display|0e89.81: Nanna draws a deep breath.
-					|SpeakerSet|Portraits_Housekeeper
-					|Display|0e89.82: We shall soon see what is too much!  As of this moment, I declare the Domestic Management of Castle British to be on strike!
-					|Goto||W1.L1.Housekeeper.Done
+						W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
+						|Display|0e89.76: Is it not? In an environment such as this, methinks it is not just possible, but a moral imperative!
 
-					W1.L1.Housekeeper.GoingOnStrike.2
-					|Display|0e89.83: I am sorry thou dost feel that way. Although I regret what we must do, I feel in my deepest heart that 'tis necessary. I hereby declare the Domestic Management of Castle British to be on strike!
-					|Goto||W1.L1.Housekeeper.Done
+						W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+						|Display|0e89.77: Avatar, wouldst thou take our grievances to Lord British? Thou art one of his most trusted friends, and he wouldst take thee seriously.  We only ask for a leveling of the unfair class structure that is so exemplified by life in the castle. Wilt thou do it?
+						|Option|0e89.78: I am afraid I must refuse. Thou art asking too much.|W1.L1.Housekeeper.GoingOnStrike
+						|Option|0e89.79: I sympathize with thee, but I think thou hast chosen a bad time to approach Lord British.|W1.L1.Housekeeper.GoingOnStrike.2
+						|Option|0e89.80: I would be happy to talk with him on thy behalf.|W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
+						|Prompt
 
-					W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
-					|Display|0e89.84: I knew that thou wouldst understand our situation, @GS8. Thou art truly a champion of the working class!
-					|Goto||W1.L1.Housekeeper.Done
+						W1.L1.Housekeeper.GoingOnStrike
+						|SpeakerSet|
+						|Display|0e89.81: Nanna draws a deep breath.
+						|SpeakerSet|Portraits_Housekeeper
+						|Display|0e89.82: We shall soon see what is too much!  As of this moment, I declare the Domestic Management of Castle British to be on strike!
+						|Goto||W1.L1.Housekeeper.Done
+
+						W1.L1.Housekeeper.GoingOnStrike.2
+						|Display|0e89.83: I am sorry thou dost feel that way. Although I regret what we must do, I feel in my deepest heart that 'tis necessary. I hereby declare the Domestic Management of Castle British to be on strike!
+						|Goto||W1.L1.Housekeeper.Done
+
+						W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
+						|Display|0e89.84: I knew that thou wouldst understand our situation, @GS8. Thou art truly a champion of the working class!
+						|Goto||W1.L1.Housekeeper.Done
 
 	W1.L1.Housekeeper.ServantsOnStrike
 	|Display|0e89.40: We are on strike, Avatar. There is nothing I can do for thee.
@@ -1541,64 +1645,6 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 
 	W1.L1.Housekeeper.StrikeResolved
 	0e89.52: Thine efforts on our behalf have opened the door to real social change in Britannia!
-
-	W1.L1.Housekeeper.MayorSucks
-	|Display|0e89.85: Patterson was fetching supplies for me, and spilled a whole bushel of apples down the stairs. Nearly half of them are badly bruised. What are we going to do with him?
-	|OptionsClear
-	|Option|0e89.86: Be patient with him, Nanna. He is only trying to help.|W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
-	|Option|0e89.87: Perhaps thou shouldst suggest that he provide help elsewhere.|
-	|Option|0e89.88: Patterson should be locked away!|W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
-	|Prompt
-
-		W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
-		|Display|0e89.89: He did volunteer for the job, so perhaps I'd best not complain. But usually he tries too hard to be helpful, and makes a nuisance of himself instead.
-		|Display|0e89.90: I'm not sure I'd wish his 'help' on anyone else!
-		|Goto||W1.L1.Housekeeper.MayorSucks.Done
-
-		W1.L1.Housekeeper.MayorSucks
-		|Display|0e89.91: For all his experience as mayor, he is quite useless for more practical tasks. A typical specimen of the ruling class!
-		|Goto||W1.L1.Housekeeper.MayorSucks.Done
-
-		W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
-		|Display|0e89.92: I'd not be so extreme as that, Avatar. But we would be better off if he'd simply stay out of the way.
-		|Goto||W1.L1.Housekeeper.MayorSucks.Done
-
-		W1.L1.Housekeeper.MayorSucks.Done
-		|Goto||W1.L1.Housekeeper.AnythingElse
-
-	W1.L1.Housekeeper.KingIsCondescending
-	0e89.93: Grrrr . . . that Lord British! Could he be more condescending!?!
-
-	W1.L1.Housekeeper.VillainTriedToBribeMe
-	|Display|0e89.94: The Guardian has been attempting to sway my loyalties away from thee and Lord British!
-	|OptionsClear
-	|Option|0e89.95: What hath been the nature of his persuasions?
-	|Option|0e89.96: Thou must fight against his influences!|W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
-	|Prompt
-
-		W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
-		|Display|0e89.97: Oh, do not worry. There is no danger of him convincing me.
-		|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
-
-		W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
-		|Display|0e89.98: He hath promised me a world where the workers have equal representation in all levels of government, if only I wouldst be loyal to him.
-		|OptionsClear
-		|Option|0e89.99: I wouldst think that thou might find that tempting.
-		|Option|0e89.100: 'Tis but a lie. The Guardian would surely make thee a slave.
-		|Option|0e89.101: The Guardian seeks to lure us each with our own desires.
-		|Prompt
-
-			W1.L1.Housekeeper.VillainTriedToBribeMe.MisjudgedWhatIWant
-			|Display|0e89.102: He hath misjudged what I desire, then.
-			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
-
-			W1.L1.Housekeeper.VillainTriedToBribeMe.ForgetThatScoundrel
-			0e89.103: I have no intention of giving into that red scoundrel.
-			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
-
-			W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
-			0e89.104: My true desire is to see Britannia's social order change, but from within, and willingly. I do not simply want equality and an end to class structure. I wish that all people, nobles and peasants alike, should first understand the need for that change, and then strive themselves to achieve it.
-			|Goto||W1.L1.Housekeeper.AnythingElse
 
 	W1.L1.Housekeeper.MurderMystery
 	|Display|0e89.105: Avatar, hast thou heard the horrible news? Lady Tory has been murdered!
@@ -1695,7 +1741,7 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 
 	W1.L1.Housekeeper.AnythingElse
 	|Display|0e89.22: Will that be all, @GS8?
-	|Option|0e89.23: Yes. I shall speak with thee again, later.
+	|Option|0e89.23: Yes. I shall speak with thee again, later.|W1.L1.Housekeeper.Done
 	|Option|0e89.24: Nay, there is more I must ask of thee.|W1.L1.Housekeeper.AnythingElse.Yes
 	|Prompt
 
@@ -1709,11 +1755,13 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 
 W1.L1.King
 |SpeakerSet|Portraits_King
-|Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
-|OptionsClear
-|Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
-|Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
-|Prompt
+
+	W1.L1.King.InitialMeeting
+	|Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
+	|OptionsClear
+	|Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
+	|Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
+	|Prompt
 
 	W1.L1.King.Speech.NotYet|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
 	|Goto||W1.L1.King.Done
@@ -1744,16 +1792,18 @@ W1.L1.King
 	W1.L1.King.Greet.FirstTime
 	|Display|0e8e.42: Well, Avatar, I am sorry now I did invite thee to this doomed affair. The Guardian's threats are indeed dire!
 	|OptionsClear
-	|Option|0e8e.43: I would not have my friends face danger alone!
-	|Option|0e8e.44: 'Tis not thy fault -- who could have known?
+	|Option|0e8e.43: I would not have my friends face danger alone!|W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
+	|Option|0e8e.44: 'Tis not thy fault -- who could have known?|W1.L1.King.Greet.FirstTime.YouGravitateTowardDanger
 	|Prompt
 
+		W1.L1.King.Greet.FirstTime.YouGravitateTowardDanger
 		|SpeakerSet|
 		|Display|0e8e.45: He laughs.
 		|SpeakerSet|Portraits_King
 		|Display|0e8e.46: Thou'rt right! Thou dost merely gravitate towards peril, like one of Brion's mystic lodestones towards iron! 'Tis a natural process, I am sure.
 		|Goto||W1.L1.King.GeneralQuestions
 
+		W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
 		|SpeakerSet|
 		|Display|0e8e.47: He laughs.
 		|SpeakerSet|Portraits_King
@@ -1765,16 +1815,17 @@ W1.L1.King
 	W1.L1.King.Greet.1|Display|0e8e.23: Greetings, Avatar. In this dark time, 'tis good to see an old companion I can trust!
 	W1.L1.King.Greet.2|Display|0e8e.24: Avatar, 'tis well that thou hast come.
 	W1.L1.King.Greet.3|Display|0e8e.25: Yes, @GS8? What may I do for thee?
+	|Goto||W1.L1.King.GeneralQuestions
 
 //0e8e.26: Please explain more fully sir.
 
 	W1.L1.King.GeneralQuestions
 	|OptionsClear
-	|Option|0e8e.27: Tell me, then, what hath occupied thine attention lately?
-	|Option|0e8e.28: Tell me of the Reconstruction, my lord.
-	|Option|0e8e.29: I would speak to thee of thy experiences here in the castle.
-	|Option|0e8e.30: I have need of thy healing powers.
-	|Option|0e8e.31: Your pardon, sir, I must leave thee.
+	|Option|0e8e.27: Tell me, then, what hath occupied thine attention lately?|W1.L1.King.News
+	|Option|0e8e.28: Tell me of the Reconstruction, my lord.|W1.L1.King.WhatOfLastYear
+	|Option|0e8e.29: I would speak to thee of thy experiences here in the castle.|W1.L1.King.News
+	|Option|0e8e.30: I have need of thy healing powers.|W1.L1.King.INeedHealing
+	|Option|0e8e.31: Your pardon, sir, I must leave thee.|W1.L1.King.Done
 	|Prompt
 
 	W1.L1.King.WhatOfLastYear
@@ -1796,6 +1847,11 @@ W1.L1.King
 		|SpeakerSet|Portraits_King
 		|Display|0e8e.41: I am sorry, Avatar, but it appears that black jewel has nullifed my powers of healing. Thou wilt have to heal thyself naturally.
 		|Goto||W1.L1.King.AnythingElse
+
+	W1.L1.King.News
+	|Goto||W1.L1.King.SpeakWithPaladin
+	|Goto||W1.L1.King.HeardYouWereExploringTheDepths
+	|Goto||W1.L1.King.HeardYouFoundMultiversePortal
 
 	W1.L1.King.SpeakWithPaladin
 	|Display|0e8e.49: Listen, thou shouldst speak with Dupre! He mentioned he had seen something which might relate to our current plight!
@@ -1821,7 +1877,7 @@ W1.L1.King
 		W1.L1.King.MurderMystery.2
 		|Display|0e8e.56: I cannot accept it! A woman murdered, within the walls of my own castle! If I cannot protect an innocent woman here, how can I protect an entire people?
 		|Option|0e8e.57: Your Highness, thou canst not hold thyself responsible for everything.|W1.L1.King.MurderMystery.ThereWillBeJustice
-		|Option|0e8e.58: I shall avenge her, my lord, thou canst depend on it.
+		|Option|0e8e.58: I shall avenge her, my lord, thou canst depend on it.|W1.L1.King.MurderMystery.ThereWillBeVengeance
 		|Prompt
 
 			W1.L1.King.MurderMystery.ThereWillBeJustice
@@ -1835,7 +1891,7 @@ W1.L1.King
 			|Display|0e8e.61: Aye. Though we failed in offering her protection, we may still offer vengeance. I shall count on thee, Avatar. Do not fail.
 			|Goto||W1.L1.King.AnythingElse
 
-	W1.L1.King.HeardTheMurderIsSolved
+	W1.L1.King.MurderSolved
 	|Display|0e8e.62: I heard the... news about Mayor Patterson. I fear that part of the blame for Nelson's death is mine -- I should never have trusted him after his association with the Fellowship. And yet... after his encounter with you he seemed a changed man, and I believe he really was.
 	|Option|0e8e.63: I think thou art right.|W1.L1.King.HeardTheMurderIsSolved.TheVillainCorruptedTheMayor
 	|Option|0e8e.64: A cur like Patterson can never change.|W1.L1.King.HeardTheMurderIsSolved.YouAreMistaken
@@ -1864,9 +1920,9 @@ W1.L1.King
 
 	W1.L1.King.ServantsOnStrike
 	|Display|0e8e.72: Avatar, something strange is going on. Just now, I asked Nanna to bring me some ale, and she stalked off without a word!
-	|Option|0e8e.73: My lord, I am here to demand a leveling of the class system in Britannia.
-	|Option|0e8e.74: Nanna has declared the servants on strike, sir!
-	|Option|0e8e.75: My lord, the servants are unhappy with their place in the castle..
+	|Option|0e8e.73: My lord, I am here to demand a leveling of the class system in Britannia.|W1.L1.King.ServantsOnStrike.Why
+	|Option|0e8e.74: Nanna has declared the servants on strike, sir!|W1.L1.King.ServantsOnStrike.Why
+	|Option|0e8e.75: My lord, the servants are unhappy with their place in the castle.|W1.L1.King.ServantsOnStrike.Why
 	|Prompt
 
 		W1.L1.King.ServantsOnStrike.Why
@@ -2029,29 +2085,48 @@ W1.L1.Knight
 	0e85.10: Ah, @GS8, kind of thee to drop in on me.
 
 	W1.L1.Knight.GeneralQuestions
-	|Option|0e85.12: How hast thou been, @GS25?
-	|Option|0e85.13: How hast thou fared this past year?
-	|Option|0e85.14: I would fain spar with thee.
-	|Option|0e85.15: Pardon me, @GS25, I must be going.
+	|Option|0e85.12: How hast thou been, @GS25?|W1.L1.Knight.News
+	|Option|0e85.13: How hast thou fared this past year?|W1.L1.Knight.LastYear
+	|Option|0e85.14: I would fain spar with thee.|W1.L1.Knight.Train
+	|Option|0e85.15: Pardon me, @GS25, I must be going.|W1.L1.Knight.Done
 	|Prompt
 
-		W1.L1.Knight.HowAreYou
-		|Display|0e85.22: In a way, 'tis a relief to be in action again. To confront danger in the realm's defense, 'tis a strange sort of exhilaration, and I have not felt it for a long time.
 
 		W1.L1.Knight.LastYear
 		|Display|0e85.21: I have lived here at the castle, serving Lord British as Captain of the Guard.  This past year has been a quiet one, so I have had very few vital tasks to perform. I confess that, in my spare time, I have become something of a philosopher. Exercising the mind, I have found, is every bit as tiring as exercising the body!
 
-	W1.L1.Knight.YouFindingMultiversePortalIsGood
-	|Display|0e85.23: I have heard that thou hast ventured into another world! Your discovery makes this blackrock prison seems less menacing.
-	|Option|0e85.24: Why is that?|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
-	|Option|0e85.25: I think so also.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
-	|Option|0e85.26: I find it makes our situation darker.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
+	W1.L1.Knight.News
+	|Goto||W1.L1.Knight.HowAreYou
+	|Goto||W1.L1.Knight.GuardswomanIsExtraordinary
+	|Goto||W1.L1.Knight.YouFindingMultiversePortalIsGood
+	|Goto||W1.L1.Knight.HeardYouFoundWater
+	|Goto||W1.L1.Knight.YourAdventuresAreHavingAnEffect
 
-		W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
-		0e85.27: Few things have a more profoundly negative effect on the spirit than hopeless confinement. Your discovery of this gem makes our plight seem not so hopeless.
 
-		W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
-		0e85.28: Ah, but now we know our imprisonment is not complete.
+	W1.L1.Knight.HowAreYou
+	|Display|0e85.22: In a way, 'tis a relief to be in action again. To confront danger in the realm's defense, 'tis a strange sort of exhilaration, and I have not felt it for a long time.
+
+	W1.L1.Knight.GuardswomanIsExtraordinary
+	|Display|0e85.41: That Syria is certainly, well . . . she is a most extraordinary woman.
+	|Option|0e85.42: Has she been to see thee?|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Option|0e85.43: Why dost thou think so?|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Option|0e85.44: I cannot but agree.|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Prompt
+
+		W1.L1.Knight.GuardswomanIsExtraordinary.2
+		|Display|0e85.45: She came to me seeking a training partner, but I am afraid I could be of little use to her.
+		|Option|0e85.46: Why not?|W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+		|Option|0e85.47: Indeed, she is an arrogant one.|W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
+		|Prompt
+
+			W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
+			|Display|0e85.48: Nay, thou'rt right, but 'twas not the reason!
+			|Goto||W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+
+			W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+			|Display|0e85.49: There was simply nothing I could teach her! My fighting methods are fine for beating down a goblin's club, or hewing through some brigand's ring mail, but they cannot compare with her! In seconds, she had taken the blade from my hand, and dropped me flat on my back!
+			|Display|0e85.50: Next to her, I looked to be a rank beginner! I am handy with a sword, compared to any goblin or brigand in the land, but Syria . . . she is a master of the blade.
+			|Goto||W1.L1.Knight.AnythingElse
 
 	W1.L1.Knight.ADaggerIsMissing
 	|Display|0e85.29: A dagger is missing from the armoury, @GS8. Didst thou borrow it?
@@ -2084,27 +2159,18 @@ W1.L1.Knight
 			|Display|0e85.40: I appreciate thine aid, @GS8.
 			|Goto||W1.L1.Knight.AnythingElse
 
-	W1.L1.Knight.GuardswomanIsExtraordinary
-	|Display|0e85.41: That Syria is certainly, well . . . she is a most extraordinary woman.
-	|Option|0e85.42: Has she been to see thee?|W1.L1.Knight.GuardswomanIsExtraordinary.2
-	|Option|0e85.43: Why dost thou think so?|W1.L1.Knight.GuardswomanIsExtraordinary.2
-	|Option|0e85.44: I cannot but agree.|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	W1.L1.Knight.YouFindingMultiversePortalIsGood
+	|Display|0e85.23: I have heard that thou hast ventured into another world! Your discovery makes this blackrock prison seems less menacing.
+	|Option|0e85.24: Why is that?|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+	|Option|0e85.25: I think so also.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+	|Option|0e85.26: I find it makes our situation darker.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
 	|Prompt
 
-		W1.L1.Knight.GuardswomanIsExtraordinary.2
-		|Display|0e85.45: She came to me seeking a training partner, but I am afraid I could be of little use to her.
-		|Option|0e85.46: Why not?|W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
-		|Option|0e85.47: Indeed, she is an arrogant one.|W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
-		|Prompt
+		W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+		0e85.27: Few things have a more profoundly negative effect on the spirit than hopeless confinement. Your discovery of this gem makes our plight seem not so hopeless.
 
-			W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
-			|Display|0e85.48: Nay, thou'rt right, but 'twas not the reason!
-			|Goto||W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
-
-			W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
-			|Display|0e85.49: There was simply nothing I could teach her! My fighting methods are fine for beating down a goblin's club, or hewing through some brigand's ring mail, but they cannot compare with her! In seconds, she had taken the blade from my hand, and dropped me flat on my back!
-			|Display|0e85.50: Next to her, I looked to be a rank beginner! I am handy with a sword, compared to any goblin or brigand in the land, but Syria . . . she is a master of the blade.
-			|Goto||W1.L1.Knight.AnythingElse
+		W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
+		0e85.28: Ah, but now we know our imprisonment is not complete.
 
 	W1.L1.Knight.HeardYouFoundWater
 	|Display|0e85.51: With the water thou hast found, we could withstand a siege for quite some time.
@@ -2138,39 +2204,49 @@ W1.L1.Knight
 
 	W1.L1.Knight.YourAdventuresAreHavingAnEffect
 	|Display|0e85.63: Thine efforts in collecting these gems are having a definite effect, @GS8.
-	|Option|0e85.64: Soon we shall be free of this accursed blackrock!
-	|Option|0e85.65: How canst thou tell?
+	|Option|0e85.64: Soon we shall be free of this accursed blackrock!|W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
+	|Option|0e85.65: How canst thou tell?|W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
 	|Option|0e85.66: I hope my progress is lifting morale here in the castle.|W1.L1.Knight.YourAdventuresAreHavingAnEffect.ItIsLiftingMorale
 	|Prompt
 
 		W1.L1.Knight.YourAdventuresAreHavingAnEffect.ItIsLiftingMorale
-		0e85.67: Surely it is!
+		|Display|0e85.67: Surely it is!
 		|Goto||W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
 
 		W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
-		0e85.68: We can hear the great gem weaken, creaking like the timbers of a ship in a storm.
+		|Display|0e85.68: We can hear the great gem weaken, creaking like the timbers of a ship in a storm.
 		|Goto||W1.L1.Knight.AnythingElse
 
 	W1.L1.Knight.HeardYouPassedATest
 	|Display|0e85.69: I have heard that thou hast passed an examination on an alien world. Is this true?
-	|Option|0e85.70: Yes, 'tis so.
-	|Option|0e85.71: Aye, and 'twas a difficult test!
-	|Option|0e85.72: No, I have not.
+	|Option|0e85.70: Yes, 'tis so.|W1.L1.Knight.HeardYouPassedATest.Yes
+	|Option|0e85.71: Aye, and 'twas a difficult test!|W1.L1.Knight.HeardYouPassedATest.Yes
+	|Option|0e85.72: No, I have not.|W1.L1.Knight.HeardYouPassedATest.No
 	|Prompt
 
-		0e85.73: Methinks that there is a parallel here... in my philosophy, smaller events are often symbols of larger ones. Perhaps, as thou hast passed this test, so thou art passing a greater test of courage whereby thou wilt defeat the Guardian!
-		0e85.74: Thy insight is most appreciated.
-		0e85.75: That is a stretch, my friend.
-		0e85.76: I thank thee, Avatar. My thoughts are always at thy disposal.
-		0e85.77: Perhaps 'tis true. I do have a tendency to apply my philosophies to everything.
-		0e85.78: Oh. I guess the rumor was false.
+		W1.L1.Knight.HeardYouPassedATest.Yes
+		|Display|0e85.73: Methinks that there is a parallel here... in my philosophy, smaller events are often symbols of larger ones. Perhaps, as thou hast passed this test, so thou art passing a greater test of courage whereby thou wilt defeat the Guardian!
+		|Option|0e85.74: Thy insight is most appreciated.|W1.L1.Knight.HeardYouPassedATest.MyThoughtsAreAtYourDisposal
+		|Option|0e85.75: That is a stretch, my friend.|W1.L1.Knight.HeardYouPassedATest.ThatsAStretch
+
+			W1.L1.Knight.HeardYouPassedATest.MyThoughtsAreAtYourDisposal
+			|Display|0e85.76: I thank thee, Avatar. My thoughts are always at thy disposal.
+			|Goto||W1.L1.Knight.AnythingElse
+
+			W1.L1.Knight.HeardYouPassedATest.ThatsAStretch
+			|Display|0e85.77: Perhaps 'tis true. I do have a tendency to apply my philosophies to everything.
+			|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.HeardYouPassedATest.No
+		|Display|0e85.78: Oh. I guess the rumor was false.
+		|Goto||W1.L1.Knight.AnythingElse
 
 	W1.L1.Knight.Train
 	|Display|0e85.79: 'Tis always an honor to train the Avatar, @GS8. What wouldst thou care to learn?
 	//0e85.80: Excellent! What shall we work on now?
-	|Option|0e85.81: Will thou teach me to fight more agressively?
-	|Option|0e85.82: Couldst thou teach me to better protect myself from foes?
-	|Option|0e85.83: Nothing today, thank thee.
+	|Option|0e85.81: Will thou teach me to fight more agressively?|W1.L1.Knight.Train.Attack
+	|Option|0e85.82: Couldst thou teach me to better protect myself from foes?|W1.L1.Knight.Train.Defend
+	|Option|0e85.83: Nothing today, thank thee.|W1.L1.Knight.Train.Done
 	|Prompt
 
 		W1.L1.Knight.Train.Attack
@@ -2235,8 +2311,7 @@ W1.L1.Knight
 		W1.L1.Knight.AnythingElse.Yes
 		|Display|0e85.19: What is it, then?
 		|OptionsClear
-		|Option|0e85.20: That is all for the moment. I shall have more to say later.
-		|Goto||W1.L1.Knight.GeneralQuestions
+		|Option|0e85.20: That is all for the moment. I shall have more to say later.|W1.L1.Knight.Done
 
 	W1.L1.Knight.Done
 	|Pop
@@ -2264,9 +2339,9 @@ W1.L1.Mayor
 	W1.L1.Mayor.Greet.3|Display|0e8c.15: Avatar! What a surprise, a real treat!
 
 	W1.L1.Mayor.GeneralQuestions
-	|Option|0e8c.16: How are things, @GS25?
+	|Option|0e8c.16: How are things, @GS25?|W1.L1.Mayor.News
 	|Option|0e8c.17: What hast thou been doing since I saw thee last year?|W1.L1.Mayor.LastYear
-	|Option|0e8c.18: Patterson, canst thou train me to have more charisma?
+	|Option|0e8c.18: Patterson, canst thou train me to have more charisma?|W1.L1.Mayor.Train
 	|Option|0e8c.19: Excuse me, Patterson, I must leave thee.|W1.L1.Mayor.Done
 	|Prompt
 
@@ -2305,9 +2380,10 @@ W1.L1.Mayor
 					|Goto||W1.L1.Mayor.WillThatBeAll
 
 		W1.L1.Mayor.Train.Charisma
-		|Option|0e8c.26: Surely I will help thee! Not for nothing did I serve as mayor of Britannia's largest town. I shall give thee a few pointers about dealing with people! But it will take some time -- hast thou a moment to spare?
-		|Option|0e8c.27: I will stay and train.
-		|Option|0e8c.28: I do not have the time to train with thee.
+		|Display|0e8c.26: Surely I will help thee! Not for nothing did I serve as mayor of Britannia's largest town. I shall give thee a few pointers about dealing with people! But it will take some time -- hast thou a moment to spare?
+		|Option|0e8c.27: I will stay and train.|W1.L1.Train.Charisma.SucceedOrFail
+		|Option|0e8c.28: I do not have the time to train with thee.|W1.L1.Train.Done
+		|Prompt
 
 			W1.L1.Train.Charisma.SucceedOrFail
 			|Goto||W1.L1.Train.Charisma.Succeed
@@ -2326,7 +2402,7 @@ W1.L1.Mayor
 
 			W1.L1.Train.Charisma.AnyMore
 			|Display|0e8c.31: Wouldst thou speak some more on this subject?
-			|Option|0e8c.32: Surely -- I find this very educational.W1.L1.Train.Charisma
+			|Option|0e8c.32: Surely -- I find this very educational.|W1.L1.Train.Charisma
 			|Option|0e8c.33: No thank thee -- perhaps another time.|W1.L1.Train.Charisma.AnyMore.No
 			|Prompt
 
@@ -2334,40 +2410,11 @@ W1.L1.Mayor
 				|Display|0e8c.34: Of course -- come to me any time.
 				|Goto||W1.L1.Train.Charisma.Succeed
 
-	W1.L1.Mayor.HeardYouveBeenExploringDepths
-	|Display|0e8c.58: I have heard thou hast begun exploring beneath the castle -- surely there is naught there but a few rotten supplies, musty tunnels... I'm sure the libraries would prove more productive.
-	|Option|0e8c.59: I am not so sure... perhaps some hidden exit tunnel?|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
-	|Option|0e8c.60: There are many mysteries in the depths -- perhaps one such might lead to our escape.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
-	|Option|0e8c.61: Thou art right -- perhaps some ancient tome will shed light on the situation.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
-	|Prompt
-
-		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
-		|Display|0e8c.62: Perhaps thou art right...but I fear the gem has sealed us in for good.
-		|Goto||W1.L1.Mayor.WillThatBeAll
-
-		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
-		|Display|0e8c.63: I see that thou art a @SS1 of deep insight! I am sure thy scholarly investigations will save us all!
-		|Goto||W1.L1.Mayor.WillThatBeAll
-
-		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
-		|SpeakerSet|
-		|Display|0e8c.64: He shrugs.
-		|SpeakerSet|Portraits_Mayor
-		|Display|0e8c.65: Do what seems best to thee!
-		|Goto||W1.L1.Mayor.WillThatBeAll
-
-	W1.L1.Mayor.HeardYouFoundMultiversePortal
-	|Display|0e8c.51: Is it true thou hast found some sort of gateway, in the sewers?
-	|Option|0e8c.52: Aye, but it leads only to another prison.
-	|Option|0e8c.53: Aye, perhaps it is the key to our salvation.
-	|Prompt
-
-		|Display|0e8c.54: 'Tis always the way with me! We've a saying in the town of Britain, when, for instance, you buy an ox and it falls dead the next day: "'Tis Patterson's luck has found ye!"
-		|Goto||W1.L1.Mayor.WillThatBeAll
-
-		|Display|0e8c.55: I would not count on it, Avatar -- I am more concerned about what will come through the gate to find us!
-		|Goto||W1.L1.Mayor.WillThatBeAll
-
+	W1.L1.Mayor.News
+	|Goto||W1.L1.Mayor.HadAScareThisMorning
+	|Goto||W1.L1.Mayor.HeardYouveBeenExploringDepths
+	|Goto||W1.L1.Mayor.HeardYouFoundMultiversePortal
+	|Goto||W1.L1.Mayor.HeardYouFoundMirrorUniverse
 
 	W1.L1.Mayor.HadAScareThisMorning
 	|Display|0e8c.66: I had quite a scare this morning, as Iolo may have told thee!
@@ -2406,10 +2453,46 @@ W1.L1.Mayor
 				|Display|0e8c.81: Yes, 'tis a common sentiment 'round here.
 				|Goto||W1.L1.Mayor.WillThatBeAll
 
+	W1.L1.Mayor.HeardYouveBeenExploringDepths
+	|Display|0e8c.58: I have heard thou hast begun exploring beneath the castle -- surely there is naught there but a few rotten supplies, musty tunnels... I'm sure the libraries would prove more productive.
+	|Option|0e8c.59: I am not so sure... perhaps some hidden exit tunnel?|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+	|Option|0e8c.60: There are many mysteries in the depths -- perhaps one such might lead to our escape.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+	|Option|0e8c.61: Thou art right -- perhaps some ancient tome will shed light on the situation.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+	|Prompt
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+		|Display|0e8c.62: Perhaps thou art right...but I fear the gem has sealed us in for good.
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+		|Display|0e8c.63: I see that thou art a @SS1 of deep insight! I am sure thy scholarly investigations will save us all!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+		|SpeakerSet|
+		|Display|0e8c.64: He shrugs.
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8c.65: Do what seems best to thee!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouFoundMultiversePortal
+	|Display|0e8c.51: Is it true thou hast found some sort of gateway, in the sewers?
+	|Option|0e8c.52: Aye, but it leads only to another prison.|W1.L1.Mayor.HeardYouFoundMultiversePortal.JustMyLuck
+	|Option|0e8c.53: Aye, perhaps it is the key to our salvation.|W1.L1.Mayor.HeardYouFoundMultiversePortal.WhatMightComeForUs
+	|Prompt
+
+		W1.L1.Mayor.HeardYouFoundMultiversePortal.JustMyLuck
+		|Display|0e8c.54: 'Tis always the way with me! We've a saying in the town of Britain, when, for instance, you buy an ox and it falls dead the next day: "'Tis Patterson's luck has found ye!"
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouFoundMultiversePortal.WhatMightComeForUs
+		|Display|0e8c.55: I would not count on it, Avatar -- I am more concerned about what will come through the gate to find us!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
 	W1.L1.Mayor.HeardYouFoundMirrorUniverse
 	|Display|0e8c.86: I have heard of thy discovery of a peaceful world, ruled by a regent of the Guardian! Is it possible... dost thou think we, too... oh, never mind, I shouldn't say it!
-	|Option|0e8c.87: Nay, what hast thou to propose?
-	|Option|0e8c.88: As you wish, 'tis forgotten.
+	|Option|0e8c.87: Nay, what hast thou to propose?|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay
+	|Option|0e8c.88: As you wish, 'tis forgotten.|W1.L1.Mayor.WillThatBeAll
 	|Prompt
 
 		W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay
@@ -2445,8 +2528,8 @@ W1.L1.Mayor
 
 		W1.L1.Mayor.WillWeEverEscape.IAmNotSoSure
 		|Display|0e8c.97: I am not so sure! At night I have awful dreams . . . even if we do get out of here, what if his men have conquered Britannia?
-		|Option|0e8c.98: We have no proof that the Guardian's visions are real.
-		|Option|0e8c.99: I have seen them, too. We can only hope...
+		|Option|0e8c.98: We have no proof that the Guardian's visions are real.|W1.L1.Mayor.WillWeEverEscape.NoProofVillainsVisionsAreReal
+		|Option|0e8c.99: I have seen them, too. We can only hope...|W1.L1.Mayor.WillWeEverEscape.WeCanOnlyHope
 		|Prompt
 
 			W1.L1.Mayor.WillWeEverEscape.NoProofVillainsVisionsAreReal
@@ -2555,6 +2638,7 @@ W1.L1.Philanthropist|SpeakerSet|Portraits_Philanhtropist
 |Option|0: [Select a different character.]|W1.L1
 |Prompt
 
+
 W1.L1.Scholar
 |Push
 |SpeakerSet|Portraits_Scholar
@@ -2563,10 +2647,10 @@ W1.L1.Scholar
 	|Display|0e8b.6: Ah, Avatar, I was just thinking... oh, just a moment. Perhaps Lord British has something to say to us.
 	|Goto||W1.L1.Scholar.Done
 
-	W1.L1.Scholar.WeAreInAFix
+	W1.L1.Scholar.Greet.FirstTime
 	|Display|0e8b.55: We are in quite a fix, aren't we? But then, I suppose that is a specialty of thine!
-	|Option|0e8b.56: Thou art right -- I shall get us out of this!
-	|Option|0e8b.57: One never gets used to such things, Nelson.
+	|Option|0e8b.56: Thou art right -- I shall get us out of this!|W1.L1.Scholar.AnythingElse
+	|Option|0e8b.57: One never gets used to such things, Nelson.|W1.L1.Scholar.AnythingElse
 	|Prompt
 
 	W1.L1.Scholar.Greet
@@ -2574,12 +2658,12 @@ W1.L1.Scholar
 	W1.L1.Scholar.Greet.1|Display|0e8b.10: Avatar! I am quite relieved thou art here.
 	W1.L1.Scholar.Greet.2|Display|0e8b.11: There you are, Avatar. I was just looking for thee.
 	W1.L1.Scholar.Greet.3|Display|0e8b.12: Yes, @GS8? What may I do for thee?
-	|Option|0e8b.13: What is it, @GS25?
-	|Option|0e8b.14: What hast occupied thee of late, @GS25?
+	|Option|0e8b.13: What is it, @GS25?|W1.L1.Scholar.News
+	|Option|0e8b.14: What hast occupied thee of late, @GS25?|W1.L1.Scholar.News
 	W1.L1.Scholar.SinceLastISawYou|Option|0e8b.15: What hast thou been doing since I saw thee in Moonglow?|W1.L1.Scholar.SinceLastISawYou.Answer
 	|Option|0e8b.16: I would study with thee a brief time.|W1.L1.Scholar.Train
-	|Option|0e8b.17: If I may, I would like to hear thy thoughts so far on the current situation.
-	|Option|0e8b.18: 'Tis good to speak with thee, Nelson, but I must hurry off.
+	|Option|0e8b.17: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Scholar.News
+	|Option|0e8b.18: 'Tis good to speak with thee, Nelson, but I must hurry off.|W1.L1.Scholar.Done
 	|Prompt
 
 	W1.L1.Scholar.SinceLastISawYou.Answer
@@ -2646,6 +2730,10 @@ W1.L1.Scholar
 		|Pop
 		|Prompt
 
+	W1.L1.Scholar.News
+	|Goto||W1.L1.Scholar.SearchForASmallerSphere
+	|Goto||W1.L1.Scholar.YouFoundAPortal
+
 	W1.L1.Scholar.SearchForASmallerSphere
 	|Display|0e8b.58: Well, I have been thinking -- all of the Guardian's blackrock structures have had smaller copies of themselves inside -- it would be worthwhile searching for something similar within the castle.
 	|Option|0e8b.59: But where would such a thing be?|W1.L1.Scholar.SearchForASmallerSphere.Where
@@ -2690,7 +2778,7 @@ W1.L1.Scholar
 		|Prompt
 
 			W1.L1.Scholar.YouFoundAPortal.ComeWithMe
-			|Option|0e8b.76: No thank thee! Miranda is right -- a scholar like myself should stay in the library, out of danger. But be sure and visit me, and tell me of thy discoveries!
+			|Display|0e8b.76: No thank thee! Miranda is right -- a scholar like myself should stay in the library, out of danger. But be sure and visit me, and tell me of thy discoveries!
 			|Goto||W1.L1.Scholar.Done
 
 			W1.L1.Scholar.IAmConcernedWithSurvival
@@ -2706,8 +2794,8 @@ W1.L1.Scholar
 
 		W1.L1.Scholar.MurderMystery.KillerWasIDontKnow
 		|Display|0e8b.82: If I may be of any assistance... I mean, I am a scholar, not a monster-killer, but still... I would fain be allowed to help in this matter.
-		|Option|0e8b.83: I shall call on thee if I need thee.
-		|Option|0e8b.84: 'Tis unlikely, but I shall keep thee in mind.
+		|Option|0e8b.83: I shall call on thee if I need thee.|W1.L1.Scholar.WillThatBeAll
+		|Option|0e8b.84: 'Tis unlikely, but I shall keep thee in mind.|W1.L1.Scholar.WillThatBeAll
 		|Prompt
 
 		W1.L1.Scholar.MurderMystery.KillerWasTraitor
@@ -2832,11 +2920,11 @@ W1.L1.Tinker
 |Push
 |SpeakerSet|Portraits_Tinker
 
-	0e87.1: @GS102
-	0e87.2: Well...
-	0e87.3: @GS70SI1
-	0e87.4: I thank thee, @GS25, that is enough.
-	0e87.5: What else dost thou know?
+	//0e87.1: @GS102
+	//0e87.2: Well...
+	//0e87.3: @GS70SI1
+	//0e87.4: I thank thee, @GS25, that is enough.
+	//0e87.5: What else dost thou know?
 
 	W1.L1.Tinker.KingAboutToSpeak
 	|Display|0e87.6: Shhh! I want to hear what Lord British has to say!
@@ -2985,10 +3073,10 @@ W1.L1.Tinker
 
 	W1.L1.Tinker.Train
 	|Display|0e87.70: To be certain, Avatar! What shall I instruct thee in today?
-	|Option|0e87.71: I should like to learn about disarming traps.
-	|Option|0e87.72: Teach me to pick locks!
-	|Option|0e87.73: I wish to learn about mending items.
-	|Option|0e87.74: Nothing, thanks -- I need no training.
+	|Option|0e87.71: I should like to learn about disarming traps.||W1.L1.Tinker.Train.Traps
+	|Option|0e87.72: Teach me to pick locks!|W1.L1.Tinker.Train.Lockpick
+	|Option|0e87.73: I wish to learn about mending items.|W1.L1.Tinker.Train.Repair
+	|Option|0e87.74: Nothing, thanks -- I need no training.||W1.L1.Tinker.Train.Done
 	|Prompt
 
 		W1.L1.Tinker.Train.Traps
