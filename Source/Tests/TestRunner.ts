@@ -8,7 +8,8 @@ class TestRunner
 			"TestsAll",
 
 			[
-				new SampleTests()
+				new SampleTests(),
+				new SystemTests()
 			]
 		);
 

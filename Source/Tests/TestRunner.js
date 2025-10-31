@@ -2,7 +2,8 @@
 class TestRunner {
     run() {
         var testSuite = new TestSuite("TestsAll", [
-            new SampleTests()
+            new SampleTests(),
+            new SystemTests()
         ]);
         testSuite.run();
     }

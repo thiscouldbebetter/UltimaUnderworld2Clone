@@ -61,13 +61,13 @@ W1.L1.Administrator
 |Push
 |SpeakerSet|Portraits_Administrator
 
-	0e88.1: @GS102
-	0e88.2: Well...
-	0e88.3: @GS70SI1
-	0e88.4: I thank thee, @GS25, that is enough.
-	0e88.5: What else dost thou know?
-	0e88.6: sir
-	0e88.7: ma'am
+	//0e88.1: @GS102
+	//0e88.2: Well...
+	//0e88.3: @GS70SI1
+	//0e88.4: I thank thee, @GS25, that is enough.
+	//0e88.5: What else dost thou know?
+	//0e88.6: sir
+	//0e88.7: ma'am
 
 	W1.L1.Administrator.KingAboutToSpeak
 	0e88.8: I will speak with thee in a moment, Avatar. Let us both first consult with Lord British.
