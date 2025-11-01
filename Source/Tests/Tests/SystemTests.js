@@ -31,12 +31,14 @@ class SystemTests extends TestFixture {
         var world = universe.world;
         var venueWorld = world.toVenue();
         universe.venueNextSet(venueWorld);
-        var talker = Talker.fromConversationDefnName("todo");
+        var talker = Talker.fromConversationDefnName("ConversationsAll");
         this.talkToTalker(universe, talker, [
             "todo"
         ]);
     }
     talkToTalker(universe, talker, optionsToSelect) {
+        var uwpe = UniverseWorldPlaceEntities.fromUniverse(universe);
+        talker.talk(uwpe);
         this.waitUntilVenueCurrentIsConversation(universe);
         var conversationRun = talker.conversationRun;
         conversationRun.nextUntilPrompt(universe);

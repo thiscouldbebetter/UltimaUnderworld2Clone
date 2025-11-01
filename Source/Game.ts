@@ -118,7 +118,7 @@ class Game
 			font("Font.ttf"),
 
 			text("Instructions.txt"),
-			text("ConversationsAllByWorldLevelAndCharacter-psv.txt")
+			text("ConversationsAll.txt")
 		];
 
 		return mediaFilePaths;

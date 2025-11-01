@@ -60,7 +60,7 @@ class SystemTests extends TestFixture
 		var venueWorld = world.toVenue();
 		universe.venueNextSet(venueWorld);
 
-		var talker = Talker.fromConversationDefnName("todo");
+		var talker = Talker.fromConversationDefnName("ConversationsAll");
 		this.talkToTalker
 		(
 			universe,
@@ -73,6 +73,9 @@ class SystemTests extends TestFixture
 
 	talkToTalker(universe: Universe, talker: Talker, optionsToSelect: string[] ): void
 	{
+		var uwpe = UniverseWorldPlaceEntities.fromUniverse(universe);
+		talker.talk(uwpe);
+
 		this.waitUntilVenueCurrentIsConversation(universe);
 
 		var conversationRun = talker.conversationRun;
