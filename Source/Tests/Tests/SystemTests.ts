@@ -6,11 +6,15 @@ class SystemTests extends TestFixture
 		super(SystemTests.name);
 	}
 
-	tests(): ( (callback: () => void) => void )[]
+	tests(): Test[]
 	{
 		var returnTests =
 		[
-			this.playFromStart
+			Test.fromNameAndRunThen
+			(
+				"PlayFromStart",
+				this.playFromStart.bind(this)
+			)
 		];
 
 		return returnTests;
@@ -18,7 +22,7 @@ class SystemTests extends TestFixture
 
 	// Tests.
 
-	playFromStart(callback: () => void ): void
+	playFromStart(testComplete: (testCompleted: Test) => void): void
 	{
 		var environment = new EnvironmentMock();
 		environment.universeBuild
@@ -27,13 +31,17 @@ class SystemTests extends TestFixture
 			{
 				u.initialize
 				(
-					() => this.playFromStart_UniverseInitialized(callback, u)
+					() => this.playFromStart_UniverseInitialized(u, testComplete)
 				)
 			}
 		);
 	}
 
-	playFromStart_UniverseInitialized(callback: () => void, universe: Universe): void
+	playFromStart_UniverseInitialized
+	(
+		universe: Universe,
+		testComplete: (testCompleted: Test) => void
+	): void
 	{
 		var methodsToRun =
 		[
@@ -49,7 +57,7 @@ class SystemTests extends TestFixture
 			}
 		);
 
-		callback();
+		testComplete(null);
 	}
 
 	playFromStart_1(universe: Universe): void
@@ -66,9 +74,17 @@ class SystemTests extends TestFixture
 			universe,
 			talker,
 			[
-				"todo"
+				// "Choose a world."
+				"1: Castle.",
+				// "Choose a level."
+				"1: Main Floor.",
+				// "Choose a character."
+				"Bard.",
+				// "Let's let the king speak first."
 			]
 		);
+
+		universe.stop();
 	}
 
 	talkToTalker(universe: Universe, talker: Talker, optionsToSelect: string[] ): void

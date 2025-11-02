@@ -1,0 +1,76 @@
+Folder PATH listing
+Volume serial number is 3048-D05F
+C:.
+|   Manifest.txt
+|   
++---Audio
+|   +---Effects
+|   |       Producer.wav
+|   |       
+|   \---Music
+|       |   Title.mp3
+|       |   _Default.mp3
+|       |   
+|       \---_Working
+|               Music.json
+|               
++---Fonts
+|   |   Font.ttf
+|   |   SquarePlusMinusPipe.sfd
+|   |   SquarePlusMinusPipe.ttf
+|   |   
+|   \---_Working
+|           Block3x6.sfd
+|           
++---Images
+|   |   Friendly.png
+|   |   
+|   +---Maps
+|   |   \---1
+|   |           1.png
+|   |           2.png
+|   |           3.png
+|   |           4.png
+|   |           5.png
+|   |           
+|   +---Portraits
+|   |       Bard.png
+|   |       Chambermaid.png
+|   |       Empath.png
+|   |       Guardswoman.png
+|   |       Housekeeper.png
+|   |       King.png
+|   |       Knight.png
+|   |       Mayor.png
+|   |       Paladin.png
+|   |       Philanthropist.png
+|   |       Scholar.png
+|   |       Tinker.png
+|   |       Valet.png
+|   |       Wizard.png
+|   |       
+|   \---Titles
+|           BoxArt.png
+|           Opening.png
+|           Producer.png
+|           Title.png
+|           
++---Maps
+|   +---1-Castle_Britannia
+|   |       1-Castle-Main.png
+|   |       1-Castle-Main.txt
+|   |       2-Castle-Lower.txt
+|   |       3-Sewers-1-Upper.txt
+|   |       4-Sewers-2-Lower.txt
+|   |       
+|   \---2-Prison_Tower
+|           1-Cellar.txt
+|           2-Ground_Floor.txt
+|           3-Second_Floor.txt
+|           
+\---Text
+    |   Instructions.txt
+    |   
+    \---Talk
+            ConversationsAll.txt
+            

@@ -1,9 +1,9 @@
 
 class TestRunner
 {
-	run(): void
+	runThen(complete: () => void): void
 	{
-		var testSuite = new TestSuite
+		var testSuite = TestSuite.fromNameAndTestFixtures
 		(
 			"TestsAll",
 
@@ -13,6 +13,6 @@ class TestRunner
 			]
 		);
 
-		testSuite.run();
+		testSuite.runThen(complete);
 	}
 }

@@ -6,20 +6,21 @@ class SampleTests extends TestFixture
 		super(SampleTests.name);
 	}
 
-	tests(): ( ()=>void )[]
+	tests(): Test[]
 	{
 		var returnValues =
 		[
-			this.alwaysPass
+			Test.fromNameAndRunThen(SampleTests.name, this.alwaysPass)
 		];
 
 		return returnValues;
 	}
 
-	alwaysPass(): void
+	alwaysPass(testComplete: (testCompleted: Test) => void): void
 	{
 		var expected = "todo";
 		var actual = "todo";
 		Assert.areStringsEqual(expected, actual);
+		testComplete(null);
 	}
 }

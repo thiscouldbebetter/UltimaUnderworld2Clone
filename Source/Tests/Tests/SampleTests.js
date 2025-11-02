@@ -5,13 +5,14 @@ class SampleTests extends TestFixture {
     }
     tests() {
         var returnValues = [
-            this.alwaysPass
+            Test.fromNameAndRunThen(SampleTests.name, this.alwaysPass)
         ];
         return returnValues;
     }
-    alwaysPass() {
+    alwaysPass(testComplete) {
         var expected = "todo";
         var actual = "todo";
         Assert.areStringsEqual(expected, actual);
+        testComplete(null);
     }
 }

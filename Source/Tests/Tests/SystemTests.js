@@ -5,18 +5,18 @@ class SystemTests extends TestFixture {
     }
     tests() {
         var returnTests = [
-            this.playFromStart
+            Test.fromNameAndRunThen("PlayFromStart", this.playFromStart.bind(this))
         ];
         return returnTests;
     }
     // Tests.
-    playFromStart(callback) {
+    playFromStart(testComplete) {
         var environment = new EnvironmentMock();
         environment.universeBuild((u) => {
-            u.initialize(() => this.playFromStart_UniverseInitialized(callback, u));
+            u.initialize(() => this.playFromStart_UniverseInitialized(u, testComplete));
         });
     }
-    playFromStart_UniverseInitialized(callback, universe) {
+    playFromStart_UniverseInitialized(universe, testComplete) {
         var methodsToRun = [
             this.playFromStart_1
         ];
@@ -24,7 +24,7 @@ class SystemTests extends TestFixture {
             console.log(x.name);
             x.call(this, universe);
         });
-        callback();
+        testComplete(null);
     }
     playFromStart_1(universe) {
         Assert.isNotNull(universe);
@@ -33,8 +33,15 @@ class SystemTests extends TestFixture {
         universe.venueNextSet(venueWorld);
         var talker = Talker.fromConversationDefnName("Talk_ConversationsAll");
         this.talkToTalker(universe, talker, [
-            "todo"
+            // "Choose a world."
+            "1: Castle.",
+            // "Choose a level."
+            "1: Main Floor.",
+            // "Choose a character."
+            "Bard.",
+            // "Let's let the king speak first."
         ]);
+        universe.stop();
     }
     talkToTalker(universe, talker, optionsToSelect) {
         var uwpe = UniverseWorldPlaceEntities.fromUniverse(universe);

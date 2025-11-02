@@ -1,10 +1,10 @@
 "use strict";
 class Program {
     start() {
-        var name = "GameStub";
-        var contentDirectoryPath = Configuration.Instance().contentDirectoryPath;
-        var game = Game.fromNameAndContentDirectoryPath(name, contentDirectoryPath);
+        var name = "UltimaUnderworld2Clone";
+        var configuration = Configuration.Instance();
+        var game = Game.fromNameAndConfiguration(name, configuration);
         game.start();
     }
 }
-new Program().start();
+new TestRunner().runThen(() => new Program().start());

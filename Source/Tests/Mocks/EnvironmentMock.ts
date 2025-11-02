@@ -6,15 +6,30 @@ class EnvironmentMock
 		callback: (u: Universe) => void
 	): void
 	{
+		var configuration = Configuration.Instance();
+
+		MediaLibrary.mediaFilePathsReadFromContentDirectoryPathAndManifestFileNameThen
+		(
+			configuration.contentDirectoryPath,
+			"Manifest.txt",
+			(mediaFilePaths: string[] ) =>
+				this.universeBuild_MediaFilePathsLoaded(mediaFilePaths, callback)
+		);
+	}
+
+	universeBuild_MediaFilePathsLoaded
+	(
+		mediaFilePaths: string[],
+		callback: (u: Universe) => void
+	): void
+	{
+		var mediaLibrary = MediaLibrary.fromMediaFilePaths(mediaFilePaths);
+
 		var timerHelper = new TimerHelper(25);
 		timerHelper.ticksSoFar = 0; // hack
 
 		var display = DisplayTest.default();
 		var soundHelper = new SoundHelperMock();
-
-		var contentDirectoryPath = "../Content/";
-		var game = Game.fromNameAndContentDirectoryPath(Game.name, contentDirectoryPath);
-		var mediaLibrary = game.mediaLibraryBuild();
 
 		var controlBuilder = ControlBuilder.default();
 		var worldCreator = new WorldCreator
@@ -38,7 +53,6 @@ class EnvironmentMock
 			ProfileHelper.minimal(),
 			worldCreator
 		);
-
 
 		universe.initialize
 		(

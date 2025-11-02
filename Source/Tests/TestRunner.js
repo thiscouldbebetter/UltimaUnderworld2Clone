@@ -1,10 +1,10 @@
 "use strict";
 class TestRunner {
-    run() {
-        var testSuite = new TestSuite("TestsAll", [
+    runThen(complete) {
+        var testSuite = TestSuite.fromNameAndTestFixtures("TestsAll", [
             new SampleTests(),
             new SystemTests()
         ]);
-        testSuite.run();
+        testSuite.runThen(complete);
     }
 }

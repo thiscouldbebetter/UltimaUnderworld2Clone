@@ -1,13 +1,15 @@
 "use strict";
 class EnvironmentMock {
     universeBuild(callback) {
+        var configuration = Configuration.Instance();
+        MediaLibrary.mediaFilePathsReadFromContentDirectoryPathAndManifestFileNameThen(configuration.contentDirectoryPath, "Manifest.txt", (mediaFilePaths) => this.universeBuild_MediaFilePathsLoaded(mediaFilePaths, callback));
+    }
+    universeBuild_MediaFilePathsLoaded(mediaFilePaths, callback) {
+        var mediaLibrary = MediaLibrary.fromMediaFilePaths(mediaFilePaths);
         var timerHelper = new TimerHelper(25);
         timerHelper.ticksSoFar = 0; // hack
         var display = DisplayTest.default();
         var soundHelper = new SoundHelperMock();
-        var contentDirectoryPath = "../Content/";
-        var game = Game.fromNameAndContentDirectoryPath(Game.name, contentDirectoryPath);
-        var mediaLibrary = game.mediaLibraryBuild();
         var controlBuilder = ControlBuilder.default();
         var worldCreator = new WorldCreator((u, wc) => new WorldGame(WorldGame.name), null, // ?
         {
