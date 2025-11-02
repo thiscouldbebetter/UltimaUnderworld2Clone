@@ -50,7 +50,7 @@ W1.L1|SpeakerSet|Maps_1_1
 |Option|Knight.|W1.L1.Knight
 |Option|Mayor.|W1.L1.Mayor
 |Option|Paladin.|W1.L1.Paladin
-|Option|Philanhtropist.|W1.L1.Philanthropist
+|Option|Philanthropist.|W1.L1.Philanthropist
 |Option|Scholar.|W1.L1.Scholar
 |Option|Tinker.|W1.L1.Tinker
 |Option|Valet.|W1.L1.Valet
@@ -365,6 +365,8 @@ W1.L1.Administrator
 W1.L1.Bard
 |Push
 |SpeakerSet|Portraits_Bard
+
+|Goto||W1.L1.Bard.KingAboutToSpeak
 
 	W1.L1.Bard.KingAboutToSpeak
 	|Display|0e86.6: Just a moment, Avatar. 'Twere best we let Lord British speak first.
@@ -706,8 +708,11 @@ W1.L1.Chambermaid
 |Push
 |SpeakerSet|Portraits_Chambermaid
 
+|Goto||W1.L1.Chambermaid.KingAboutToSpeak
+
 	W1.L1.Chambermaid.KingAboutToSpeak
 	|Display|0e8a.6: Avatar, thou shouldst hurry to the throne room. We must decide what on earth we're going to do!
+	|Goto||W1.L1.Chambermaid.Done
 
 	W1.L1.Chambermaid.Greet
 	W1.L1.Chambermaid.Greet.1|Display|0e8a.10: How may I help thee, Avatar?
@@ -902,6 +907,8 @@ W1.L1.Chambermaid
 W1.L1.Empath
 |SpeakerSet|Portraits_Empath
 |Push
+
+|Goto||W1.L1.Empath.KingAboutToSpeak
 
 	W1.L1.Empath.KingAboutToSpeak
 	|Display|0e8d.6: I think it best that we listen to what Lord British has to say -- perhaps he will have a calming effect on the group.
@@ -1399,7 +1406,11 @@ W1.L1.Guardswoman
 	|Prompt
 
 
-W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
+W1.L1.Housekeeper
+|Push
+|SpeakerSet|Portraits_Housekeeper
+
+|Goto||W1.L1.Housekeeper.KingAboutToSpeak
 
 	//1: @GS102
 	//2: Well...
@@ -1407,12 +1418,12 @@ W1.L1.Housekeeper|SpeakerSet|Portraits_Housekeeper
 	//4: I thank thee, @GS25, that is enough.
 	//5: What else dost thou know?
 
-	W1.L1.Housekeeper.BeginTheCeremony
-	|Display|0e89.12: Please, @GS8, the soldiers are almost upon us. Begin the ceremony!
-	|Goto||W1.L1.Housekeeper.Done
-
 	W1.L1.Housekeeper.KingAboutToSpeak
 	|Display|0e89.11: In a minute, in a minute! We must go hear what Lord British is saying!
+	|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.BeginTheCeremony
+	|Display|0e89.12: Please, @GS8, the soldiers are almost upon us. Begin the ceremony!
 	|Goto||W1.L1.Housekeeper.Done
 
 	W1.L1.Housekeeper.StrikeResolved
@@ -2068,11 +2079,16 @@ W1.L1.King
 	|Pop
 	|Prompt
 
+
 W1.L1.Knight
 |Push
 |SpeakerSet|Portraits_Knight
 
-	0e85.6: Abide a moment, Avatar. Let us both first hear the words of a wiser man than we.
+|Goto||W1.L1.Knight.KingAboutToSpeak
+
+	W1.L1.Knight.KingAboutToSpeak
+	|Display|0e85.6: Abide a moment, Avatar. Let us both first hear the words of a wiser man than we.
+	|Goto||W1.L1.Knight.Done
 
 //0e85.1: @GS102
 //0e85.2: Well...
@@ -2080,15 +2096,13 @@ W1.L1.Knight
 //0e85.4: I thank thee, @GS25, that is enough.
 //0e85.5: What else dost thou know?
 
-	W1.L1.Knight.
-	0e85.9: Avatar! I was just thinking of thee.
-	0e85.11: What is it, @GS25?
-
-	W1.L1.Knight.
-	0e85.8: Ah, @GS8, 'tis good thou art here -- perhaps we shall fight back to back again, as in the time when thou sought to become the Avatar.
+	W1.L1.Knight.Greet.FirstTime
+	|Display|0e85.8: Ah, @GS8, 'tis good thou art here -- perhaps we shall fight back to back again, as in the time when thou sought to become the Avatar.
 
 	W1.L1.Knight.Greet
-	0e85.10: Ah, @GS8, kind of thee to drop in on me.
+	|Display|0e85.9: Avatar! I was just thinking of thee.
+	|Display|0e85.10: Ah, @GS8, kind of thee to drop in on me.
+	|Display|0e85.11: What is it, @GS25?
 
 	W1.L1.Knight.GeneralQuestions
 	|Option|0e85.12: How hast thou been, @GS25?|W1.L1.Knight.News
@@ -2590,67 +2604,588 @@ W1.L1.Mayor
 	//0e8c.56: man
 	//0e8c.57: woman
 
-W1.L1.Paladin|Push
-|SpeakerSet|Portraits_Paladin
-|DoNextInCycle|W1.L1.Paladin.TimesGreeted|W1.L1.Paladin.Greet.1;W1.L1.Paladin.Greet.2;W1.L1.Paladin.Greet.3
-W1.L1.Paladin.Greet.1|Display|0e84.10: Yes, my friend?
-W1.L1.Paladin.Greet.2|Display|0e84.11: What is it, @GS25?
-W1.L1.Paladin.Greet.3|Display|0e84.12: What is on thy mind, friend @GS25?
-|OptionsClear
-0e84.13|Option|0e84.13: What hast thou been doing since [...] a year ago?|W1.L1.Paladin.LastYear
-|Option|0e84.14: Hast thou time to spar with me?|W1.L1.Paladin.Train
-|Option|0e84.15: Pardon me, but I must be going.|W1.L1.Paladin.Done
-|Prompt
 
-	W1.L1.Paladin.LastYear|Display|0e84.19: [...]I resumed my survey of Britannia's taverns[...]
-	|OptionRemove||0e84.13
+W1.L1.Paladin
+|Push
+|SpeakerSet|Portraits_Paladin
+
+|Goto||W1.L1.Paladin.KingAboutToSpeak
+
+	// 0e84.1: @GS102
+	// 0e84.2: Well...
+	// 0e84.3: @GS70SI1
+	// 0e84.4: I thank thee, @GS25, that is enough.
+	// 0e84.5: What else dost thou know?
+
+	W1.L1.Paladin.KingAboutToSpeak
+	|Display|0e84.6: I will speak with thee in a moment, Avatar. First, though, let us hear what Lord British counsels.
+	|Goto||W1.L1.Paladin.Done
+
+	W1.L1.Paladin.BeginTheCeremony
+	|Display|0e84.7: Quickly, Avatar, let us begin! Our guards cannot hold them for long!
+
+	W1.L1.Paladin.Greet.FirstTime
+	0e84.8: Ah, Avatar! 'Tis good to have thee here in this crisis. But I must speak with thee at once, in private!
+
+	W1.L1.Paladin.Greet
+	W1.L1.Paladin.Greet.1|Display|0e84.9: Good day, Avatar! What's on thy mind?
+	W1.L1.Paladin.Greet.2|Display|0e84.10: Yes, my friend?
+	W1.L1.Paladin.Greet.3|Display|0e84.11: What is it, @GS25?
+	W1.L1.Paladin.Greet.4|Display|0e84.12: What is on thy mind, friend @GS25?
+
+	W1.L1.Paladin.GeneralQuestions
+	|Option|0e84.13: What hast thou been doing since we trounced the Guardian a year ago?|W1.L1.Paladin.LastYear
+	|Option|0e84.14: Hast thou time to spar with me?|W1.L1.Paladin.Train
+	|Option|0e84.15: Pardon me, but I must be going.|W1.L1.Paladin.Farewell
 	|Prompt
 
-	W1.L1.Paladin.Train|Push
-	|Display|0e84.20: Of course! I could do with the practice, myself!
+		W1.L1.Paladin.LastYear
+		|Display|0e84.19: After we thwarted the Guardian last time, I resumed my survey of Britannia's taverns. I was at the Friendly Knave in Moonglow, trying out a new ale they have there, when I received the invitation to Lord British's festival. Of course I sailed for the castle at once -- my survey is hard work, and I thought this would be a fine vacation. @GS8, the Guardian shall owe me for every hour of revelry I am missing!
+		|Prompt
+
+	W1.L1.Paladin.Train
+	|Display|0e84.20: Of course! I could do with the practice, myself! I've been working on the mace and axe, these days.
 	|Option|0e84.21: Let us spar with the axe, then.|W1.L1.Paladin.Train.Axe
 	|Option|0e84.22: By all means, let us try our hands at the mace.|W1.L1.Paladin.Train.Mace
 	|Option|0e84.23: I have no need to work on those, at the moment.|W1.L1.Paladin.Train.Done
 	|Prompt
 
-		W1.L1.Paladin.Train.Axe|Push
-		W1.L1.Paladin.Train.Axe.Start|SpeakerSet
-		|Display|0e84.24: Dupre is as accomplished a warrior as ever, and you learn much[...]
-		|SpeakerSet|Paladin
-		|Display|0e84.30: Shall we go another round?
-		|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Axe.Start
-		|Option|0e84.33: No, thank thee.|W1.L1.Paladin.Train.Axe.Done
-		|Prompt
+		W1.L1.Paladin.Train.Axe
+		|Goto||W1.L1.Paladin.Train.Axe.Succeed
+		|Goto||W1.L1.Paladin.Train.Axe.Fail
 
-			W1.L1.Paladin.Train.Axe.Done|Pop
+			W1.L1.Paladin.Train.Axe.Succeed
+			|SpeakerSet
+			|Display|0e84.24: Dupre is as accomplished a warrior as ever, and you learn much from him.
+			|SpeakerSet|Portraits_Paladin
+			|Goto||W1.L1.Paladin.Train.Axe.AnyMore
+
+				W1.L1.Paladin.Train.Axe.AnyMore
+				|Display|0e84.30: Shall we go another round?
+				|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Axe
+				|Option|0e84.32: No, thank thee.|W1.L1.Paladin.Train.Done
+				|Prompt
+
+			W1.L1.Paladin.Train.Axe.Fail
+			|SpeakerSet
+			0e84.25: You spar a while with Dupre, but you seem to have reached a plateau in your axe skills.
+			|SpeakerSet|Portraits_Paladin
+			0e84.26: Perhaps thou art having an off day, Avatar.
 			|Goto||W1.L1.Paladin.Train.Done
 
-		W1.L1.Paladin.Train.Mace|Push
-		W1.L1.Paladin.Train.Mace.Start|SpeakerSet
-		|Display|0e84.The mighty Dupre wields the mace with his customary ease[...]
-		|SpeakerSet|Paladin
-		|Display|0e84.30: Shall we go another round?
-		|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Mace.Start
-		|Option|0e84.33: No, thank thee.|W1.L1.Paladin.Train.Mace.Done
-		|Prompt
+			W1.L1.Paladin.Train.Done
+			|Goto||W1.L1.Paladin.AnythingElse
 
-			W1.L1.Paladin.Train.Mace.Done|Pop
+		W1.L1.Paladin.Train.Mace
+		|Goto||W1.L1.Paladin.Train.Mace.Succeed
+		|Goto||W1.L1.Paladin.Train.Mace.Fail
+
+			W1.L1.Paladin.Train.Mace.Succeed
+			|Display|0e84.27: The mighty Dupre wields the mace with his customary ease -- he shows you a few new tricks.
+			|Goto||W1.L1.Paladin.Train.Axe.AnyMore
+
+				W1.L1.Paladin.Train.Mace.AnyMore
+				|Display|0e84.30: Shall we go another round?
+				|Option|0e84.31: Yes, let us continue.|W1.L1.Paladin.Train.Mace
+				|Option|0e84.32: No, thank thee.|W1.L1.Paladin.Train.Done
+				|Prompt
+
+			W1.L1.Paladin.Train.Mace.Fail
+			|SpeakerSet|
+			|Display|0e84.28: It is not a good day for you with the mace, and you feel unimproved.
+			|SpeakerSet|Portraits_Paladin
+			|Display|0e84.29: I seem to have the advantage of thee, today, @GS8.
 			|Goto||W1.L1.Paladin.Train.Done
 
-		W1.L1.Paladin.Train.Done|Display|0e84.16: What else have we to speak of?
-		|Pop
+		W1.L1.Paladin.Train.Sword// Is there an option for this?
+		|Goto||W1.L1.Paladin.Train.Sword.Succeed
+		|Goto||W1.L1.Paladin.Train.Sword.Fail
+
+			W1.L1.Paladin.Train.Sword.Succeed
+			|SpeakerSet|
+			|Display|0e84.33: Dupre wasn't kidding about keeping up his swordsmanship! He shows you a few moves you've never even seen before.
+			|SpeakerSet|Portraits_Paladin
+			|Goto||W1.L1.Paladin.Train.Sword
+
+			W1.L1.Paladin.Train.Sword.Fail
+			|SpeakerSet|
+			|Display|0e84.34: Dupre's sword-hand moves too fast for you -- you can't pick up much from him.
+			|SpeakerSet|Portraits_Paladin
+			|Display|0e84.35: I seem to have the advantage of thee, today, @GS8.
+			|Goto||W1.L1.Paladin.Train.Done
+
+		W1.L1.Paladin.Train.Done
+		|Goto||W1.L1.Paladin.AnythingElse
 		|Prompt
 
-	W1.L1.Paladin.Done|Display|0e84.38: Do not linger here, Avatar, but hurry to investigate! [...]
-	|SpeakerSet|
+	// 0e84.36: man
+	// 0e84.37: woman
+
+	W1.L1.Paladin.HorribleDiscovery
+	|Display|0e84.39: Do not tell the others, @GS8, but I have made a horrible discovery!
+	|Option|0e84.40: What is it?|W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+	|Option|0e84.41: Is our situation not difficult enough?|W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
+	|Prompt
+
+		W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
+		|Display|0e84.42: Thou dost not know the worst.
+		|Goto||W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+
+		W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+		|Display|0e84.43: Iolo and I walked down into the sewers, and a bit below -- a plague of monsters has erupted! I do not know where they are coming from, but the matter bears investigation!
+		|Option|0e84.44: I shall look into it at once!|W1.L1.Paladin.HorribleDiscovery.YouAreBrave
+		|Option|0e84.45: Truly, I am loath to descend into the sewers.|W1.L1.Paladin.HorribleDiscovery.ShameOnYou
+		|Prompt
+
+			W1.L1.Paladin.HorribleDiscovery.ShameOnYou
+			|Display|0e84.46: Avatar, shame on thee! The men and women of the castle are depending on thee!
+			|Display|0e84.47: Take thou this key to the sewers, if thou shouldst recover the courage I admire thee for!
+			|Option|0e84.48: I was merely jesting, Dupre. I shall descend at once.|W1.L1.Paladin.AnythingElse
+			|Option|0e84.49: If I must.|W1.L1.Paladin.AnythingElse
+			|Prompt
+
+			W1.L1.Paladin.HorribleDiscovery.YouAreBrave
+			|Display|0e84.50: Thou art a brave @SS1, @GS8. I admire thee, though I do not envy thy responsibilities here. Take thou then this key to the sewers!
+			|Option|0e84.51: I shall descend at once.|W1.L1.Paladin.AnythingElse
+			|Option|0e84.52: If I must.|W1.L1.Paladin.AnythingElse
+			|Prompt
+
+	W1.L1.Paladin.HeardYouFoundWater
+	|Display|0e84.53: I hear thou hast found a river!  Dost thou realize what this means? We have a water supply! Now perhaps Miranda will ease the rationing of alcohol.
+	|Option|0e84.54: Yes, 'tis good that we shall not now die of thirst!|W1.L1.Paladin.HeardYouFoundWater.WeWontDieOfThirstNow
+	|Option|0e84.55: That rationing must have been difficult for thee.|W1.L1.Paladin.HeardYouFoundWater.RationingWasTough
+	|Prompt
+
+		W1.L1.Paladin.HeardYouFoundWater.RationingWasTough
+		|Display|0e84.63: Aye, @GS8, it hit me where I live!
+		W1.L1.Paladin.HeardYouFoundWater.WeWontDieOfThirstNow
+
+		W1.L1.Paladin.HeardYouFoundWater.WeWontDieOfThirstNow
+		0e84.73: Now that thou hast found a source of water, we are spared at least one grim fate!
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.ReturnedFromTheIceCaverns
+	|Display|0e84.56: I have just now returned from the ice caverns, Avatar. Even after visiting there myself, I can scarcely believe this other world is real!
+	|Option|0e84.57: Didst thou think I was lying?|W1.L1.Paladin.ReturnedFromTheIceCaverns.DidYouThinkILied
+	|Option|0e84.58: 'Tis indeed a marvel!|W1.L1.Paladin.ReturnedFromTheIceCaverns.ShameThePortalMustBeDestroyed
+	|Prompt
+
+		W1.L1.Paladin.ReturnedFromTheIceCaverns.DidYouThinkILied
+		|SpeakerSet|
+		|Display|0e84.59: He laughs.
+		|SpeakerSet|Portraits_Paladin
+		|Display|0e84.60: Nay, Avatar -- 'twould be folly to doubt THY word.
+
+		W1.L1.Paladin.ReturnedFromTheIceCaverns.ShameThePortalMustBeDestroyed
+		|Display|0e84.61: 'Tis indeed a shame, that should we destroy this gem, I shall never again have a chance to voyage between the worlds.
+		|Display|0e84.62: Someone, though, will still need to bring the water back from the ice caves, a dangerous task at best. Methinks I will volunteer!
+		|SpeakerSet|Portraits
+		|Display|0e84.64: Dupre chuckles and pats his belly.
+		|SpeakerSet|Portraits_Paladin
+		|Display|0e84.65: I can think of no one better for such a vital task.
+		|Option|0e84.66: Who else, to provide the castle with drink?|W1.L1.Paladin.AnythingElse
+		|Option|0e84.67: Good luck to the both of us then, @GS8.|W1.L1.Paladin.AnythingElse
+		|Prompt
+
+	W1.L1.Paladin.StandingAroundDrivingMeCrazy
+	|Display|0e84.68: By the Serpent, Avatar! Standing around in this castle is driving me crazy!
+	|Option|0e84.69: Thou shouldst see Miranda -- perhaps there is some way thou couldst help out?|W1.L1.Paladin.StandingAroundDrivingMeCrazy.AlreadyAskedForAJob
+	|Option|0e84.70: Thou shouldst try to relax.|W1.L1.Paladin.StandingAroundDrivingMeCrazy.JustRelax
+	|Prompt
+
+		W1.L1.Paladin.StandingAroundDrivingMeCrazy.AlreadyAskedForAJob
+		|Display|0e84.71: I have done so, perhaps a dozen times already! I am no good at organizing supplies, or calming the mayor. If only she'd give me permission to venture through the gem, as thou dost . . .
+		|Goto||W1.L1.Paladin.AnythingElse
+
+		W1.L1.Paladin.StandingAroundDrivingMeCrazy.JustRelax
+		|Display|0e84.72: Aye, thou'rt right -- 'tis fruitless, and I only upset the others. Oh, for a comfortable pub, and a drink!
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.MurderMystery
+	|Display|0e84.74: Avatar, there has been foul murder here in the castle! 'Tis outrageous! 'Tis calamitous! 'Tis...
+	|Option|0e84.75: Yes, I have heard of the tragedy.|W1.L1.Paladin.MurderMystery.IBlameTheVillain
+	|Option|0e84.76: Surely you jest! Who has died?|W1.L1.Paladin.MurderMystery.EmpathWasTheVictim
+	|Option|0e84.77: Murder? Hast the killer been found?|W1.L1.Paladin.MurderMystery.IBlameTheVillain
+	|Prompt
+
+		W1.L1.Paladin.MurderMystery.IBlameTheVillain
+		|Display|0e84.78: Whoever the agent, I hold the Guardian responsible! Some day soon there must be reckoning with that red miscreant.
+		|Goto||W1.L1.Paladin.MurderMystery.Done
+
+		W1.L1.Paladin.MurderMystery.EmpathWasTheVictim
+		|Display|0e84.79: 'Twas the Lady Tory -- she was stabbed in her quarters!
+		|Goto||W1.L1.Paladin.MurderMystery.Done
+
+		W1.L1.Paladin.MurderMystery.VillainWasCareful
+		|Display|0e84.80: Nay, the villain was most careful. 'Twas the Lady Tory who was killed -- I'll wager there's a spy in our midst who feared that Tory's empathy would ferret them out. Such a monstrous deed!
+		|Goto||W1.L1.Paladin.MurderMystery.Done
+
+		W1.L1.Paladin.MurderMystery.Done
+		|Option|0e84.81: Lady Tory's murder will not go unavenged. You have my word on that, @GS8!|W1.L1.Paladin.AnythingElse
+		|Prompt
+
+	W1.L1.Paladin.MurderSolved
+	|Display|0e84.82: Two murders now, and a third dead as well. 'Tis a sad thing that such griefs should be visited upon the castle.
+	|Option|0e84.83: We should have suspected Patterson.|W1.L1.Paladin.MurderSolved.ShouldveSuspectedMayor
+	|Option|0e84.84: Wert thou good friends with Nelson?|W1.L1.Paladin.MurderSolved.DidntKnowTheScholar
+	|Option|0e84.85: At least now there shouldst be no more killings.|W1.L1.Paladin.MurderSolved.WhoKnowsIfWereSafeNow
+	|Prompt
+
+		W1.L1.Paladin.MurderSolved.ShouldveSuspectedMayor
+		|Display|0e84.86: Who can say, of such things? I thought him merely a coward. And the result is, our debt of vengeance to the Guardian has grown again.
+		|Goto||W1.L1.Paladin.MurderSolved.Done
+
+		W1.L1.Paladin.MurderSolved.DidntKnowTheScholar
+		|Display|0e84.87: Nay, I hardly knew him at all. He seemed to me a likable fellow, but shy.  He spent most of his hours in the library. Always there was a book in his hand, and never a drink.
+		|Goto||W1.L1.Paladin.MurderSolved.Done
+
+		W1.L1.Paladin.MurderSolved.WhoKnowsIfWereSafeNow
+		|Display|0e84.88: One would hope not. But if the Guardian had one pawn in our midst, can we be certain that there are no more?
+		|Goto||W1.L1.Paladin.MurderSolved.Done
+
+		W1.L1.Paladin.MurderSolved.Done
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.MayorSucks
+	|Display|0e84.89: That bloke Patterson, he certainly is a strange one.
+	|Option|0e84.90: Why dost thou say so?|W1.L1.Paladin.MayorSucks.HeRefusedWhiskey
+	|Option|0e84.91: I'd agree with that!|W1.L1.Paladin.MayorSucks.HeRefusedWhiskey
+	|Option|0e84.92: Does he seem suspicious to you?|W1.L1.Paladin.MayorSucks.HesAnxiousAndCowardly
+	|Prompt
+
+		W1.L1.Paladin.MayorSucks.HeRefusedWhiskey
+		|Display|0e84.93: I offered to share with him the last of my whiskey, just to cheer him up, and he refused! Canst thou imagine?
+		|Goto||W1.L1.Paladin.MayorSucks.Done
+
+		W1.L1.Paladin.MayorSucks.HesAnxiousAndCowardly
+		|Display|0e84.94: Suspicious? No, I'd not say that. Anxious is more like it. Patterson is a coward, and being trapped in here by the Guardian is just fuelling his cowardice.
+		|Goto||W1.L1.Paladin.MayorSucks.Done
+
+		W1.L1.Paladin.MayorSucks.Done
+		|Goto||W1.L1.Paladin.Done
+
+	W1.L1.Paladin.WaterFetchingGoingWell
+	|Display|0e84.95: My task of bringing water from the ice-caves is going extremely well.
+	|Option|0e84.96: Have the Yeti proved troublesome in thy efforts?|W1.L1.Paladin.WaterFetchingGoingWell.YetiTrouble
+	|Option|0e84.97: We are all grateful for the service.|W1.L1.Paladin.WaterFetchingGoingWell.JealousOfYou
+	|Prompt
+
+		W1.L1.Paladin.WaterFetchingGoingWell.YetiTrouble
+		|Display|0e84.98: They were an annoyance at first, but I have since taught them that 'tis safer to let me be! I have saved some of the pelts, if thou dost wish to see them later.
+		|Goto||W1.L1.Paladin.WaterFetchingGoingWell.Done
+
+		W1.L1.Paladin.WaterFetchingGoingWell.JealousOfYou
+		|Display|0e84.99: I am jealous of thee, @GS8! Thou dost get to explore new dimensions whilst I lug buckets of water back and forth. 'Tis mundane labor for a knight, but necessary. I am happy to do it.
+		|Goto||W1.L1.Paladin.WaterFetchingGoingWell.Done
+
+		W1.L1.Paladin.WaterFetchingGoingWell.Done
+		|Goto||W1.L1.Paladin.Done
+
+	W1.L1.Paladin.EquipmentStolenFromIceCaves
+	|Display|0e84.100: I left some lifting equipment hidden in the ice-caves, and now all of it is missing! As if carrying all of that water isn't toil enough...
+	|Option|0e84.101: Dost thou know who stole it?|W1.L1.Paladin.EquipmentStolenFromIceCaves.NoIdeaWhoStoleIt
+	|Option|0e84.102: Perhaps the Yeti who live there have taken thy things.|W1.L1.Paladin.EquipmentStolenFromIceCaves.TheYetiDidntStealIt
+	|Prompt
+
+		W1.L1.Paladin.EquipmentStolenFromIceCaves.NoIdeaWhoStoleIt
+		|Display|0e84.103: Nay, I've no idea who the robber is...
+		|Goto||W1.L1.Paladin.EquipmentStolenFromIceCaves.IFearTheCastleThiefDidIt
+
+		W1.L1.Paladin.EquipmentStolenFromIceCaves.TheYetiDidntStealIt
+		|Display|0e84.104: There are no signs that Yeti were anywhere near the place where I kept the equipment...
+		|Goto||W1.L1.Paladin.EquipmentStolenFromIceCaves.IFearTheCastleThiefDidIt
+
+		W1.L1.Paladin.EquipmentStolenFromIceCaves.IFearTheCastleThiefDidIt
+		|Display|0e84.105: I fear that the mysterious castle thief has been venturing into the other planes.
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.YouSwallowedAWhat
+	|Display|0e84.106: Look at thee... @GS8, the human bottle! After we have settled with the Guardian, we should fill thee with ale and keep thee locked in the pantry!
+	|Option|0e84.107: Ah, Dupre, 'tis good to see that thou hast not changed!|W1.L1.Paladin.YouSwallowedAWhat.KeepTheMudOffTheFloors
+	|Option|0e84.108: This is not the time for jokes, my friend.|W1.L1.Paladin.YouSwallowedAWhat.NoBetterTimeForJokes
+	|Prompt
+
+		W1.L1.Paladin.YouSwallowedAWhat.KeepTheMudOffTheFloors
+		|Display|0e84.109: Take care that the mud stays caked to thee. Should it start to flake, Nell with have thy hide for making a mess of her castle!
+		|Goto||W1.L1.Paladin.YouSwallowedAWhat.Done
+
+		W1.L1.Paladin.YouSwallowedAWhat.NoBetterTimeForJokes
+		|Display|0e84.110: Ah, Avatar, 'tis the times of trouble when one's sense of humor is most valuable.
+		|Goto||W1.L1.Paladin.YouSwallowedAWhat.Done
+
+		W1.L1.Paladin.YouSwallowedAWhat.Done
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.BadDreams
+	|Display|0e84.111: The Guardian has been harassing me in my sleep. 'Tis most annoying.
+	|Option|0e84.112: What does he say to thee?|W1.L1.Paladin.BadDreams.WhatDoesVillainSay
+	|Option|0e84.113: Do not listen to his lies.|W1.L1.Paladin.BadDreams.DontListenToHim
+	|Prompt
+
+		W1.L1.Paladin.BadDreams.WhatDoesVillainSay
+		|Display|0e84.114: He hath made a variety of threats on my person, which of course are empty. Once he offered me a brewery of mine own, were I to betray thee and Lord British. Canst thou imagine? Only one brewery!
+		|Option|0e84.115: Surely thou wouldst not betray us for all the world's ale!|W1.L1.Paladin.BadDreams.OnlyJoking
+		|Option|0e84.116: Methinks the Guardian doth not understand true loyalty.|W1.L1.Paladin.BadDreams.VillainDoesntUnderstandLoyalty
+		|Prompt
+
+			W1.L1.Paladin.BadDreams.OnlyJoking
+			|Display|0e84.117: 'Twas only a jest, Avatar. Of course not!
+			W1.L1.Paladin.BadDreams.Done
+
+			W1.L1.Paladin.BadDreams.VillainDoesntUnderstandLoyalty
+			|Display|0e84.118: Ah, there I think thou hast found the Guardian's weakness. He is only served through fear, so his servants are those who lack true courage. Such a ruler can never hope for victory.
+			W1.L1.Paladin.BadDreams.Done
+
+		W1.L1.Paladin.BadDreams.DontListenToHim
+		|Display|0e84.119: I will not. He offers me threats and bribes, but behind both I sense his deception. If thou dost ask me, he still smarts from our part in his previous defeat.
+		|Goto||W1.L1.Paladin.BadDreams.Done
+
+		W1.L1.Paladin.BadDreams.Done
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.SewersGetMoreDangerousAllTheTime
+	|Display|0e84.120: The sewers grow more and more dangerous with each trip I make. I have just now met with a pair of dread spiders -- and to think I thought them a myth!
+	|Option|0e84.121: Art thou all right?|W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.YouAllRight
+	|Option|0e84.122: Dost thou require an escort?|W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.NeedAnEscort
+	|Prompt
+
+		W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.YouAllRight
+		|Display|0e84.123: Aye, worry not! The dreads left our encounter shy a few legs, though!
+		|Goto||W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.Done
+
+		W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.NeedAnEscort
+		|Display|0e84.124: Nay, nay, @GS8! I shall bear my own weight, as thou must bear thine!
+		|Goto||W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.Done
+
+		W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.Done
+		|Goto||W1.L1.Paladin.AnythingElse
+
+	W1.L1.Paladin.AnythingElse
+	|Display|0e84.16: What else have we to speak of?
+	|Option|0e84.17: Nothing right now -- I shall see thee later, my friend.|W1.L1.Paladin.Farewell
+	|Option|0e84.18: There is one thing more.|W1.L1.Paladin.GeneralQuestions
+	|Prompt
+
+	W1.L1.Paladin.Farewell
+	|Display|0e84.38: Do not linger here, Avatar, but hurry to investigate! If we are to escape here at all, it must be done quickly.
+	|Goto||W1.L1.Paladin.Done
+
+	W1.L1.Paladin.Done
 	|Pop
 	|Prompt
 
-W1.L1.Philanthropist|SpeakerSet|Portraits_Philanhtropist
-|Display|Not yet implemented!
-|OptionsClear
-|Option|0: [Select a different character.]|W1.L1
-|Prompt
+
+W1.L1.Philanthropist
+|Push
+|SpeakerSet|Portraits_Philanthropist
+
+|Goto||W1.L1.Philanthropist.KingAboutToSpeak
+
+	// 0e8f.1: @GS102
+	// 0e8f.2: Well...
+	// 0e8f.3: @GS70SI1
+	// 0e8f.4: I thank thee, @GS25, that is enough.
+	// 0e8f.5: What else dost thou know?
+
+	W1.L1.Philanthropist.KingAboutToSpeak
+	|Display|0e8f.6: I think Lord British has something he wishes to say. Thou shouldst hasten to the throne room.
+	|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.BeginTheCeremony
+	|Display|0e8f.7: Well, Avatar, if thou hast any final tricks up thy sleeve, now is the time to play them!
+	|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.Greet.FirstTime
+	0e8f.8: So thou art here as well.
+
+	// 0e8f.9: I had been meaning to speak to thee, Avatar.
+
+	W1.L1.Philanthropist.Greet
+	W1.L1.Philanthropist.Greet.1|Display|0e8f.10: Yes, @GS8? What may I do for thee?
+	W1.L1.Philanthropist.Greet.2|Display|0e8f.11: What is it, @GS25?
+	W1.L1.Philanthropist.Greet.3|Display|0e8f.12: What is on thy mind, @GS25?
+
+	W1.L1.Philanthropist.GeneralQuestions
+	|Option|0e8f.13: How didst thou spend the previous year, @GS25?|W1.L1.Philanthropist.LastYear
+	|Option|0e8f.14: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Philanthropist.News
+	|Option|0e8f.15: Excuse me, Feridwyn -- I must go.|W1.L1.Philanthropist.Done
+	|Prompt
+
+		W1.L1.Philanthropist.LastYear
+		|Display|0e8f.73: The dissolution of the Fellowship didst not change my desire to aid the poor and needy of Britannia. I have continued to run the shelter in Paws, though we are in great need of more funding from Lord British. I fear that soon we may lack the means to offer even the meager services that we currently provide.
+		|Prompt
+
+		W1.L1.Philanthropist.News
+		|Goto||W1.L1.Philanthropist.MayorSucks
+		// todo
+
+	W1.L1.Philanthropist.MayorSucks
+	|Display|0e8f.21: Avatar, canst we not do something about Patterson?  He is without doubt the most inane fellow I have encountered in my life!
+	|Option|0e8f.22: Just ignore him and he'll go away.|W1.L1.Philanthropist.MayorSucks.IsThatHowYouSolveProblems
+	|Option|0e8f.23: Has he been bothering thee?|W1.L1.Philanthropist.MayorSucks.HesAPest
+	|Option|0e8f.24: He means well, Feridwyn.|W1.L1.Philanthropist.MayorSucks.HeMeansWell
+	|Prompt
+
+		W1.L1.Philanthropist.MayorSucks.IsThatHowYouSolveProblems
+		|Display|0e8f.25: Is that how the Avatar deals with problems?  Ignore them and hope they vanish by themselves?  If that is thy philosophy, 'tis amazing that thou hast been so successful in the past.
+		|Goto||W1.L1.Philanthropist.MayorSucks.HesAPest
+
+		W1.L1.Philanthropist.MayorSucks.HesAPest
+		|Display|0e8f.26: He hath been a constant pest, and methinks not only to me. Many others have been complaining about him.  If his behavior continues, I shall have stern words for the man.
+		|Goto||W1.L1.Philanthropist.MayorSucks.MoreQuestions
+
+		W1.L1.Philanthropist.MayorSucks.HeMeansWell
+		|Display|0e8f.27: I dost not care if he means well, @GS8.  Thou dost know what they say of good intentions.
+		|Goto||W1.L1.Philanthropist.MayorSucks.MoreQuestions
+
+		W1.L1.Philanthropist.MayorSucks.MoreQuestions
+		|Option|0e8f.28: Do not be too harsh with him.|W1.L1.Philanthropist.MayorSucks.BeHarshIfIWant
+		|Option|0e8f.29: I agree with thee.  Something should be done about him.|W1.L1.Philanthropist.MayorSucks.SomethingShouldBeDone
+		|Option|0e8f.30: Thine opinions are of little value to me.|W1.L1.Philanthropist.MayorSucks.IDontCareWhatYouThink
+		|Prompt
+
+			W1.L1.Philanthropist.MayorSucks.BeHarshIfIWant
+			|Display|0e8f.31: I shall be as harsh as I like, if he continues to pester me.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+			W1.L1.Philanthropist.MayorSucks.SomethingShouldBeDone
+			|Display|0e8f.32: Aye, and done soon.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+			W1.L1.Philanthropist.MayorSucks.IDontCareWhatYouThink
+			|SpeakerSet|
+			|Display|0e8f.33: Feridwyn graces you with a cold smile.
+			|SpeakerSet|Portraits_Philanthropist
+			|Display|0e8f.34: The feeling is mutual, Avatar.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+		W1.L1.Philanthropist.MayorSucks.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.YoureTrouble
+	|Display|0e8f.35: Well, @GS8, once again thy visit has coincided with calamity.  I cannot say I am surprised.
+	|Option|0e8f.36: If thou wilt not be civil, do not speak to me.|W1.L1.Philanthropist.YoureTrouble.CivilityIsEarned
+	|Option|0e8f.37: I shall do my best to end this crisis, as should we all.|W1.L1.Philanthropist.YoureTrouble.LetsAllDoOurBest
+	|Option|0e8f.38: Trouble does seem to follow me about.|W1.L1.Philanthropist.YoureTrouble.TroubleFollowsMe
+	|Prompt
+
+		W1.L1.Philanthropist.YoureTrouble.CivilityIsEarned
+		|Display|0e8f.39: Civility, like respect, should be earned, Avatar.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.LetsAllDoOurBest
+		|Display|0e8f.40: I shall do my part, do not worry.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.TroubleFollowsMe
+		|Display|0e8f.41: Yes, it does.  History tells us that thou hast always been a harbinger of ill tidings.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.MurderMystery
+	|Display|0e8f.42: I am greatly saddened by Lady Tory's death.  She was a good woman.
+	|Option|0e8f.43: We must all be wary, now that we know a traitor walks among us.|W1.L1.Philanthropist.MurderMystery.AlwaysWary
+	|Option|0e8f.44: Dost thou know anything about the murder?|W1.L1.Philanthropist.MurderMystery.KnowNothingOfMurder
+	|Option|0e8f.45: Where wert thou at the time of the killing?|W1.L1.Philanthropist.MurderMystery.AreYouAccusingMe
+	|Prompt
+
+		W1.L1.Philanthropist.MurderMystery.AlwaysWary
+		0e8f.46: I am always wary, @GS8.
+
+		W1.L1.Philanthropist.MurderMystery.KnowNothingOfMurder
+		0e8f.47: Nay, I know nothing of it.
+
+		W1.L1.Philanthropist.MurderMystery.AreYouAccusingMe
+		|Display|0e8f.48: Art thou accusing me, Avatar?
+		|Option|0e8f.49: No, I was merely wondering.|W1.L1.Philanthropist.MurderMystery.IWasAloneInMyRoom
+		|Option|0e8f.50: Thou art a prime suspect, Feridwyn!|W1.L1.Philanthropist.MurderMystery.YouHaveNoEvidence
+		|Prompt
+
+			W1.L1.Philanthropist.MurderMystery.IWasAloneInMyRoom
+			|Display|0e8f.51: I was in alone in my room when I heard the shouts of the guards. I am as innocent as thou.
+			|Goto||W1.L1.Philanthropist.MurderMystery.Done
+
+			W1.L1.Philanthropist.MurderMystery.YouHaveNoEvidence
+			|Display|0e8f.52: If thou hast any evidence, then come out and make the accusation, but I assure thee that I am guilty of nothing.  I am aware that many are talking of me behind my back, and I would be lying to say it dost not bother me.  @GS8, you of all people should know the dangers of groundless speculation.
+			|Goto||W1.L1.Philanthropist.MurderMystery.Done
+
+		W1.L1.Philanthropist.MurderMystery.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams
+	|Display|0e8f.53: Avatar, we both know that I have little love for thee. However, for the sake of the others you should know that the Guardian spoke to me last night.
+	|Option|0e8f.54: What didst he say to thee?|W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+	|Option|0e8f.55: Feridwyn, I care not about what he hath said in thy dreams.|W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.YouShouldHearThis
+	|Prompt
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.YouShouldHearThis
+	|Display|0e8f.56: I think that thou shouldst hear this.
+	|Goto||W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+	|Display|0e8f.57: He tried to get me to convince thee that thou wouldst best be served by exploring the dungeons of Killorn Keep. I wouldst not attempt it though... it is no doubt some trickery on his part. He was unwise to think that I wouldst betray Britannia.
+	|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.HeardYouFoundWater
+	|Display|0e8f.58: So thou hast discovered a river in another world. 'Tis most fortunate for us, that we shall not perish of thirst. Wert thou searching for water, or didst thou stumble across it accidentally?
+	|Option|0e8f.59: 'Twas sheer luck that I found water there, Feridwyn.|W1.L1.Philanthropist.HeardYouFoundWater.IGotLucky
+	|Option|0e8f.60: Doth it matter?  We should just be thankful to have found it.|W1.L1.Philanthropist.HeardYouFoundWater.DoesntMatter
+	|Option|0e8f.61: I was indeed searching for it!  I have saved us all!|W1.L1.Philanthropist.HeardYouFoundWater.YourModestyIsOverwhelming
+	|Prompt
+
+		W1.L1.Philanthropist.HeardYouFoundWater.IGotLucky
+		|Display|0e8f.62: I thought as much.  Good fortune seems to be thy constant companion.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.DoesntMatter
+		|Display|0e8f.63: No, it matters not.  I was simply curious.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.YourModestyIsOverwhelming
+		|Display|0e8f.64: Thy modesty is overwhelming, Avatar.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.MurderSolved
+	|Display|0e8f.65: All of this time, Patterson was under the Guardian's influence. Hopefully this tragedy will at least quell the unfounded suspicions that so many here have of me.
+	|Option|0e8f.66: We all owe you our apologies, Feridwyn.|W1.L1.Philanthropist.MurderSolved.IllAcceptAllApologies
+	|Option|0e8f.67: Is that all thou dost care about? Thine own reputation?|W1.L1.Philanthropist.MurderSolved.YourReputation
+	|Option|0e8f.68: I am still not convinced of thine innocence.|W1.L1.Philanthropist.MurderSolved.ThenYoureAFool
+	|Prompt
+
+		W1.L1.Philanthropist.MurderSolved.IllAcceptAllApologies
+		|Display|0e8f.69: I will accept them all, starting with thine, but for now thou had best return to your task of freeing us from the Guardian's cage.
+
+		W1.L1.Philanthropist.MurderSolved.YourReputation
+		|Display|0e8f.70: @GS8, thy dislike for me is ill-disguised. The deaths of Lady Tory and Nelson, and even of Patterson, have afflicted me with ample grief. But I have also had to bear the weight of a dozen unfair judgements, which is not an easy burden to carry. Now leave me, and return to your tasks.
+
+		W1.L1.Philanthropist.MurderSolved.ThenYoureAFool
+		|Display|0e8f.71: Then thou art a fool, Avatar.  I need not stay and listen to further paranoid accusations.
+
+		W1.L1.Philanthropist.MurderSolved.Done
+		|Display|0e8f.72: Enough have died here already, solely because there was a frightened, vicious fool in our midst. Thou art said to be a hero -- now go about thy heroic business.
+		|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.WillThatBeAll
+	|Display|0e8f.16: Art thou finished, Avatar?
+	|Option|0e8f.17: Yes. I shall speak with thee again, later.|W1.L1.Philanthropist.Done
+	|Option|0e8f.18: Nay, there is more I must discuss with thee.|W1.L1.Philanthropist.WillThatBeAll.No
+	|Prompt
+
+		W1.L1.Philanthropist.WillThatBeAll.No
+		|Display|0e8f.19: Yes, Avatar?
+		|Goto||W1.L1.Philanthropist.GeneralQuestions
+
+	// 0e8f.20: I can think of nothing more.
+
+
+	W1.L1.Philanthropist.Done
+	|Pop
+	|Prompt
 
 
 W1.L1.Scholar
@@ -3194,35 +3729,39 @@ W1.L1.Valet
 //0e83.4: I thank thee, @GS25, that is enough.
 //0e83.5: What else dost thou know?
 
-W1.L1.Valet.KingAboutToSpeak
-0e83.6: Excuse me, @GS8, I want to hear what Lord British has to say!
+	W1.L1.Valet.KingAboutToSpeak
+	|Display|0e83.6: Excuse me, @GS8, I want to hear what Lord British has to say!
+	|Goto||W1.L1.Valet.Done
 
-W1.L1.Valet.EndOfGame
-0e83.7: What dost thou want of me, Avatar? Quick, start the ceremony, before we are overwhelmed!
+	W1.L1.Valet.EndOfGame
+	|Display|0e83.7: What dost thou want of me, Avatar? Quick, start the ceremony, before we are overwhelmed!
+	|Goto||W1.L1.Valet.Done
 
-W1.L1.Valet.StrikeResolved
-0e83.8: Now that Lord British has agreed to act on our proposals, we have called off the strike.
+	W1.L1.Valet.StrikeResolved
+	|Display|0e83.8: Now that Lord British has agreed to act on our proposals, we have called off the strike.
+	|Goto||W1.L1.Valet.AnythingElse
 
-W1.L1.Valet.Greet
-0e83.9: What is it, Avatar?
-0e83.10: 'Tis good to see thee, Avatar.
-0e83.11: Yes? May I help thee?
+	W1.L1.Valet.Greet
+	W1.L1.Valet.Greet.1|Display|0e83.9: What is it, Avatar?
+	W1.L1.Valet.Greet.2|Display|0e83.10: 'Tis good to see thee, Avatar.
+	W1.L1.Valet.Greet.3|Display|0e83.11: Yes? May I help thee?
 
-W1.L1.Valet.WhatIsIt
-0e83.12: What is it, Charles?
+	W1.L1.Valet.WhatIsIt
+	|Option|0e83.12: What is it, Charles?|W1.L1.Valet.News
+	|Prompt
 
-W1.L1.Valet.GeneralQuestions
-0e83.13: What hast occupied thee of late, @GS25?
-0e83.14: What hast thou been doing for the past year?
-0e83.15: I must leave thee now.
+	W1.L1.Valet.GeneralQuestions
+	|Option|0e83.13: What hast occupied thee of late, @GS25?|W1.L1.Valet.News
+	|Option|0e83.14: What hast thou been doing for the past year?|W1.L1.Valet.LastYear
+	|Option|0e83.15: I must leave thee now.|W1.L1.Valet.Done
 
-W1.L1.Valet.AnythingElse
-0e83.16: Will there be anything else?
-0e83.17: No thank thee, Charles.
-0e83.18: Yes, there is more I must ask of thee.
+		W1.L1.Valet.LastYear
+		|Display|0e83.119: It hath been a quiet year here at the castle.  Bennie and Boots have retired from the staff, so more of the duties now fall to me. My sister Nell has married that... artist, Caroccio.  I'm not entirely sure I approve, but she is happy with him.
+		|Prompt
 
-	W1.L1.Valet.AnythingElse.Yes
-	0e83.19: Of course. What hast thou in mind?
+		W1.L1.Valet.News
+		|Goto||W1.L1.Valet.MayorSucks
+		// todo
 
 	W1.L1.Valet.ServantsOnStrike
 	|Display|0e83.20: Whatever it is thou needest, Avatar, thou wilt have to go elsewhere for it.  We members of the 'Domestic Management' are on strike.
@@ -3478,8 +4017,14 @@ W1.L1.Valet.AnythingElse
 	|Display|0e83.118: 'Tis not so important, but did I mention what I found with the key? Some old document about a battle with a sorcerer, whose body was never found. It all crumbled when I tried to pick it up!
 	|Goto||W1.L1.Valet.AnythingElse
 
-	W1.L1.Valet.LastYear
-	|Display|0e83.119: It hath been a quiet year here at the castle.  Bennie and Boots have retired from the staff, so more of the duties now fall to me. My sister Nell has married that... artist, Caroccio.  I'm not entirely sure I approve, but she is happy with him.
+	W1.L1.Valet.AnythingElse
+	|Display|0e83.16: Will there be anything else?
+	|Option|0e83.17: No thank thee, Charles.|W1.L1.Valet.Done
+	|Option|0e83.18: Yes, there is more I must ask of thee.|W1.L1.Valet.AnythingElse.Yes
+	|Prompt
+
+	W1.L1.Valet.AnythingElse.Yes
+	|Display|0e83.19: Of course. What hast thou in mind?
 	|Goto||W1.L1.Valet.GeneralQuestions
 
 	W1.L1.Valet.Done
@@ -3490,7 +4035,8 @@ W1.L1.Valet.AnythingElse
 W1.L1.Wizard
 |Push
 |SpeakerSet|Portraits_Wizard
-|Goto||W1.L1.Wizard.Greet// todo
+
+|Goto||W1.L1.Wizard.KingAboutToSpeak
 
 	W1.L1.Wizard.KingAboutToSpeak
 	|Display|0e82.8: If thou wilt wait a moment, Avatar, I think Lord British is about to commence his speech.

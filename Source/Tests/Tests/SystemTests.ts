@@ -45,7 +45,7 @@ class SystemTests extends TestFixture
 	{
 		var methodsToRun =
 		[
-			this.playFromStart_1
+			this.playFromStart_1_CastleStaffWontTalkToYouUntilKingSpeaks
 		];
 
 		methodsToRun.forEach
@@ -60,7 +60,7 @@ class SystemTests extends TestFixture
 		testComplete(null);
 	}
 
-	playFromStart_1(universe: Universe): void
+	playFromStart_1_CastleStaffWontTalkToYouUntilKingSpeaks(universe: Universe): void
 	{
 		Assert.isNotNull(universe);
 
@@ -79,8 +79,25 @@ class SystemTests extends TestFixture
 				// "Choose a level."
 				"1: Main Floor.",
 				// "Choose a character."
-				"Bard.",
+				"Administrator.",
 				// "Let's let the king speak first."
+				"Bard.",
+				// "Let's let the king speak first," again.
+				// Run through the rest of the starting characters, except for the king.
+				// They'll all dismiss you, waiting for the king to speek.
+				"Chambermaid.",
+				"Empath.",
+				"Housekeeper.",
+				"Knight.",
+				"Mayor.",
+				"Paladin.",
+				"Philanthropist.",
+				"Scholar.",
+				"Tinker.",
+				"Valet.",
+				"Wizard.",
+				// Now speak to the king.
+				"King."
 			]
 		);
 
