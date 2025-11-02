@@ -11,6 +11,9 @@ class WorldGame extends World {
         var placeInitialName = places[0].name;
         super(name, timeCreated, defn, placeGetByName, placeInitialName);
     }
+    static fromName(name) {
+        return new WorldGame(name);
+    }
     static defnBuild() {
         return new WorldDefn([
             [

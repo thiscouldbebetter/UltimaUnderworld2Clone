@@ -70,7 +70,7 @@ class PlaceDefault extends PlaceBase
 	{
 		super.initialize(uwpe);
 
-		var conversationDefnName = "ConversationsAll";
+		var conversationDefnName = "Talk_ConversationsAll";
 
 		var talker = Talker.fromConversationDefnName(conversationDefnName);
 		talker.talk(uwpe);

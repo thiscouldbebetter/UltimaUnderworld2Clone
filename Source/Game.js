@@ -73,7 +73,7 @@ class Game {
             video("Movie.webm"),
             font("Font.ttf"),
             text("Instructions.txt"),
-            text("ConversationsAll.txt")
+            text("Talk/ConversationsAll.txt")
         ];
         return mediaFilePaths;
     }

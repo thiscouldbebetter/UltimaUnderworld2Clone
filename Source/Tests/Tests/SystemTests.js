@@ -31,7 +31,7 @@ class SystemTests extends TestFixture {
         var world = universe.world;
         var venueWorld = world.toVenue();
         universe.venueNextSet(venueWorld);
-        var talker = Talker.fromConversationDefnName("ConversationsAll");
+        var talker = Talker.fromConversationDefnName("Talk_ConversationsAll");
         this.talkToTalker(universe, talker, [
             "todo"
         ]);

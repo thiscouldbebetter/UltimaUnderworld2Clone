@@ -118,7 +118,7 @@ class Game
 			font("Font.ttf"),
 
 			text("Instructions.txt"),
-			text("ConversationsAll.txt")
+			text("Talk/ConversationsAll.txt")
 		];
 
 		return mediaFilePaths;
