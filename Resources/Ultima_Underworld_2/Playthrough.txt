@@ -160,3 +160,393 @@ What wouldst thou say...?
 	That is wise of thee...
 
 Saved 2-DippedToeBelow, or something like that.
+
+Reloaded 0.
+
+Nelson says "let's listen to the king" and the conversation ends.
+Iolo: same.
+Syria: same.
+Nell: same.
+
+Guard:
+
+	Good morning.
+	1. How goes the watch?
+	2. How art thou?
+	3. And the same to thee.
+
+2.
+
+	Fine, sir.
+	[He continues on his rounds.]
+
+Talked to king.
+
+Talked to Nelson.
+
+	'Tis good to see thee here, Avatar.
+	1. What is it, Nelson?
+	2. What hast thou been doing since...?
+	3. I would study with thee a brief time.
+
+1.
+
+	We are in quite a fix...
+	1. Thou art right...
+	2. One never gets used...
+
+2.
+
+	Well, I have been thinking -- al of the G's blackrock structures...
+	1. But where...?
+	2. What use...?
+
+1.
+
+	'Tis hard to say.
+
+Talk to him again immediately, and now:
+
+	Yes [name]?  What may I do...?
+	1. What hast thou been doing...?
+	2. I would study with thee...
+	3. If I may, I would like to hear thy thoughts...
+
+3.
+
+	Well...
+	The logic of the Guardian's previous creations...
+	1. I thank thee,... that is enough.
+	2. What else dost thou know?
+
+2.
+
+	[Repeats previous.]
+
+2. [again]
+
+	That is all for the moment.  I shall have more to say later.
+	Will that be all...?
+
+Talked to Nystul:
+
+	...I see you are joining us in this.. reunion!...
+	1. What wouldst thou say to me?
+	2. What hast thou been doing since...?
+	3. Hast thou time to teach me...?
+
+1.
+
+	'Tis a staggeringly huge spell...
+	1. What dost thou mean... crude...?
+	2. What is blackrock?
+	3. I am sorry thy sense of aesthetics...
+
+1.
+
+	'Tis as if the caster...
+	1. What kind of "aftershocks"?
+	2. Other realities?
+	3. Probably.  But I must be going.
+
+3.
+
+	If there is nothing more...
+	1. I shall speak to thee later, then
+	2. Wait...
+
+1.
+
+Talked to him again.
+
+	What brings thee to see me...?
+	1. What hast thou been doing...?
+	2. Hast thou time to teach...?
+	3. Please, repeat... speculations.
+	4. Excuse me, I must go.
+
+3.
+
+	Well...
+	The Guardian's spell-casting lacks subtlety...
+	1. I thank thee... that is enough.
+	2. What else...?
+
+2.
+
+	I can think of nothing else...
+	1. I shall speak to thee later...
+	2. Wait...
+
+1.
+
+Talked to Syria.
+
+	Ah, Avatar.  Good of thee...
+	1. What is on thy mind...?
+	2. What has become of thee...?
+	3. Wouldst thou train me...?
+	4. Please excuse...
+
+1.
+
+	It seems I shall have a chance to see...
+	1. Doubtless... exaggerated...
+	2. I have... endured many perils....
+
+2.
+
+	Excellent!...
+	What else...?
+	1. Nothing...
+	2. There is one more...
+
+1.  Talked to her again.
+
+	Yes?  What may I do...?
+	1. What has become...?
+	2. Wouldst thou train...?
+	3. Please excuse me...
+
+No "recent thoughts".
+
+Talked to Geoffrey.
+
+	Ah... 'tis good thou art here...
+	1. How hast thou been...?
+	2. How hast thou fared...?
+	3. I would fain spar...
+	4. Pardon me...
+
+1.
+
+	In a way, 'tis a relief...
+	May I help thee with anything else?
+	1. No...
+	2. Yes...
+
+Talked to him again.
+
+	Ah... kind of thee to drop in...
+	1. How hast thou fared...?
+	2. I would fain spar...
+	3. Pardon me, Geoffrey.
+
+Talked to Nanna.
+
+	What is it...?
+	1. What hast occupied thee...?
+	2. What hast thou been doing for the past year?
+	3. Excuse me..
+
+1.
+
+	Lord British's behavior is becoming more and more offensive!...
+	1. I'm sure... esteem.
+	2. Look... must pull together.
+
+1.
+
+	Hmf!
+	[ends]
+
+Talk to her again
+
+	YES?
+	What can I do...?
+	1. What hast thou been doing...?
+	2. Excuse me...
+
+Talked to Nell.
+
+	How may I help thee...?
+	1. What hast occupied thee of late...?
+	2. ...last year?
+	3. Canst thou think of anything...?
+	4. Please excuse me...
+
+1.
+
+	I am glad thou art here...
+	Will that be all...?
+	1. Yes.
+	2. Nay.
+
+2.
+
+3. Can you think of anything...?
+
+	'Twas the night before this hideous gem... chanting...
+	Will that be all...?
+
+Talked to Charles.
+
+	What is it...?
+	1. ... past year?
+	2. I must leave...
+
+Talked to Iolo.
+
+	'Tis good to speak...
+	1. What news?
+	There is little to say...
+	2. Doubtless...
+	...darker than most suspect...
+	1. What meanest thou?
+	[Monsters in the sewers]
+
+Talked to him again.
+
+	Yes, my friend?
+	1. ...last year?
+	2. ...train me?
+	3. ...excuse me.
+
+Talked to Julia.
+
+	I had heard thou were about...
+	1. What is on thy mind...?
+	Between me and thee, glad you're here...
+	2. 'Tis good to work with thee...
+	We must be careful of the others...
+	1. I agree...
+	If there is nothing more...
+	1. I shall speak to thee later...
+
+Talked to her again.
+
+	What can I do for thee...
+	3. ...I must go.
+
+And again.
+
+	What can I do for thee...
+
+And again.  And again!
+
+	What can I do for thee...
+
+So is the greeting random, or what?
+I guess maybe events change the greeting>
+
+Talked to Lady Tory.
+
+	...For all our sakes...
+	1. I would know thy thoughts...
+	Trapped in here as we are...
+	1. Thou must... prevent panic.
+	But I also sense...
+	[She pauses]
+	As do I...
+	[ends]
+
+Talked to her again.
+
+	Hello there...
+	1. ... past year...?
+	2. ... train me...?
+	3. Excuse me...
+
+Talked to Nelson.
+
+	Yes...?
+	3. ...like to hear your thoughts...
+	Well...
+	The logic of the Guardians' previous creations...
+	2. What else...?
+	[repeats]
+	2. What else...?
+	That is all...
+
+Talked to Patterson.
+
+	I am so happy to see thee here!
+	1. How are things...?
+	2. ... last year?
+	3. ...train me...?
+	4. Excuse me...
+
+4.
+Then talked again.
+
+	...What a pleasure...!
+	1. How are things...?
+	I am glad to have a chance...
+	1. No, thanks...
+	2. ...Keep up morale...
+	3. ...assist Miranda...
+	4. ...out of my way...
+	Thank thee... I shall do as thou sayest...
+	Anything else?
+
+Talked again.
+
+	...What a surprise, a real treat!
+	1. ...last year?
+	2. ...charisma?
+	3. ...must leave.
+
+
+Reloaded from start.
+Listened to king's speech.
+Talked to Dupre, got key.
+Descended, went back up immediately.
+Talked to Iolo.
+
+	I am glad to see my old companion...
+	1. What news?
+	Hast thou seen the monsters in the sewer yet?
+	2. Nay.
+	I'd swear...
+	Now, is there aught else...?
+	1. Nay...
+
+Talked to Julia.
+
+	Sometimes I wish Patterson weren't so eager...
+	What can I do for thee...?
+	1. Please, explain...
+	I'm trying to teach him...
+	1. Patience.
+	'Tis a mystery...
+	If there is nothing more...
+	1. ...later, then.
+
+Talked to Lady Tory.
+
+	...For all our sakes...
+	3. Excuse me...
+
+Talked to Patterson.
+
+	I am so happy to see thee here...
+	1. How are things...?
+	I have heard that thou hast begun exploring beneath...
+	3. Thou art right.
+	I see you are a man of deep insight...
+	Will that be all
+	1. Yes...
+
+Talked to King.
+
+	Greetings... In this dark time...
+	1. ... occupied thine attention lately?
+	...I hear thou hast begun exploring...
+	If there is nothing more.
+	1. ...later, then.
+
+Talked to Miranda (though everyone seemed to know my business.)
+She mentioned Nystul and Patterson.
+
+Talked to Patterson again.
+He had nothing additional to say.
+
+Talked to Nystul.
+
+	Ah... been meaning to speak...
+	1. What...?
+	Well... how goes thy exploration...?
+	2. Begun exploring below.
+	That is wise...
+	If there is nothing more...
+	1. ...later, then.
