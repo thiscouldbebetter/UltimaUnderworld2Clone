@@ -1,4 +1,16 @@
 "use strict";
+class Player extends Entity {
+    constructor() {
+        super(Player.name, [
+            ItemHolder.create(),
+            Playable.create()
+        ]);
+        this.variableValuesByName = new Map();
+    }
+    static create() {
+        return new Player();
+    }
+}
 class WorldGame extends World {
     constructor(name) {
         var name = name;
@@ -10,6 +22,7 @@ class WorldGame extends World {
         var placeGetByName = (placeName) => placesByName.get(placeName);
         var placeInitialName = places[0].name;
         super(name, timeCreated, defn, placeGetByName, placeInitialName);
+        this.player = Player.create();
     }
     static fromName(name) {
         return new WorldGame(name);

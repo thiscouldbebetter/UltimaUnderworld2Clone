@@ -34,6 +34,7 @@ C:.
 |   |           5.png
 |   |           
 |   +---Portraits
+|   |       Administrator.png
 |   |       Bard.png
 |   |       Chambermaid.png
 |   |       Empath.png
@@ -47,6 +48,7 @@ C:.
 |   |       Scholar.png
 |   |       Tinker.png
 |   |       Valet.png
+|   |       Villain.png
 |   |       Wizard.png
 |   |       
 |   \---Titles

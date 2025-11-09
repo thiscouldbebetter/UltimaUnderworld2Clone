@@ -8,7 +8,7 @@ class EnvironmentMock {
         var mediaLibrary = MediaLibrary.fromMediaFilePaths(mediaFilePaths);
         var timerHelper = new TimerHelper(25);
         timerHelper.ticksSoFar = 0; // hack
-        var display = DisplayTest.default();
+        var display = DisplayMock.default();
         var soundHelper = new SoundHelperMock();
         var controlBuilder = ControlBuilder.default();
         var worldCreator = new WorldCreator((u, wc) => new WorldGame(WorldGame.name), null, // ?

@@ -3,7 +3,11 @@ imagePortraitName=Friendly
 
 // name|defnName|content|next|isDisabled
 
-Start|SpeakerSet|Titles_BoxArt
+Start
+
+|VariablesImport|u.world.player.variableValuesByName
+
+|SpeakerSet|Titles_BoxArt
 |Display|This is every conversation in UUW2
 |Display|by world, level, and character.
 
@@ -18,6 +22,7 @@ World.Choose|Display|Select a world.
 |Option|7: Arena.|W7
 |Option|8: Tomb.|W8
 |Option|9: Astral Plane.|W9
+|Option|10: [End conversation.]|End
 |Prompt
 
 
@@ -61,6 +66,11 @@ W1.L1.Administrator
 |Push
 |SpeakerSet|Portraits_Administrator
 
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Administrator.KingAboutToSpeak
+|Goto||W1.L1.Administrator.Greet
+
+	|Goto||W1.L1.Administrator.KingAboutToSpeak
+
 	//0e88.1: @GS102
 	//0e88.2: Well...
 	//0e88.3: @GS70SI1
@@ -70,7 +80,7 @@ W1.L1.Administrator
 	//0e88.7: ma'am
 
 	W1.L1.Administrator.KingAboutToSpeak
-	0e88.8: I will speak with thee in a moment, Avatar. Let us both first consult with Lord British.
+	|Display|0e88.8: I will speak with thee in a moment, Avatar. Let us both first consult with Lord British.
 	|Goto||W1.L1.Administrator.Done
 
 	W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful
@@ -366,7 +376,8 @@ W1.L1.Bard
 |Push
 |SpeakerSet|Portraits_Bard
 
-|Goto||W1.L1.Bard.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Bard.KingAboutToSpeak
+|Goto||W1.L1.Bard.Greet
 
 	W1.L1.Bard.KingAboutToSpeak
 	|Display|0e86.6: Just a moment, Avatar. 'Twere best we let Lord British speak first.
@@ -708,7 +719,8 @@ W1.L1.Chambermaid
 |Push
 |SpeakerSet|Portraits_Chambermaid
 
-|Goto||W1.L1.Chambermaid.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Chambermaid.KingAboutToSpeak
+|Goto||W1.L1.Chambermaid.Greet
 
 	W1.L1.Chambermaid.KingAboutToSpeak
 	|Display|0e8a.6: Avatar, thou shouldst hurry to the throne room. We must decide what on earth we're going to do!
@@ -908,7 +920,8 @@ W1.L1.Empath
 |SpeakerSet|Portraits_Empath
 |Push
 
-|Goto||W1.L1.Empath.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Empath.KingAboutToSpeak
+|Goto||W1.L1.Empath.Greet
 
 	W1.L1.Empath.KingAboutToSpeak
 	|Display|0e8d.6: I think it best that we listen to what Lord British has to say -- perhaps he will have a calming effect on the group.
@@ -1138,6 +1151,10 @@ W1.L1.Empath
 W1.L1.Guardswoman
 |SpeakerSet|Portraits_Guardswoman
 |Push
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Guardswoman.KingAboutToSpeak
+|Goto||W1.L1.Guardswoman.Greet
+
 	//0ea8.1: @GS102
 	//0ea8.2: Well...
 	//0ea8.3: @GS70SI1
@@ -1410,7 +1427,8 @@ W1.L1.Housekeeper
 |Push
 |SpeakerSet|Portraits_Housekeeper
 
-|Goto||W1.L1.Housekeeper.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Housekeeper.KingAboutToSpeak
+|Goto||W1.L1.Housekeeper.Greet
 
 	//1: @GS102
 	//2: Well...
@@ -1770,8 +1788,15 @@ W1.L1.Housekeeper
 	|Pop
 	|Prompt
 
+
+
 W1.L1.King
+|Push
 |SpeakerSet|Portraits_King
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.King.InitialMeeting
+|JumpIfFalse|W1.L1.Paladin.SewerReconMentioned|W1.L1.King.Greet.FirstTime
+|Goto||W1.L1.King.GeneralQuestions
 
 	W1.L1.King.InitialMeeting
 	|Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
@@ -1780,33 +1805,36 @@ W1.L1.King
 	|Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
 	|Prompt
 
-	W1.L1.King.Speech.NotYet|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
-	|Goto||W1.L1.King.Done
+	W1.L1.King.Speech.NotYet
+	|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
+	|Goto||W1.L1.King.Speech.Yes
 
-	W1.L1.King.Speech.Yes|Display|0e8e.10: I need not tell you, citizens of Britannia, that we are near our darkest hour. The gem that surrounds our castle is made of blackrock, a substance impervious to all physical force, which stifles magical workings within its boundaries. The Guardian has this day struck Britannia a fearsome blow, and we may be sure that he will not rest idle. Doubtless, even now he is preparing an assault on the entire nation of Britannia!
-	|SpeakerSet|
+	W1.L1.King.Speech.Yes
+	|VariableSet|W1.L1.King.SpeechHasBeenGiven|true
+	|Display|0e8e.10: I need not tell you, citizens of Britannia, that we are near our darkest hour. The gem that surrounds our castle is made of blackrock, a substance impervious to all physical force, which stifles magical workings within its boundaries. The Guardian has this day struck Britannia a fearsome blow, and we may be sure that he will not rest idle. Doubtless, even now he is preparing an assault on the entire nation of Britannia!
+	|SpeakerSet|Portraits_Administrator
 	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom of the gargoyles rally our people against the invader?\m
-	|SpeakerSet|King
+	|SpeakerSet|Portraits_King
 	|Display|0e8e.12: 12: He will do what he can, certainly, but I know not whether the humans of Britannia shall follow a gargoyle leader.
 	|SpeakerSet|
-	|Display|0e8e.13: [Patterson arrives in a hurry, gasping for breath.]
-	|SpeakerSet|Mayor
+	|Display|0e8e.13: Patterson arrives in a hurry, gasping for breath.
+	|SpeakerSet|Portraits_Mayor
 	|Display|0e8e.14: Well, w-what can we do, then?
-	|SpeakerSet|King
+	|SpeakerSet|Portraits_King
 	|Display|0e8e.15: Somehow, we must find a way to breach the gem. Now, to work! Servants, take an inventory of the castle storerooms! Nystul, Nelson, we shall have need of thy far-famed scholarly powers -- you must determine how the jewel was created, and how it may be destroyed. You others, warriors, and especially you, Avatar, eight times our savior, you must search the castle, above and below, for some means of escape.\m
 	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort. Thou shouldst use the Great Hall as thy headquarters. Avatar, be sure and report to her all that thou dost learn in thy search, and heed her advice in all things.
 	|Display|0e8e.17: All Britannia...
 	|SpeakerSet|
-	|Display|0e8e.18: [He breaks off, sensing an otherworldly intruder.]
-	|SpeakerSet|Villain
-	|Display|[Villain speech not available?]
-	|Goto||W1.L1.King.Done
-
-	W1.L1.King.IMustHaveSolitude
-	|Display|0e8e.22: Please, Avatar -- I must have solitude if I am to  come to any decision in this matter. I trust Miranda to handle any difficulties that may come up meanwhile.
+	|Display|0e8e.18: He breaks off, sensing an otherworldly intruder.
+	|SpeakerSet|Portraits_Villain
+	|Display|0c20.0: Yes, British, hasten to thy vain struggle.
+	|Display|0c20.1: But know this...
+	|Display|0c20.2: ...all who choose to serve me will be spared.
+	|Display|0c20.3: All others shall rot within these walls.
 	|Goto||W1.L1.King.Done
 
 	W1.L1.King.Greet.FirstTime
+	|VariableSet|W1.L1.King.TimesGreeted|1
 	|Display|0e8e.42: Well, Avatar, I am sorry now I did invite thee to this doomed affair. The Guardian's threats are indeed dire!
 	|OptionsClear
 	|Option|0e8e.43: I would not have my friends face danger alone!|W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
@@ -1818,14 +1846,19 @@ W1.L1.King
 		|Display|0e8e.45: He laughs.
 		|SpeakerSet|Portraits_King
 		|Display|0e8e.46: Thou'rt right! Thou dost merely gravitate towards peril, like one of Brion's mystic lodestones towards iron! 'Tis a natural process, I am sure.
-		|Goto||W1.L1.King.GeneralQuestions
+		|Goto||W1.L1.King.SpeakWithPaladin
 
 		W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
 		|SpeakerSet|
 		|Display|0e8e.47: He laughs.
 		|SpeakerSet|Portraits_King
 		0e8e.48: Thou'rt right! I was a fool to think I could keep thee out of danger, for thou'rt e'er plunging thyself in the thick of it!
-		|Goto||W1.L1.King.GeneralQuestions
+		|Goto||W1.L1.King.SpeakWithPaladin
+
+		W1.L1.King.SpeakWithPaladin
+		|Display|0e8e.49: Listen, thou shouldst speak with Dupre! He mentioned he had seen something which might relate to our current plight!
+		|VariableSet|W1.L1.Paladin.SewerReconMentioned|true
+		|Goto||W1.L1.King.AnythingElse
 
 	W1.L1.King.Greet
 	|DoNextInSequence|W1.L1.King.TimesGreeted|W1.L1.King.Greet.1;W1.L1.King.Greet.2;W1.L1.King.Greet.3
@@ -1845,12 +1878,12 @@ W1.L1.King
 	|Option|0e8e.31: Your pardon, sir, I must leave thee.|W1.L1.King.Done
 	|Prompt
 
-	W1.L1.King.WhatOfLastYear
-	|Display|0e8e.36: It has indeed been a hard year for us, Avatar. As thou didst travel the land, doubtless thou didst bear witness to the Guardian's subtle devastation of our land. 'Twill be a few more years yet before Britannia is once again a land fit for heroes to walk.
+		W1.L1.King.WhatOfLastYear
+		|Display|0e8e.36: It has indeed been a hard year for us, Avatar. As thou didst travel the land, doubtless thou didst bear witness to the Guardian's subtle devastation of our land. 'Twill be a few more years yet before Britannia is once again a land fit for heroes to walk.
 
-	W1.L1.King.INeedHealing
-	|Goto||W1.L1.King.INeedHealing.TriesAndFails
-	|Goto||W1.L1.King.INeedHealing.NoYouDont
+		W1.L1.King.INeedHealing
+		|Goto||W1.L1.King.INeedHealing.TriesAndFails
+		|Goto||W1.L1.King.INeedHealing.NoYouDont
 
 		W1.L1.King.INeedHealing.NoYouDont
 		|Display|0e8e.37: But thou art unwounded! 'Twere best I save my power for a time of need.
@@ -1866,13 +1899,9 @@ W1.L1.King
 		|Goto||W1.L1.King.AnythingElse
 
 	W1.L1.King.News
-	|Goto||W1.L1.King.SpeakWithPaladin
 	|Goto||W1.L1.King.HeardYouWereExploringTheDepths
 	|Goto||W1.L1.King.HeardYouFoundMultiversePortal
 
-	W1.L1.King.SpeakWithPaladin
-	|Display|0e8e.49: Listen, thou shouldst speak with Dupre! He mentioned he had seen something which might relate to our current plight!
-	|Goto||W1.L1.King.Done
 
 	W1.L1.King.HeardYouWereExploringTheDepths
 	|Display|0e8e.50: Avatar, I hear thou hast begun exploring the Undercastle. 'Tis a vast area, and even I do not know its full extent. Be sure to alert Miranda to all of thy movements, lest thou shouldst become lost within its vast extent.
@@ -1993,6 +2022,10 @@ W1.L1.King
 
 //0e8e.95: @GS1e12
 
+	W1.L1.King.IMustHaveSolitude
+	|Display|0e8e.22: Please, Avatar -- I must have solitude if I am to  come to any decision in this matter. I trust Miranda to handle any difficulties that may come up meanwhile.
+	|Goto||W1.L1.King.Done
+
 	W1.L1.King.AlmostTimeToBreakSpell
 	|Display|0e8e.96: Avatar, thou shouldst speak with Nystul at once -- it is almost time to begin our attack on the Guardian's spell!
 	|Option|0e8e.97: I shall speak with him at once.|W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
@@ -2084,7 +2117,8 @@ W1.L1.Knight
 |Push
 |SpeakerSet|Portraits_Knight
 
-|Goto||W1.L1.Knight.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Knight.KingAboutToSpeak
+|Goto||W1.L1.Knight.Greet
 
 	W1.L1.Knight.KingAboutToSpeak
 	|Display|0e85.6: Abide a moment, Avatar. Let us both first hear the words of a wiser man than we.
@@ -2340,8 +2374,13 @@ W1.L1.Knight
 	|Pop
 	|Prompt
 
+
+
 W1.L1.Mayor
 |SpeakerSet|Portraits_Mayor
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Mayor.KingAboutToSpeak
+|Goto||W1.L1.Mayor.Greet
 
 	W1.L1.Mayor.KingAboutToSpeak
 	|Display|0e8c.6: Avatar, a pleasure to see thee again! Let us have a talk, you and I, after Lord British finishes his little speech. For now, we should hasten there.
@@ -2605,11 +2644,13 @@ W1.L1.Mayor
 	//0e8c.57: woman
 
 
+
 W1.L1.Paladin
 |Push
 |SpeakerSet|Portraits_Paladin
 
-|Goto||W1.L1.Paladin.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Paladin.KingAboutToSpeak
+|JumpIfFalse|W1.L1.Paladin.SewerReconDescribed|W1.L1.Paladin.HorribleDiscovery
 
 	// 0e84.1: @GS102
 	// 0e84.2: Well...
@@ -2621,11 +2662,43 @@ W1.L1.Paladin
 	|Display|0e84.6: I will speak with thee in a moment, Avatar. First, though, let us hear what Lord British counsels.
 	|Goto||W1.L1.Paladin.Done
 
-	W1.L1.Paladin.BeginTheCeremony
-	|Display|0e84.7: Quickly, Avatar, let us begin! Our guards cannot hold them for long!
-
 	W1.L1.Paladin.Greet.FirstTime
-	0e84.8: Ah, Avatar! 'Tis good to have thee here in this crisis. But I must speak with thee at once, in private!
+	// Does this ever happen?
+	|Display|0e84.8: Ah, Avatar! 'Tis good to have thee here in this crisis. But I must speak with thee at once, in private!
+
+	W1.L1.Paladin.HorribleDiscovery
+	|VariableSet|W1.L1.Paladin.SewerReconDescribed|true
+	|Display|0e84.39: Do not tell the others, @GS8, but I have made a horrible discovery!
+	|Option|0e84.40: What is it?|W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+	|Option|0e84.41: Is our situation not difficult enough?|W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
+	|Prompt
+
+		W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
+		|Display|0e84.42: Thou dost not know the worst.
+		|Goto||W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+
+		W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
+		|Display|0e84.43: Iolo and I walked down into the sewers, and a bit below -- a plague of monsters has erupted! I do not know where they are coming from, but the matter bears investigation!
+		|Option|0e84.44: I shall look into it at once!|W1.L1.Paladin.HorribleDiscovery.YouAreBrave
+		|Option|0e84.45: Truly, I am loath to descend into the sewers.|W1.L1.Paladin.HorribleDiscovery.ShameOnYou
+		|Prompt
+
+			W1.L1.Paladin.HorribleDiscovery.ShameOnYou
+			|Display|0e84.46: Avatar, shame on thee! The men and women of the castle are depending on thee!
+			|Display|0e84.47: Take thou this key to the sewers, if thou shouldst recover the courage I admire thee for!
+			|Option|0e84.48: I was merely jesting, Dupre. I shall descend at once.|W1.L1.Paladin.AnythingElse
+			|Option|0e84.49: If I must.|W1.L1.Paladin.AnythingElse
+			|Prompt
+
+			W1.L1.Paladin.HorribleDiscovery.YouAreBrave
+			|Display|0e84.50: Thou art a brave @SS1, @GS8. I admire thee, though I do not envy thy responsibilities here. Take thou then this key to the sewers!
+			|Option|0e84.51: I shall descend at once.|W1.L1.Paladin.HorribleDiscovery.GiveKey
+			|Option|0e84.52: If I must.|W1.L1.Paladin.HorribleDiscovery.GiveKey
+			|Prompt
+
+				W1.L1.Paladin.HorribleDiscovery.GiveKey
+				|Script|ItemHolder.of(u.world.player).itemAdd(Item.fromDefnName("Key-Sewer") )
+				|Goto||W1.L1.Paladin.Done
 
 	W1.L1.Paladin.Greet
 	W1.L1.Paladin.Greet.1|Display|0e84.9: Good day, Avatar! What's on thy mind?
@@ -2720,35 +2793,6 @@ W1.L1.Paladin
 
 	// 0e84.36: man
 	// 0e84.37: woman
-
-	W1.L1.Paladin.HorribleDiscovery
-	|Display|0e84.39: Do not tell the others, @GS8, but I have made a horrible discovery!
-	|Option|0e84.40: What is it?|W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
-	|Option|0e84.41: Is our situation not difficult enough?|W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
-	|Prompt
-
-		W1.L1.Paladin.HorribleDiscovery.YouDontKnowTheWorst
-		|Display|0e84.42: Thou dost not know the worst.
-		|Goto||W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
-
-		W1.L1.Paladin.HorribleDiscovery.MonstersInTheSewers
-		|Display|0e84.43: Iolo and I walked down into the sewers, and a bit below -- a plague of monsters has erupted! I do not know where they are coming from, but the matter bears investigation!
-		|Option|0e84.44: I shall look into it at once!|W1.L1.Paladin.HorribleDiscovery.YouAreBrave
-		|Option|0e84.45: Truly, I am loath to descend into the sewers.|W1.L1.Paladin.HorribleDiscovery.ShameOnYou
-		|Prompt
-
-			W1.L1.Paladin.HorribleDiscovery.ShameOnYou
-			|Display|0e84.46: Avatar, shame on thee! The men and women of the castle are depending on thee!
-			|Display|0e84.47: Take thou this key to the sewers, if thou shouldst recover the courage I admire thee for!
-			|Option|0e84.48: I was merely jesting, Dupre. I shall descend at once.|W1.L1.Paladin.AnythingElse
-			|Option|0e84.49: If I must.|W1.L1.Paladin.AnythingElse
-			|Prompt
-
-			W1.L1.Paladin.HorribleDiscovery.YouAreBrave
-			|Display|0e84.50: Thou art a brave @SS1, @GS8. I admire thee, though I do not envy thy responsibilities here. Take thou then this key to the sewers!
-			|Option|0e84.51: I shall descend at once.|W1.L1.Paladin.AnythingElse
-			|Option|0e84.52: If I must.|W1.L1.Paladin.AnythingElse
-			|Prompt
 
 	W1.L1.Paladin.HeardYouFoundWater
 	|Display|0e84.53: I hear thou hast found a river!  Dost thou realize what this means? We have a water supply! Now perhaps Miranda will ease the rationing of alcohol.
@@ -2960,6 +3004,9 @@ W1.L1.Paladin
 		W1.L1.Paladin.SewersGetMoreDangerousAllTheTime.Done
 		|Goto||W1.L1.Paladin.AnythingElse
 
+	W1.L1.Paladin.BeginTheCeremony
+	|Display|0e84.7: Quickly, Avatar, let us begin! Our guards cannot hold them for long!
+
 	W1.L1.Paladin.AnythingElse
 	|Display|0e84.16: What else have we to speak of?
 	|Option|0e84.17: Nothing right now -- I shall see thee later, my friend.|W1.L1.Paladin.Farewell
@@ -2979,7 +3026,8 @@ W1.L1.Philanthropist
 |Push
 |SpeakerSet|Portraits_Philanthropist
 
-|Goto||W1.L1.Philanthropist.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Philanthropist.KingAboutToSpeak
+|Goto||W1.L1.Philanthropist.Greet
 
 	// 0e8f.1: @GS102
 	// 0e8f.2: Well...
@@ -3191,6 +3239,9 @@ W1.L1.Philanthropist
 W1.L1.Scholar
 |Push
 |SpeakerSet|Portraits_Scholar
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Scholar.KingAboutToSpeak
+|Goto||W1.L1.Scholar.Greet
 
 	W1.L1.Scholar.KingAboutToSpeak
 	|Display|0e8b.6: Ah, Avatar, I was just thinking... oh, just a moment. Perhaps Lord British has something to say to us.
@@ -3474,6 +3525,9 @@ W1.L1.Tinker
 |Push
 |SpeakerSet|Portraits_Tinker
 
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Tinker.KingAboutToSpeak
+|Goto||W1.L1.Tinker.Greet
+
 	//0e87.1: @GS102
 	//0e87.2: Well...
 	//0e87.3: @GS70SI1
@@ -3722,6 +3776,9 @@ W1.L1.Tinker
 W1.L1.Valet
 |Push
 |SpeakerSet|Portraits_Valet
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Valet.KingAboutToSpeak
+|Goto||W1.L1.Valet.Greet
 
 //0e83.1: @GS102
 //0e83.2: Well...
@@ -4036,7 +4093,8 @@ W1.L1.Wizard
 |Push
 |SpeakerSet|Portraits_Wizard
 
-|Goto||W1.L1.Wizard.KingAboutToSpeak
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Wizard.KingAboutToSpeak
+|Goto||W1.L1.Wizard.Greet
 
 	W1.L1.Wizard.KingAboutToSpeak
 	|Display|0e82.8: If thou wilt wait a moment, Avatar, I think Lord British is about to commence his speech.
@@ -4725,10 +4783,15 @@ W1.L3.Thief|Display|Selected Character 1: Thief.
 |SpeakerSet|Portraits_Thief
 |Push
 
+|JumpIfFalse|W1.L3.Thief.HasBeenMet|W1.L3.Thief.MeetingInSewer.Second
+|JumpIfFalse|W1.L3.Thief.HasBeenArrested|W1.L3.Thief.GreetInJail
+|Goto||W1.L3.Thief.MeetingInSewer.First
+
 	//0e80.17: Mister
 	//0e80.18: Ma'am
 
 	W1.L3.Thief.MeetingInSewer.First
+	|VariableSet|W1.L3.Thief.HasBeenMet
 	|Display|0e80.19: Cor! Leave it, won't you? Serves me roight for tryin' to rob the castle, 'n' gettin' caught. Last time I take a dare from Erik Blackhand!
 	|Option|0e80.20: Who art thou?|W1.L3.Thief.MeetingInSewer.First.MyNameIs
 	|Option|0e80.21: Were you really trying to rob the castle?|W1.L3.Thief.Background.ICameToSteal
@@ -4872,6 +4935,7 @@ W1.L3.Thief|Display|Selected Character 1: Thief.
 	|Prompt
 
 		W1.L3.Thief.Arrest.SoundsOkayActually
+		|VariableSet|W1.L3.Thief.HasBeenArrested
 		|Display|0e80.83: Thou hast a point. 'S not as if I 'aven't done time before.
 		|SpeakerSet|
 		|Display|0e80.84: Resigned, Fissif heads for the nearest ladder.
@@ -5790,5 +5854,6 @@ W9L6|Display|Selected Level 6: Shrine.
 |Prompt
 
 
-
-End|Quit
+End
+|VariablesExport|u.world.player.variableValuesByName.set($key, $value)
+|Quit

@@ -1,6 +1,32 @@
 
+class Player extends Entity
+{
+	variableValuesByName: Map<string, string>;
+
+	constructor()
+	{
+		super
+		(
+			Player.name,
+			[
+				ItemHolder.create(),
+				Playable.create()
+			]
+		);
+
+		this.variableValuesByName = new Map<string, string>();
+	}
+
+	static create(): Player
+	{
+		return new Player();
+	}
+}
+
 class WorldGame extends World
 {
+	player: Player;
+
 	constructor(name: string)
 	{
 		var name = name;
@@ -18,6 +44,8 @@ class WorldGame extends World
 		(
 			name, timeCreated, defn, placeGetByName, placeInitialName
 		);
+
+		this.player = Player.create();
 	}
 
 	static fromName(name: string): WorldGame

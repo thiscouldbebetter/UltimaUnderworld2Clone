@@ -28,7 +28,7 @@ class EnvironmentMock
 		var timerHelper = new TimerHelper(25);
 		timerHelper.ticksSoFar = 0; // hack
 
-		var display = DisplayTest.default();
+		var display = DisplayMock.default();
 		var soundHelper = new SoundHelperMock();
 
 		var controlBuilder = ControlBuilder.default();

@@ -33,18 +33,26 @@ class Game
 
 	start_MediaFilePathsLoaded(mediaFilePaths: string[])
 	{
-		var ticksPerSecond = 20;
+		var displaySize = Coords.fromXY
+		(
+			// 320, 240
+			400, 300
+		);
+		displaySize.z = displaySize.x * 6; // hack
+		var display = Display3D.fromViewSizeInPixels(displaySize);
+
+		var mediaLibrary = MediaLibrary.fromMediaFilePaths(mediaFilePaths);
 
 		var worldCreator = WorldCreator.fromWorldCreate
 		(
 			() => WorldGame.fromName(this.name)
 		);
 
-		var universe = Universe.fromNameTicksPerSecondMediaFilePathsAndWorldCreator
+		var universe = Universe.fromNameDisplayMediaLibraryAndWorldCreator
 		(
 			"UltimaUnderworld2Clone",
-			ticksPerSecond,
-			mediaFilePaths,
+			display,
+			mediaLibrary,
 			worldCreator
 		);
 
