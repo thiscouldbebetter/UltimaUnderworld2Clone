@@ -1,3 +1,6 @@
 [submodule "Source/Framework"]
 	path = Source/Framework
 	url = https://github.com/thiscouldbebetter/GameFrameworkTS
+[submodule "Tools/TextOverImageCompositor"]
+	path = Tools/TextOverImageCompositor
+	url = https://github.com/thiscouldbebetter/TextOverImageCompositor
