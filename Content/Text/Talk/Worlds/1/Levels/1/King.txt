@@ -1,0 +1,322 @@
+
+W1.L1.King
+|Push
+|SpeakerSet|Portraits_King
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.King.InitialMeeting
+|JumpIfFalse|W1.L1.Paladin.SewerReconMentioned|W1.L1.King.Greet.FirstTime
+|Goto||W1.L1.King.GeneralQuestions
+
+	W1.L1.King.InitialMeeting
+	|Display|0e8e.6: Greetings, Avatar! Shall we begin this meeting?
+	|OptionsClear
+	|Option|0e8e.7: By all means, my lord.|W1.L1.King.Speech.Yes
+	|Option|0e8e.8: Not just yet. I have something I must attend to, first.|W1.L1.King.Speech.NotYet
+	|Prompt
+
+	W1.L1.King.Speech.NotYet
+	|Display|0e8e.9: Please, Avatar, these are matters of utmost importance!
+	|Goto||W1.L1.King.Speech.Yes
+
+	W1.L1.King.Speech.Yes
+	|VariableSet|W1.L1.King.SpeechHasBeenGiven|true
+	|Display|0e8e.10: I need not tell you, citizens of Britannia, that we are near our darkest hour. The gem that surrounds our castle is made of blackrock, a substance impervious to all physical force, which stifles magical workings within its boundaries. The Guardian has this day struck Britannia a fearsome blow, and we may be sure that he will not rest idle. Doubtless, even now he is preparing an assault on the entire nation of Britannia!
+	|SpeakerSet|Portraits_Administrator
+	|Display|0e8e.11: Lord British! Cannot Lord Draxinusom of the gargoyles rally our people against the invader?\m
+	|SpeakerSet|Portraits_King
+	|Display|0e8e.12: 12: He will do what he can, certainly, but I know not whether the humans of Britannia shall follow a gargoyle leader.
+	|SpeakerSet|
+	|Display|0e8e.13: Patterson arrives in a hurry, gasping for breath.
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8e.14: Well, w-what can we do, then?
+	|SpeakerSet|Portraits_King
+	|Display|0e8e.15: Somehow, we must find a way to breach the gem. Now, to work! Servants, take an inventory of the castle storerooms! Nystul, Nelson, we shall have need of thy far-famed scholarly powers -- you must determine how the jewel was created, and how it may be destroyed. You others, warriors, and especially you, Avatar, eight times our savior, you must search the castle, above and below, for some means of escape.\m
+	|Display|0e8e.16: Miranda, I place thee in charge of the escape effort. Thou shouldst use the Great Hall as thy headquarters. Avatar, be sure and report to her all that thou dost learn in thy search, and heed her advice in all things.
+	|Display|0e8e.17: All Britannia...
+	|SpeakerSet|
+	|Display|0e8e.18: He breaks off, sensing an otherworldly intruder.
+	|SpeakerSet|Portraits_Villain
+	|Display|0c20.0: Yes, British, hasten to thy vain struggle.
+	|Display|0c20.1: But know this...
+	|Display|0c20.2: ...all who choose to serve me will be spared.
+	|Display|0c20.3: All others shall rot within these walls.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.Greet.FirstTime
+	|VariableSet|W1.L1.King.TimesGreeted|1
+	|Display|0e8e.42: Well, Avatar, I am sorry now I did invite thee to this doomed affair. The Guardian's threats are indeed dire!
+	|OptionsClear
+	|Option|0e8e.43: I would not have my friends face danger alone!|W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
+	|Option|0e8e.44: 'Tis not thy fault -- who could have known?|W1.L1.King.Greet.FirstTime.YouGravitateTowardDanger
+	|Prompt
+
+		W1.L1.King.Greet.FirstTime.YouGravitateTowardDanger
+		|SpeakerSet|
+		|Display|0e8e.45: He laughs.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.46: Thou'rt right! Thou dost merely gravitate towards peril, like one of Brion's mystic lodestones towards iron! 'Tis a natural process, I am sure.
+		|Goto||W1.L1.King.SpeakWithPaladin
+
+		W1.L1.King.Greet.FirstTime.CantKeepYouAwayFromDanger
+		|SpeakerSet|
+		|Display|0e8e.47: He laughs.
+		|SpeakerSet|Portraits_King
+		0e8e.48: Thou'rt right! I was a fool to think I could keep thee out of danger, for thou'rt e'er plunging thyself in the thick of it!
+		|Goto||W1.L1.King.SpeakWithPaladin
+
+		W1.L1.King.SpeakWithPaladin
+		|Display|0e8e.49: Listen, thou shouldst speak with Dupre! He mentioned he had seen something which might relate to our current plight!
+		|VariableSet|W1.L1.Paladin.SewerReconMentioned|true
+		|Goto||W1.L1.King.AnythingElse
+
+	W1.L1.King.Greet
+	|DoNextInSequence|W1.L1.King.TimesGreeted|W1.L1.King.Greet.1;W1.L1.King.Greet.2;W1.L1.King.Greet.3
+	W1.L1.King.Greet.1|Display|0e8e.23: Greetings, Avatar. In this dark time, 'tis good to see an old companion I can trust!
+	W1.L1.King.Greet.2|Display|0e8e.24: Avatar, 'tis well that thou hast come.
+	W1.L1.King.Greet.3|Display|0e8e.25: Yes, @GS8? What may I do for thee?
+	|Goto||W1.L1.King.GeneralQuestions
+
+//0e8e.26: Please explain more fully sir.
+
+	W1.L1.King.GeneralQuestions
+	|OptionsClear
+	|Option|0e8e.27: Tell me, then, what hath occupied thine attention lately?|W1.L1.King.News
+	|Option|0e8e.28: Tell me of the Reconstruction, my lord.|W1.L1.King.WhatOfLastYear
+	|Option|0e8e.29: I would speak to thee of thy experiences here in the castle.|W1.L1.King.News
+	|Option|0e8e.30: I have need of thy healing powers.|W1.L1.King.INeedHealing
+	|Option|0e8e.31: Your pardon, sir, I must leave thee.|W1.L1.King.Done
+	|Prompt
+
+		W1.L1.King.WhatOfLastYear
+		|Display|0e8e.36: It has indeed been a hard year for us, Avatar. As thou didst travel the land, doubtless thou didst bear witness to the Guardian's subtle devastation of our land. 'Twill be a few more years yet before Britannia is once again a land fit for heroes to walk.
+
+		W1.L1.King.INeedHealing
+		|Goto||W1.L1.King.INeedHealing.TriesAndFails
+		|Goto||W1.L1.King.INeedHealing.NoYouDont
+
+		W1.L1.King.INeedHealing.NoYouDont
+		|Display|0e8e.37: But thou art unwounded! 'Twere best I save my power for a time of need.
+		|Goto||W1.L1.King.AnythingElse
+
+		W1.L1.King.INeedHealing.TriesAndFails
+		|Display|0e8e.38: Of course, Avatar.
+		|SpeakerSet|
+		|Display|0e8e.39: He performs a gesture of healing, but nothing happens.
+		|Display|0e8e.40: He repeats the gesture.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.41: I am sorry, Avatar, but it appears that black jewel has nullifed my powers of healing. Thou wilt have to heal thyself naturally.
+		|Goto||W1.L1.King.AnythingElse
+
+	W1.L1.King.News
+	|Goto||W1.L1.King.HeardYouWereExploringTheDepths
+	|Goto||W1.L1.King.HeardYouFoundMultiversePortal
+
+
+	W1.L1.King.HeardYouWereExploringTheDepths
+	|Display|0e8e.50: Avatar, I hear thou hast begun exploring the Undercastle. 'Tis a vast area, and even I do not know its full extent. Be sure to alert Miranda to all of thy movements, lest thou shouldst become lost within its vast extent.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.HeardYouFoundMultiversePortal
+	|Display|0e8e.51: I knew my hopes would be justified! Trust the Avatar to take a sealed castle, and discover in it a door to another world. Well done, my friend!
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.MurderMystery
+	|SpeakerSet|
+	|Display|0e8e.52: Stricken with grief, Lord British turns his face away from you.
+	|SpeakerSet|Portraits_King
+	|Display|0e8e.53: Please, Avatar, I would rather not speak with anyone right now.
+	|Option|0e8e.54: All right, I shall go.|W1.L1.King.Done
+	|Option|0e8e.55: What is the matter?|W1.L1.King.MurderMystery.2
+	|Prompt
+
+		W1.L1.King.MurderMystery.2
+		|Display|0e8e.56: I cannot accept it! A woman murdered, within the walls of my own castle! If I cannot protect an innocent woman here, how can I protect an entire people?
+		|Option|0e8e.57: Your Highness, thou canst not hold thyself responsible for everything.|W1.L1.King.MurderMystery.ThereWillBeJustice
+		|Option|0e8e.58: I shall avenge her, my lord, thou canst depend on it.|W1.L1.King.MurderMystery.ThereWillBeVengeance
+		|Prompt
+
+			W1.L1.King.MurderMystery.ThereWillBeJustice
+			|SpeakerSet|
+			|Display|0e8e.59: He sighs.
+			|SpeakerSet|Portraits_King
+			|Display|0e8e.60: I suppose thou art right. But mark me, now that the deed is done there shall be justice. I shall have the killer, or rule this land no more!
+			|Goto||W1.L1.King.AnythingElse
+
+			W1.L1.King.MurderMystery.ThereWillBeVengeance
+			|Display|0e8e.61: Aye. Though we failed in offering her protection, we may still offer vengeance. I shall count on thee, Avatar. Do not fail.
+			|Goto||W1.L1.King.AnythingElse
+
+	W1.L1.King.MurderSolved
+	|Display|0e8e.62: I heard the... news about Mayor Patterson. I fear that part of the blame for Nelson's death is mine -- I should never have trusted him after his association with the Fellowship. And yet... after his encounter with you he seemed a changed man, and I believe he really was.
+	|Option|0e8e.63: I think thou art right.|W1.L1.King.HeardTheMurderIsSolved.TheVillainCorruptedTheMayor
+	|Option|0e8e.64: A cur like Patterson can never change.|W1.L1.King.HeardTheMurderIsSolved.YouAreMistaken
+	|Prompt
+
+		W1.L1.King.HeardTheMurderIsSolved.YouAreMistaken
+		|Display|0e8e.65: No, I think thou art mistaken.
+
+		W1.L1.King.HeardTheMurderIsSolved.TheVillainCorruptedTheMayor
+		|Display|0e8e.66: It took the Guardian to find his fear, and his lust for power and status, and twist him into something else. Patterson was not a strong man, and the Guardian knew where to push him.
+		|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouSwallowedAWhat
+	|Display|0e8e.67: Avatar, grant me the truth from thine own lips. Thou hast WHAT inside thy body?
+	|Option|0e8e.68: Why, nothing, Lord British.|W1.L1.King.YouSwallowedAWhat.Nothing
+	|Option|0e8e.69: An elemental of air, my lord.|W1.L1.King.YouSwallowedAWhat.AnAirElemental
+	|Prompt
+
+		W1.L1.King.YouSwallowedAWhat.Nothing
+		|Display|0e8e.70: 'Tis a relief. There certainly are strange rumors afoot in this castle.
+		|Goto||W1.L1.King.Done
+
+		W1.L1.King.YouSwallowedAWhat.AnAirElemental
+		|Display|0e8e.71: Surely, @GS8, this is thy strangest adventure ever!
+		|Goto||W1.L1.King.Done
+
+	W1.L1.King.ServantsOnStrike
+	|Display|0e8e.72: Avatar, something strange is going on. Just now, I asked Nanna to bring me some ale, and she stalked off without a word!
+	|Option|0e8e.73: My lord, I am here to demand a leveling of the class system in Britannia.|W1.L1.King.ServantsOnStrike.Why
+	|Option|0e8e.74: Nanna has declared the servants on strike, sir!|W1.L1.King.ServantsOnStrike.Why
+	|Option|0e8e.75: My lord, the servants are unhappy with their place in the castle.|W1.L1.King.ServantsOnStrike.Why
+	|Prompt
+
+		W1.L1.King.ServantsOnStrike.Why
+		|Display|0e8e.76: What precisely are they asking for?
+		|Option|0e8e.77: To be treated with respect, to be referred to as "Domestic Management," and to have a voice in castle decisions.|W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+		|Option|0e8e.78: Their demands are subtle, but 'tis clear they ultimately seek to overthrow thee.|W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+		|Prompt
+
+			W1.L1.King.ServantsOnStrike.DidntTheHousekeeperWorkForTheVillainOnce
+			|Display|0e8e.79: Nanna... was she not once a member of the Guardian's Fellowship?
+			|Option|0e8e.80: Aye, but I think her concerns are legitimate nonetheless.|W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+			|Option|0e8e.81: Yes, thou hast it! She has thrown in her lot with the Guardian.|W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+			|Prompt
+
+				W1.L1.King.ServantsOnStrike.IThinkHousekeeperIsTrustworthy
+				|Display|0e8e.82: Perhaps so, but I was certain Nanna could be trusted. Perhaps she is in fact sincere. I must think on this.
+				|Goto||W1.L1.King.Done
+
+//0e8e.83: @GS112
+
+	W1.L1.King.StrikeSolutions
+	|Display|0e8e.84: So, Avatar, hast thou come to any new conclusions about our class problems?|
+	|Option|0e8e.85: I think the servants should be beaten!|W1.L1.King.StrikeSolutions.BeatTheServants
+	|Option|0e8e.86: I think thou shouldst accede to their demands, which are quite reasonable.|W1.L1.King.StrikeSolutions.AcceptTheDemands
+	|Option|0e8e.87: I am uncertain -- caving in to their demands sets an unpleasant precedent.|W1.L1.King.StrikeSolutions.NotSure
+	|Prompt
+
+		W1.L1.King.StrikeSolutions.BeatTheServants
+		|Display|0e8e.88: Avatar, I am most disappointed -- thou showest thyself a fool! One cannot govern people as if one were driving oxen!
+		|Goto||W1.L1.King.StrikeSolutions.IHaveDecided
+
+		W1.L1.King.StrikeSolutions.AcceptTheDemands
+		|Display|0e8e.89: I see some justice in thy words, Avatar, although 'tis not easy to change the longstanding order of a society.
+		W1.L1.King.StrikeSolutions.IHaveDecided
+
+		W1.L1.King.StrikeSolutions.NotSure
+		|Display|0e8e.90: 'Tis true. Yet in this instance the wrath of the aggrieved may well be just, and therefore I cannot ignore or suppress it.
+		|Goto||W1.L1.King.StrikeSolutions.MustThinkAboutIt
+
+		W1.L1.King.StrikeSolutions.MustThinkAboutIt
+		//0e8e.94: I must have time, Avatar, to think on the past, and the way of life I have established in Britannia, and whether or not I have been just in my actions.
+		|Goto||W1.L1.King.Done
+
+		W1.L1.King.StrikeSolutions.IHaveDecided
+		|SpeakerSet|
+		|Display|0e8e.91: He sighs.
+		|SpeakerSet|Portraits_King
+		|Display|0e8e.92: I have made my decision.
+		|Display|0e8e.93: 'Tis a reform too long in coming -- the ordering of our society is an ancient one, and it carries with it many evils which have long gone unrecognized. I shall inform them myself that I find their demands, and their anger, understandable and justified.
+		|Goto||W1.L1.King.Done
+
+//0e8e.95: @GS1e12
+
+	W1.L1.King.IMustHaveSolitude
+	|Display|0e8e.22: Please, Avatar -- I must have solitude if I am to  come to any decision in this matter. I trust Miranda to handle any difficulties that may come up meanwhile.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.AlmostTimeToBreakSpell
+	|Display|0e8e.96: Avatar, thou shouldst speak with Nystul at once -- it is almost time to begin our attack on the Guardian's spell!
+	|Option|0e8e.97: I shall speak with him at once.|W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+	|Option|0e8e.98: I have a few things to take care of yet.|W1.L1.King.AlmostTimeToBreakSpell.NotYet
+	|Prompt
+
+		W1.L1.King.AlmostTimeToBreakSpell.NotYet
+		|Display|0e8e.99: Hurry, then! I can think of nothing more urgent than this.
+		|Goto||W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+
+		W1.L1.King.AlmostTimeToBreakSpell.GuardsWillWatchForEnemyGeneral
+		|Display|0e8e.100: In the meantime, I have instructed the guards to be watchful for this "Mors Gotha" you have described.
+		|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUp
+	|SpeakerSet|
+	|Display|0e8e.102: Lord British gazes at you sternly.
+	|SpeakerSet|Portraits_King
+	|Display|0e8e.103: Avatar? I would speak with thee.
+	|Option|0e8e.104: What wouldst thou speak of?|W1.L1.King.YouScrewedUp.DontFightWithFriends
+	|Option|0e8e.105: I suspect I know what thou art here about.|W1.L1.King.YouScrewedUp.YouKnowWhatThisIsAbout
+	|Option|0e8e.106: I do not wish to speak to thee.|W1.L1.King.YouScrewedUp.ButWeMustSpeak
+	|Prompt
+
+		W1.L1.King.YouScrewedUp.ButWeMustSpeak
+		|Display|0e8e.107: As the situation stands, thou hast not a choice.
+		|Goto||W1.L1.King.YouScrewedUp.DontFightWithFriends
+
+		W1.L1.King.YouScrewedUp.YouKnowWhatThisIsAbout
+		|Display|0e8e.108: I suspect thou art right.
+		|Goto||W1.L1.King.YouScrewedUp.DontFightWithFriends
+
+		W1.L1.King.YouScrewedUp.DontFightWithFriends
+		|Display|0e8e.109: Avatar, I and thou know that the burden of protecting a nation is a great one. However, the next time thou dost find the pressure too much to bear, I suggest that thou find some occupation besides brawling with thy friends!
+		|OptionsClear
+		|Option|0e8e.110: I am sorry, Your Lordship. I did indeed lose my head.|W1.L1.King.YouScrewedUp.YoureForgiven
+		|Option|0e8e.111: Nay, I shall spend my time how I like.|W1.L1.King.YouScrewedUp.YoureNotForgiven
+		|Prompt
+
+			W1.L1.King.YouScrewedUp.YoureForgiven
+			|Display|0e8e.112: Now come, thou hast been forgiven. Now let us begin the fight anew!
+			|Display|0e8e.113: Try to be more civil in the future, though -- this is all we ask.
+			|Goto||W1.L1.King.Done
+
+			W1.L1.King.YouScrewedUp.YoureNotForgiven
+			|Display|0e8e.114: Then I am afraid thou shalt spend it here, and we must continue the fight without thee.
+			|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUpAgainSoGameOver
+	|Display|0e8e.115: Avatar, I have had enough. I sentence thee to remain in this cell for the duration of the Guardian's assault, if not longer. In that time, I suggest thou dost meditate on the path of virtue, and where it was thou didst lose thy way from it.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.YouScrewedUpSoVeryBadSoGameOver
+	|Display|0e8e.101: Avatar, I am sorry to see that the shock of the Guardian's assault has gotten the better of thee. I think it best that thou shouldst remain here for the duration of the coming crisis. This time, Britannia will have to undertake its own defense.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.EndOfGame
+	|Display|0e8e.21: Avatar, the time to act is now! If the gem is not shattered, the Guardian's soldiers shall flood the castle in a few moments. This spell you and Nystul have prepared must not fail.
+
+	W1.L1.King.AnythingElse
+	|Display|0e8e.32: If there is nothing more, @GS8, I must go now.
+	|OptionsClear
+	|Option|0e8e.33: I shall speak to thee later, then.|W1.L1.King.Farewell
+	|Option|34: Wait, @GS25, there is more we must speak of.|W1.L1.King.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.King.AnythingElse.Yes
+		|Display|35: What wouldst thou like to talk about, then?
+		|Goto||W1.L1.King.GeneralQuestions
+
+	W1.L1.King.Farewell
+	|Goto||W1.L1.King.Farewell.IllBeHereInMyRoom
+
+	W1.L1.King.Farewell.IllBeHereOrInMyRoom
+	|Display|0e8e.20: If I am not here, I shall be in my quarters.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.Farewell.IllBeHereInMyRoom
+	|Display|0e8e.19: If thou dost need me, I shall be here in my quarters.
+	|Goto||W1.L1.King.Done
+
+	W1.L1.King.Done
+	|SpeakerSet|
+	|Pop
+	|Prompt

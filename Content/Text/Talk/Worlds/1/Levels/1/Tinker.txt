@@ -1,0 +1,251 @@
+
+W1.L1.Tinker
+|Push
+|SpeakerSet|Portraits_Tinker
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Tinker.KingAboutToSpeak
+|Goto||W1.L1.Tinker.Greet
+
+	//0e87.1: @GS102
+	//0e87.2: Well...
+	//0e87.3: @GS70SI1
+	//0e87.4: I thank thee, @GS25, that is enough.
+	//0e87.5: What else dost thou know?
+
+	W1.L1.Tinker.KingAboutToSpeak
+	|Display|0e87.6: Shhh! I want to hear what Lord British has to say!
+	|Goto||W1.L1.Tinker.Done
+
+	W1.L1.Tinker.GladYoureHere
+	|Display|0e87.39: Between me and thee, I am glad thou art here, @GS8. We've worked together, fought side by side -- I know I can count on thee!
+	|Option|0e87.40: Surely thou wouldst not question the others' loyalty, @GS25!|W1.L1.Tinker.GladYoureHere.DoYouQuestionTheirLoyalty
+	|Option|0e87.41: 'Tis good to work with thee again, too, Julia.|W1.L1.Tinker.GladYoureHere.GoodToWorkWithYouAgain
+	|Prompt
+
+		W1.L1.Tinker.GladYoureHere.DoYouQuestionTheirLoyalty
+		|Display|0e87.42: Nay, but there are some here, like Iolo and Dupre, who I can rely upon. People like Feridwyn, Syria, I know not of!
+		|Goto||W1.L1.Tinker.GladYoureHere.Responses
+
+		W1.L1.Tinker.GladYoureHere.GoodToWorkWithYouAgain
+		|Display|0e87.43: We must be careful of the others. Feridwyn, for instance, and Syria -- who are they? They happened to come to the festival, but how can we know they are reliable?
+		|Goto||W1.L1.Tinker.GladYoureHere.Responses
+
+		W1.L1.Tinker.GladYoureHere.Responses
+		|Option|0e87.44: I agree, Julia. The Companions must stick together.|W1.L1.Tinker.GladYoureHere.WhoCanTellWhatPeopleWillDo
+		|Option|0e87.45: Of course they are reliable! Are you suggesting one of them might side with the Guardian?|W1.L1.Tinker.GladYoureHere.WhoCanTellWhatPeopleWillDo
+		|Prompt
+
+			W1.L1.Tinker.GladYoureHere.WhoCanTellWhatPeopleWillDo
+			|Display|0e87.46: I know they are our friends, but who can tell what people will do when threatened with death?
+			|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.Fight
+	|Display|0e87.8: Do it, Avatar, come on!
+
+	//0e87.10: Avatar, I've been looking all over for thee!
+	//0e87.12: Please, explain exactly what thou dost mean.
+
+	W1.L1.Tinker.Greet
+	|DoNextInCycle|W1.L1.Tinker.TimesGreeted|W1.L1.Tinker.Greet.1;W1.L1.Tinker.Greet.2
+	|Display|0e87.9: I had heard thou wert about, old friend.
+	|Display|0e87.11: What can I do for thee, @GS8?
+	|Goto||W1.L1.Tinker.GeneralQuestions
+
+	W1.L1.Tinker.GeneralQuestions
+	|Option|0e87.13: What is on thy mind, Julia?|W1.L1.Tinker.News
+	|Option|0e87.14: Tell me of thy year in Britannia.|W1.L1.Tinker.SpentLastYearTravelling
+	|Option|0e87.15: I have need of thy prowess as an artisan.|W1.L1.Tinker.Train
+	|Option|0e87.16: I would speak to thee of thy experiences here in the castle.|W1.L1.Tinker.NewsHistory
+	|Option|0e87.17: Excuse me, Julia, I must go.|W1.L1.Tinker.Done
+	|Prompt
+
+		W1.L1.Tinker.SpentLastYearTravelling
+		|Display|0e87.25: After travelling across Britannia and back with thee, well, I just couldn't go back to that "rustic village tinker" act I'd been doing the past few years. So since then I've been walking through Northern Britannia, watching the Reconstruction happen.
+		|Prompt
+
+		W1.L1.Tinker.News
+		|Goto||W1.L1.Tinker.MayorSucks
+
+		W1.L1.Tinker.NewsHistory
+		|Display|0e87.22: Well, there was the time I got so angry with Mayor Patterson, when he broke those arrows I gave him to fix.
+		|Display|0e87.23: I still think Feridwyn is a killer. I wouldn't go near the man, if I were you. And why else would he spend all his time by himself?
+		|Display|0e87.24: I can't remember anything else important.
+		|Prompt
+
+	W1.L1.Tinker.MayorSucks
+	|Display|0e87.26: Sometimes I wish Patterson weren't quite so eager to help out!
+	//27: This will not stand, I swear it!
+	|Display|0e87.28: I'm trying to teach him to repair weapons, but it's just useless! This morning (if you can call it morning in this godforsaken darkness) he ruined a whole batch of arrows!
+	|Option|0e87.29: Patience, Julia. He is trying.|W1.L1.Tinker.MayorSucks.HowDidHeGetElected
+	|Option|0e87.30: Perhaps he should try his skills elsewhere.|W1.L1.Tinker.MayorSucks.MaybeHeShouldSwimWithSharks
+	|Prompt
+
+		W1.L1.Tinker.MayorSucks.HowDidHeGetElected
+		|Display|0e87.31: 'Tis a mystery to me that he was elected Mayor of Britain, even with all the Guardian's sorcery on his side!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+		W1.L1.Tinker.MayorSucks.MaybeHeShouldSwimWithSharks
+		|Display|0e87.32: Perhaps he should go swimming with the lurkers!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.MurderMystery
+	|Display|0e87.33: Avatar, if you don't find out who the traitor is, I will! I swear to you, it's that cold bastard Feridwyn. If he gives me one excuse, I'll cut his throat!
+	|Option|0e87.34: I shall speak with him right away.|W1.L1.Tinker.MurderMystery.IllSpeakWithHim
+	|Option|0e87.35: Should we not wait before throwing around such accusations?|W1.L1.Tinker.MurderMystery.LetsNotThrowAroundAccusations
+	|Prompt
+
+		W1.L1.Tinker.MurderMystery.IllSpeakWithHim
+		|Display|0e87.36: Yes, see that thou dost!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+		W1.L1.Tinker.MurderMystery.LetsNotThrowAroundAccusations
+		|SpeakerSet|
+		|Display|0e87.37: She sighs.
+		|SpeakerSet|Portraits_Tinker
+		|Display|0e87.38: Sometimes, Avatar, thy good nature becomes tiresome!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.MurderSolved
+	|Display|0e87.68: I was just thinking about Patterson. For a while, I actually felt sorry for the man. I mean, he seemed so unhinged, near the end... I don't envy your job, not at all.
+	|Display|0e87.7: Patterson was the one, but I still think that Feridwyn is a suspicious. What does he do all day, by himself in that room...?
+	|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.HeardYouFoundMultiversePortal
+	|Display|0e87.47: @GS8, I heard thou hast journeyed to another world! How I wish I could go with thee, but Miranda says 'tis best we remain in the castle for now.
+	|Option|0e87.48: She's right -- unless we remain together and organized, we have little hope of survival.|W1.L1.Tinker.HeardYouFoundMultiversePortal.YouShouldStayPut
+	|Option|0e87.49: Perhaps thou shouldst be allowed to explore a bit.|W1.L1.Tinker.HeardYouFoundMultiversePortal.MaybeYouShouldExplore
+	|Prompt
+
+		W1.L1.Tinker.HeardYouFoundMultiversePortal.MaybeYouShouldExplore
+		|Display|0e87.50: Perhaps I shall! I do long for my old adventuring days, as when we faced the Stygian Abyss together.
+		|SpeakerSet|
+		|Display|0e87.51: She laughs.
+		|SpeakerSet|Portraits_Tinker
+		|Display|0e87.52: 'Twas most discourteous of thee to return without me!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+		W1.L1.Tinker.HeardYouFoundMultiversePortal.YouShouldStayPut
+		|Display|0e87.53: She sighs.
+		|Display|0e87.54: I suppose thou'rt right.
+		|Display|0e87.55: Avatar, thou dost not know what it is like to spend thy nights here. This castle is becoming like some haunted tomb!
+		|Option|0e87.56: Cheer up, Julia. There may yet be aid waiting for us on other planes.|W1.L1.Tinker.HeardYouFoundMultiversePortal.IWillTryToShareYourOptimism
+		|Option|0e87.57: Hast thou found any clues to real danger?|W1.L1.Tinker.HeardYouFoundMultiversePortal.IHearFootstepsAtNight
+		|Prompt
+
+			W1.L1.Tinker.HeardYouFoundMultiversePortal.IWillTryToShareYourOptimism
+			|Display|0e87.58: I will try to share thine optimism, @GS8.
+			|Goto||W1.L1.Tinker.AnythingElse
+
+			W1.L1.Tinker.HeardYouFoundMultiversePortal.IHearFootstepsAtNight
+			|Display|0e87.59: Some nights, lying awake I can hear footsteps walking through the secret passage. Somebody in here can't sleep, and it's no wonder.
+			|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.HeardYouFoundWater
+	|Display|0e87.60: Thank the Serpent thou didst find the ice caves. Dupre says we'll have all the water we need, soon.
+	|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.VillainKeepsNaggingMe
+	|Display|0e87.61: Sorry, @GS8...it's just I'm so distracted.
+	|Option|0e87.62: What's the matter, Julia?|W1.L1.Tinker.VillainKeepsNaggingMe.WhatsTheMatter
+	|Option|0e87.63: Thou shouldst keep thy mind on our safety!|W1.L1.Tinker.VillainKeepsNaggingMe.FocusOnOurSafety
+	|Prompt
+
+		W1.L1.Tinker.VillainKeepsNaggingMe.WhatsTheMatter
+		|Display|0e87.64: The Guardian won't even leave my thoughts alone! He keeps nagging at me! We're never giving up, do you hear me Guardian? @GS8's getting us out of here!
+		|SpeakerSet|
+		|Display|0e87.65: A booming laugh resounds throughout the chamber.
+		|SpeakerSet|Portraits_Tinker
+		|Display|0e87.66: Just you wait!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+		W1.L1.Tinker.VillainKeepsNaggingMe.FocusOnOurSafety
+		0e87.67: That's easy for you to say! You don't have to sit here in the castle, polishing armor, waiting for god-knows-what to come boiling up out of the sewers! At least you get to do something!
+		|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.BindingSpellIsBreaking
+	0e87.69: I think the spell really is weakening -- at night I hear the gem creak and groan, as if it were being strained somehow.
+	|Goto||W1.L1.Tinker.Done
+
+	W1.L1.Tinker.Train
+	|Display|0e87.70: To be certain, Avatar! What shall I instruct thee in today?
+	|Option|0e87.71: I should like to learn about disarming traps.|W1.L1.Tinker.Train.Traps
+	|Option|0e87.72: Teach me to pick locks!|W1.L1.Tinker.Train.Lockpick
+	|Option|0e87.73: I wish to learn about mending items.|W1.L1.Tinker.Train.Repair
+	|Option|0e87.74: Nothing, thanks -- I need no training.|W1.L1.Tinker.Train.Done
+	|Prompt
+
+		W1.L1.Tinker.Train.Traps
+		|Goto||W1.L1.Tinker.Train.Traps.Succeed
+		|Goto||W1.L1.Tinker.Train.Traps.Fail
+
+			W1.L1.Tinker.Train.Traps.Succeed
+			|Display|0e87.75: Julia explains some basic principles of trap and trigger systems.
+			|Goto||W1.L1.Tinker.Train.Traps.AnyMore
+
+				W1.L1.Tinker.Train.Traps.AnyMore
+				|Display|0e87.85: Wouldst like to learn more?
+				|Option|0e87.86: Yes, please teach me more!|W1.L1.Tinker.Train.Traps
+				|Option|0e87.87: No, thank thee.|W1.L1.Tinker.Train.Done
+				|Prompt
+
+			W1.L1.Tinker.Train.Traps.Fail
+			|Display|0e87.76: Julia tries to explain how traps work, but the knowledge doesn't penetrate.
+			|Display|0e87.77: Let us try again later, when thou hast worked on a few real traps.
+			|Goto||W1.L1.Tinker.Train.Done
+
+		W1.L1.Tinker.Train.Lockpick
+		|Goto||W1.L1.Tinker.Train.Lockpick.Succeed
+		|Goto||W1.L1.Tinker.Train.Lockpick.Fail
+
+			W1.L1.Tinker.Train.Lockpick.Succeed
+			|Display|0e87.78: Art thou not straying a little way from the straight and narrow, Avatar? But no matter, I shall teach thee what I know.
+			|Display|0e87.79: She briefly tutors thee on lockpicking.
+			|Goto||W1.L1.Tinker.Train.Lockpick.AnyMore
+
+				W1.L1.Tinker.Train.Lockpick.AnyMore
+				|Display|0e87.85: Wouldst like to learn more?
+				|Option|0e87.86: Yes, please teach me more!|W1.L1.Tinker.Train.Lockpick
+				|Option|0e87.87: No, thank thee.|W1.L1.Tinker.Train.Done
+				|Prompt
+
+			W1.L1.Tinker.Train.Lockpick.Fail
+			|Display|0e87.80: Julia's complex explanations are lost on you.
+			|Display|0e87.81: Thou shouldst try opening a few real locks, and then let us talk again.
+			|Goto||W1.L1.Tinker.Train.Done
+
+		W1.L1.Tinker.Train.Repair
+		|Goto||W1.L1.Tinker.Train.Repair.Succeed
+		|Goto||W1.L1.Tinker.Train.Repair.Fail
+
+			W1.L1.Tinker.Train.Repair.Succeed
+			|Display|0e87.82: Julia teaches you a bit more about craftsmanship.
+			|Goto||W1.L1.Tinker.Train.Repair.AnyMore
+
+				W1.L1.Tinker.Train.Repair.AnyMore
+				|Display|0e87.85: Wouldst like to learn more?
+				|Option|0e87.86: Yes, please teach me more!|W1.L1.Tinker.Train.Repair
+				|Option|0e87.87: No, thank thee.|W1.L1.Tinker.Train.Done
+				|Prompt
+
+			W1.L1.Tinker.Train.Repair.Fail
+			|Display|0e87.83: She tries to explain about how weapons are repaired, but you cannot quite follow.
+			|Display|0e87.84: We will try again later, when thou hast more experience in these matters.
+			|Goto||W1.L1.Tinker.Train.Done
+
+		W1.L1.Tinker.Train.Done
+		|Goto||W1.L1.Tinker.AnythingElse
+
+	W1.L1.Tinker.AnythingElse
+	|Display|0e87.18: If there is nothing more, @GS8, I must go now.
+	|OptionsClear
+	|Option|0e87.19: I shall speak to thee later, then.|W1.L1.Tinker.Done
+	|Option|0e87.20: Wait, @GS25, there is more we must speak of.|W1.L1.Tinker.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Tinker.AnythingElse.Yes
+		|Display|0e87.21: What wouldst thou like to talk about, then?
+		|Goto||W1.L1.Tinker.GeneralQuestions
+
+	W1.L1.Tinker.Done
+	|Pop
+	|Prompt

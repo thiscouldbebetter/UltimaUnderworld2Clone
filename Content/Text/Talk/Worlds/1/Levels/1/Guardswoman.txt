@@ -1,0 +1,274 @@
+
+W1.L1.Guardswoman
+|SpeakerSet|Portraits_Guardswoman
+|Push
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Guardswoman.KingAboutToSpeak
+|Goto||W1.L1.Guardswoman.Greet
+
+	//0ea8.1: @GS102
+	//0ea8.2: Well...
+	//0ea8.3: @GS70SI1
+	//0ea8.4: I thank thee, @GS25, that is enough.
+	//0ea8.5: What else dost thou know?
+
+	W1.L1.Guardswoman.KingAboutToSpeak
+	|Display|0ea8.8: Just a minute, @GS8. We'd best listen to what British has to say.
+	|Goto||W1.L1.Guardswoman.Done
+
+	W1.L1.Guardswoman.Greet
+	|DoOnceOnly
+	|Display|0ea8.9: Well, Avatar, it seems thou art trapped with the rest of us!
+	|DoNextInCycle|W1.L1.Guardswoman.TimesGreeted|W1.L1.Guardswoman.Greet.1;W1.L1.Guardswoman.Greet.2
+	W1.L1.Guardswoman.Greet.1|Display|0ea8.10: Ah, Avatar. Good of thee to visit me.
+	W1.L1.Guardswoman.Greet.2|Display|0ea8.11: Yes? What may I do for thee?
+	//0ea8.12: Blah blah blah?
+	|Prompt
+
+	W1.L1.Guardswoman.GeneralQuestions
+	|OptionsClear
+	|Option|0ea8.13: What is on thy mind, @GS25?|W1.L1.Guardswoman.News
+	|Option|0ea8.14: What has become of thee, this past year?|W1.L1.Guardswoman.LastYear
+	|Option|0ea8.15: Wouldst thou train me, Master @GS25?|W1.L1.Guardswoman.Train
+	|Option|0ea8.16: Please excuse me, @GS25.|W1.L1.Guardswoman.Done
+	|Prompt
+
+		W1.L1.Guardswoman.LastYear
+		|Display|0ea8.21: I confess, Avatar, for a long time I hated thee. 'Twas a cruel thing, to learn that my Master De Snel, who had attained such perfection in the fighting arts, had turned from the path of honor! 'Twas a terrible blow to the entire academy, the Library of Scars!
+		|Option|0ea8.22: 'Twas indeed a shame.|W1.L1.Guardswoman.LastYear.HeDiedWithHonor
+		|Option|0ea8.23: He got what he deserved.|W1.L1.Guardswoman.LastYear.YouDispensedJustice
+		|Option|0ea8.24: Refresh my memory -- what became of the man?|W1.L1.Guardswoman.LastYear.RefreshMyMemory
+		|Prompt
+
+			W1.L1.Guardswoman.LastYear.RefreshMyMemory
+			|Display|0ea8.25: Why, @GS8! When thou didst confront him with the evidence of his crimes, he drew on thee! 'Twas a splendid duel, by all accounts.
+			|Goto||W1.L1.Guardswoman.LastYear.WhatThen
+
+			W1.L1.Guardswoman.LastYear.HeDiedWithHonor
+			|Display|0ea8.26: At least he died with honor, in single combat with thee.
+			|Goto||W1.L1.Guardswoman.LastYear.WhatThen
+
+			W1.L1.Guardswoman.LastYear.YouDispensedJustice
+			|Display|0ea8.27: Indeed. Thou didst dispense justice with dispatch and resolve.
+			|Goto||W1.L1.Guardswoman.LastYear.WhatThen
+
+			W1.L1.Guardswoman.LastYear.WhatThen
+			|OptionsClear
+			|Option|0ea8.28: What has become of thee since?|W1.L1.Guardswoman.LastYear.WhatThen.1
+			|Option|0ea8.29: What of the Library of Scars, in this past year?|W1.L1.Guardswoman.LastYear.WhatThen.1
+			|Prompt
+
+				W1.L1.Guardswoman.LastYear.WhatThen.1
+				|Display|0ea8.30: I have been appointed headmaster of the Library of Scars! Indeed, I am known there now as Master Syria! 'Tis an honor, save that now I can find none to face me in combat.
+				|OptionsClear
+				|Option|0ea8.31: Why, congratulations!|W1.L1.Guardswoman.AnythingElse
+				|Option|0ea8.32: I must leave thee, now.|W1.L1.Guardswoman.Done
+				|Option|0ea8.33: And what of thy other friends, there.|W1.L1.Guardswoman.LastYear.WhatThen.2
+				|Prompt
+
+					W1.L1.Guardswoman.LastYear.WhatThen.2
+					|Display|0ea8.34: That worm, Sprellic, is no longer causing us trouble. Vokes found some occasion to knock him sprawling in his own inn! Little other news -- a few new additions to the Library of Scars, that is all.
+					|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.Train
+	|Display|0ea8.35: I thought thou wouldst never ask! My blade rusts in its sheath, confined to the castle as I am! Shall we fence, then? Or shall I teach thee the art of unarmed fighting?
+	|Option|0ea8.36: By all means, teach me of the blade!|W1.L1.Guardswoman.Train.Sword
+	|Option|0ea8.37: Let us spar unarmed.|W1.L1.Guardswoman.Train.Unarmed
+	|Option|0ea8.38: Not right now. Perhaps later.|W1.L1.Guardswoman.Train.Done
+	|Prompt
+
+		W1.L1.Guardswoman.Train.ATestOfTheGreatOne
+		|Display|0ea8.50: It seems I shall have a chance to see the famous Avatar in action. I shall be curious to know whether there is any truth to the tales of thy boldness and cunning.
+		|Option|0ea8.51: Doubtless some of it has been exaggerated in the telling.|W1.L1.Guardswoman.Train.ATestOfTheGreatOne.NoBigDeal
+		|Option|0ea8.52: I have indeed endured many perils! Mine has been a full life.|W1.L1.Guardswoman.Train.ATestOfTheGreatOne.YouKnowIt
+		|Prompt
+
+			W1.L1.Guardswoman.Train.ATestOfTheGreatOne.NoBigDeal
+			|Display|0ea8.53: Such a shame! I had so looked forward to watching a hero in action.
+			|Goto||W1.L1.Guardswoman.Train
+
+			W1.L1.Guardswoman.Train.ATestOfTheGreatOne.YouKnowIt
+			|Display|0ea8.54: Excellent! I shall expect a dazzling performance, Avatar.
+
+			W1.L1.Guardswoman.Train.Sword
+			|Goto||W1.L1.Guardswoman.Train.Sword.Succeed
+			|Goto||W1.L1.Guardswoman.Train.Sword.Fail
+			|Goto||W1.L1.Guardswoman.Train.Sword.NothingMoreToLearn
+
+				W1.L1.Guardswoman.Train.Sword.NothingMoreToLearn
+				|SpeakerSet|
+				|Display|0ea8.39: After sparring with you for a few minutes, Syria lowers her sword.
+				|SpeakerSet|Portraits_Guardswoman
+				|Display|0ea8.40: Thou'rt the mightiest fighter I have ever seen! There is nothing more I can teach thee now.
+				|Goto||W1.L1.Guardswoman.Train.Done
+
+				W1.L1.Guardswoman.Train.Sword.Succeed
+				|Display|0ea8.41: Syria's knowledge of the blade is daunting -- you learn much from her.
+				|Goto||W1.L1.Guardswoman.Train.Sword.WantAnyMore
+
+					W1.L1.Guardswoman.Train.Sword.WantAnyMore
+					|Display|0ea8.47: Wouldst thou like to continue, or stop for the moment?
+					|Option|0ea8.48: By all means, let us continue.|W1.L1.Guardswoman.Train.Sword
+					|Option|0ea8.49: Let us call it a day.|W1.L1.Guardswoman.Train.Done
+					|Prompt
+
+				W1.L1.Guardswoman.Train.Sword.Fail
+				|SpeakerSet|
+				|Display|0ea8.42: She hurries you through several unfamiliar drills, and you find it difficult to learn much.
+				|SpeakerSet|Portraits_Guardswoman
+				|Display|0ea8.43: I can teach thee no more, Avatar -- thou art lacking in true combat experience!
+				|Goto||W1.L1.Guardswoman.Train.Done
+
+			W1.L1.Guardswoman.Train.Unarmed
+			|Goto||W1.L1.Guardswoman.Train.Unarmed.Succeed
+			|Goto||W1.L1.Guardswoman.Train.Unarmed.Fail
+
+			W1.L1.Guardswoman.Train.Unarmed.Succeed
+			|Display|0ea8.44: Syria's stronger than she looks. You take a few bruises, but your strength and striking speed improve.
+
+				W1.L1.Guardswoman.Train.Unarmed.WantAnyMore
+				|Display|0ea8.47: Wouldst thou like to continue, or stop for the moment?
+				|Option|0ea8.48: By all means, let us continue.|W1.L1.Guardswoman.Train.Unarmed
+				|Option|0ea8.49: Let us call it a day.|W1.L1.Guardswoman.Train.Done
+				|Prompt
+
+			W1.L1.Guardswoman.Train.Unarmed.Fail
+			|SpeakerSet|
+			|Display|0ea8.45: Her style of fighting is undeniably effective, but for the moment you can't figure it out.
+			|SpeakerSet|Portraits_Guardswoman
+			|Display|0ea8.46: Enough! This is all we can do in a classroom -- thou shouldst go out and fight a few matches for blood!
+			W1.L1.Guardswoman.Train.Done
+
+		W1.L1.Guardswoman.Train.Done
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.News
+	|Goto||W1.L1.Guardswoman.ValetFoundSomething
+	|Goto||W1.L1.Guardswoman.SpeakWithPaladin
+	|Goto||W1.L1.Guardswoman.KnightSucks
+	|Goto||W1.L1.Guardswoman.HeardYouFoundMultiversePortal
+
+	W1.L1.Guardswoman.ValetFoundSomething
+	|Display|0ea8.62: I hear that whelp, Charles, has found something to excite him, down in the basement. Probably found a few more mushy old apples!
+	|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.SpeakWithPaladin
+	|Display|0ea8.63: @GS8, speak to Dupre, won't thou? He seems so restless, waving his sword about the way he does! If he is not more careful I shall duel him -- 'twould fascinate me to take on the famous Sir Dupre!
+	|Option|0ea8.64: Watch thy step, Syria. He is possessed of a temper!|W1.L1.Guardswoman.SpeakWithPaladin.CertainlyHopeHeHasATemper
+	|Option|0ea8.65: I am sure he would spar with thee, if thou wouldst ask him.|W1.L1.Guardswoman.SpeakWithPaladin.NoWishToSpar
+	|Prompt
+
+		W1.L1.Guardswoman.SpeakWithPaladin.NoWishToSpar
+		|Display|0ea8.66: I have no wish to spar with anyone, Avatar! 'Tis so dull, if there is no blood at stake.
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+		W1.L1.Guardswoman.SpeakWithPaladin.CertainlyHopeHeHasATemper
+		|Display|0ea8.67: My dear @GS8, I certainly hope so!
+		|SpeakerSet|
+		|Display|0ea8.68: Syria laughs.
+		|SpeakerSet|Portraits_Guardswoman
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.KnightSucks
+	|Display|0ea8.69: I have just been to see thy trainer, Geoffrey! Who taught that man to handle a blade? He looked like a man waving a flag, or a feather duster!
+	|Option|0ea8.70: Syria, Geoffrey is a worthy fighting man!|W1.L1.Guardswoman.KnightSucks.HeHasNoGrace
+	|Option|0ea8.71: Perhaps Geoffrey's methods are a bit outdated.|W1.L1.Guardswoman.KnightSucks.HeIsSoOutOfTouch|W1.L1.Guardswoman.KnightSucks.HeIsSoOutOfTouch
+	|Prompt
+
+		W1.L1.Guardswoman.KnightSucks.HeHasNoGrace
+		|Display|0ea8.72: I do not question his loyalty, or his sense of honor, Avatar, but really! He has all the grace of an Iron Golem!
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+		W1.L1.Guardswoman.KnightSucks.HeIsSoOutOfTouch
+		|Display|0ea8.73: Outdated? His fighting style looks as old . . . well, as old as thee, @GS8! The man would be laughed out of the Library of Scars!
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.HeardYouFoundMultiversePortal
+	|Display|0ea8.55: Is it true that thou hast ventured to another world?
+	|Option|0ea8.56: Aye.|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.1
+	|Option|0ea8.57: It is hard to tell. Certainly I was SOMEWHERE.|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.1
+	|Prompt
+
+		W1.L1.Guardswoman.HeardYouFoundMultiversePortal.1
+		|Display|0ea8.58: I truly hope so. Britannia has been so boring, of late! If only I had been born back in the days of the evil Mondain!
+		|OptionsClear
+		|Option|0ea8.59: How canst thou say such a thing?|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
+		|Option|0ea8.60: I was there -- 'twas a difficult time to be alive.|W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
+		|Prompt
+
+			W1.L1.Guardswoman.HeardYouFoundMultiversePortal.2
+			|Display|0ea8.61: Say what thou wilt, but I am tired of a world where a mastery of the fighting arts makes one either a preacher of virtue (no offense, Avatar), or a school teacher!
+			|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.MurderMystery
+	|Display|0ea8.74: I suppose thou hast heard of the revolting matter of Tory's death! 'Twas revolting, a killing devoid of honor or finesse!
+	|Option|0ea8.75: Thou dost seem to show little compassion in this matter, Syria.|W1.L1.Guardswoman.MurderMystery.SorryToBeCallous
+	|Option|0ea8.76: I cannot but agree. The matter turns my stomach.|W1.L1.Guardswoman.MurderMystery.IAmDisgusted
+	|Prompt
+
+		W1.L1.Guardswoman.MurderMystery.SorryToBeCallous
+		|Display|0ea8.77: I apologize, Avatar. It has become my way, having so often confronted death in my life. It is one of the things I have lost, in my devotion to my craft.
+		|Goto||W1.L1.Guardswoman.MurderMystery.HadToBeOutsider
+
+		W1.L1.Guardswoman.MurderMystery.IAmDisgusted
+		|SpeakerSet|
+		|Display|0ea8.78: She spits.
+		|SpeakerSet|Portraits_Guardswoman
+		|Display|0ea8.79: I do not often feel disgust, Avatar, but I confess I share thy feelings in this matter.
+		|Option|0ea8.80: Hast thou any idea who is responsible?|W1.L1.Guardswoman.MurderMystery.HadToBeOutsider
+		|Option|0ea8.81: I shall leave thee now.|W1.L1.Guardswoman.Done
+		|Option|0ea8.82: If only we could be sure this would not be repeated.|W1.L1.Guardswoman.MurderMystery.HadToBeOutsider
+		|Prompt
+
+		W1.L1.Guardswoman.MurderMystery.HadToBeOutsider
+		|Display|0ea8.83: As such matters have become my profession, let me offer thee some advice -- I do not think anyone in the castle could have carried this out. They are good people, and unused to killing -- if one of them had done this, it would show in their face. Likely, 'twas some servant of the Guardian, crawling up through the sewers in the night.
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.MurderSolved
+	|Display|0ea8.84: I heard news of thy scrap with Patterson. Hard luck, there. And yet, it bothers me that in the castle they are calling him a coward!
+	|OptionsClear
+	|Option|0ea8.85: And so he was!|W1.L1.Guardswoman.MurderSolved.ThisIsUnjust
+	|Option|0ea8.86: I am not responsible for what they say.|W1.L1.Guardswoman.MurderSolved.TreasonTakesGuts
+	|Option|0ea8.87: How canst thou sympathize with such a man?|W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo
+	|Prompt
+
+		W1.L1.Guardswoman.MurderSolved.ThisIsUnjust
+		|Display|0ea8.88: But this is unjust, Avatar.
+		|Goto||W1.L1.Guardswoman.MurderSolved.TreasonTakesGuts
+
+		W1.L1.Guardswoman.MurderSolved.TreasonTakesGuts
+		|Display|0ea8.89: Patterson was a poor fighter, surely. But think of the courage it took to walk among us with that secret inside him. And then to face thee, the mightiest warrior in the realm, in single combat, unarmed! It is my belief that few among us would have the courage to attempt such odds.
+		|Goto||W1.L1.Guardswoman.AnythingElse
+
+		W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo
+		|Display|0ea8.90: @GS8, the Guardian came to me with a similar offer, and I confess I was tempted -- perhaps Britannia has become too gentle a nation for me. I might have been happier in a world with no Avatar and no Lord British, where youth and strength meant more than a list of virtues!
+		|Option|0ea8.91: I, too, miss the earlier days, Syria.|W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo.2
+		|Option|0ea8.92: I cannot agree with thee -- there was so much suffering in the old days!|W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo.2
+		|Option|0ea8.93: Ah, well. I suppose there is no going back.|W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo.2
+		|Prompt
+
+			W1.L1.Guardswoman.MurderSolved.VillainTemptedMeToo.2
+			|Display|0ea8.94: I know. Perhaps it is not such a bad thing that thee and thy kind rule this world now.
+			|Goto||W1.L1.Guardswoman.AnythingElse
+
+	W1.L1.Guardswoman.IMustFaceEnemyGeneral
+	|Display|0ea8.6: Where is this Mors Gotha? I must face her!
+
+	W1.L1.Guardswoman.KillMeThen
+	|Display|0ea8.7: Kill me then, since you can. I'm sick of a world where a mastery of the fighting arts makes you either a mealy-mouthed preacher of empty virtues, or a school teacher!
+	|Goto||W1.L1.Guardswoman.Done
+
+	W1.L1.Guardswoman.AnythingElse
+	|Display|0ea8.17: What else may I do for thee, @GS8?
+	|OptionsClear
+	|Option|0ea8.18: Nothing, thank thee.|W1.L1.Guardswoman.Done
+	|Option|0ea8.19: There is one more thing, @GS25.|W1.L1.Guardswoman.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Guardswoman.AnythingElse.Yes
+		|Display|0ea8.20: What is it?
+		|Goto||W1.L1.Guardswoman.GeneralQuestions
+
+	W1.L1.Guardswoman.Done
+	|Pop
+	|Prompt

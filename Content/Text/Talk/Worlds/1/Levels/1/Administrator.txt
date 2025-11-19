@@ -1,0 +1,310 @@
+
+W1.L1.Administrator
+|Push
+|SpeakerSet|Portraits_Administrator
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Administrator.KingAboutToSpeak
+|Goto||W1.L1.Administrator.Greet
+
+	|Goto||W1.L1.Administrator.KingAboutToSpeak
+
+	//0e88.1: @GS102
+	//0e88.2: Well...
+	//0e88.3: @GS70SI1
+	//0e88.4: I thank thee, @GS25, that is enough.
+	//0e88.5: What else dost thou know?
+	//0e88.6: sir
+	//0e88.7: ma'am
+
+	W1.L1.Administrator.KingAboutToSpeak
+	|Display|0e88.8: I will speak with thee in a moment, Avatar. Let us both first consult with Lord British.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful
+	|Display|0e88.12: Avatar, is it true thou didst say that in @SS11 they live peacefully under the Guardian?
+	//|Display|0e88.10: Killorn Keep
+	//|Display|0e88.11: the Guardian's keep
+	|Option|0e88.13: Aye, and 'tis true!|W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful.Yes
+	|Option|0e88.14: Nay, I never said that.|W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful.No
+	|Prompt
+
+		W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful.Yes
+		|Display|0e88.15: Well, I would ask thee not to praise the Guardian so generously, in the future. 'Tis hard enough as it is keep our people from being tempted by the Guardian's offer.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+		W1.L1.Administrator.DidYouSayVillainRuledLandsWerePeaceful.No
+		|Display|0e88.16: I don't know where such rumors start, then! I am worried about our morale.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+	W1.L1.Administrator.Greet
+	|DoNextInCycle|W1.L1.Administrator.TimesGreeted|W1.L1.Administrator.Greet.1;W1.L1.Administrator.Greet.2;W1.L1.Administrator.Greet.3
+	W1.L1.Administrator.Greet.0|Display|0e88.45: Avatar! 'Tis good to see thee!
+	W1.L1.Administrator.Greet.1|Display|0e88.17: Hello, Avatar.
+	W1.L1.Administrator.Greet.2|Display|0e88.18: Avatar! Good, I have been expecting thee.
+	W1.L1.Administrator.Greet.3|Display|0e88.19: Good to see thee again, @GS8.
+
+	|SpeakerSet|
+	|Display|0e88.20: You recount for Miranda your latest experiences, and she records them carefully, to distribute to other members of the castle.
+	|SpeakerSet|Portraits_Administrator
+
+	W1.L1.Administrator.GeneralQuestions
+	|OptionsClear
+	|Option|0e88.27: What is the situation in the castle?|W1.L1.Administrator.WhatIsSituationInCastle
+	|Option|0e88.28: What is the current situation in the castle?|W1.L1.Administrator.WhatIsSituationInCastle
+	|Option|0e88.29: What hast thou been doing since I last visited Britain?|W1.L1.Administrator.LastYear
+	|Option|0e88.69: How are the castle personnel doing?|W1.L1.Administrator.HowArePeople
+	|Option|0e88.30: Miranda, canst thou tell me where the Guardian's lines of power have been cut?|W1.L1.Administrator.VillainsPowerHasBeenCutHere
+	|Option|0e88.31: Excuse me, Miranda, I must go.|W1.L1.Administrator.Done
+	|Prompt
+
+		W1.L1.Administrator.WhatIsSituationInCastle
+		|Display|todo
+		|Prompt
+
+		W1.L1.Administrator.HowArePeople
+		|Display|0e88.71: Our people are doing all right, so far.
+		|Option|0e88.70: What else has been happening?|W1.L1.Administrator.WhatIsSituationInCastle
+		|Prompt
+
+		W1.L1.Administrator.LastYear
+		|Display|0e88.44: Well, Lord British put me in charge of Britannia's environmental problems, starting with Lock Lake, and I've started an organization of women who want a larger role in Britannian society. But who knows if all that will matter now?
+		|Prompt
+
+		W1.L1.Administrator.VillainsPowerHasBeenCutHere
+		|Display|0e88.117: The Guardian can no longer draw power from @SS1C1.
+		|Display|0e88.114: The Guardian can no longer draw power from these places:
+		|Display|0e88.106: The Ethereal Void.
+		|Display|0e88.107: The Pits of Carnage.
+		|Display|0e88.108: The Tomb of Praecor Loth.
+		|Display|0e88.109: The Scintillus Academy Final Exam.
+		|Display|0e88.110: Talorus.
+		|Display|0e88.111: Ice Caverns.
+		|Display|0e88.112: Killorn Keep.
+		|Display|0e88.113: The Prison Tower.
+		|Display|0e88.116: Why, 'tis all the known planes of reality!
+		|Prompt
+
+	W1.L1.Administrator.ValetIsPleasedAboutSomething
+	|Display|0e88.36: If thou hast not made a point of visiting Charles, please do so. He seemed most pleased about something!
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.WizardAsksYouToInvestigate
+	|Display|0e88.37: And do not forget -- Nystul wishes thee to be watchful for something which might tell us more about the casting of this spell on our castle.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.SettingUpAWarRoom
+	|Display|0e88.46: Well, I'm setting up our "War Room" in the Great Hall, where I'll keep track of all the events related to our battle against the Guardian. Make sure to come to me often to get the latest news, and inform me of thy progress.
+	|OptionsClear|
+	|Option|0e88.47: I shall.|W1.L1.Administrator.AnythingElse
+	|Option|0e88.48: Nay, I prefer to work on my own.|W1.L1.Administrator.SettingUpAWarRoom.YouMustCooperate
+	|Prompt
+
+		W1.L1.Administrator.SettingUpAWarRoom.YouMustCooperate
+		|Display|0e88.49: Please, Avatar -- we need to know everything you discover, and thou wilt need to know what progress others in the castle have made.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+		W1.L1.Administrator.SettingUpAWarRoom.SeeWizardAndScholar
+		|Display|0e88.50: Which reminds me! Both Nystul and Nelson asked me to send thee to see them.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+	W1.L1.Administrator.WizardHasAdvice
+	|Display|0e88.51: Nystul said he had some advice for thee.
+	|Option|0e88.52: I will go see him.|W1.L1.Administrator.WizardHasAdvice.IllSeeHim
+	|Option|0e88.53: More magical gibberish, I expect.|W1.L1.Administrator.WizardHasAdvice.ProbablyGibberish
+	|Prompt
+
+		W1.L1.Administrator.WizardHasAdvice.ProbablyGibberish
+		|Display|0e88.54: Avatar! Next to thee, Nystul is our greatest asset in this fight!
+		|Goto||W1.L1.Administrator.Done
+
+		W1.L1.Administrator.WizardHasAdvice.IllSeeHim
+		|Display|0e88.55: The others are quite anxious to hear of thy progress!
+		|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.MayorIsLookingForYou
+	|Display|0e88.56: Oh, and Mayor Patterson was looking for thee -- he seemed quite anxious to speak with thee.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.WorriedAboutWater
+	|Display|0e88.68: To be frank, Avatar, I am most concerned about our water supply! Even if we shut off the fountain in the courtyard, we are still going to have to conserve as much as possible.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.HeardYouFoundMultiversePortal
+	|Display|0e88.57: Avatar, thy news is extraordinary! Perhaps this other world might hold the key to our escape.||W1.L1.Administrator.HeardYouFoundMultiversePortal.WizardCanAdviseYou
+	|Option|0e88.58: Perhaps. Yet this other world did not strike me as more hospitable than our own.|W1.L1.Administrator.HeardYouFoundMultiversePortal.NotMuchBetterThere
+	|Option|0e88.59: Perhaps -- or perhaps still more worlds might open to us.|W1.L1.Administrator.HeardYouFoundMultiversePortal.WizardCanAdviseYou
+	|Prompt
+
+		W1.L1.Administrator.HeardYouFoundMultiversePortal.NotMuchBetterThere
+		|Display|0e88.60: It must have been a gloomy place, indeed!
+		|Goto||W1.L1.Administrator.AnythingElse
+
+		W1.L1.Administrator.HeardYouFoundMultiversePortal.WizardCanAdviseYou
+		|Display|0e88.61: I am sure Nystul would be well able to advise thee in this.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+	W1.L1.Administrator.ServantsAreRude
+	|Display|0e88.62: The castle has been quiet recently, save for the servants, who have become increasingly rude and irritable.
+	|Option|0e88.63: Perhaps I should speak to them myself.|W1.L1.Administrator.ServantsAreRude.TheyllListenToYou
+	|Option|0e88.64: 'Tis a difficult time for all of us!|W1.L1.Administrator.ServantsAreRude.WeMustWorkTogether
+	|Prompt
+
+		W1.L1.Administrator.ServantsAreRude.WeMustWorkTogether
+		|Display|0e88.65: Indeed, and yet it behooves all of us to work together, and not complain over trivialities, as Nanna has been doing!
+		|Goto||W1.L1.Administrator.AnythingElse
+
+		W1.L1.Administrator.ServantsAreRude.TheyllListenToYou
+		|Display|0e88.66: I am sure they would listen to you, Avatar. Thou shouldst speak to Nanna first.
+		|Goto||W1.L1.Administrator.AnythingElse
+
+	W1.L1.Administrator.TakeThatGemToTheWizard
+	|Display|0e88.67: Oh! And if thou hast not already done so, thou shouldst take that gem thou didst find to Nystul -- 'tis an intriguing artifact, and I am sure he would be fascinated to take a look at it.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.SeePhilanthropistAndPaladin
+	|Display|0e88.72: Come to think of it, Feridwyn seems to have something on his mind, and Sir Dupre has been so restless lately! He is always drawing his sword and sheathing it again!  Perhaps thou couldst find some way for him to help thee.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.SeeWizardAndMayor
+	|Display|0e88.73: Well, it seems Nystul had something to say to thee, and Patterson has seemed rather anxious lately -- thou shouldst talk to him.
+
+	W1.L1.Administrator.Murder
+	|SpeakerSet|
+	|Display|0e88.74: A guard appears.
+	|SpeakerSet|Portraits_Guard
+	|Display|0e88.75: Er...Lady Miranda?\m
+	|SpeakerSet|Portraits_Administrator
+	|Display|0e88.76: Yes? What is it, Jenner? I am having an important discussion with the Avatar!\m
+	|SpeakerSet|Portraits_Guard
+	|Display|0e88.77: I hardly know how to say this... but Lady Tory...\m
+	|SpeakerSet|Portraits_Administrator
+	|Display|0e88.78: Yes? Out with it!\m
+	|SpeakerSet|Portraits_Guard
+	|Display|0e88.79: Julia just found her, @GS105. I...she's been killed.\m
+	|Option|0e88.80: How did this happen?|W1.L1.Administrator.Murder.How
+	|Option|0e88.81: Who is responsible for this?|W1.L1.Administrator.Murder.Who
+	|Prompt
+
+		W1.L1.Administrator.Murder.How
+		|Display|0e88.82: Er, it seems she was stabbed, @GS105. In her room.\m
+		|Goto||W1.L1.Administrator.MurderMystery.Done
+
+		W1.L1.Administrator.Murder.Who
+		|Display|0e88.83: I don't know, @GS105. No one knows anything.\m
+		|Goto||W1.L1.Administrator.MurderMystery.Done
+
+		W1.L1.Administrator.MurderMystery.Done
+		|SpeakerSet|Portraits_Administrator
+		|Display|0e88.84: @GS8, thou hadst better go at once and investigate this. I shall inform the others.
+		|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.MurderMystery
+	|Display|0e88.85: I have told the others the news, Avatar. I don't believe there is anything we can do at the moment. Clearly though, someone has struck at the only one among us who might have detected a traitor.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.SeeTheScholar
+	|Display|0e88.86: @GS8, thou shouldst go see Nelson at once!
+	|Option|0e88.87: Why? What is the matter?|W1.L1.Administrator.SeeTheScholar.WhatsTheMatter
+	|Option|0e88.88: I am too busy!|W1.L1.Administrator.SeeTheScholar.ItsImportant
+	|Prompt
+
+		W1.L1.Administrator.SeeTheScholar.ItsImportant
+		|Display|0e88.89: Please, Avatar, this is extremely important to him!
+		|Goto||W1.L1.Administrator.SeeTheScholar.WhatsTheMatter
+
+		W1.L1.Administrator.SeeTheScholar.WhatsTheMatter
+		|Display|0e88.90: He has been pacing through the castle like a madman, muttering aloud! I think he is on the verge of a discovery that might change the entire situation!
+		|Option|0e88.91: I shall see him at once.|W1.L1.Administrator.SeeTheScholar.PleaseDo
+		|Option|0e88.92: Surely this can wait!|W1.L1.Administrator.SeeTheScholar.WeMustCooperate
+		|Prompt
+
+			W1.L1.Administrator.SeeTheScholar.WeMustCooperate
+			|Display|0e88.93: Avatar, thou must cooperate with the others in the castle, or we shall never get out of here!
+			|Goto||W1.L1.Administrator.Done
+
+			W1.L1.Administrator.SeeTheScholar.PleaseDo
+			|Display|0e88.94: Please do!
+			|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.MurderSolved
+	|SpeakerSet|
+	|Display|0e88.95: Miranda speaks in a dazed monotone.
+	|SpeakerSet|Portraits_Administrator
+	|Display|0e88.96: I am sorry. At least thou hast avenged our betrayal -- I am certain we need fear no more traitors in THIS castle. I pity him, that is all.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.WizardIsHysterical
+	|Display|0e88.97: Yes -- I have been looking everywhere for thee! Nystul is in a hysterical state -- he says thou must see him at once!
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.WizardWantsToHearAboutEnemyGeneral
+	|Display|0e88.99: Thou shouldst see Nystul at once about thine encounter with Mors Gotha -- I am sure he will be most interested.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.TellWizardAboutBarbarianKing
+	|Display|0e88.100: 'Tis quite a story thou hast told, Avatar. Perhaps thou shouldst share it with Nystul -- he may have heard of this "Praecor Loth."
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.ValetFoundSomething
+	|Display|0e88.101: Just now I heard a great commotion over at the servants' quarters -- it seems Charles has made some sort of discovery in the storerooms -- he is most proud of himself!
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.YourEffortsMayNotBeEnough
+	|Display|0e88.102: Avatar, thou hast done much on our behalf, but it may not be enough!
+	|Option|0e88.103: Why not?|W1.L1.Administrator.YourEffortsMayNotBeEnough.2
+	|Option|0e88.104: I feel confident I shall soon succeed in freeing us.|W1.L1.Administrator.YourEffortsMayNotBeEnough.2
+	|Prompt
+
+		W1.L1.Administrator.YourEffortsMayNotBeEnough.2
+		|Display|0e88.105: The gem is certainly weakening, but Nystul tells me we have not quite obtained the power necessary to destroy it! And meanwhile, I have been having terrible dreams! If Lord Draxinusom is not victorious, we may emerge to find the Guardian's troops on our doorstep!
+		|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.SpellIsBreaking
+	|Display|0e88.98: At night I hear the black jewel creak and groan, as if under great strain -- I feel thine efforts are having some strong effect.
+	|Goto||W1.L1.Administrator.Done
+
+//0e88.115: @SS1SI10\n
+
+	W1.L1.Administrator.HornOfTheGhostKing
+	|Display|0e88.21: She seems surprised to see you again so soon.
+	|Display|0e88.22: And what of the horn of Praecor Loth? Dost thou have it?
+	|Option|0e88.23: Aye|W1.L1.Administrator.HornOfTheGhostKing.GotIt
+	|Option|0e88.25: Nay.|W1.L1.Administrator.HornOfTheGhostKing.DoNotHaveIt
+	|Prompt
+
+		W1.L1.Administrator.HornOfTheGhostKing.GotIt
+		|Display|0e88.24: That is good. I'm sure it is very important.
+		|Goto||W1.L1.Administrator.Done
+
+		W1.L1.Administrator.HornOfTheGhostKing.DoNotHaveIt
+		|Display|0e88.26: Perhaps thou shouldst find it.  I'm sure it is very important.
+		|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.EndOfGame
+	|Display|0e88.9: All is in readiness, Avatar. Give the word, and Nystul will begin the incantation.
+	|Goto||W1.L1.Administrator.Done
+
+	W1.L1.Administrator.AnythingElse
+	|Display|0e88.32: Is there aught else thou wishest to know?
+	|OptionsClear
+	|Option|0e88.33: Not right now, thank thee.|W1.L1.Administrator.Done
+	|Option|0e88.34: Yes, there is.|W1.L1.Administrator.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Administrator.AnythingElse.Yes
+		|Display|0e88.35: What wouldst thou like to know?
+		|Option|0e88.43: That is all for the moment. I shall have more to say later.|W1.L1.Administrator.GeneralQuestions
+		|Prompt
+
+	W1.L1.Administrator.Farewell
+	|DoNextInCycle|W1.L1.Administrator.Farewell.TimesDismissed|W1.L1.Administrator.Farewell.1;W1.L1.Administrator.Farewell.2;W1.L1.Administrator.Farewell.3;W1.L1.Administrator.Farewell.4;W1.L1.Administrator.Farewell.5
+	W1.L1.Administrator.Farewell.1|Display|0e88.38: Farewell, then. Do be careful!
+	W1.L1.Administrator.Farewell.2|Display|0e88.39: Be sure and let me know if thou dost learn anything new.
+	W1.L1.Administrator.Farewell.3|Display|0e88.40: Good luck to thee!
+	W1.L1.Administrator.Farewell.4|Display|0e88.41: Do not neglect to keep me informed, Avatar -- the others depend on me for news!
+	W1.L1.Administrator.Farewell.5|Display|0e88.42: Remember to visit me often, @GS8 -- I may have news!
+
+	W1.L1.Administrator.Done
+	|SpeakerSet|
+	|Pop
+	|Prompt

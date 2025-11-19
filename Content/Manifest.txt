@@ -74,5 +74,24 @@ C:.
     |   Instructions.txt
     |   
     \---Talk
-            ConversationsAll.txt
-            
+        |   ConversationsAll.txt
+        |
+        \---Worlds
+            \---1
+                \---Levels
+                    \---1
+                            Administrator.txt
+                            Bard.txt
+                            Chambermaid.txt
+                            Empath.txt
+                            Guardswoman.txt
+                            Housekeeper.txt
+                            King.txt
+                            Knight.txt
+                            Mayor.txt
+                            Paladin.txt
+                            Philanthropist.txt
+                            Scholar.txt
+                            Tinker.txt
+                            Valet.txt
+                            Wizard.txt

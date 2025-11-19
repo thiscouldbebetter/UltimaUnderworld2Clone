@@ -1,0 +1,213 @@
+
+W1.L1.Philanthropist
+|Push
+|SpeakerSet|Portraits_Philanthropist
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Philanthropist.KingAboutToSpeak
+|Goto||W1.L1.Philanthropist.Greet
+
+	// 0e8f.1: @GS102
+	// 0e8f.2: Well...
+	// 0e8f.3: @GS70SI1
+	// 0e8f.4: I thank thee, @GS25, that is enough.
+	// 0e8f.5: What else dost thou know?
+
+	W1.L1.Philanthropist.KingAboutToSpeak
+	|Display|0e8f.6: I think Lord British has something he wishes to say. Thou shouldst hasten to the throne room.
+	|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.BeginTheCeremony
+	|Display|0e8f.7: Well, Avatar, if thou hast any final tricks up thy sleeve, now is the time to play them!
+	|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.Greet.FirstTime
+	0e8f.8: So thou art here as well.
+
+	// 0e8f.9: I had been meaning to speak to thee, Avatar.
+
+	W1.L1.Philanthropist.Greet
+	W1.L1.Philanthropist.Greet.1|Display|0e8f.10: Yes, @GS8? What may I do for thee?
+	W1.L1.Philanthropist.Greet.2|Display|0e8f.11: What is it, @GS25?
+	W1.L1.Philanthropist.Greet.3|Display|0e8f.12: What is on thy mind, @GS25?
+
+	W1.L1.Philanthropist.GeneralQuestions
+	|Option|0e8f.13: How didst thou spend the previous year, @GS25?|W1.L1.Philanthropist.LastYear
+	|Option|0e8f.14: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Philanthropist.News
+	|Option|0e8f.15: Excuse me, Feridwyn -- I must go.|W1.L1.Philanthropist.Done
+	|Prompt
+
+		W1.L1.Philanthropist.LastYear
+		|Display|0e8f.73: The dissolution of the Fellowship didst not change my desire to aid the poor and needy of Britannia. I have continued to run the shelter in Paws, though we are in great need of more funding from Lord British. I fear that soon we may lack the means to offer even the meager services that we currently provide.
+		|Prompt
+
+		W1.L1.Philanthropist.News
+		|Goto||W1.L1.Philanthropist.MayorSucks
+		// todo
+
+	W1.L1.Philanthropist.MayorSucks
+	|Display|0e8f.21: Avatar, canst we not do something about Patterson?  He is without doubt the most inane fellow I have encountered in my life!
+	|Option|0e8f.22: Just ignore him and he'll go away.|W1.L1.Philanthropist.MayorSucks.IsThatHowYouSolveProblems
+	|Option|0e8f.23: Has he been bothering thee?|W1.L1.Philanthropist.MayorSucks.HesAPest
+	|Option|0e8f.24: He means well, Feridwyn.|W1.L1.Philanthropist.MayorSucks.HeMeansWell
+	|Prompt
+
+		W1.L1.Philanthropist.MayorSucks.IsThatHowYouSolveProblems
+		|Display|0e8f.25: Is that how the Avatar deals with problems?  Ignore them and hope they vanish by themselves?  If that is thy philosophy, 'tis amazing that thou hast been so successful in the past.
+		|Goto||W1.L1.Philanthropist.MayorSucks.HesAPest
+
+		W1.L1.Philanthropist.MayorSucks.HesAPest
+		|Display|0e8f.26: He hath been a constant pest, and methinks not only to me. Many others have been complaining about him.  If his behavior continues, I shall have stern words for the man.
+		|Goto||W1.L1.Philanthropist.MayorSucks.MoreQuestions
+
+		W1.L1.Philanthropist.MayorSucks.HeMeansWell
+		|Display|0e8f.27: I dost not care if he means well, @GS8.  Thou dost know what they say of good intentions.
+		|Goto||W1.L1.Philanthropist.MayorSucks.MoreQuestions
+
+		W1.L1.Philanthropist.MayorSucks.MoreQuestions
+		|Option|0e8f.28: Do not be too harsh with him.|W1.L1.Philanthropist.MayorSucks.BeHarshIfIWant
+		|Option|0e8f.29: I agree with thee.  Something should be done about him.|W1.L1.Philanthropist.MayorSucks.SomethingShouldBeDone
+		|Option|0e8f.30: Thine opinions are of little value to me.|W1.L1.Philanthropist.MayorSucks.IDontCareWhatYouThink
+		|Prompt
+
+			W1.L1.Philanthropist.MayorSucks.BeHarshIfIWant
+			|Display|0e8f.31: I shall be as harsh as I like, if he continues to pester me.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+			W1.L1.Philanthropist.MayorSucks.SomethingShouldBeDone
+			|Display|0e8f.32: Aye, and done soon.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+			W1.L1.Philanthropist.MayorSucks.IDontCareWhatYouThink
+			|SpeakerSet|
+			|Display|0e8f.33: Feridwyn graces you with a cold smile.
+			|SpeakerSet|Portraits_Philanthropist
+			|Display|0e8f.34: The feeling is mutual, Avatar.
+			|Goto||W1.L1.Philanthropist.MayorSucks.Done
+
+		W1.L1.Philanthropist.MayorSucks.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.YoureTrouble
+	|Display|0e8f.35: Well, @GS8, once again thy visit has coincided with calamity.  I cannot say I am surprised.
+	|Option|0e8f.36: If thou wilt not be civil, do not speak to me.|W1.L1.Philanthropist.YoureTrouble.CivilityIsEarned
+	|Option|0e8f.37: I shall do my best to end this crisis, as should we all.|W1.L1.Philanthropist.YoureTrouble.LetsAllDoOurBest
+	|Option|0e8f.38: Trouble does seem to follow me about.|W1.L1.Philanthropist.YoureTrouble.TroubleFollowsMe
+	|Prompt
+
+		W1.L1.Philanthropist.YoureTrouble.CivilityIsEarned
+		|Display|0e8f.39: Civility, like respect, should be earned, Avatar.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.LetsAllDoOurBest
+		|Display|0e8f.40: I shall do my part, do not worry.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.TroubleFollowsMe
+		|Display|0e8f.41: Yes, it does.  History tells us that thou hast always been a harbinger of ill tidings.
+		|Goto||W1.L1.Philanthropist.YoureTrouble.Done
+
+		W1.L1.Philanthropist.YoureTrouble.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.MurderMystery
+	|Display|0e8f.42: I am greatly saddened by Lady Tory's death.  She was a good woman.
+	|Option|0e8f.43: We must all be wary, now that we know a traitor walks among us.|W1.L1.Philanthropist.MurderMystery.AlwaysWary
+	|Option|0e8f.44: Dost thou know anything about the murder?|W1.L1.Philanthropist.MurderMystery.KnowNothingOfMurder
+	|Option|0e8f.45: Where wert thou at the time of the killing?|W1.L1.Philanthropist.MurderMystery.AreYouAccusingMe
+	|Prompt
+
+		W1.L1.Philanthropist.MurderMystery.AlwaysWary
+		0e8f.46: I am always wary, @GS8.
+
+		W1.L1.Philanthropist.MurderMystery.KnowNothingOfMurder
+		0e8f.47: Nay, I know nothing of it.
+
+		W1.L1.Philanthropist.MurderMystery.AreYouAccusingMe
+		|Display|0e8f.48: Art thou accusing me, Avatar?
+		|Option|0e8f.49: No, I was merely wondering.|W1.L1.Philanthropist.MurderMystery.IWasAloneInMyRoom
+		|Option|0e8f.50: Thou art a prime suspect, Feridwyn!|W1.L1.Philanthropist.MurderMystery.YouHaveNoEvidence
+		|Prompt
+
+			W1.L1.Philanthropist.MurderMystery.IWasAloneInMyRoom
+			|Display|0e8f.51: I was in alone in my room when I heard the shouts of the guards. I am as innocent as thou.
+			|Goto||W1.L1.Philanthropist.MurderMystery.Done
+
+			W1.L1.Philanthropist.MurderMystery.YouHaveNoEvidence
+			|Display|0e8f.52: If thou hast any evidence, then come out and make the accusation, but I assure thee that I am guilty of nothing.  I am aware that many are talking of me behind my back, and I would be lying to say it dost not bother me.  @GS8, you of all people should know the dangers of groundless speculation.
+			|Goto||W1.L1.Philanthropist.MurderMystery.Done
+
+		W1.L1.Philanthropist.MurderMystery.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams
+	|Display|0e8f.53: Avatar, we both know that I have little love for thee. However, for the sake of the others you should know that the Guardian spoke to me last night.
+	|Option|0e8f.54: What didst he say to thee?|W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+	|Option|0e8f.55: Feridwyn, I care not about what he hath said in thy dreams.|W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.YouShouldHearThis
+	|Prompt
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.YouShouldHearThis
+	|Display|0e8f.56: I think that thou shouldst hear this.
+	|Goto||W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+
+	W1.L1.Philanthropist.VillainSpokeToMeInMyDreams.WhatDidHeSay
+	|Display|0e8f.57: He tried to get me to convince thee that thou wouldst best be served by exploring the dungeons of Killorn Keep. I wouldst not attempt it though... it is no doubt some trickery on his part. He was unwise to think that I wouldst betray Britannia.
+	|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.HeardYouFoundWater
+	|Display|0e8f.58: So thou hast discovered a river in another world. 'Tis most fortunate for us, that we shall not perish of thirst. Wert thou searching for water, or didst thou stumble across it accidentally?
+	|Option|0e8f.59: 'Twas sheer luck that I found water there, Feridwyn.|W1.L1.Philanthropist.HeardYouFoundWater.IGotLucky
+	|Option|0e8f.60: Doth it matter?  We should just be thankful to have found it.|W1.L1.Philanthropist.HeardYouFoundWater.DoesntMatter
+	|Option|0e8f.61: I was indeed searching for it!  I have saved us all!|W1.L1.Philanthropist.HeardYouFoundWater.YourModestyIsOverwhelming
+	|Prompt
+
+		W1.L1.Philanthropist.HeardYouFoundWater.IGotLucky
+		|Display|0e8f.62: I thought as much.  Good fortune seems to be thy constant companion.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.DoesntMatter
+		|Display|0e8f.63: No, it matters not.  I was simply curious.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.YourModestyIsOverwhelming
+		|Display|0e8f.64: Thy modesty is overwhelming, Avatar.
+		|Goto||W1.L1.Philanthropist.HeardYouFoundWater.Done
+
+		W1.L1.Philanthropist.HeardYouFoundWater.Done
+		|Goto||W1.L1.Philanthropist.WillThatBeAll
+
+	W1.L1.Philanthropist.MurderSolved
+	|Display|0e8f.65: All of this time, Patterson was under the Guardian's influence. Hopefully this tragedy will at least quell the unfounded suspicions that so many here have of me.
+	|Option|0e8f.66: We all owe you our apologies, Feridwyn.|W1.L1.Philanthropist.MurderSolved.IllAcceptAllApologies
+	|Option|0e8f.67: Is that all thou dost care about? Thine own reputation?|W1.L1.Philanthropist.MurderSolved.YourReputation
+	|Option|0e8f.68: I am still not convinced of thine innocence.|W1.L1.Philanthropist.MurderSolved.ThenYoureAFool
+	|Prompt
+
+		W1.L1.Philanthropist.MurderSolved.IllAcceptAllApologies
+		|Display|0e8f.69: I will accept them all, starting with thine, but for now thou had best return to your task of freeing us from the Guardian's cage.
+
+		W1.L1.Philanthropist.MurderSolved.YourReputation
+		|Display|0e8f.70: @GS8, thy dislike for me is ill-disguised. The deaths of Lady Tory and Nelson, and even of Patterson, have afflicted me with ample grief. But I have also had to bear the weight of a dozen unfair judgements, which is not an easy burden to carry. Now leave me, and return to your tasks.
+
+		W1.L1.Philanthropist.MurderSolved.ThenYoureAFool
+		|Display|0e8f.71: Then thou art a fool, Avatar.  I need not stay and listen to further paranoid accusations.
+
+		W1.L1.Philanthropist.MurderSolved.Done
+		|Display|0e8f.72: Enough have died here already, solely because there was a frightened, vicious fool in our midst. Thou art said to be a hero -- now go about thy heroic business.
+		|Goto||W1.L1.Philanthropist.Done
+
+	W1.L1.Philanthropist.WillThatBeAll
+	|Display|0e8f.16: Art thou finished, Avatar?
+	|Option|0e8f.17: Yes. I shall speak with thee again, later.|W1.L1.Philanthropist.Done
+	|Option|0e8f.18: Nay, there is more I must discuss with thee.|W1.L1.Philanthropist.WillThatBeAll.No
+	|Prompt
+
+		W1.L1.Philanthropist.WillThatBeAll.No
+		|Display|0e8f.19: Yes, Avatar?
+		|Goto||W1.L1.Philanthropist.GeneralQuestions
+
+	// 0e8f.20: I can think of nothing more.
+
+
+	W1.L1.Philanthropist.Done
+	|Pop
+	|Prompt

@@ -1,0 +1,267 @@
+
+W1.L1.Mayor
+|SpeakerSet|Portraits_Mayor
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Mayor.KingAboutToSpeak
+|Goto||W1.L1.Mayor.Greet
+
+	W1.L1.Mayor.KingAboutToSpeak
+	|Display|0e8c.6: Avatar, a pleasure to see thee again! Let us have a talk, you and I, after Lord British finishes his little speech. For now, we should hasten there.
+
+	//0e8c.0: 
+	//0e8c.1: @GS102
+	//0e8c.2: Well...
+	//0e8c.3: @GS70SI1
+	//0e8c.4: I thank thee, @GS25, that is enough.
+	//0e8c.5: What else dost thou know?
+
+	//0e8c.12: Oh, @GS8! Nelson and I were just . . . er . . . talking about an . . . idea he had . . .
+
+	W1.L1.Mayor.Greet
+	|DoNextInCycle|W1.L1.Mayor.TimesGreeted|W1.L1.Mayor.Greet.1;W1.L1.Mayor.Greet.2;W1.L1.Mayor.Greet.3
+	W1.L1.Mayor.Greet.1|Display|0e8c.13: I am so happy to see thee here! I mean... not because thou art inside here but... er, you understand.
+	W1.L1.Mayor.Greet.2|Display|0e8c.14: @GS8! What a pleasure to see thee!
+	W1.L1.Mayor.Greet.3|Display|0e8c.15: Avatar! What a surprise, a real treat!
+
+	W1.L1.Mayor.GeneralQuestions
+	|Option|0e8c.16: How are things, @GS25?|W1.L1.Mayor.News
+	|Option|0e8c.17: What hast thou been doing since I saw thee last year?|W1.L1.Mayor.LastYear
+	|Option|0e8c.18: Patterson, canst thou train me to have more charisma?|W1.L1.Mayor.Train
+	|Option|0e8c.19: Excuse me, Patterson, I must leave thee.|W1.L1.Mayor.Done
+	|Prompt
+
+		W1.L1.Mayor.LastYear
+		|Display|0e8c.35: Well, Avatar, I shall not soon forget our last encounter! Thou didst teach me a lesson in honesty that was long past due, and though it hurts my pride, I must thank thee for it. Adultery is an ugly sin, but an easy one to fall into. Ah, 'tis a relief to be living without lies again.
+		|OptionsClear
+		|Option|0e8c.36: I hope thy wife was understanding.|W1.L1.Mayor.LastYear.Wife
+		|Option|0e8c.37: Think nothing of it -- 'twas my duty as an Avatar.|W1.L1.Mayor.CanIHelp
+		|Option|0e8c.38: Thou wert a scoundrel, Patterson, and I hope thou hast mended thy ways.|W1.L1.Mayor.CanIHelp
+		|Prompt
+
+			W1.L1.Mayor.LastYear.Wife
+			|OptionsClear
+			|Display|0e8c.39: Though we separated for a time, I am glad to tell thee Judith and I are together once again!
+			|Option|0e8c.40: 'Tis a relief to hear that, Patterson. I wish thee well.|W1.L1.Mayor.CanIHelp
+			|Option|0e8c.41: If thou art not deserving of her trust, thou shalt hear from me again!|W1.L1.Mayor.CanIHelp
+			|Prompt
+
+				W1.L1.Mayor.CanIHelp
+				|Display|0e8c.42: Again, I thank thee.
+				|Display|0e8c.43: I am glad to have a chance to speak with thee. I just wanted to say, I have always been a great admirer of thine, and 'tis good to be working with thee. If there is anything I can do to help out...
+				|OptionsClear
+				|Option|0e8c.44: No, thank thee.|W1.L1.Mayor.CanIHelp.No
+				|Option|0e8c.45: I need thee to help keep up people's morale -- thou art good at that!|W1.L1.Mayor.CanIHelp.Sure
+				|Option|0e8c.46: Perhaps thou shouldst assist Miranda in the war room.|W1.L1.Mayor.CanIHelp.Sure
+				|Option|0e8c.47: Just stay out of my way, Patterson.|W1.L1.Mayor.CanIHelp.No
+				|Prompt
+
+					W1.L1.Mayor.CanIHelp.No
+					|Display|0e8c.48: Er...
+					|Display|0e8c.49: Well, thou hast only to call on me, and I shall be ready!
+					|Goto||W1.L1.Mayor.WillThatBeAll
+
+					W1.L1.Mayor.CanIHelp.Sure
+					|Display|0e8c.50: Thank thee, Avatar! I shall do as thou sayest.
+					|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.Train
+
+		W1.L1.Mayor.Train.Charisma
+		|Display|0e8c.26: Surely I will help thee! Not for nothing did I serve as mayor of Britannia's largest town. I shall give thee a few pointers about dealing with people! But it will take some time -- hast thou a moment to spare?
+		|Option|0e8c.27: I will stay and train.|W1.L1.Mayor.Train.Charisma.SucceedOrFail
+		|Option|0e8c.28: I do not have the time to train with thee.|W1.L1.Mayor.Train.Done
+		|Prompt
+
+			W1.L1.Mayor.Train.Charisma.SucceedOrFail
+			|Goto||W1.L1.Mayor.Train.Charisma.Succeed
+			|Goto||W1.L1.Mayor.Train.Charisma.Fail
+
+			W1.L1.Mayor.Train.Charisma.Succeed
+			|SpeakerSet
+			|Display|0e8c.29: Patterson's tips are surprisingly insightful.
+			|SpeakerSet|Portraits_Mayor
+			|Goto||W1.L1.Mayor.Train.Charisma.AnyMore
+
+			W1.L1.Mayor.Train.Charisma.Fail
+			|SpeakerSet
+			|Display|0e8c.30: Patterson tries to explain how he works with people, but you are unable to see his point of view.
+			|SpeakerSet|Portraits_Mayor
+
+			W1.L1.Mayor.Train.Charisma.AnyMore
+			|Display|0e8c.31: Wouldst thou speak some more on this subject?
+			|Option|0e8c.32: Surely -- I find this very educational.|W1.L1.Mayor.Train.Charisma
+			|Option|0e8c.33: No thank thee -- perhaps another time.|W1.L1.Mayor.Train.Charisma.AnyMore.No
+			|Prompt
+
+				W1.L1.Mayor.Train.Charisma.AnyMore.No
+				|Display|0e8c.34: Of course -- come to me any time.
+				|Goto||W1.L1.Mayor.Train.Done
+
+			W1.L1.Mayor.Train.Done
+			|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.News
+	|Goto||W1.L1.Mayor.HadAScareThisMorning
+	|Goto||W1.L1.Mayor.HeardYouveBeenExploringDepths
+	|Goto||W1.L1.Mayor.HeardYouFoundMultiversePortal
+	|Goto||W1.L1.Mayor.HeardYouFoundMirrorUniverse
+
+	W1.L1.Mayor.HadAScareThisMorning
+	|Display|0e8c.66: I had quite a scare this morning, as Iolo may have told thee!
+	|Option|0e8c.67: What happened?|W1.L1.Mayor.SpiderCorneredMeInBasement
+	|Option|0e8c.68: What had Iolo to do with this?|W1.L1.Mayor.BardSavedMe
+
+		W1.L1.Mayor.BardSavedMe
+		//0e8c.69: Why, he played the part of my rescuer!
+
+		W1.L1.Mayor.SpiderCorneredMeInBasement
+		|Display|0e8c.70: A spider had me cornered in the basement, a real brute the size of a dog! Iolo found me and drove it off, thank the serpent.
+		|Option|0e8c.71: Thou wert very lucky!|W1.L1.Mayor.EveryoneAvoidsMe
+		|Option|0e8c.72: What wert thou doing in the basement?|W1.L1.Mayor.WhyWereYouInTheBasement
+		|Prompt
+
+			W1.L1.Mayor.WhyWereYouInTheBasement
+			|Display|0e8c.73: I was hoping to find some wine or ale, to calm down Dupre -- he has been so nervous lately.
+			|Goto||W1.L1.Mayor.EveryoneAvoidsMe
+
+			W1.L1.Mayor.EveryoneAvoidsMe
+			|Display|0e8c.74: 'Tis disheartening, Avatar -- I try to help the others out, but it never seems to come out right! Now it seems like the whole castle is avoiding me. 'Tis strange to feel so alone, when trapped in a castle with a score of other humans.
+			|Option|0e8c.75: Well, thou knowest I am thy friend, Patterson.|W1.L1.Mayor.IAmYourFriend
+			|Option|0e8c.76: I pity thee, Patterson.|W1.L1.Mayor.IPityYou
+			|Option|0e8c.77: Really, I must be going!|W1.L1.Mayor.IMustGot
+
+				W1.L1.Mayor.IMustGot
+				|Display|0e8c.78: Well, I guess I shall see thee later, @GS8...
+				|Goto||W1.L1.Mayor.Done
+
+				W1.L1.Mayor.IAmYourFriend
+				|Display|0e8c.79: I am glad to hear thee say that, @GS8. Very glad.
+				|Goto||W1.L1.Mayor.WillThatBeAll
+
+				W1.L1.Mayor.IPityYou
+				|Display|0e8c.80: He is silent for a moment.
+				|Display|0e8c.81: Yes, 'tis a common sentiment 'round here.
+				|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouveBeenExploringDepths
+	|Display|0e8c.58: I have heard thou hast begun exploring beneath the castle -- surely there is naught there but a few rotten supplies, musty tunnels... I'm sure the libraries would prove more productive.
+	|Option|0e8c.59: I am not so sure... perhaps some hidden exit tunnel?|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+	|Option|0e8c.60: There are many mysteries in the depths -- perhaps one such might lead to our escape.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+	|Option|0e8c.61: Thou art right -- perhaps some ancient tome will shed light on the situation.|W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+	|Prompt
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAnExitTunnel
+		|Display|0e8c.62: Perhaps thou art right...but I fear the gem has sealed us in for good.
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeResearchIsBetter
+		|Display|0e8c.63: I see that thou art a @SS1 of deep insight! I am sure thy scholarly investigations will save us all!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouveBeenExploringDepths.MaybeAHelpfulMystery
+		|SpeakerSet|
+		|Display|0e8c.64: He shrugs.
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8c.65: Do what seems best to thee!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouFoundMultiversePortal
+	|Display|0e8c.51: Is it true thou hast found some sort of gateway, in the sewers?
+	|Option|0e8c.52: Aye, but it leads only to another prison.|W1.L1.Mayor.HeardYouFoundMultiversePortal.JustMyLuck
+	|Option|0e8c.53: Aye, perhaps it is the key to our salvation.|W1.L1.Mayor.HeardYouFoundMultiversePortal.WhatMightComeForUs
+	|Prompt
+
+		W1.L1.Mayor.HeardYouFoundMultiversePortal.JustMyLuck
+		|Display|0e8c.54: 'Tis always the way with me! We've a saying in the town of Britain, when, for instance, you buy an ox and it falls dead the next day: "'Tis Patterson's luck has found ye!"
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+		W1.L1.Mayor.HeardYouFoundMultiversePortal.WhatMightComeForUs
+		|Display|0e8c.55: I would not count on it, Avatar -- I am more concerned about what will come through the gate to find us!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.HeardYouFoundMirrorUniverse
+	|Display|0e8c.86: I have heard of thy discovery of a peaceful world, ruled by a regent of the Guardian! Is it possible... dost thou think we, too... oh, never mind, I shouldn't say it!
+	|Option|0e8c.87: Nay, what hast thou to propose?|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay
+	|Option|0e8c.88: As you wish, 'tis forgotten.|W1.L1.Mayor.WillThatBeAll
+	|Prompt
+
+		W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay
+		|Display|0e8c.89: What I mean to say... perhaps to live under the Guardian would not... be that bad?
+		|Option|0e8c.90: Thou hast only to look at what he did to Britannia, to know what it would be like under his rule.|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+		|Option|0e8c.91: The inhabitants did seem at peace, in a sense, but certainly discontented.|W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+		|Prompt
+
+			W1.L1.Mayor.HeardYouFoundMirrorUniverse.MaybeVillainIsOkay.MaybeNot
+			|Display|0e8c.92: I see. Perhaps thou art right.
+			|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.MurderMystery
+	|Display|0e8c.93: What has happened, @GS8, I can't think about it... I just can't think about it!
+	|SpeakerSet|
+	|Display|0e8c.94: He hides his face.
+	|Goto||W1.L1.Mayor.Done
+
+	W1.L1.Mayor.HeardOfMineralCacheOnExoplanet
+	|Display|0e8c.82: Avatar! I have seen a most extraordinary thing! I was wandering through a basement storeroom, when I came upon an ancient scroll, which spoke of a secret cache of Filanium on Talorus, "near the lava pits!" Could this be of any help to thee?
+	|Option|0e8c.83: Aye, a great deal!|W1.L1.Mayor.HeardOfMineralCacheOnExoplanet.SoundsGood
+	|Option|0e8c.84: No, sorry.|W1.L1.Mayor.WillThatBeAll
+	|Prompt
+
+		W1.L1.Mayor.HeardOfMineralCacheOnExoplanet.SoundsGood
+		|Display|0e8c.85: At last I am of some use!
+		|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.WillWeEverEscape
+	|Display|0e8c.95: Avatar, dost thou think we will ever get out of here?
+	|Option|0e8c.96: Aye, do not worry thyself, Patterson!|	W1.L1.Mayor.WillWeEverEscape.IAmNotSoSure
+	|Prompt
+
+		W1.L1.Mayor.WillWeEverEscape.IAmNotSoSure
+		|Display|0e8c.97: I am not so sure! At night I have awful dreams . . . even if we do get out of here, what if his men have conquered Britannia?
+		|Option|0e8c.98: We have no proof that the Guardian's visions are real.|W1.L1.Mayor.WillWeEverEscape.NoProofVillainsVisionsAreReal
+		|Option|0e8c.99: I have seen them, too. We can only hope...|W1.L1.Mayor.WillWeEverEscape.WeCanOnlyHope
+		|Prompt
+
+			W1.L1.Mayor.WillWeEverEscape.NoProofVillainsVisionsAreReal
+			|Display|0e8c.100: You're right! I had not thought of that!
+			|Goto||W1.L1.Mayor.WillThatBeAll
+
+			W1.L1.Mayor.WillWeEverEscape.WeCanOnlyHope
+			|Display|0e8c.101: Yes... I suppose we can just hope.
+			|Goto||W1.L1.Mayor.WillThatBeAll
+
+	W1.L1.Mayor.Dying
+	|SpeakerSet|
+	|Display|0e8c.7: Driven to his knees, Patterson cries out.
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8c.8: Oh G... Guardian, save me, I served you... I did it all... why... do you not aid me now?
+	|SpeakerSet|
+	|Display|0e8c.9: Somehow, he manages to stand again.
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8c.10: Stop staring at me, you... you hated me in life, anyway, false friends, now you may hate me worse in death. If you ever get out of here... tell Judith I am sorry!
+	|Display|0e8c.11: I'm sorry, Avatar -- he's going to kill us all, and I can't... let myself go that way.
+	|Goto||W1.L1.Mayor.Done
+
+	W1.L1.Mayor.WillThatBeAll
+	|Display|0e8c.20: Will that be all, @GS8?
+	|OptionsClear
+	|Option|0e8c.21: Yes. I shall speak with thee again, later.|W1.L1.Mayor.Farewell
+	|Option|0e8c.22: There is more I must discuss with thee.|W1.L1.Mayor.WillThatBeAll.No
+	|Option|0e8c.25: That is all for the moment. I shall have more to say later.|W1.L1.Mayor.Farewell
+	|Prompt
+
+		W1.L1.Mayor.WillThatBeAll.No
+		|Display|0e8c.23: Of course. What hast thou in mind?
+		|Goto||W1.L1.Mayor.GeneralQuestions
+
+	W1.L1.Mayor.Farewell
+	|Display|0e8c.24: Always a pleasure, @GS8.
+	|Goto||W1.L1.Mayor.Done
+
+	W1.L1.Mayor.Done
+	|Pop
+	|Prompt
+
+
+	//0e8c.56: man
+	//0e8c.57: woman

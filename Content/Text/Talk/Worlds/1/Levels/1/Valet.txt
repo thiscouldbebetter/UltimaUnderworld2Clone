@@ -1,0 +1,315 @@
+
+W1.L1.Valet
+|Push
+|SpeakerSet|Portraits_Valet
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Valet.KingAboutToSpeak
+|Goto||W1.L1.Valet.Greet
+
+//0e83.1: @GS102
+//0e83.2: Well...
+//0e83.3: @GS70SI1
+//0e83.4: I thank thee, @GS25, that is enough.
+//0e83.5: What else dost thou know?
+
+	W1.L1.Valet.KingAboutToSpeak
+	|Display|0e83.6: Excuse me, @GS8, I want to hear what Lord British has to say!
+	|Goto||W1.L1.Valet.Done
+
+	W1.L1.Valet.EndOfGame
+	|Display|0e83.7: What dost thou want of me, Avatar? Quick, start the ceremony, before we are overwhelmed!
+	|Goto||W1.L1.Valet.Done
+
+	W1.L1.Valet.StrikeResolved
+	|Display|0e83.8: Now that Lord British has agreed to act on our proposals, we have called off the strike.
+	|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.Greet
+	W1.L1.Valet.Greet.1|Display|0e83.9: What is it, Avatar?
+	W1.L1.Valet.Greet.2|Display|0e83.10: 'Tis good to see thee, Avatar.
+	W1.L1.Valet.Greet.3|Display|0e83.11: Yes? May I help thee?
+
+	W1.L1.Valet.WhatIsIt
+	|Option|0e83.12: What is it, Charles?|W1.L1.Valet.News
+	|Prompt
+
+	W1.L1.Valet.GeneralQuestions
+	|Option|0e83.13: What hast occupied thee of late, @GS25?|W1.L1.Valet.News
+	|Option|0e83.14: What hast thou been doing for the past year?|W1.L1.Valet.LastYear
+	|Option|0e83.15: I must leave thee now.|W1.L1.Valet.Done
+
+		W1.L1.Valet.LastYear
+		|Display|0e83.119: It hath been a quiet year here at the castle.  Bennie and Boots have retired from the staff, so more of the duties now fall to me. My sister Nell has married that... artist, Caroccio.  I'm not entirely sure I approve, but she is happy with him.
+		|Prompt
+
+		W1.L1.Valet.News
+		|Goto||W1.L1.Valet.MayorSucks
+		// todo
+
+	W1.L1.Valet.ServantsOnStrike
+	|Display|0e83.20: Whatever it is thou needest, Avatar, thou wilt have to go elsewhere for it.  We members of the 'Domestic Management' are on strike.
+	|Option|0e83.21: 'Domestic Management?'|W1.L1.Valet.ServantsOnStrike.WhatsDomesticManagement
+	|Option|0e83.22: On strike? 'Tis outrageous!|W1.L1.Valet.ServantsOnStrike.ThatsOutrageous
+	|Option|0e83.23: Aren't you taking this a bit far?|W1.L1.Valet.ServantsOnStrike.WeAreNotOverreacting
+	|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.WhatsDomesticManagement
+		|Display|0e83.24: That is our new title. Nanna thought of it, and 'tis certainly an improvement over 'servants.' 'Servants' are only a step away from 'slaves,' after all.
+		|OptionsClear
+		|Option|0e83.25: But that is what thou art! A servant!|W1.L1.Valet.ServantsOnStrike.YourAttitudeIsInsulting
+		|Option|0e83.26: Methinks that thou art overreacting.|W1.L1.Valet.ServantsOnStrike.WeAreNotOverreacting
+		|Option|0e83.27: I see thy point.|W1.L1.Valet.ServantsOnStrike.ThatSeemsFair
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.ThatsOutrageous
+		|Display|0e83.28: The outrage is the way we have always allowed ourselves to be treated. We only ask for respect and equality.
+		|Option|0e83.29: The servants have always been respected!|W1.L1.Valet.ServantsOnStrike.WeAreNotOverreacting
+		|Option|0e83.30: That seems only fair.|W1.L1.Valet.ServantsOnStrike.ThatSeemsFair
+		|Option|0e83.31: This hardly seems like the best time for such measures!|W1.L1.Valet.ServantsOnStrike.NotTheBestTime
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.WeAreNotOverreacting
+		|Display|0e83.32: If thou were treated as a second-class citizen, thou might not think so.
+		|OptionsClear
+		|Option|0e83.33: But why strike now, when cooperation is essential for survival?|W1.L1.Valet.ServantsOnStrike.NotTheBestTime
+		|Option|0e83.34: What is that you want, exactly?|W1.L1.Valet.ServantsOnStrike.OurDemandsAre
+		|Option|0e83.35: This uprising cannot be tolerated!|W1.L1.Valet.ServantsOnStrike.YourAttitudeIsInsulting
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.ThatSeemsFair
+		|Display|0e83.36: We are not trying to hinder anyone by going on strike, Avatar. We are trying to make a statement. Lord British will soon realize how much he relies on us, and how much he takes us for granted. Surely he will accede to our modest demands.
+		|OptionsClear
+		|Option|0se83.37: What are thy demands?|W1.L1.Valet.ServantsOnStrike.OurDemandsAre
+		|Option|0e83.38: Lord British will never be blackmailed!|W1.L1.Valet.ServantsOnStrike.ItsNotBlackmailItsJustice
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.OurDemandsAre
+		|Display|0e83.42: We would like to be called 'Domestic Management,' rather than 'servants,' for one thing. We would like more say in how the affairs of this castle are run -- especially considering that we do so much of the work! In general, we wish to be afforded the status that we deserve.
+		|OptionsClear
+		|Option|0e83.43: That is ridiculous!|W1.L1.Valet.ServantsOnStrike.YourAttitudeIsInsulting
+		|Option|0e83.44: That sounds reasonable. I hope that thou doth resolve this soon with Lord British.|W1.L1.Valet.ServantsOnStrike.Done
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.ItsNotBlackmailItsJustice
+		|Display|0e83.48: 'Tis not blackmail, Avatar. 'Tis justice.
+		|Goto||W1.L1.Valet.ServantsOnStrike.Done
+
+		W1.L1.Valet.ServantsOnStrike.NotTheBestTime
+		|Display|0e83.39: This is a perfect time to demonstrate how vital we to are the function of the castle. I am sure that Lord British will not hesitate to grant us the status we deserve.
+		|OptionsClear
+		|Option|0e83.40: I cannot agree. We must all work together in this crisis.|W1.L1.Valet.ServantsOnStrike.EntitledToYourOpinions
+		|Option|0e83.41: I hope he doth see matters that way.|W1.L1.Valet.ServantsOnStrike.Done
+		|Prompt
+
+		W1.L1.Valet.ServantsOnStrike.NothingToDiscuss
+		|Display|0e83.47: It seems we have little left to discuss.
+		|Goto||W1.L1.Valet.Done
+
+		W1.L1.Valet.ServantsOnStrike.EntitledToYourOpinions
+		|Display|0e83.49: Thou art of course entitled to thine opinions, @GS8.
+		|Goto||W1.L1.Valet.ServantsOnStrike.Done
+
+		W1.L1.Valet.ServantsOnStrike.YourAttitudeIsInsulting
+		|Display|0e83.45: I find thy attitude insulting.
+		|Display|0e83.46: Unless thou wilt address me as 'Domestic Management,' I shall not speak with thee.
+		|Goto||W1.L1.Valet.Done
+
+		W1.L1.Valet.ServantsOnStrike.Done
+		|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.MayorSucks
+	|SpeakerSet|
+	|Display|0e83.50: Charles splutters for a moment, obviously upset.
+	|SpeakerSet|Portraits_Valet
+	|Display|0e83.51: Avatar, given our situation, 'tis, 'tis hard enough already to keep the kitchen running smoothly!
+	|Option|0e83.52: What is the matter?|W1.L1.Valet.MayorSucks.1
+	|Option|0e83.53: Charles, calm thyself and speak slowly!|W1.L1.Valet.MayorSucks.1
+	|Option|0e83.54: Has something happened in the kitchen?|W1.L1.Valet.MayorSucks.1
+	|Prompt
+
+		W1.L1.Valet.MayorSucks.1
+		|SpeakerSet|
+		|Display|0e83.55: Charles closes his eyes, and appears to relax a bit.
+		|SpeakerSet|Portraits_Valet
+		|Display|0e83.56: It's that buffoon, Patterson!  Just now he upset an entire barrel of flour. The kitchen looks like a snowstorm! Can't we just keep the man out of the place?
+		|OptionsClear
+		|Option|0e83.57: Patterson is only trying to be helpful.|W1.L1.Valet.MayorSucks.1.JustTryingToHelp
+		|Option|0e83.58: I'm sure that if thou asked nicely, he would stay out from underfoot.|W1.L1.Valet.MayorSucks.1.AskHimNicelyToLeave
+		|Option|0e83.59: We must all try to keep our tempers in this crisis.|W1.L1.Valet.MayorSucks.1.KeepYourTemper
+		|Prompt
+
+			W1.L1.Valet.MayorSucks.1.JustTryingToHelp
+			|SpeakerSet|
+			|Display|0e83.60: Charles frowns.
+			|SpeakerSet|Portraits_Valet
+			|Display|0e83.61: The man would be more helpful were he locked in a broom closet!
+			|Goto||W1.L1.Valet.Done
+
+			W1.L1.Valet.MayorSucks.1.AskHimNicelyToLeave
+			|Display|0e83.62: Thou art no doubt correct, Avatar. If I see him in the kitchen again, I shall ask him.
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.MayorSucks.1.KeepYourTemper
+			|SpeakerSet|
+			|Display|0e83.63: Charles sighs.
+			|SpeakerSet|Portraits_Valet
+			|Display|0e83.64: I apologize for mine outburst, @GS8. But 'tis difficult to remain calm with that bumbler making a mess of things. I'm afraid I scolded him for the flour, but perhaps he has learned a lesson.
+			|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.WeWillDieOfThirst
+	|Display|0e83.65: Avatar, we would have a chance of surviving this imprisonment, except for one thing.
+	|Option|0e83.66: What is that?|W1.L1.Valet.WeWillDieOfThirst.1
+	|Prompt
+
+		W1.L1.Valet.WeWillDieOfThirst.1
+		|Display|0e83.67: Water! There is food here to last for months, but unless we think of something soon, we shall all die of thirst within the week.
+		|Option|0e83.68: I hadn't thought of that.|W1.L1.Valet.WeWillDieOfThirst.HighestPriority
+		|Option|0e83.69: Dost not the castle have a well?|W1.L1.Valet.WeWillDieOfThirst.WellIsCutOff
+		|Option|0e83.70: Hast thou any ideas?|W1.L1.Valet.WeWillDieOfThirst.AnyIdeas
+		|Prompt
+
+			W1.L1.Valet.WeWillDieOfThirst.HighestPriority
+			|Display|0e83.71: Soon it shall be a problem on all of our minds. We should make finding a source of water our highest priority!
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.WeWillDieOfThirst.WellIsCutOff
+			|Display|0e83.72: Aye, it does, but this accursed gem that traps us has also cut off the well! There is no other source of water here that I can think of.
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.WeWillDieOfThirst.AnyIdeas
+			|Display|0e83.73: Nay, I have not been able to think of anything. If only magic would function properly here, Lord British could create all the water we need! But I understand that is impossible.
+			|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.HeardYouFoundWater
+	|Display|0e83.74: I have heard that thou hast found a river in another dimension. Avatar, thou hast done it! Thou hast found us a source of water!  Now we shall need someone to carry it to the castle. Hast thou talked with Dupre?
+	|Option|0e83.75: Yes.|W1.L1.Valet.HeardYouFoundWater.DidYouTalkToPaladin.Yes
+	|Option|0e83.76: No.|W1.L1.Valet.HeardYouFoundWater.DidYouTalkToPaladin.No
+	|Prompt
+
+		W1.L1.Valet.HeardYouFoundWater.DidYouTalkToPaladin.Yes
+		|Display|0e83.77: Good! Now thou canst turn thy attentions to getting us out of this black prison.
+		|Goto||W1.L1.Valet.AnythingElse
+
+		W1.L1.Valet.HeardYouFoundWater.DidYouTalkToPaladin.No
+		|Display|0e83.78: He hath been itching for something to do ever since the gem appeared. Methinks he is ideally suited for the job. Thou shouldst ask him if he wishes to accept the responsibility.
+		|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.FoodPoisoning
+	|Display|0e83.79: There have been three cases of food poisoning reported to me this morning! 'Tis most strange, since I fetched the food from the store-room myself. I know it was fresh.
+	|Option|0e83.80: Dost thou know the cause?|W1.L1.Valet.FoodPoisoning.WhatCausedIt
+	|Option|0e83.81: Perhaps thou shouldst check the food more carefully.|W1.L1.Valet.FoodPoisoning.BeMoreCareful
+	|Option|0e83.82: Dost thou think these cases suspicious?|W1.L1.Valet.FoodPoisoning.CanYouKeepASecret
+	|Prompt
+
+		W1.L1.Valet.FoodPoisoning.WhatCausedIt
+		|Display|0e83.83: Nay, these poisonings make no sense. Not knowing how long we may be trapped here, I have been extremely careful about preserving our food supply.
+		|Goto||W1.L1.Valet.FoodPoisoning.CanYouKeepASecret
+
+		W1.L1.Valet.FoodPoisoning.BeMoreCareful
+		0e83.84: Do not tell me how to do my job, @GS8! I have taken the utmost care in maintaining our stock of food. I tell thee, the food was fresh when I brought it from the store-room.
+		|Goto||W1.L1.Valet.FoodPoisoning.CanYouKeepASecret
+
+		W1.L1.Valet.FoodPoisoning.CanYouKeepASecret
+		|Display|0e83.85: Canst thou keep a secret, Avatar?
+		|OptionsClear
+		|Option|0e83.86: Yes.|W1.L1.Valet.FoodPoisoning.CanYouKeepASecret.Yes
+		|Option|0e83.87: No.|W1.L1.Valet.FoodPoisoning.CanYouKeepASecret.No
+		|Prompt
+
+			W1.L1.Valet.FoodPoisoning.CanYouKeepASecret.Yes
+			|Display|0e83.88: Well, @GS8, I think that Feridwyn may be the man behind the food poisonings, and perhaps more. I have no solid evidence... yet... but he makes me very nervous! Keep thine eyes on him.
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.FoodPoisoning.CanYouKeepASecret.No
+			|Display|0e83.89: Never mind, then.
+			|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.MurderMystery
+	|Display|0e83.90: We shall all mourn the loss of Lady Tory. She was a kindly woman, who often took time to talk with the servants.
+	|Option|0e83.91: 'Twas that unusual?|W1.L1.Valet.MurderMystery.NoblesDontTalkToServants
+	|Option|0e83.92: Didst thou hear how she died?|W1.L1.Valet.MurderMystery.SheWasStabbed
+	|Option|0e83.93: Hast thou any suspicions?|W1.L1.Valet.MurderMystery.AnySuspects
+	|Prompt
+
+		W1.L1.Valet.MurderMystery.NoblesDontTalkToServants
+		|Display|0e83.94: Most of the nobles here do not generally converse with the castle staff. 'Tis not out of malice, methinks, but simply because it doth not occur to them that we are capable of intelligent conversation! Lady Tory treated us the same as she did the Lords and Ladies, even Lord British.
+		|OptionsClear
+		|Option|0e83.95: Perhaps others have learned from her example.|W1.L1.Valet.MurderMystery.NotThatIveNoticed
+		|Option|0e83.96: Who would have killed her, do you think?|W1.L1.Valet.MurderMystery.AnySuspects
+		|Prompt
+
+			W1.L1.Valet.MurderMystery.NotThatIveNoticed
+			|Display|0e83.99: Not that I have noticed, I'm afraid. But we continue to look forward to the day when we are treated as equals in the castle.
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.MurderMystery.AnySuspects
+			|Display|0e83.98: Feridwyn is at the top of my list of suspects, Avatar. He is distant and arrogant, and often rude to me. I'd not have guessed he was the murdering type, but 'twould not surprise me greatly. I am not so certain that he has abandoned all ties with the treacherous Fellowship.
+			|Goto||W1.L1.Valet.AnythingElse
+
+		W1.L1.Valet.MurderMystery.SheWasStabbed
+		0e83.97: Aye, and from what I hear, 'twas a gruesome stabbing! Apparently the killer was an incompetent, and had to stab her many times before she died. It chills my blood to think upon the deed. Be careful, Avatar. The murderer is still at large.
+		|Goto||W1.L1.Valet.AnythingElse
+
+
+	W1.L1.Valet.MurderSolved
+	|Display|0e83.100: To think, 'twas Patterson all along. I should have known he was the traitor.
+	|Option|0e83.101: He was driven to madness by the Guardian, the poor man.|W1.L1.Valet.MurderSolved.MadnessIsNoExcuse
+	|Option|0e83.102: Many of us now owe Feridwyn an apology.|W1.L1.Valet.MurderSolved.DontRubItIn
+	|Prompt
+
+		W1.L1.Valet.MurderSolved.DidYouKnowScholarWell
+		|Display|0e83.103: Didst thou know Nelson well?
+
+			W1.L1.Valet.MurderSolved.DidYouKnowScholarWell.No
+			0e83.106: No, I did not  Nelson always seemed to me an unfriendly man, who had time only for his studies. He never paid much attention to the servants. Don't misunderstand me -- I am shocked and dismayed by his death -- but we were not friends.
+
+		W1.L1.Valet.MurderSolved.MadnessIsNoExcuse
+		0e83.104: 'Tis no excuse, if thou doth ask me! The Guardian has been harassing all of us, but only Patterson succumbed.  He was a cowardly dolt, and much evil has come from his cowardice.
+
+		W1.L1.Valet.MurderSolved.DontRubItIn
+		0e83.105: Thou dost not need to rub it in, Avatar. I made an error in judgement, I confess.  But I still do not trust Feridwyn! We have no assurances that he was not also involved.
+
+	W1.L1.Valet.FoundSomething
+	|Display|0e83.107: Look, Avatar, this may be important.
+	|Display|0e83.108: Avatar, look what I have found!
+	|Option|0e83.109: What is it, Charles?|W1.L1.Valet.FoundSomething.ItsAKey
+	|Option|0e83.110: I have no time for thee right now.|W1.L1.Valet.FoundSomething.NoTimeForThis
+	|Prompt
+
+		W1.L1.Valet.FoundSomething.NoTimeForThis
+		|Display|0e83.111: Have it thine own way, Avatar!
+		|Goto||W1.L1.Valet.Done
+
+		W1.L1.Valet.FoundSomething.ItsAKey
+		|Display|0e83.112: 'Tis a key! 'Twas in a locked chest in an old storeroom. It looks very old, perhaps from the days of Minax!
+		|Option|0e83.113: Thank thee, Charles, this a great discovery!|W1.L1.Valet.FoundSomething.ItsAKey.Thanks
+		|Option|0e83.114: Whatever it opened is probably just junk now.|W1.L1.Valet.FoundSomething.ItsAKey.ProbablyJustJunk
+
+			W1.L1.Valet.FoundSomething.ItsAKey.Thanks
+			0e83.115: I hope it helps thee!
+			|Goto||W1.L1.Valet.AnythingElse
+
+			W1.L1.Valet.FoundSomething.ItsAKey.ProbablyJustJunk
+			|SpeakerSet|
+			|Display|0e83.116: He looks disappointed.
+			|SpeakerSet|Portraits_Valet
+			|Display|0e83.117: Well, you might as well take it anyway.
+			|Goto||W1.L1.Valet.Done
+
+	W1.L1.Valet.FoundADocumentWithTheKey
+	|Display|0e83.118: 'Tis not so important, but did I mention what I found with the key? Some old document about a battle with a sorcerer, whose body was never found. It all crumbled when I tried to pick it up!
+	|Goto||W1.L1.Valet.AnythingElse
+
+	W1.L1.Valet.AnythingElse
+	|Display|0e83.16: Will there be anything else?
+	|Option|0e83.17: No thank thee, Charles.|W1.L1.Valet.Done
+	|Option|0e83.18: Yes, there is more I must ask of thee.|W1.L1.Valet.AnythingElse.Yes
+	|Prompt
+
+	W1.L1.Valet.AnythingElse.Yes
+	|Display|0e83.19: Of course. What hast thou in mind?
+	|Goto||W1.L1.Valet.GeneralQuestions
+
+	W1.L1.Valet.Done
+	|Pop
+	|Prompt

@@ -1,0 +1,261 @@
+
+W1.L1.Knight
+|Push
+|SpeakerSet|Portraits_Knight
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Knight.KingAboutToSpeak
+|Goto||W1.L1.Knight.Greet
+
+	W1.L1.Knight.KingAboutToSpeak
+	|Display|0e85.6: Abide a moment, Avatar. Let us both first hear the words of a wiser man than we.
+	|Goto||W1.L1.Knight.Done
+
+//0e85.1: @GS102
+//0e85.2: Well...
+//0e85.3: @GS70SI1
+//0e85.4: I thank thee, @GS25, that is enough.
+//0e85.5: What else dost thou know?
+
+	W1.L1.Knight.Greet.FirstTime
+	|Display|0e85.8: Ah, @GS8, 'tis good thou art here -- perhaps we shall fight back to back again, as in the time when thou sought to become the Avatar.
+
+	W1.L1.Knight.Greet
+	|Display|0e85.9: Avatar! I was just thinking of thee.
+	|Display|0e85.10: Ah, @GS8, kind of thee to drop in on me.
+	|Display|0e85.11: What is it, @GS25?
+
+	W1.L1.Knight.GeneralQuestions
+	|Option|0e85.12: How hast thou been, @GS25?|W1.L1.Knight.News
+	|Option|0e85.13: How hast thou fared this past year?|W1.L1.Knight.LastYear
+	|Option|0e85.14: I would fain spar with thee.|W1.L1.Knight.Train
+	|Option|0e85.15: Pardon me, @GS25, I must be going.|W1.L1.Knight.Done
+	|Prompt
+
+
+		W1.L1.Knight.LastYear
+		|Display|0e85.21: I have lived here at the castle, serving Lord British as Captain of the Guard.  This past year has been a quiet one, so I have had very few vital tasks to perform. I confess that, in my spare time, I have become something of a philosopher. Exercising the mind, I have found, is every bit as tiring as exercising the body!
+
+	W1.L1.Knight.News
+	|Goto||W1.L1.Knight.HowAreYou
+	|Goto||W1.L1.Knight.GuardswomanIsExtraordinary
+	|Goto||W1.L1.Knight.YouFindingMultiversePortalIsGood
+	|Goto||W1.L1.Knight.HeardYouFoundWater
+	|Goto||W1.L1.Knight.YourAdventuresAreHavingAnEffect
+
+
+	W1.L1.Knight.HowAreYou
+	|Display|0e85.22: In a way, 'tis a relief to be in action again. To confront danger in the realm's defense, 'tis a strange sort of exhilaration, and I have not felt it for a long time.
+
+	W1.L1.Knight.GuardswomanIsExtraordinary
+	|Display|0e85.41: That Syria is certainly, well . . . she is a most extraordinary woman.
+	|Option|0e85.42: Has she been to see thee?|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Option|0e85.43: Why dost thou think so?|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Option|0e85.44: I cannot but agree.|W1.L1.Knight.GuardswomanIsExtraordinary.2
+	|Prompt
+
+		W1.L1.Knight.GuardswomanIsExtraordinary.2
+		|Display|0e85.45: She came to me seeking a training partner, but I am afraid I could be of little use to her.
+		|Option|0e85.46: Why not?|W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+		|Option|0e85.47: Indeed, she is an arrogant one.|W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
+		|Prompt
+
+			W1.L1.Knight.GuardswomanIsExtraordinary.ThatsNotWhy
+			|Display|0e85.48: Nay, thou'rt right, but 'twas not the reason!
+			|Goto||W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+
+			W1.L1.Knight.GuardswomanIsExtraordinary.WhyWereYouNoUse
+			|Display|0e85.49: There was simply nothing I could teach her! My fighting methods are fine for beating down a goblin's club, or hewing through some brigand's ring mail, but they cannot compare with her! In seconds, she had taken the blade from my hand, and dropped me flat on my back!
+			|Display|0e85.50: Next to her, I looked to be a rank beginner! I am handy with a sword, compared to any goblin or brigand in the land, but Syria . . . she is a master of the blade.
+			|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.ADaggerIsMissing
+	|Display|0e85.29: A dagger is missing from the armoury, @GS8. Didst thou borrow it?
+	|Option|0e85.30: Nay, I did not.|W1.L1.Knight.ADaggerIsMissing.IDidntTakeIt
+	|Option|0e85.31: Has someone stolen a dagger?|W1.L1.Knight.ADaggerIsMissing.DidSomeoneStealIt
+	|Option|0e85.32: No. I wouldst have asked thee first, of course!|W1.L1.Knight.ADaggerIsMissing.IWouldHaveAsked
+	|Prompt
+
+		W1.L1.Knight.ADaggerIsMissing.IDidntTakeIt
+		|Display|0e85.33: Well, someone has taken it. I have asked nearly everyone, and no one knows anything about it. 'Tis most strange.
+
+		W1.L1.Knight.ADaggerIsMissing.DidSomeoneStealIt
+		|Display|0e85.34: 'Twould appear so. I had left it out on a bench to be sharpened -- 'twas a dull blade -- and returned with a whetstone to find it missing. I find the thought of a thief running about the castle to be most disturbing.
+
+		W1.L1.Knight.ADaggerIsMissing.IWouldHaveAsked
+		|Display|0e85.35: I know, Avatar. But I have asked everyone in the castle, and none can account for it.
+
+		W1.L1.Knight.ADaggerIsMissing.Suggestions
+		|OptionsClear
+		|Option|0e85.36: Keep thine eyes open, Geoffrey.|W1.L1.Knight.ADaggerIsMissing.Suggestions.IWill
+		|Option|0e85.37: Perhaps thou shouldst make an inventory of castle arms.|W1.L1.Knight.ADaggerIsMissing.Suggestions.IWill
+		|Option|0e85.38: If I find out anything, I shall let thee know.|W1.L1.Knight.ADaggerIsMissing.Suggestions.Thanks
+		|Prompt
+
+			W1.L1.Knight.ADaggerIsMissing.Suggestions.IWill
+			|Display|0e85.39: I shall do so, @GS8.
+			|Goto||W1.L1.Knight.AnythingElse
+
+			W1.L1.Knight.ADaggerIsMissing.Suggestions.Thanks
+			|Display|0e85.40: I appreciate thine aid, @GS8.
+			|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.YouFindingMultiversePortalIsGood
+	|Display|0e85.23: I have heard that thou hast ventured into another world! Your discovery makes this blackrock prison seems less menacing.
+	|Option|0e85.24: Why is that?|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+	|Option|0e85.25: I think so also.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+	|Option|0e85.26: I find it makes our situation darker.|W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
+	|Prompt
+
+		W1.L1.Knight.YouFindingMultiversePortalIsGood.Agree
+		0e85.27: Few things have a more profoundly negative effect on the spirit than hopeless confinement. Your discovery of this gem makes our plight seem not so hopeless.
+
+		W1.L1.Knight.YouFindingMultiversePortalIsGood.Disagree
+		0e85.28: Ah, but now we know our imprisonment is not complete.
+
+	W1.L1.Knight.HeardYouFoundWater
+	|Display|0e85.51: With the water thou hast found, we could withstand a siege for quite some time.
+	|Option|0e85.52: Dost thou think that is likely?|W1.L1.Knight.HeardYouFoundWater.2
+	|Option|0e85.53: I hope it does not come to that!|W1.L1.Knight.HeardYouFoundWater.2
+	|Prompt
+
+		W1.L1.Knight.HeardYouFoundWater.2
+		0e85.54: Clearly the Guardian has trapped us here to keep our leadership from the rest of Britannia. If the war outside goes badly, we should expect the Guardian's armies to lay siege to this castle. The few of us here would not survive. We must find a way out of here before then!
+		|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.MurderMystery
+	|Display|0e85.55: I have heard the news about Lady Tory. We must all be doubly wary, Avatar, now that we know there is an enemy among us.
+	|Option|0e85.56: Aye, we should trust no one!|W1.L1.Knight.MurderMystery.TrustNoOne
+	|Option|0e85.57: Dost thou suspect anyone, Geoffrey?|W1.L1.Knight.MurderMystery.WhomDoYouSuspect
+	|Option|0e85.58: Thou shouldst keep a close watch on the armoury.|W1.L1.Knight.MurderMystery.WatchTheArmory
+	|Prompt
+
+		W1.L1.Knight.MurderMystery.TrustNoOne
+		|Display|0e85.59: I didst not say that, @GS8.  We must exercise caution, but avoid falling prey to paranoia. 'Tis my philosophy that if we lose our heads, the rest of us will surely follow.
+		|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.MurderMystery.WhomDoYouSuspect
+		|Display|0e85.60: Nay, I do not. With no evidence, 'twould be dangerous and foolhardy to make accusations.
+		0e85.61: I think that the murder was done by whoever stole the blunted dagger from the armoury earlier. I have heard that the wounds on Lady Tory were inflicted with a dull-edged blade.
+		|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.MurderMystery.WatchTheArmory
+		0e85.62: The murder was committed with a dagger stolen fron the armoury. Thou wouldst be wise to guard thine own possessions!
+		|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.YourAdventuresAreHavingAnEffect
+	|Display|0e85.63: Thine efforts in collecting these gems are having a definite effect, @GS8.
+	|Option|0e85.64: Soon we shall be free of this accursed blackrock!|W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
+	|Option|0e85.65: How canst thou tell?|W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
+	|Option|0e85.66: I hope my progress is lifting morale here in the castle.|W1.L1.Knight.YourAdventuresAreHavingAnEffect.ItIsLiftingMorale
+	|Prompt
+
+		W1.L1.Knight.YourAdventuresAreHavingAnEffect.ItIsLiftingMorale
+		|Display|0e85.67: Surely it is!
+		|Goto||W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
+
+		W1.L1.Knight.YourAdventuresAreHavingAnEffect.WeHearTheGemCreaking
+		|Display|0e85.68: We can hear the great gem weaken, creaking like the timbers of a ship in a storm.
+		|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.HeardYouPassedATest
+	|Display|0e85.69: I have heard that thou hast passed an examination on an alien world. Is this true?
+	|Option|0e85.70: Yes, 'tis so.|W1.L1.Knight.HeardYouPassedATest.Yes
+	|Option|0e85.71: Aye, and 'twas a difficult test!|W1.L1.Knight.HeardYouPassedATest.Yes
+	|Option|0e85.72: No, I have not.|W1.L1.Knight.HeardYouPassedATest.No
+	|Prompt
+
+		W1.L1.Knight.HeardYouPassedATest.Yes
+		|Display|0e85.73: Methinks that there is a parallel here... in my philosophy, smaller events are often symbols of larger ones. Perhaps, as thou hast passed this test, so thou art passing a greater test of courage whereby thou wilt defeat the Guardian!
+		|Option|0e85.74: Thy insight is most appreciated.|W1.L1.Knight.HeardYouPassedATest.MyThoughtsAreAtYourDisposal
+		|Option|0e85.75: That is a stretch, my friend.|W1.L1.Knight.HeardYouPassedATest.ThatsAStretch
+
+			W1.L1.Knight.HeardYouPassedATest.MyThoughtsAreAtYourDisposal
+			|Display|0e85.76: I thank thee, Avatar. My thoughts are always at thy disposal.
+			|Goto||W1.L1.Knight.AnythingElse
+
+			W1.L1.Knight.HeardYouPassedATest.ThatsAStretch
+			|Display|0e85.77: Perhaps 'tis true. I do have a tendency to apply my philosophies to everything.
+			|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.HeardYouPassedATest.No
+		|Display|0e85.78: Oh. I guess the rumor was false.
+		|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.Train
+	|Display|0e85.79: 'Tis always an honor to train the Avatar, @GS8. What wouldst thou care to learn?
+	//0e85.80: Excellent! What shall we work on now?
+	|Option|0e85.81: Will thou teach me to fight more agressively?|W1.L1.Knight.Train.Attack
+	|Option|0e85.82: Couldst thou teach me to better protect myself from foes?|W1.L1.Knight.Train.Defend
+	|Option|0e85.83: Nothing today, thank thee.|W1.L1.Knight.Train.Done
+	|Prompt
+
+		W1.L1.Knight.Train.Attack
+		|Display|0e85.84: Pay close attention, Avatar.
+		|Goto||W1.L1.Knight.Train.Attack.Succeed
+		|Goto||W1.L1.Knight.Train.Attack.Fail
+
+			W1.L1.Knight.Train.Attack.Succeed
+			|SpeakerSet|
+			|Display|0e85.85: Geoffrey is an excellent teacher, reacquainting you with old techniques and helping you develop new ones as well.
+			|SpeakerSet|Portraits_Knight
+			|Goto||W1.L1.Knight.Train.Attack.AnyMore
+
+				W1.L1.Knight.Train.Attack.AnyMore
+				|Display|0e85.92: Shall we go another round?
+				|OptionsClear
+				|Option|0e85.93: Yes, let us continue.|W1.L1.Knight.Train.Attack
+				|Option|0e85.94: No, thank thee.|W1.L1.Knight.AnythingElse
+				|Prompt
+
+			W1.L1.Knight.Train.Attack.Fail
+			|SpeakerSet|
+			|Display|0e85.86: Geoffrey's advanced lessons do not seem to be helping you.
+			|SpeakerSet|Portraits_Knight
+			|Display|0e85.87: Thou dost need to practice what thou hast already learned, Avatar.
+			|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.Train.Defend
+		|Display|0e85.88: Come, let us spar.
+		|Goto||W1.L1.Knight.Train.Defend.Succeed
+		|Goto||W1.L1.Knight.Train.Defend.Fail
+
+			W1.L1.Knight.Train.Defend.Succeed
+			|SpeakerSet|
+			|Display|0e85.89: Geoffrey teaches you how to better defend yourself against a variety of weapons.
+			|SpeakerSet|Portraits_Knight
+
+				W1.L1.Knight.Train.Attack.AnyMore
+				|Display|0e85.92: Shall we go another round?
+				|OptionsClear
+				|Option|0e85.93: Yes, let us continue.|W1.L1.Knight.Train.Defend
+				|Option|0e85.94: No, thank thee.|W1.L1.Knight.AnythingElse
+				|Prompt
+
+			W1.L1.Knight.Train.Defend.Fail
+			|SpeakerSet
+			|Display|0e85.90: Geoffrey's advanced lessons do not seem to be helping you.
+			|SpeakerSet|Portraits_Knight
+			|Display|0e85.91: Thou dost need to practice what thou hast already learned, Avatar.
+			|Goto||W1.L1.Knight.AnythingElse
+
+		W1.L1.Knight.Train.Done
+		|Goto||W1.L1.Knight.AnythingElse
+
+	W1.L1.Knight.WereBeingForcedBackToThroneRoom
+	0e85.7: Avatar, we are being forced back into the throne room! Please, if thou hast some magic to try, now is the time!
+
+	W1.L1.Knight.AnythingElse
+	|Display|0e85.16: May I help thee with anything else?
+	|OptionsClear
+	|Option|0e85.17: No, thank thee, Geoffrey.|W1.L1.Knight.Done
+	|Option|0e85.18: Yes, there is something.|W1.L1.Knight.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Knight.AnythingElse.Yes
+		|Display|0e85.19: What is it, then?
+		|OptionsClear
+		|Option|0e85.20: That is all for the moment. I shall have more to say later.|W1.L1.Knight.Done
+
+	W1.L1.Knight.Done
+	|Pop
+	|Prompt

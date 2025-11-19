@@ -1,0 +1,365 @@
+
+W1.L1.Housekeeper
+|Push
+|SpeakerSet|Portraits_Housekeeper
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Housekeeper.KingAboutToSpeak
+|Goto||W1.L1.Housekeeper.Greet
+
+	//1: @GS102
+	//2: Well...
+	//3: @GS70SI1
+	//4: I thank thee, @GS25, that is enough.
+	//5: What else dost thou know?
+
+	W1.L1.Housekeeper.KingAboutToSpeak
+	|Display|0e89.11: In a minute, in a minute! We must go hear what Lord British is saying!
+	|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.BeginTheCeremony
+	|Display|0e89.12: Please, @GS8, the soldiers are almost upon us. Begin the ceremony!
+	|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.StrikeResolved
+	|Display|0e89.13: @GS8, I have heard of Lord British's decision regarding the domestic management. Thou hast struck a mighty blow for the working people of Britannia!
+	|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.Greet
+	|Display|0e89.14: What is it, Avatar?
+	|Display|0e89.15: YES?
+	|Display|0e89.16: How may I help thee, Avatar?
+	|Display|0e89.17: What can I do for thee?
+	|Goto||W1.L1.Housekeeper.GeneralQuestions
+
+	W1.L1.Housekeeper.GeneralQuestions
+	|Option|0e89.18: What may I do for thee, Nanna?|W1.L1.Housekeeper.News
+	|Option|0e89.19: What hast occupied thee of late, @GS25?|W1.L1.Housekeeper.News
+	|Option|0e89.20: What hast thou been doing for the past year?|W1.L1.Housekeeper.LastYear
+	|Option|0e89.21: Excuse me, @GS25, I must return to my work.|W1.L1.Housekeeper.Done
+	|Prompt
+
+		W1.L1.Housekeeper.LastYear
+		|Display|0e89.134: Oh, not much. I have retained my position as head of the Royal Nursery, keeping watch over the little ones of the castle. Boots came back last week and took the children on a field trip to Paws -- I do hope they are all right!
+		|Prompt
+
+		W1.L1.Housekeeper.News
+		|Goto||W1.L1.Housekeeper.WhatDoYouDoAllDay
+		|Goto||W1.L1.Housekeeper.MayorSucks
+		|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe
+		|Goto||W1.L1.Housekeeper.KingIsCondescending
+		|Goto||W1.L1.Housekeeper.ServantTroubleBrewing
+		|Goto||W1.L1.Housekeeper.AboutToGoOnStrike
+		|Goto||W1.L1.Housekeeper.ServantsOnStrike
+		|Goto||W1.L1.Housekeeper.StrikeResolved
+		|Goto||W1.L1.Housekeeper.SpellIsWeakening
+
+	W1.L1.Housekeeper.WhatDoYouDoAllDay
+	|Display|0e89.32: Avatar, what do heroes such as thee DO all day?
+	|Option|0e89.33: Well, we slay monsters and solve puzzles.|W1.L1.Housekeeper.WhatDoYouDoAllDay.2
+	|Option|0e89.34: We explore unknown territory.|W1.L1.Housekeeper.WhatDoYouDoAllDay.2
+	|Option|0e89.35: We save the lives of people like thee.|W1.L1.Housekeeper.WhatDoYouDoAllDay.2
+	|Prompt
+
+		W1.L1.Housekeeper.WhatDoYouDoAllDay.2
+		|Display|0e89.36: Today I counted, inspected, and stored 73 separate items of food, chased 2 giant rats out of the cellars with just a broom, served two meals to the entire castle, and kept Patterson out of trouble the entire day, mostly. I suppose they'll never name an island after me, though.
+		|SpeakerSet|
+		|Display|0e89.37: She sighs.
+		|SpeakerSet|Portraits_Housekeeper
+		|Display|0e89.38: Oh. Well, I suppose thou'rt doing thy part, at any rate.
+		|SpeakerSet|
+		|Display|0e89.39: She turns and walks off, lost in thought.
+		|SpeakerSet|Portraits_Housekeeper
+		|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.MayorSucks
+	|Display|0e89.85: Patterson was fetching supplies for me, and spilled a whole bushel of apples down the stairs. Nearly half of them are badly bruised. What are we going to do with him?
+	|OptionsClear
+	|Option|0e89.86: Be patient with him, Nanna. He is only trying to help.|W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
+	|Option|0e89.87: Perhaps thou shouldst suggest that he provide help elsewhere.|W1.L1.Housekeeper.MayorSucks.UselessAtPracticalTasks
+	|Option|0e89.88: Patterson should be locked away!|W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
+	|Prompt
+
+		W1.L1.Housekeeper.MayorSucks.IGuessHeVolunteered
+		|Display|0e89.89: He did volunteer for the job, so perhaps I'd best not complain. But usually he tries too hard to be helpful, and makes a nuisance of himself instead.
+		|Display|0e89.90: I'm not sure I'd wish his 'help' on anyone else!
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.UselessAtPracticalTasks
+		|Display|0e89.91: For all his experience as mayor, he is quite useless for more practical tasks. A typical specimen of the ruling class!
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.ThatsTooExtreme
+		|Display|0e89.92: I'd not be so extreme as that, Avatar. But we would be better off if he'd simply stay out of the way.
+		|Goto||W1.L1.Housekeeper.MayorSucks.Done
+
+		W1.L1.Housekeeper.MayorSucks.Done
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.VillainTriedToBribeMe
+	|Display|0e89.94: The Guardian has been attempting to sway my loyalties away from thee and Lord British!
+	|OptionsClear
+	|Option|0e89.95: What hath been the nature of his persuasions?|W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+	|Option|0e89.96: Thou must fight against his influences!|W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
+	|Prompt
+
+		W1.L1.Housekeeper.VillainTriedToBribeMe.NoChance
+		|Display|0e89.97: Oh, do not worry. There is no danger of him convincing me.
+		|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+
+		W1.L1.Housekeeper.VillainTriedToBribeMe.WithEquality
+		|Display|0e89.98: He hath promised me a world where the workers have equal representation in all levels of government, if only I wouldst be loyal to him.
+		|OptionsClear
+		|Option|0e89.99: I wouldst think that thou might find that tempting.|W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+		|Option|0e89.100: 'Tis but a lie. The Guardian would surely make thee a slave.|W1.L1.Housekeeper.VillainTriedToBribeMe.ForgetThatScoundrel
+		|Option|0e89.101: The Guardian seeks to lure us each with our own desires.|W1.L1.Housekeeper.VillainTriedToBribeMe.MisjudgedWhatIWant
+		|Prompt
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.MisjudgedWhatIWant
+			|Display|0e89.102: He hath misjudged what I desire, then.
+			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.ForgetThatScoundrel
+			0e89.103: I have no intention of giving into that red scoundrel.
+			|Goto||W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+
+			W1.L1.Housekeeper.VillainTriedToBribeMe.IWantRealEquality
+			0e89.104: My true desire is to see Britannia's social order change, but from within, and willingly. I do not simply want equality and an end to class structure. I wish that all people, nobles and peasants alike, should first understand the need for that change, and then strive themselves to achieve it.
+			|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.KingIsCondescending
+	|Display|0e89.93: Grrrr . . . that Lord British! Could he be more condescending!?!
+	|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.ServantTroubleBrewing
+	|Display|0e89.26: Avatar, I must speak to thee at once!
+	|Display|0e89.27: Lord British's behavior is becoming more and more offensive! "Servants, take an inventory"! No "please," no "thank you," no mention of "far-famed organizational powers!" I wonder what he thinks he would do without us!
+	|Option|0e89.28: I am sure Lord British holds the servants in great esteem.|W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
+	|Option|0e89.29: Look, @GS25, in this time of crisis we must all pull together.|W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
+	|Prompt
+
+		W1.L1.Housekeeper.ServantTroubleBrewing.KingRespectsServants
+		|Display|0e89.30: Hmf!
+		|Goto||W1.L1.Housekeeper.Done
+
+		W1.L1.Housekeeper.ServantTroubleBrewing.WeMustPullTogether
+		|Display|0e89.31: Pull together? I spend all day searching the storerooms, shooing away rats, while he sits on his throne looking noble, staring into the middle distance! I suppose that's what you call pulling together!
+		|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.AboutToGoOnStrike
+	|Display|0e89.53: I find it insulting that we 'servants' are treated with so little respect. Lord British has become accustomed to ordering us about like animals!
+	|OptionsClear
+	|Option|0e89.54: I think that thou dost overstate the case.|W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
+	|Option|0e89.55: Oh, stop thy complaining.|W1.L1.Housekeeper.AboutToGoOnStrike.StopComplaining
+	|Option|0e89.56: What wouldst thou have Lord British do?|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+	|Prompt
+
+		W1.L1.Housekeeper.AboutToGoOnStrike.StopComplaining
+		|Display|0e89.57: Thou art just like the rest of the nobility! Thou hast no idea what 'tis like to be a member of the working classes. We enjoy none of the privileges and benefits afforded to those of noble rank. And in the past year, the situation has worsened, both in the castle and in Britannia at large.
+		|OptionsClear
+		|Option|0e89.58: What privileges dost thou desire?|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+		|Option|0e89.59: Thou shouldst spend less time worrying about such things.|W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
+		|Prompt
+
+			W1.L1.Housekeeper.AboutToGoOnStrike.YouOverstateTheCase
+			|Display|0e89.60: Thou might be surprised, Avatar, at how quickly things here would degenerate without the castle 'servants.' Given what we do, we deserve social equality!
+			|OptionsClear
+			|Option|0e89.61: How dost thou define 'equality?'|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+			|Option|0e89.62: What exactly dost thou want, then?|W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+			|Prompt
+
+			W1.L1.Housekeeper.AboutToGoOnStrike.WhatDoYouWantFromKing
+			|Display|0e89.63: First off, we should not be called 'servants.' 'Tis a demeaning term, and overused here in the castle.  We should be given the title of 'Domestic Management.'
+			|OptionsClear
+			|Option|0e89.64: Surely thou art kidding!|W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
+			|Option|0e89.65: That seems reasonable.|W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+			|Prompt
+
+				W1.L1.Housekeeper.AboutToGoOnStrike.YoureKidding
+				|Display|0e89.66: And why should I be kidding?
+				|Goto||W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+
+				W1.L1.Housekeeper.AboutToGoOnStrike.WeAreAllServants
+				|Display|0e89.67: Aren't we all 'servants,' in truth?  Lord British himself hath taken an oath to serve the people of Britannia -- should we not call him a 'servant,' then? The word implies that we are not entitled to basic human dignity! It should be discarded.
+				|OptionsClear
+				|Option|0e89.68: That is a fair argument.|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+				|Option|0e89.69: Is that all thou dost want?|W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+				|Option|0e89.70: That seemeth a bit silly, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
+				|Prompt
+
+					W1.L1.Housekeeper.AboutToGoOnStrike.ThatsSilly
+					|Display|0e89.71: 'Tis not silly, and 'tis not all.
+					|Goto||W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+
+					W1.L1.Housekeeper.AboutToGoOnStrike.WeWantASay
+					|Display|0e89.72: More importantly, we desire a voice in the decisions that affect life here in the castle. We toil here every day, working just as hard as the nobles, if not harder. And yet we are never consulted on issues of day-to-day management. 'Tis like we are but children here!
+					|Option|0e89.73: 'Tis not possible for everyone to have a say in everything.|W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
+					|Option|0e89.74: Your arguments are persuasive, Nanna.|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+					|Option|0e89.75: Is there something I can do to help thee?|W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+					|Prompt
+
+						W1.L1.Housekeeper.AboutToGoOnStrike.NotEveryoneGetsASay
+						|Display|0e89.76: Is it not? In an environment such as this, methinks it is not just possible, but a moral imperative!
+
+						W1.L1.Housekeeper.AboutToGoOnStrike.WillYouTalkToTheKing
+						|Display|0e89.77: Avatar, wouldst thou take our grievances to Lord British? Thou art one of his most trusted friends, and he wouldst take thee seriously.  We only ask for a leveling of the unfair class structure that is so exemplified by life in the castle. Wilt thou do it?
+						|Option|0e89.78: I am afraid I must refuse. Thou art asking too much.|W1.L1.Housekeeper.GoingOnStrike
+						|Option|0e89.79: I sympathize with thee, but I think thou hast chosen a bad time to approach Lord British.|W1.L1.Housekeeper.GoingOnStrike.2
+						|Option|0e89.80: I would be happy to talk with him on thy behalf.|W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
+						|Prompt
+
+						W1.L1.Housekeeper.GoingOnStrike
+						|SpeakerSet|
+						|Display|0e89.81: Nanna draws a deep breath.
+						|SpeakerSet|Portraits_Housekeeper
+						|Display|0e89.82: We shall soon see what is too much!  As of this moment, I declare the Domestic Management of Castle British to be on strike!
+						|Goto||W1.L1.Housekeeper.Done
+
+						W1.L1.Housekeeper.GoingOnStrike.2
+						|Display|0e89.83: I am sorry thou dost feel that way. Although I regret what we must do, I feel in my deepest heart that 'tis necessary. I hereby declare the Domestic Management of Castle British to be on strike!
+						|Goto||W1.L1.Housekeeper.Done
+
+						W1.L1.Housekeeper.YouAreAChampionOfTheWorkingClass
+						|Display|0e89.84: I knew that thou wouldst understand our situation, @GS8. Thou art truly a champion of the working class!
+						|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.ServantsOnStrike
+	|Display|0e89.40: We are on strike, Avatar. There is nothing I can do for thee.
+	|OptionsClear
+	|Option|0e89.41: Fine. Goodbye.|W1.L1.Housekeeper.Done
+	|Option|0e89.42: Thou art being ridiculous! Cease this foolishness at once!|W1.L1.Housekeeper.ServantsOnStrike.YoureBeingRidiculous
+	|Option|0e89.43: I have spoken to Lord British, but he is . . . thinking.|W1.L1.Housekeeper.ServantsOnStrike.KingIsThinking
+	|Option|0e89.44: Wait! I have reconsidered what thou hast said.|W1.L1.Housekeeper.ServantsOnStrike.IHaveReconsidered
+	|Prompt
+
+		W1.L1.Housekeeper.ServantsOnStrike.KingIsThinking
+		|Display|0e89.45: Then I suppose we lowly servants (and that includes thee, Avatar, in case thou wert not aware of it) must await his decision! Until then, the strike continues!
+		|Goto||W1.L1.Housekeeper.Done
+
+		W1.L1.Housekeeper.ServantsOnStrike.YoureBeingRidiculous
+		0e89.46: If thou hast nothing new to say, then neither have I.
+		|Goto||W1.L1.Housekeeper.Done
+
+		W1.L1.Housekeeper.ServantsOnStrike.IHaveReconsidered
+		0e89.47: Hast thou?  Wilt thou take our demands to Lord British?
+		|OptionsClear
+		|Option|0e89.48: Yes. The serv... the Domestic Management deserves to be heard.|W1.L1.Housekeeper.ServantsOnStrike.IfKingConcedesSoWillWe
+		|Option|0e89.49: Nay, I shall not.|W1.L1.Housekeeper.ServantsOnStrike.WeHaveNoMoreToDiscuss
+		|Prompt
+
+			W1.L1.Housekeeper.ServantsOnStrike.IfKingConcedesSoWillWe
+			0e89.50: Excellent! If Lord British will grant our requests, I shall call off the strike.
+			|Goto||W1.L1.Housekeeper.Done
+
+			W1.L1.Housekeeper.ServantsOnStrike.WeHaveNoMoreToDiscuss
+			0e89.51: Then we have little more to discuss.
+			|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.StrikeResolved
+	0e89.52: Thine efforts on our behalf have opened the door to real social change in Britannia!
+
+	W1.L1.Housekeeper.MurderMystery
+	|Display|0e89.105: Avatar, hast thou heard the horrible news? Lady Tory has been murdered!
+	|Option|0e89.106: Yes, I have heard.|W1.L1.Housekeeper.MurderMystery.2
+	|Option|0e89.107: Lady Tory murdered?  No, I didst not know!|W1.L1.Housekeeper.MurderMystery.2
+	|Prompt
+
+		W1.L1.Housekeeper.MurderMystery.2
+		|SpeakerSet|
+		|Display|0e89.108: Nanna's face is wet with tears.
+		|SpeakerSet|Portraits_Housekeeper
+		|Display|0e89.109: How could something like that happen here? And to Lady Tory, who was such a kindly woman. 'Tis not fair that such a thing should happen! Not fair!
+		|OptionsClear
+		|Option|0e89.110: Nanna, thou must calm thyself!|W1.L1.Housekeeper.MurderMystery.SheWasStabbed
+		|Option|0e89.111: 'Tis indeed a terrible loss.|W1.L1.Housekeeper.MurderMystery.ItsATerribleLoss
+		|Option|0e89.112: Hast thou heard who might have comitted the crime?|W1.L1.Housekeeper.MurderMystery.IHaveHeardNothing
+		|Prompt
+
+			W1.L1.Housekeeper.MurderMystery.SheWasStabbed
+			|Display|0e89.113: She was stabbed in her room, stabbed several times!
+			|SpeakerSet|
+			|Display|0e89.114: Nanna tries to control her weeping.
+			|SpeakerSet|Portraits_Housekeeper
+			|Display|0e89.115: I am sorry, Avatar. I know I should be strong, but 'twas such a frightful scene. I saw her body with mine own eyes. There was so much, so much blood...
+			|Goto||W1.L1.Housekeeper.MurderMystery.Done
+
+			W1.L1.Housekeeper.MurderMystery.ItsATerribleLoss
+			|SpeakerSet|
+			|Display|0e89.116: She turns away from you, sobbing.
+			|SpeakerSet|Portraits_Housekeeper
+			|Display|0e89.117: Oh, it is, it is!
+			|Goto||W1.L1.Housekeeper.MurderMystery.Done
+
+			W1.L1.Housekeeper.MurderMystery.IHaveHeardNothing
+			|SpeakerSet|
+			|Display|0e89.118: Nanna turns from you, sobbing.
+			|SpeakerSet|Portraits_Housekeeper
+			|Display|0e89.119: No, I have heard nothing. Now we are trapped here in the castle with a killer! What shall we do, @GS8? What shall we do?
+
+			W1.L1.Housekeeper.MurderMystery.Done
+			|SpeakerSet|
+			|Display|0e89.120: Nanna begins to weep uncontrollably, and turns away from you.
+			|SpeakerSet|Portraits_Housekeeper
+			|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.SpellIsWeakening
+	|Display|0e89.121: Avatar, many of us have heard strange noises coming from the gem. Nystul says that it is weakening, thanks to thine efforts. Is this true?
+	|Option|0e89.122: Yes; as I collect the small gems, the great gem falters.|W1.L1.Housekeeper.SpellIsWeakening.2
+	|Option|0e89.123: If Nystul says so, then 'tis probably true.|W1.L1.Housekeeper.SpellIsWeakening.2
+	|Option|0e89.124: I know not.|W1.L1.Housekeeper.SpellIsWeakening.2
+	|Prompt
+
+		W1.L1.Housekeeper.SpellIsWeakening.2
+		|Display|0e89.125: Such things are beyond me, I'm afraid. But Nystul's words are encouraging, even if I do not understand them all.
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.SpellIsBreaking
+	|Display|0e89.6: Is it true thou canst shatter the gem, Avatar?
+	|Option|0e89.7: Aye, and I shall in a moment.|W1.L1.Housekeeper.SpellIsBreaking.Yes
+	|Option|0e89.8: I am not sure, but Nystul and I shall try.|W1.L1.Housekeeper.SpellIsBreaking.IllTry
+	|Prompt
+
+		W1.L1.Housekeeper.SpellIsBreaking.Yes
+		|Display|0e89.9: 'Tis a miracle!
+		|Goto||W1.L1.Housekeeper.Done
+
+		W1.L1.Housekeeper.SpellIsBreaking.IllTry
+		|Display|0e89.10: Please, try what thou canst! If the Guardian's soldiers are not stopped soon, all shall be lost!
+		|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.YouAreCakedInMud
+	|Display|0e89.126: @GS8, thou art caked in mud! Is it necessary for thee to tromp about the castle like that?
+	|OptionsClear
+	|Option|0e89.127: I am sorry, but 'tis indeed necessary.|W1.L1.Housekeeper.YouAreCakedInMud.MindWhereYouSit
+	|Option|0e89.128: The mud allows me to contain an elemental within myself.|W1.L1.Housekeeper.AnEleWhat
+	|Option|0e89.129: No, but I enjoy being filthy.|W1.L1.Housekeeper.YouHaveAStrangeSenseOfHumor
+	|Prompt
+
+		W1.L1.Housekeeper.YouAreCakedInMud.MindWhereYouSit
+		|Display|0e89.130: Just you mind where thou dost sit, Avatar. This is a castle, not a pig-pen.
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+		W1.L1.Housekeeper.AnEleWhat
+		|Display|0e89.131: An ele-what?  Nay, do not bother to explain. I wouldst probably not understand. Just try thy best not to make the castle as dirty as thyself.
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+		W1.L1.Housekeeper.YouHaveAStrangeSenseOfHumor
+		|Display|0e89.132: Avatar, thou dost have a strange sense of humor.
+		|Goto||W1.L1.Housekeeper.AnythingElse
+
+	W1.L1.Housekeeper.MoreMurders
+	|Display|0e89.133: So it has come to this, has it? We are killing our own! I care not who the traitor was -- I know only that two more of us are dead, and I know not why!
+	|Goto||W1.L1.Housekeeper.Done
+
+	W1.L1.Housekeeper.AnythingElse
+	|Display|0e89.22: Will that be all, @GS8?
+	|Option|0e89.23: Yes. I shall speak with thee again, later.|W1.L1.Housekeeper.Done
+	|Option|0e89.24: Nay, there is more I must ask of thee.|W1.L1.Housekeeper.AnythingElse.Yes
+	|Prompt
+
+		W1.L1.Housekeeper.AnythingElse.Yes
+		|Display|0e89.25: Of course. What hast thou in mind?
+		|Goto||W1.L1.Housekeeper.GeneralQuestions
+
+	W1.L1.Housekeeper.Done
+	|Pop
+	|Prompt

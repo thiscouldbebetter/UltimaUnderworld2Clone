@@ -1,0 +1,231 @@
+
+W1.L1.Empath
+|SpeakerSet|Portraits_Empath
+|Push
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Empath.KingAboutToSpeak
+|Goto||W1.L1.Empath.Greet
+
+	W1.L1.Empath.KingAboutToSpeak
+	|Display|0e8d.6: I think it best that we listen to what Lord British has to say -- perhaps he will have a calming effect on the group.
+	|Goto||W1.L1.Empath.Done
+
+//0e8d.0: 
+//0e8d.1: @GS102
+//0e8d.2: Well...
+//0e8d.3: @GS70SI1
+//0e8d.4: I thank thee, @GS25, that is enough.
+//0e8d.5: What else dost thou know?
+
+//0e8d.7: @GS8! For all our sakes, it is good that thou art here.
+
+	W1.L1.Empath.Greet
+	W1.L1.Empath.Greet.1|Display|0e8d.8: Hello again, @GS8, I was just looking for thee.
+	W1.L1.Empath.Greet.2|Display|0e8d.9: Hello there, @GS8.
+	W1.L1.Empath.Greet.3|Display|0e8d.10: So ho, @GS25.
+	|Goto||W1.L1.Empath.GeneralQuestions
+
+	W1.L1.Empath.GeneralQuestions
+	|Option|0e8d.11: I would know thy thoughts, Lady Tory.|W1.L1.Empath.News
+	|Option|0e8d.12: How has the past year been for thee?|W1.L1.Empath.WhatOfLastYear
+	|Option|0e8d.13: Lady, canst thou train me to be a more charismatic leader?|W1.L1.Empath.Train
+	|Option|0e8d.14: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Empath.News
+	|Option|0e8d.15: Excuse me, Lady, I must be going.|W1.L1.Empath.Done
+	|Prompt
+
+	W1.L1.Empath.WhatOfLastYear
+	|Display|0e8d.84: I have spent this past year at Serpent's Hold, serving as counsellor and raising my son.  I am still in debt to thee for saving him from those accursed harpies! But now, I fear again for his safety. I left him in the care of trusted servants at Serpent's Hold, and now that there is war in Britannia, the Hold will be in an uproar. I can only hope that the Guardian has not singled out my home for a special assault.
+	|Prompt
+
+	W1.L1.Empath.Train
+	|Display|0e8d.21: Of course, @GS8. Let us talk for a while. But this will take some time -- wilt thou stay, or dost thou have to hurry off?
+	|OptionsClear
+	|Option|0e8d.22: I will stay and train.|W1.L1.Empath.Train.StayAndTrain
+	|Option|0e8d.23: I do not have the time to train with thee.|W1.L1.Empath.Train.WantToKeepGoing.No
+	|Prompt
+
+		W1.L1.Empath.Train.StayAndTrain
+		|Goto||W1.L1.Empath.Train.Success
+		|Goto||W1.L1.Empath.Train.Fail
+
+		W1.L1.Empath.Train.Success
+		|SpeakerSet|
+		|Display|0e8d.24: The Lady's empathic insights are very helpful.
+		|SpeakerSet|Portraits_Empath
+		|Goto||W1.L1.Empath.Train.WantToKeepGoing
+
+		W1.L1.Empath.Train.Fail
+		|SpeakerSet|
+		|Display|0e8d.25: Lady Tory attempts to explain how she perceives other people's feelings, but you find her point of view alien to your own.
+		|SpeakerSet|Portraits_Empath
+		|Display|W1.L1.Empath.WillThatBeAll
+
+		W1.L1.Empath.Train.WantToKeepGoing
+		|Display|0e8d.26: Wouldst thou speak some more on this subject?
+		|OptionsClear
+		|Option|0e8d.27: Indeed! I find this very fascinating.|W1.L1.Empath.Train.StayAndTrain
+		|Option|0e8d.28: No thank thee -- perhaps another time.|W1.L1.Empath.Train.WantToKeepGoing.No
+		|Prompt
+
+			W1.L1.Empath.Train.WantToKeepGoing.No
+			|Display|0e8d.29: I am always available to talk with, @GS8.
+			|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.News
+	|Goto||W1.L1.Empath.VillainInvadesMyDreams
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Goto||W1.L1.Empath.NowThatYouFoundWater
+	|Goto||W1.L1.Empath.SensingStrongEmotionsFromMayor
+	|Goto||W1.L1.Empath.TriedToTalkToMayorAgain
+
+	W1.L1.Empath.VillainInvadesMyDreams
+	|Display|0e8d.30: Oh, Avatar, wilt the Guardian not leave our minds to ourselves? Each night his horrible visage invades my dreams.
+	|Option|0e8d.31: Are thy nightmares growing worse?|W1.L1.Empath.VillainInvadesMyDreams.HisVoiceSpeaksToMe
+	|Option|0e8d.32: Remember that they art only dreams, which cannot harm thee.|W1.L1.Empath.VillainInvadesMyDreams.TheyAreOnlyDreams
+	|Option|0e8d.33: Many here have received such unwanted visitations.|W1.L1.Empath.VillainInvadesMyDreams.ManyAreHavingDreams
+
+		W1.L1.Empath.VillainInvadesMyDreams.HisVoiceSpeaksToMe
+		|Display|0e8d.34: His voice, that awful voice, speaks to me in my sleep. Recently it has been one message, over and over again. 'Lady Tory,' it says, 'even in the darkness of thy innermost thoughts, my eyes shall be watching you.'
+		|Option|0e8d.35: Do thy best to ignore it -- we must all stay sane to survive.|W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
+		|Option|0e8d.36: Soon we will be free from this gem, and your nightmares will cease.|W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
+		|Prompt
+
+		W1.L1.Empath.VillainInvadesMyDreams.TheyAreOnlyDreams
+		|Display|0e8d.37: My dreams are more vivid than thine own, @GS8, due to the nature of my empathic abilities. Still, thou art correct. They are naught but dreams, which means the Guardian is still unable to affect us directly. For that we should be thankful.
+		|Goto||W1.L1.Empath.WillThatBeAll
+
+			W1.L1.Empath.VillainInvadesMyDreams.ManyAreHavingDreams
+		|Display|0e8d.38: I know that they have. Several people have come to me recently for counsel. The Guardian seems to know what we each most fear -- and what we most desire -- and uses that to influence us in our dreams.
+		|OptionsClear
+		|Option|0e8d.39: How art thou dealing with these dreams thyself?|W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
+		|Option|0e8d.40: 'Tis good that we have an empath with us!|W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
+		|Prompt
+
+			W1.L1.Empath.VillainInvadesMyDreams.IShouldPutMyOwnDistressAside
+			|Display|0e8d.41: I shouldst put my own distress aside, I know. There are others in the castle without my mental training who are in great need of my skills.
+			|Goto||W1.L1.Empath.WillThatBeAll
+
+			W1.L1.Empath.VillainInvadesMyDreams.IWillTryToIgnoreTheseDreams
+			|Display|0e8d.42: My nightmares doth continue, Avatar, but I am doing what I can to ignore them. Others need mine aid too much for me to succumb to the Guardian's whisperings.
+			|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist
+	|Display|0e8d.43: Avatar, I am sensing very strong emotions from Feridwyn.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.44: Canst thou be more specific?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.45: I have long suspected that he was up to no good!|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Option|0e8d.46: From Feridwyn? Art thou certain?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Prompt
+
+		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+		|Display|0e8d.47: 'Tis strange, but though he greatly fears what others may think of him, I can detect no guilt in him at all.
+		|OptionsClear
+		|Option|0e8d.48: Why is that strange?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+		|Option|0e8d.49: What dost thou think it means?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+		|Option|0e8d.50: Do you trust Feridwyn?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+		|Prompt
+
+			W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+			|Display|0e8d.51: He has either committed an evil act without remorse, or he is afraid of being falsely accused. Which, I cannot tell. To be honest with thee, Avatar, I do not trust the man.
+			|OptionsClear
+			|Option|0e8d.53: What can you tell from his emotions?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+			|Option|0e8d.54: Keep an eye on him, Lady Tory.|W1.L1.Empath.WillThatBeAll
+			|Prompt
+
+			W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3B
+			|Display|0e8d.52: Truthfully, I do not know what to think. I hesitate to judge Feridwyn harshly without proof, and yet his emotions are so extremely defensive!
+			|OptionsClear
+			|Option|0e8d.53: What can you tell from his emotions?|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.3A
+			|Option|0e8d.54: Keep an eye on him, Lady Tory.|W1.L1.Empath.WillThatBeAll
+			|Prompt
+
+	W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2
+	|Display|0e8d.55: I am still keeping my mind on Feridwyn.  He remains suspicious, though I have no proof that he has done wrong.
+	|Display|0e8d.56: Trapped in here as we are, I sense rising fear and anxiety in nearly everyone.
+	|Option|0e8d.57: Thou must do what thou canst to prevent panic.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+	|Option|0e8d.58: 'Tis understandable, Lady Tory.|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+	|Option|0e8d.59: We must not give into fear. 'Tis the Guardian's chief weapon!|W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+	|Prompt
+
+		W1.L1.Empath.SensingStrongEmotionsFromPhilanthropist.2.2
+		|Display|0e8d.60: But I also sense that they have great confidence in thee, @GS8.
+		|SpeakerSet|
+		|Display|0e8d.61: She pauses.
+		|SpeakerSet|Portraits_Empath
+		|Display|0e8d.62: As do I, Avatar.
+		|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.NowThatYouFoundWater
+	|Display|0e8d.63: Now that we will not die of thirst, some of the tension in the castle has been lifted.
+	|Option|0e8d.64: We must still find a means to escape!|W1.L1.Empath.NowThatYouFoundWater.WeMustStillEscape
+	|Option|0e8d.65: It shows that the Guardian is not infallable.|W1.L1.Empath.NowThatYouFoundWater.VillainIsNotInfallible
+	|Option|0e8d.66: What is thy general sense of emotion in the castle?|W1.L1.Empath.NowThatYouFoundWater.PeopleWorriedAboutVillain
+	|Prompt
+
+		W1.L1.Empath.NowThatYouFoundWater.PeopleWorriedAboutVillain
+		|Display|0e8d.67: The people worry about what the Guardian has planned for us.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+		W1.L1.Empath.NowThatYouFoundWater.WeMustStillEscape
+		|Display|0e8d.68: Aye, 'tis true.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+		W1.L1.Empath.NowThatYouFoundWater.VillainIsNotInfallible
+		|Display|0e8d.69: I suppose that is so, but 'tis only a minor comfort.
+		|Goto||W1.L1.Empath.NowThatYouFoundWater.Done
+
+			W1.L1.Empath.NowThatYouFoundWater.Done
+			|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.SensingStrongEmotionsFromMayor
+	|Display|0e8d.70: I am sensing particularly great anxiety and turmoil in Patterson.
+	|Option|0e8d.71: Canst thou divine the cause?|W1.L1.Empath.SensingStrongEmotionsFromMayor.MindTooConfused
+	|Option|0e8d.72: Perhaps thou shouldst speak with him.|W1.L1.Empath.SensingStrongEmotionsFromMayor.TriedToTalkSeveralTimes
+	|Option|0e8d.73: His behavior has seemed strange of late.|W1.L1.Empath.SensingStrongEmotionsFromMayor.ClaimsVillainNotTauntingHim
+	|Prompt
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.MindTooConfused
+		|Display|0e8d.74: Nay, there is too much confusion in his mind.
+		|Goto||W1.L1.Empath.WillThatBeAll
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.TriedToTalkSeveralTimes
+		|Display|0e8d.75: I have tried, several times.
+		|Goto||W1.L1.Empath.WillThatBeAll
+
+		W1.L1.Empath.SensingStrongEmotionsFromMayor.ClaimsVillainNotTauntingHim
+		|Display|0e8d.76: Patterson claims that he has received no taunts from the Guardian, but I am sure he is lying. I suspect that the Guardian has been particularly cruel to him. 'Twould be wise for me to speak with him again.
+		|Goto||W1.L1.Empath.WillThatBeAll
+
+	W1.L1.Empath.TriedToTalkToMayorAgain
+	|Display|0e8d.77: I tried to talk with Patterson again, but 'twas useless. Why, he even made a pass at me!
+	|Option|0e8d.78: Art thou joking?|W1.L1.Empath.TriedToTalkToMayorAgain.NotAJoke
+	|Option|0e8d.79: Dost thou sense anything new in him?|W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead
+	|Prompt
+
+		W1.L1.Empath.TriedToTalkToMayorAgain.NotAJoke
+		|Display|0e8d.80: No, 'tis no jest! 'Tis a shame I had no interest in responding, but I hope I was kind to him.
+
+		W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead
+		|Display|0e8d.81: I still can detect no specific emotions in the man. His mind is a tangle of confusion. He seems to have taken a liking to thee, @GS8 -- perhaps thou can help him.
+		|OptionsClear
+		|Option|0e8d.82: I will do what I can.|W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead.2
+		|Prompt
+
+			W1.L1.Empath.TriedToTalkToMayorAgain.HisMindTooConfusedToRead.2
+			|Display|0e8d.83: I wish the man would just leave me alone!
+			|Goto||W1.L1.Empath.Done
+
+	W1.L1.Empath.WillThatBeAll
+	|Display|0e8d.16: Will that be all, @GS8?
+	|Option|0e8d.17: Yes. I shall speak with thee again, later.|W1.L1.Empath.Done
+	|Option|0e8d.18: Nay, there is more I must discuss with thee.|W1.L1.Empath.WillThatBeAll.No
+	|Option|0e8d.20: That is all for the moment. I shall have more to say later.|W1.L1.Empath.Done
+
+		W1.L1.Empath.WillThatBeAll.No
+		|Display|0e8d.19: Of course. What hast thou in mind?
+		|Goto||W1.L1.Empath.GeneralQuestions
+
+	W1.L1.Empath.Done
+	|SpeakerSet
+	|Pop
+	|Prompt

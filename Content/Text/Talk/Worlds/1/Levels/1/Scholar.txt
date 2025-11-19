@@ -1,0 +1,284 @@
+
+W1.L1.Scholar
+|Push
+|SpeakerSet|Portraits_Scholar
+
+|JumpIfFalse|W1.L1.King.SpeechHasBeenGiven|W1.L1.Scholar.KingAboutToSpeak
+|Goto||W1.L1.Scholar.Greet
+
+	W1.L1.Scholar.KingAboutToSpeak
+	|Display|0e8b.6: Ah, Avatar, I was just thinking... oh, just a moment. Perhaps Lord British has something to say to us.
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.Greet.FirstTime
+	|Display|0e8b.55: We are in quite a fix, aren't we? But then, I suppose that is a specialty of thine!
+	|Option|0e8b.56: Thou art right -- I shall get us out of this!|W1.L1.Scholar.WillThatBeAll
+	|Option|0e8b.57: One never gets used to such things, Nelson.|W1.L1.Scholar.WillThatBeAll
+	|Prompt
+
+	W1.L1.Scholar.Greet
+	|DoNextInCycle|W1.L1.Scholar.TimesGreeted|W1.L1.Scholar.Greet.1;W1.L1.Scholar.Greet.2;W1.L1.Scholar.Greet.3
+	W1.L1.Scholar.Greet.1|Display|0e8b.10: Avatar! I am quite relieved thou art here.
+	W1.L1.Scholar.Greet.2|Display|0e8b.11: There you are, Avatar. I was just looking for thee.
+	W1.L1.Scholar.Greet.3|Display|0e8b.12: Yes, @GS8? What may I do for thee?
+
+	W1.L1.Scholar.GeneralQuestions
+	|Option|0e8b.13: What is it, @GS25?|W1.L1.Scholar.News
+	|Option|0e8b.14: What hast occupied thee of late, @GS25?|W1.L1.Scholar.News
+	W1.L1.Scholar.SinceLastISawYou|Option|0e8b.15: What hast thou been doing since I saw thee in Moonglow?|W1.L1.Scholar.SinceLastISawYou.Answer
+	|Option|0e8b.16: I would study with thee a brief time.|W1.L1.Scholar.Train
+	|Option|0e8b.17: If I may, I would like to hear thy thoughts so far on the current situation.|W1.L1.Scholar.News
+	|Option|0e8b.18: 'Tis good to speak with thee, Nelson, but I must hurry off.|W1.L1.Scholar.Done
+	|Prompt
+
+	W1.L1.Scholar.SinceLastISawYou.Answer
+	|OptionRemove|W1.L1.Scholar.SinceLastISawYou
+	|Display|0e8b.29: I have remained in that fair city, as head of the Lycaeum. My studies there have kept me well occupied and quite content.  I heard that your friend Dupre had visited the city recently, but he prefered to frequent the Friendly Knave, and did not visit me in the Lycaeum.
+	|Prompt
+
+	W1.L1.Scholar.Train
+	|Display|0e8b.42: Of course! I find the ancient lore endlessly fascinating, and I would love to teach thee. Also, in my archaeological work I have developed an efficient method of searching small areas. Which would thou like to learn of?
+	|OptionsClear
+	|Option|0e8b.43: Let us discuss lore, then.|W1.L1.Scholar.Train.Lore
+	|Option|0e8b.44: Please, teach me to search out what is hidden.|W1.L1.Scholar.Train.Search
+	|Option|0e8b.45: I shall return when I have the time.|W1.L1.Scholar.Train.Done
+	|Push
+	|Prompt
+
+		W1.L1.Scholar.Train.Lore
+		|Goto||W1.L1.Scholar.Train.Lore.Succeed
+
+			W1.L1.Scholar.Train.Lore.Succeed
+			|SpeakerSet|
+			|Display|0e8b.46: Nelson's knowledge is encyclopedic, and in a short time you learn much.
+			|SpeakerSet|Portraits_Scholar
+			|Goto||W1.L1.Scholar.Train.Lore.WouldYouLikeToLearnMore
+
+				W1.L1.Scholar.Train.Lore.WouldYouLikeToLearnMore
+				|Display|0e8b.52: Wouldst thou like to study more?
+				|OptionsClear
+				|Option|0e8b.53: Yes, let us continue.|W1.L1.Scholar.Train.Lore
+				|Option|0e8b.54: No, thank thee.|W1.L1.Scholar.Train.Done
+				|Prompt
+
+			W1.L1.Scholar.Train.Lore.Fail
+			|SpeakerSet|
+			|Display|0e8b.47: Nelson talks for a long time, but you find your attention straying.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.48: Perhaps thou hast other things on thy mind, Avatar.
+			|Goto||W1.L1.Scholar.Train.Done
+
+		W1.L1.Scholar.Train.Search
+		|Goto||W1.L1.Scholar.Train.Search.Succeed
+
+			W1.L1.Scholar.Train.Search.Succeed
+			|SpeakerSet|
+			|Display|0e8b.49: Nelson's observations on the subject are quite canny.  You learn a great deal.
+			|SpeakerSet|Portraits_Scholar
+			|Goto||W1.L1.Scholar.Train.Search.WouldYouLikeToLearnMore
+
+				W1.L1.Scholar.Train.Search.WouldYouLikeToLearnMore
+				|Display|0e8b.52: Wouldst thou like to study more?
+				|OptionsClear
+				|Option|0e8b.53: Yes, let us continue.|W1.L1.Scholar.Train.Search
+				|Option|0e8b.54: No, thank thee.|W1.L1.Scholar.Train.Done
+				|Prompt
+
+			W1.L1.Scholar.Train.Search.Fail
+			|SpeakerSet|
+			|Display|0e8b.50: Nelson seems to know what he's talking about, but you don't quite get the point.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.51: Perhaps we should discuss this some other time, Avatar.
+			|Goto||W1.L1.Scholar.Train.Done
+
+		W1.L1.Scholar.Train.Done
+		|Pop
+		|Prompt
+
+	W1.L1.Scholar.News
+	|Goto||W1.L1.Scholar.SearchForASmallerSphere
+	|Goto||W1.L1.Scholar.YouFoundAPortal
+
+	W1.L1.Scholar.SearchForASmallerSphere
+	|Display|0e8b.58: Well, I have been thinking -- all of the Guardian's blackrock structures have had smaller copies of themselves inside -- it would be worthwhile searching for something similar within the castle.
+	|Option|0e8b.59: But where would such a thing be?|W1.L1.Scholar.SearchForASmallerSphere.Where
+	|Option|0e8b.60: What use would that be to us?|W1.L1.Scholar.SearchForASmallerSphere.Why
+	|Prompt
+
+		W1.L1.Scholar.SearchForASmallerSphere.Why
+		|Display|0e8b.61: I cannot say for certain, but a year ago, thou didst find such a thing did help thee in breaking the Guardian's power. Dost thou recall? Thou didst enter within each of the smaller shapes, to attain thy goal.
+		|Goto||W1.L1.Scholar.HaveYouObservedTheStructure
+
+		W1.L1.Scholar.SearchForASmallerSphere.Where
+		|Display|0e8b.62: 'Tis hard to say. It may have been hidden, or it may contain its own defences, in some interior space. 'Tis probably not in the castle proper, though, but rather nearer the base of the sphere, in the sewers.
+		|Goto||W1.L1.Scholar.HaveYouObservedTheStructure
+
+		W1.L1.Scholar.HaveYouObservedTheStructure
+		|Display|0e8b.63: Hast thou observed anything of the black gem's structural properties?
+		|OptionsClear
+		|Option|0e8b.64: No. I have more important things to think about than architecture.|W1.L1.Scholar.StructureHasAcousticalProperties
+		|Option|0e8b.65: No, please tell me of thy observations.|W1.L1.Scholar.StructureHasAcousticalProperties
+		|Prompt
+
+			W1.L1.Scholar.StructureHasAcousticalProperties
+			|Display|0e8b.66: Hmm... well, 'tis a very stable structure, very sound. I did notice some interesting acoustical properties. Listen!
+			|SpeakerSet|
+			|Display|0e8b.67: He hums a single note loudly, in a pleasing tenor. When he leaves off, you can hear the gem resonating faintly to the same note. It holds for a long time, then dies away.
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.68: Extraordinary, is it not?
+			|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.YouFoundAPortal
+	|Display|0e8b.70: I mean, that thou didst find a gem, that took thee to a building in another world! Just think of what this discovery means!
+	|OptionsClear
+	|Option|0e8b.71: Er, what does it mean?|W1.L1.Scholar.YouFoundAPortal.2
+	|Option|0e8b.72: Canst thou tell me anything about other worlds?|W1.L1.Scholar.YouFoundAPortal.2
+	|Prompt
+
+		W1.L1.Scholar.YouFoundAPortal.2
+		|Display|0e8b.73: There are legends of events of other worlds, just think if we could learn their truth firsthand! The Battle of Rhyna, the Homeland of the Daemons -- any one of these things could lie through that gem!
+		|OptionsClear
+		|Option|0e8b.74: Why not come with me and see?|W1.L1.Scholar.YouFoundAPortal.ComeWithMe
+		|Option|0e8b.75: I am more concerned with survival, thank thee.|W1.L1.Scholar.IAmConcernedWithSurvival
+		|Prompt
+
+			W1.L1.Scholar.YouFoundAPortal.ComeWithMe
+			|Display|0e8b.76: No thank thee! Miranda is right -- a scholar like myself should stay in the library, out of danger. But be sure and visit me, and tell me of thy discoveries!
+			|Goto||W1.L1.Scholar.Done
+
+			W1.L1.Scholar.IAmConcernedWithSurvival
+			|Display|0e877: Ah, @GS8, thou hast not the poet's heart! Still, to a hero such as thyself, perhaps such things seem commonplace.
+			|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderMystery
+	|Display|0e8b.78: I can hardly believe it -- I was so fond of her, @GS8. Tell me -- was it some... thing that crawled up out of the gem, or... dost thou think it could have been one of us?
+	|Option|0e8b.79: I know not.|W1.L1.Scholar.MurderMystery.KillerWasIDontKnow
+	|Option|0e8b.80: Aye, methinks one of us hath turned traitor.|W1.L1.Scholar.MurderMystery.KillerWasTraitor
+	|Option|0e8b.81: Nay, likely something from one of the other worlds.|W1.L1.Scholar.MurderMystery.KillerWasOutworlder
+	|Prompt
+
+		W1.L1.Scholar.MurderMystery.KillerWasIDontKnow
+		|Display|0e8b.82: If I may be of any assistance... I mean, I am a scholar, not a monster-killer, but still... I would fain be allowed to help in this matter.
+		|Option|0e8b.83: I shall call on thee if I need thee.|W1.L1.Scholar.WillThatBeAll
+		|Option|0e8b.84: 'Tis unlikely, but I shall keep thee in mind.|W1.L1.Scholar.WillThatBeAll
+		|Prompt
+
+		W1.L1.Scholar.MurderMystery.KillerWasTraitor
+		|Display|0e8b.85: 'Tis hard to imagine, Avatar. Surely, no one of us could have done that... And yet, if there were a traitor in the castle, the empath would be his or her first target.
+		|Goto||W1.L1.Scholar.Done
+
+		W1.L1.Scholar.MurderMystery.KillerWasOutworlder
+		|Display|0e8b.86: 'Tis a relief to hear thee say that. And yet, 'twas not one of the verminous sewer-creatures that did that. It strikes me that the killing was no random act of malice or hunger, but a deliberate attempt to remove the empath from our midst.
+		|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderedOnstage
+	|Display|0e8b.89: You see, @GS8, I was reading in the library, and . . .\n
+	|SpeakerSet|Portraits_Mayor
+	|Display|0e8b.90: Yes, @GS8, but there was something I wished to discuss with thee . . .\m
+	|SpeakerSet|Portraits_Scholar
+	|Display|0e8b.91: Please, Mayor Patterson, this is of the utmost importance. I was reading some of Batal Thaam's early texts concerning blackrock -- thou hast heard of Batal Thaam?
+	|Option|0e8b.92: Aye.|W1.L1.Scholar.MurderedOnstage.2
+	|Option|0e8b.93: Nay.|W1.L1.Scholar.MurderedOnstage.2
+	|Prompt
+
+		W1.L1.Scholar.MurderedOnstage.2
+		|Display|0e8b.94: She was one of the earliest sorcerers to develop a sense of the ether around us. Also a veteran of the Brujerian uprising -- 'tis a fascinating story, thou shouldst read it sometime...\m
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8b.95: Nelson, this does not seem terribly urgent after all. Perhaps the Avatar and I have something to discuss...?\m
+		|SpeakerSet|Portraits_Scholar
+		|Display|0e8b.96: Mayor Patterson, please! Now Batal Thaam also wrote specifically on the creation of blackrock, and its effects on the ether. But also, on how the ether can be made to have an effect on blackrock itself.\m
+		|SpeakerSet|Portraits_Mayor
+		|Display|0e8b.97: Avatar, must we endure these abstract theories? There is work to be done!
+		|Option|0e8b.98: Shhh. This sounds important.|W1.L1.Scholar.MurderedOnstage.ThisSoundsImportant
+		|Option|0e8b.99: Nelson, he may have a point. What is the gist of the matter?|W1.L1.Scholar.MurderedOnstage.GetToThePoint
+		|Prompt
+
+			W1.L1.Scholar.MurderedOnstage.ThisSoundsImportant
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.100: Thank you, @GS8.
+			|Goto||W1.L1.Scholar.MurderedOnstage.3
+
+			W1.L1.Scholar.MurderedOnstage.GetToThePoint
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.101: Avatar, please, a little patience.
+			|Goto||W1.L1.Scholar.MurderedOnstage.3
+
+			W1.L1.Scholar.MurderedOnstage.3
+			|Display|0e8b.102: Now it seems that Thaam had discovered a means of manip...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8b.103: Nelson, why are we bothering with this?\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.104: ...manipulating blackrock through a simple spell, which would allow one to perceive and act on...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8b.105: I don't think thou shouldst speak of such...\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.106: ...act on the ether, and therefore on the blackrock itself,...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8b.107: Nelson.\m
+			|SpeakerSet|Portraits_Scholar
+			|Display|0e8b.108: 'Twas a runic spell, using the runes...\m
+			|SpeakerSet|Portraits_Mayor
+			|Display|0e8b.109: I'm sorry, Nelson.\m
+			|SpeakerSet|
+			|Display|0e8b.110: In a flash, Patterson draws a dagger from his belt and stabs Nelson through the back of the neck. Nelson stiffens and falls, and the dagger falls from Patterson's hand.
+			|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.MurderedOffstage
+	|SpeakerSet|
+	|Display|0e8b.7: Nelson seems dazed. Blood is trickling from a wound on his neck, running down his shirt. He looks  down at it, then back up at you.
+	|SpeakerSet|Portraits_Scholar
+	|Display|0e8b.8: I say, Avatar . . . I was just telling Patterson about a new way of tunnelling through blackrock, when . . . there seems to have been some sort of misunderstanding . . .
+	|SpeakerSet|
+	|Display|0e8b.9: He collapses at your feet.
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.WillThatBeAll
+	|Display|0e8b.19: Will that be all, @GS8?
+	|Option|0e8b.20: Yes. I shall speak with thee again, later.|W1.L1.Scholar.Done
+	|Option|0e8b.21: Nay, there is more I must discuss with thee.|W1.L1.Scholar.WillThatBeAll.No
+	|Prompt
+
+		W1.L1.Scholar.WillThatBeAll.No
+		|Display|0e8b.22: Of course. What hast thou in mind?|W1.L1.Scholar.GeneralQuestions
+		|Prompt
+
+	W1.L1.Scholar.Farewell
+	|Goto||W1.L1.Scholar.Done
+
+	W1.L1.Scholar.Done
+	|Pop
+	|Prompt
+
+
+//0: 
+//1: @GS102
+//2: Well...
+//3: @GS70SI1
+//4: I thank thee, @GS25, that is enough.
+//5: What else dost thou know?
+
+//23: The logic of the Guardian's previous creations dictates that some smaller version of the blackrock gem must have formed within the castle grounds.
+
+//24: Well, I did notice that the gem resonates very strongly to certain musical notes.
+//25: Ah, @GS8, I long to know more of the worlds that lie through that gem!
+	//69: Yes, well, I suppose thou dost.
+
+//26: It seemed clear to me that Lady Tory was killed intentionally, and not just by some animal or brutal humanoid.
+//27: I'm dead now, so I can't say this.
+//28: That is all for the moment. I shall have more to say later.
+//30: 'Tis good to see thee here, Avatar.
+//31: I have noticed something odd.
+
+//32: Avatar, I have heard the news!
+//33: @GS8, I suppose thou hast heard the news.
+//34: Hello, @GS8. Mayor Patterson was just visiting me. I have some important research I must share with thee at once!
+//35: Of course, Nelson. What is it?
+//36: Just a minute -- I have another question for thee.
+//37: It must wait, Avatar -- this is too important!
+//38: Hello, @GS8. Mayor Patterson was just visiting me. I have some important research I must share with thee at once!
+//39: Of course, Nelson. What is it?
+//40: Just a minute -- I have another question for thee.
+//41: It must wait, Avatar -- this is too important!
+
+//87: man
+//88: woman
